@@ -103,5 +103,13 @@
     "/resources/assets/backend/js/form-validation/form-validation-meta-tag.min.js": "/resources/assets/backend/js/form-validation/form-validation-meta-tag.min.js",
     "/backend/assets/js/form-validate/form-validation-meta-tag.min.js": "/backend/assets/js/form-validate/form-validation-meta-tag.min.js",
     "/resources/assets/backend/js/form-validation/form-validation-roles.min.js": "/resources/assets/backend/js/form-validation/form-validation-roles.min.js",
-    "/backend/assets/js/form-validate/form-validation-roles.min.js": "/backend/assets/js/form-validate/form-validation-roles.min.js"
+    "/backend/assets/js/form-validate/form-validation-roles.min.js": "/backend/assets/js/form-validate/form-validation-roles.min.js",
+    "/resources/assets/backend/js/form-validation/form-validation-users.min.js": "/resources/assets/backend/js/form-validation/form-validation-users.min.js",
+    "/backend/assets/js/form-validate/form-validation-users.min.js": "/backend/assets/js/form-validate/form-validation-users.min.js",
+    "/resources/assets/backend/js/form-validation/form-validation-corruption-case.min.js": "/resources/assets/backend/js/form-validation/form-validation-corruption-case.min.js",
+    "/backend/assets/js/form-validate/form-validation-corruption-case.min.js": "/backend/assets/js/form-validate/form-validation-corruption-case.min.js",
+    "/resources/assets/backend/js/form-validation/form-validation-content-category.min.js": "/resources/assets/backend/js/form-validation/form-validation-content-category.min.js",
+    "/backend/assets/js/form-validate/form-validation-content-category.min.js": "/backend/assets/js/form-validate/form-validation-content-category.min.js",
+    "/resources/assets/backend/js/form-validation/form-validation-menu-item.min.js": "/resources/assets/backend/js/form-validation/form-validation-menu-item.min.js",
+    "/backend/assets/js/form-validate/form-validation-menu-item.min.js": "/backend/assets/js/form-validate/form-validation-menu-item.min.js"
 }

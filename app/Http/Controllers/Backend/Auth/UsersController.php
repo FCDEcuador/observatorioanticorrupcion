@@ -8,7 +8,6 @@ use BlaudCMS\Http\Traits\BackendAuthorizable;
 
 use BlaudCMS\Helpers\TimeFormat;
 
-use BlaudCMS\Message;
 use BlaudCMS\Configuration;
 use BlaudCMS\Role;
 use BlaudCMS\Permission;
@@ -84,10 +83,6 @@ class UsersController extends Controller
         // Agregando restriccion para usuarios logueados y que sean de backend
         $this->middleware('auth');
 
-        // Obteniendo ultimos mensajes no leidos y la cantidad total de los mismos
-        $this->unreadMessages = Message::unread()->orderBy('created_at', 'DESC')->limit(10)->get();
-        $this->cantUnreadMessages = Message::unread()->count();
-
         // Instanciamos el objeto de configuracion para obtener su data, si no existe creamos un nuevo objeto
         $oConfiguration = Configuration::find(1);
         if( ! is_object($oConfiguration)){
@@ -119,9 +114,6 @@ class UsersController extends Controller
     {
         $usersList = User::searchUser($request->sStringSearch, 'backend', 20);
         $data = [
-            // Datos generales para todas las vistas
-            'cantUnreadMessages' => $this->cantUnreadMessages,
-            'unreadMessages' => $this->unreadMessages,
             'activeMenu' => $this->activeMenu,
             'oConfiguration' => $this->oConfiguration,
 
@@ -169,9 +161,6 @@ class UsersController extends Controller
         $aRoles = Role::all();
         
         $data = [
-            // Datos generales para todas las vistas
-            'cantUnreadMessages' => $this->cantUnreadMessages,
-            'unreadMessages' => $this->unreadMessages,
             'activeMenu' => $this->activeMenu,
             'oConfiguration' => $this->oConfiguration,
 
@@ -348,9 +337,6 @@ class UsersController extends Controller
         $aRoles = Role::all();
         
         $data = [
-            // Datos generales para todas las vistas
-            'cantUnreadMessages' => $this->cantUnreadMessages,
-            'unreadMessages' => $this->unreadMessages,
             'activeMenu' => $this->activeMenu,
             'oConfiguration' => $this->oConfiguration,
 

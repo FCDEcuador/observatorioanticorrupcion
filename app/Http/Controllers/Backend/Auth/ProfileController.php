@@ -5,7 +5,6 @@ namespace BlaudCMS\Http\Controllers\Backend\Auth;
 use Illuminate\Http\Request;
 use BlaudCMS\Http\Controllers\Controller;
 
-use BlaudCMS\Message;
 use BlaudCMS\Configuration;
 use BlaudCMS\User;
 
@@ -55,20 +54,6 @@ class ProfileController extends Controller
     private $activeMenu;
 
     /**
-     * Variable para almacenar la lista de mensajes no leidos.
-     *
-     * @var unreadMessages
-     */
-    private $unreadMessages;
-
-    /**
-     * Variable para almacenar la cantidad de mensajes no leidos.
-     *
-     * @var cantUnreadMessages
-     */
-    private $cantUnreadMessages;
-
-    /**
      * Constructor del Controller, iniciamos los middlewares para validar que el usuario tenga los permisos correctos
      * @Autor Raúl Chauvin
      * @FechaCreacion  2017/05/15
@@ -77,10 +62,6 @@ class ProfileController extends Controller
     	
     	// Agregando restriccion para usuarios logueados y que sean de backend
     	$this->middleware('auth');
-
-        // Obteniendo ultimos mensajes no leidos y la cantidad total de los mismos
-        $this->unreadMessages = Message::unread()->orderBy('created_at', 'DESC')->limit(10)->get();
-        $this->cantUnreadMessages = Message::unread()->count();
 
         // Instanciamos el objeto de configuracion para obtener su data, si no existe creamos un nuevo objeto
         $oConfiguration = Configuration::find(1);
@@ -114,9 +95,6 @@ class ProfileController extends Controller
     public function profile(Request $request)
     {
         $data = [
-            // Datos generales para todas las vistas
-            'cantUnreadMessages' => $this->cantUnreadMessages,
-            'unreadMessages' => $this->unreadMessages,
             'activeMenu' => $this->activeMenu,
 
             // Datos especificos para utilizar en la vista

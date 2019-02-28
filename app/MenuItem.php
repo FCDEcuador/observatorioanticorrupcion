@@ -109,4 +109,8 @@ class MenuItem extends Model
     public function scopeByLevel($sQuery, $iLevel = 0){
         return $sQuery->whereLevel($iLevel);
     }
+
+    public function scopeFirstLevel($sQuery){
+        return $sQuery->byLevel(0)->whereNull('menu_item_id');
+    }
 }

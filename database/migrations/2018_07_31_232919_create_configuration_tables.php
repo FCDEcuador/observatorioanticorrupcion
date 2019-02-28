@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Symfony\Component\Console\Helper\ProgressBar;
+use Symfony\Component\Console\Output\ConsoleOutput;
 
 class CreateConfigurationTables extends Migration
 {
@@ -13,6 +15,11 @@ class CreateConfigurationTables extends Migration
      */
     public function up()
     {
+
+        $output = new ConsoleOutput();
+        $bar = new ProgressBar($output, 3);
+        $bar->start();
+
         if(!Schema::hasTable('configurations')){
             Schema::create('configurations', function (Blueprint $table) {
                 $table->increments('id');
@@ -41,6 +48,7 @@ class CreateConfigurationTables extends Migration
                 $table->timestamps();
             });
         }
+        $bar->advance();
 
         if(!Schema::hasTable('meta_tags')){
             Schema::create('meta_tags', function (Blueprint $table) {
@@ -53,31 +61,7 @@ class CreateConfigurationTables extends Migration
                 $table->primary('id');
             });
         }
-
-        
-        if(!Schema::hasTable('messages')){
-            Schema::create('messages', function (Blueprint $table) {
-                $table->uuid('id');
-                $table->string('name');
-                $table->string('email');
-                $table->char('type', 2);
-                /*
-                    Co -> Consult
-                    Or -> Order
-                    Su -> Suggestion
-                    Cm -> Comment
-                */
-                $table->string('subject')->nullable();
-                $table->text('message')->nullable();
-                $table->boolean('status')->default(0);
-                /*
-                    0 -> Unread
-                    1 -> Read
-                */
-                $table->timestamps();
-                $table->primary('id');
-            });
-        }
+        $bar->advance();
 
         if(!Schema::hasTable('catalogs')){
             Schema::create('catalogs', function (Blueprint $table) {
@@ -115,6 +99,10 @@ class CreateConfigurationTables extends Migration
                 $table->foreign('catalogue_id')->references('id')->on('catalogs');
             });
         }
+        $bar->advance();
+
+        $bar->finish();
+        print("\n");
     }
 
     /**
@@ -124,9 +112,19 @@ class CreateConfigurationTables extends Migration
      */
     public function down()
     {
+
+        $output = new ConsoleOutput();
+        $bar = new ProgressBar($output, 3);
+        $bar->start();
+
         Schema::dropIfExists('catalogs');
-        Schema::dropIfExists('messages');
+        $bar->advance();
         Schema::dropIfExists('meta_tags');
+        $bar->advance();
         Schema::dropIfExists('configurations');
+        $bar->advance();
+
+        $bar->finish();
+        print("\n");
     }
 }

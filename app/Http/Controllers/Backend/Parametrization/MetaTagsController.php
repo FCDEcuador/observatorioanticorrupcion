@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use BlaudCMS\Http\Controllers\Controller;
 use BlaudCMS\Http\Traits\BackendAuthorizable;
 
-use BlaudCMS\Message;
 use BlaudCMS\Configuration;
 use BlaudCMS\MetaTag;
 use BlaudCMS\User;
@@ -59,20 +58,6 @@ class MetaTagsController extends Controller
     private $activeMenu;
 
     /**
-     * Variable para almacenar la lista de mensajes no leidos.
-     *
-     * @var unreadMessages
-     */
-    private $unreadMessages;
-
-    /**
-     * Variable para almacenar la cantidad de mensajes no leidos.
-     *
-     * @var cantUnreadMessages
-     */
-    private $cantUnreadMessages;
-
-    /**
      * Constructor del Controller, iniciamos los middlewares para validar que el usuario tenga los permisos correctos
      * @Autor Raúl Chauvin
      * @FechaCreacion  2018/08/30
@@ -81,10 +66,6 @@ class MetaTagsController extends Controller
     	
     	// Agregando restriccion para usuarios logueados y que sean de backend
     	$this->middleware('auth');
-
-        // Obteniendo ultimos mensajes no leidos y la cantidad total de los mismos
-        $this->unreadMessages = Message::unread()->orderBy('created_at', 'DESC')->limit(10)->get();
-        $this->cantUnreadMessages = Message::unread()->count();
 
         // Instanciamos el objeto de configuracion para obtener su data, si no existe creamos un nuevo objeto
         $oConfiguration = Configuration::find(1);
@@ -119,14 +100,11 @@ class MetaTagsController extends Controller
         $metaTagsList = MetaTag::paginate(20);
         $data = [
             // Datos generales para todas las vistas
-            'cantUnreadMessages' => $this->cantUnreadMessages,
-            'unreadMessages' => $this->unreadMessages,
             'activeMenu' => $this->activeMenu,
             'oConfiguration' => $this->oConfiguration,
 
             // Datos especificos para utilizar en la vista
             'oStorage' => $this->oStorage,
-            'env' => config('app.env'),
             'metaTagsList' => $metaTagsList,
         ];
         $view = view('backend.parametrization.metatags.metaTagsList', $data);
@@ -158,14 +136,11 @@ class MetaTagsController extends Controller
     {
         $data = [
             // Datos generales para todas las vistas
-            'cantUnreadMessages' => $this->cantUnreadMessages,
-            'unreadMessages' => $this->unreadMessages,
             'activeMenu' => $this->activeMenu,
             'oConfiguration' => $this->oConfiguration,
 
             // Datos especificos para utilizar en la vista
             'oStorage' => $this->oStorage,
-            'env' => config('app.env'),
             'oMetaTag' => null,
         ];
 
@@ -262,14 +237,11 @@ class MetaTagsController extends Controller
 
         $data = [
             // Datos generales para todas las vistas
-            'cantUnreadMessages' => $this->cantUnreadMessages,
-            'unreadMessages' => $this->unreadMessages,
             'activeMenu' => $this->activeMenu,
             'oConfiguration' => $this->oConfiguration,
 
             // Datos especificos para utilizar en la vista
             'oStorage' => $this->oStorage,
-            'env' => config('app.env'),
             'oMetaTag' => $oMetaTag,
         ];
 

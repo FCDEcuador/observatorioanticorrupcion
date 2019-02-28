@@ -246,7 +246,7 @@ function confirmDelete(formId, btnId, titleAlert, textAlert, urlRender, render) 
                       error: function(errors){
                         swal({
                                 title: titleAlert,
-                                text: 'No se pudo eliminar el meta tag, por favor intentelo nuevamente luego de unos minutos',
+                                text: 'No se pudo eliminar el registro, por favor intentelo nuevamente luego de unos minutos',
                                 type: 'error',
                                 allowOutsideClick: true,
                                 showConfirmButton: true,

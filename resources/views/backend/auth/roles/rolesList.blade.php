@@ -19,7 +19,7 @@
             </div>
             <div class="col-md-7 align-self-center">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="javascript: void();" onclick="javascript: renderSection('{!! route('backend.dashboard') !!}');">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="{!! route('backend.dashboard') !!}">Dashboard</a></li>
                     <li class="breadcrumb-item">Auth</li>
                     <li class="breadcrumb-item active">Roles</li>
                 </ol>
@@ -47,7 +47,7 @@
                             </div>
                             <div class="col-md-4">
                                 @can('backend_add_roles')
-                                    <a href="javascript: void();" onclick="renderSection('{!! route('backend.auth.roles.create') !!}');" class="btn btn-info btn-sm waves-effect waves-light" data-toggle="tooltip" title="Agregar Rol">
+                                    <a href="{!! route('backend.auth.roles.create') !!}" class="btn btn-info btn-sm waves-effect waves-light" data-toggle="tooltip" title="Agregar Rol">
                                         <span class="btn-label">
                                             <i class="ti-plus"></i>
                                         </span>
@@ -83,7 +83,7 @@
                                                                             {!! Form::open(['route' => ['backend.auth.roles.delete', $oRole->id], 'method' => 'DELETE', 'name' => 'deleteRoleForm_'.$oRole->id, 'id' => 'deleteRoleForm_'.$oRole->id]) !!}
                                                                         @endcan
                                                                         @can('backend_edit_roles')
-                                                                            <a class="btn btn-xs btn-info waves-effect waves-light text-white" onclick="javascript: renderSection('{!! route('backend.auth.roles.edit', [$oRole->id]) !!}');" style="width:90%;margin-left:8px; cursor: pointer;">
+                                                                            <a class="btn btn-xs btn-info waves-effect waves-light text-white" style="width:90%;margin-left:8px;" href="{!! route('backend.auth.roles.edit', [$oRole->id]) !!}">
                                                                                 <span class="btn-label"><i class="mdi mdi-pencil"></i></span>
                                                                                 Editar Rol
                                                                             </a>

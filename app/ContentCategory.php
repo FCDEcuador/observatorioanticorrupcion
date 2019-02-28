@@ -37,13 +37,7 @@ class ContentCategory extends Model
         'meta_description',
         'meta_keywords',
         'extra_headers',
-        'active',
-        'num_list_items',
-        'advertising_positions',
-        'hits',
         'content_category_id',
-        'created_by',
-        'updated_by',
     ];
 
     /**
@@ -81,29 +75,7 @@ class ContentCategory extends Model
     	return json_decode($tags);
     }
 
-    /**
-     * Método que guarda en la base de datos las posiciones de publicidad de la categoria en formato JSON
-     * @Autor Raúl Chauvin
-     * @FechaCreacion  2017/06/08
-     *
-     * @param string advertisingPositions
-     *
-     */
-    public function setAdvertisingPositionsAttribute($advertisingPositions){
-        $this->attributes['advertising_positions'] = json_encode($advertisingPositions);
-    }
-
-    /**
-     * Método que devuelve las posiciones de publicidad de la categoria en formato array luego de convertir el JSON
-     * @Autor Raúl Chauvin
-     * @FechaCreacion  2017/06/08
-     *
-     * @param string advertisingPositions
-     *
-     */
-    public function getAdvertisingPositionsAttribute($advertisingPositions){
-    	return json_decode($advertisingPositions);
-    }
+    
 
     /*****************************************************************
     	Autor Raúl Chauvin
@@ -121,58 +93,27 @@ class ContentCategory extends Model
         return $this->hasMany('BlaudCMS\ContentCategory','content_category_id', 'id');
     }
 
-    // ContentCategory __has_many__ MultimediaContent
-    public function multimediaContents() {
-        return $this->hasMany('BlaudCMS\MulimediaContent','content_category_id', 'id');
-    }
-
     // ContentCategory __has_many__ ContentArticle
     public function contentArticles() {
         return $this->hasMany('BlaudCMS\ContentArticle','content_category_id', 'id');
     }
 
-
     /*************************************************************************************************
         Metodos scope para utilizar en el controlador
         Autor Raúl Chauvin
-        FechaCreacion  2017/06/08
-        EJ:
-        $aActiveCategories = ContentCategory::active()->get();
-        $aActiveCategoriesNoStatics = ContentCategory::active()->noStatics()->get();
+        FechaCreacion  2018/01/03
     **************************************************************************************************/
 
-    public function scopeActive($sQuery){
-        return $sQuery->whereActive(1);
+    public function scopeBySuperContentCategory($sQuery, $sIdSuperContentCategory){
+        return $sQuery->where('content_category_id', $sIdSuperContentCategory);
     }
 
-    public function scopeInactive($sQuery){
-        return $sQuery->whereActive(0);
+    public function scopeSuperCategories($query){
+        return $query->whereNull('content_category_id');
     }
 
-    
-    public function scopeNoStatics($sQuery){
-    	return $sQuery->where(function($sQuery){
-    		$sQuery->where('id','<>', 1) // HOME
-    		->where('id','<>', 2);		 // STATICS PAGES
-    	})
-    }
-
-    /**
-     * Metodo que verifica si una categoria de contenido es estatica (Home o Static Pages).
-     * @Autor Raúl Chauvin
-     * @FechaCreacion  2017/06/08
-     *
-     * @param int iId?
-     * @return bool
-     */
-    public static function isStaticContentCategory($iId = ''){
-        if($iId){
-        	$oContentCategory = ContentCategory::find($iId);
-        	if($oContentCategory){
-        		return ($oContentCategory->id == 1 || $oContentCategory == 2) ? TRUE : FALSE;
-        	}
-        }
-        return FALSE;
+    public function scopeSubCategories($query, $sId){
+        return $query->where('content_category_id', $sId);
     }
 
     /**
@@ -212,42 +153,6 @@ class ContentCategory extends Model
     }
 
 
-    /**
-     * Metodo que obtiene la super categoria de una categoria dada.
-     * @Autor Raúl Chauvin
-     * @FechaCreacion  2017/06/08
-     *
-     * @param int iId?
-     * @return bool
-     */
-    public static function superContentCategory($iId = ''){
-        if($iId){
-        	$oContentCategory = ContentCategory::find($iId);
-        	if($oContentCategory){
-        		return ContentCategory::isSuperCategory($oContentCategory->id) ? 
-        													 $oContentCategory : 
-        				ContentCategory::superCategory($oContentCategory->content_category_id);
-        	}
-        }
-        return FALSE;
-    }
-
-
-    /**
-     * Metodo que verifica si una categoria de contenido esta activa o no.
-     * @Autor Raúl Chauvin
-     * @FechaCreacion  2017/06/08
-     *
-     * @param int iId?
-     * @return bool
-     */
-    public static function isActive($iId = ''){
-        if($iId){
-        	return ContentCategory::find($iId)->active == 1 ? TRUE : FALSE;
-        }
-        return FALSE;
-    }
-
 
     /**
     * Metodo que devuelve un modelo ContentCategory encontrado por slug o falso en caso de no encontrarlo
@@ -281,30 +186,73 @@ class ContentCategory extends Model
     * @FechaCreacion  2017/06/08
     *
     * @param string sStringSearch
-    * @param integer iActive
     * @param integer iPaginate
     * @return ContentCategory[] 
     */
-    public static function searchContentCategory($sStringSearch = '', $iActive = '', $iPaginate = 20){
+    public static function searchContentCategory($sStringSearch = '', $iPaginate = 20){
         if($sStringSearch){
             $aListCategories = ContentCategory::where(function($sQuery) use ($sStringSearch){
-            						->$sQuery->where('id','like','%'.$sStringSearch.'%')
+            						$sQuery->where('id','like','%'.$sStringSearch.'%')
                                     ->orWhere('name','like','%'.$sStringSearch.'%')
                                     ->orWhere('title','like','%'.$sStringSearch.'%')
                                     ->orWhere('subtitle','like','%'.$sStringSearch.'%')
                                     ->orWhere('tags','like','%'.$sStringSearch.'%');
             					});
-            if($iActive != ''){
-            	$aListCategories = $aListCategories->where('active', $iActive);
-            }
+            
             $aListCategories = $aListCategories->paginate($iPaginate);
         }else{
-        	if($iActive != ''){
-            	$aListCategories = ContentCategory::where('active', $iActive)->paginate($iPaginate);
-            }else{
-            	$aListCategories = ContentCategory::paginate($iPaginate);
-            }
+        	$aListCategories = ContentCategory::paginate($iPaginate);
         }
         return $aListCategories;
+    }
+
+
+    public static function dropDownItems($superContentCategoryId = null, $selectedItemId = null, $sSpacesString = ''){
+        $selectItems = '';
+        if($superContentCategoryId){
+            $sSpacesString .= '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+            $aContentCategories = ContentCategory::subCategories($superContentCategoryId)->get();
+        }else{
+            $aContentCategories = ContentCategory::superCategories()->get();
+        }
+        if($aContentCategories->isNotEmpty()){
+            foreach($aContentCategories as $oContentCategory){
+                if($selectedItemId == $oContentCategory->id){
+                    $selectItems .= '<option selected="selected" value="'.$oContentCategory->id.'">'.$sSpacesString.$oContentCategory->name.'</option>';
+                }else{
+                    $selectItems .= '<option value="'.$oContentCategory->id.'">'.$sSpacesString.$oContentCategory->name.'</option>';
+                }
+                $subCategories = ContentCategory::subCategories($oContentCategory->id)->count();
+                if($subCategories){
+                    $selectItems .= ContentCategory::dropDownItems($oContentCategory->id, $selectedItemId, $sSpacesString);
+                }
+            }
+        }
+        return $selectItems;
+    }
+
+
+    public static function dropDownItemsMenu($superContentCategoryId = null, $selectedItemId = null, $sSpacesString = ''){
+        $selectItems = '';
+        if($superContentCategoryId){
+            $sSpacesString .= '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+            $aContentCategories = ContentCategory::subCategories($superContentCategoryId)->get();
+        }else{
+            $aContentCategories = ContentCategory::superCategories()->get();
+        }
+        if($aContentCategories->isNotEmpty()){
+            foreach($aContentCategories as $oContentCategory){
+                if($selectedItemId == $oContentCategory->id){
+                    $selectItems .= '<option selected="selected" value="/contenido/'.$oContentCategory->slug.'">'.$sSpacesString.$oContentCategory->name.'</option>';
+                }else{
+                    $selectItems .= '<option value="/contenido/'.$oContentCategory->slug.'">'.$sSpacesString.$oContentCategory->name.'</option>';
+                }
+                $subCategories = ContentCategory::subCategories($oContentCategory->id)->count();
+                if($subCategories){
+                    $selectItems .= ContentCategory::dropDownItems($oContentCategory->id, $selectedItemId, $sSpacesString);
+                }
+            }
+        }
+        return $selectItems;
     }
 }

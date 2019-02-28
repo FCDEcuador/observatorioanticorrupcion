@@ -95,18 +95,6 @@ class User extends Authenticatable
 
     protected $dates = ['deleted_at'];
 
-
-    /*****************************************************************
-    Autor Raúl Chauvin
-    FechaCreacion  2018/08/30
-    Metodos para construir relaciones en ORM
-    ******************************************************************/
-
-    // User __has_many__ ParamUser
-    public function paramUsers() {
-        return $this->hasMany('BlaudCMS\ParamUser','user_id', 'id');
-    }
-
     /**
      * Método que genera el hash de las claves antes de guardarlas en la BD.
      * @Autor Raúl Chauvin

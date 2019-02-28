@@ -7,6 +7,7 @@ use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 use BlaudCMS\Console\Commands\AuthBackendPermissionsCommand;
 use BlaudCMS\Console\Commands\AuthFrontendPermissionsCommand;
+use BlaudCMS\Console\Commands\ContentMenusCommand;
 
 class Kernel extends ConsoleKernel
 {
@@ -18,6 +19,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         AuthBackendPermissionsCommand::class,
         AuthFrontendPermissionsCommand::class,
+        ContentMenusCommand::class,
     ];
 
     /**

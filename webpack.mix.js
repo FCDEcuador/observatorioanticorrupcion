@@ -90,7 +90,20 @@ let mix = require('laravel-mix');
 			   	.copy('resources/assets/backend/js/form-validation/form-validation-meta-tag.min.js', 'public/backend/assets/js/form-validate')
 			// Roles
 			   	.minify('resources/assets/backend/js/form-validation/form-validation-roles.js')
-			   	.copy('resources/assets/backend/js/form-validation/form-validation-roles.min.js', 'public/backend/assets/js/form-validate');
+			   	.copy('resources/assets/backend/js/form-validation/form-validation-roles.min.js', 'public/backend/assets/js/form-validate')
+			// Usuarios
+			   	.minify('resources/assets/backend/js/form-validation/form-validation-users.js')
+			   	.copy('resources/assets/backend/js/form-validation/form-validation-users.min.js', 'public/backend/assets/js/form-validate')
+			// Casos de Corrupcion
+				.minify('resources/assets/backend/js/form-validation/form-validation-corruption-case.js')
+			   	.copy('resources/assets/backend/js/form-validation/form-validation-corruption-case.min.js', 'public/backend/assets/js/form-validate')
+			// Categorias de Contenido
+				.minify('resources/assets/backend/js/form-validation/form-validation-content-category.js')
+			   	.copy('resources/assets/backend/js/form-validation/form-validation-content-category.min.js', 'public/backend/assets/js/form-validate')
+			// Items de Menu
+				.minify('resources/assets/backend/js/form-validation/form-validation-menu-item.js')
+			   	.copy('resources/assets/backend/js/form-validation/form-validation-menu-item.min.js', 'public/backend/assets/js/form-validate');
+
 	// SASS
 
 		// Colors

@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
             // Seed the default permissions
             $this->command->warn('Creando permisos por defecto en el sistema.');
 
-            $bar = new ProgressBar($output, 12);
+            $bar = new ProgressBar($output, 16);
             $bar->start();
             
             // Permisos para modulo de Autenticacion/Autorizacion
@@ -46,26 +46,38 @@ class DatabaseSeeder extends Seeder
             $this->command->call('permission:backend-permissions', ['name' => 'metatags']);
             $bar->advance();
             print("\n");
-            $this->command->call('permission:backend-permissions', ['name' => 'messages']);
-            $bar->advance();
-            print("\n");
 
             // Permisos para administracion de catalogos
-            $this->command->call('permission:backend-permissions', ['name' => 'states']);
+            $this->command->call('permission:backend-permissions', ['name' => 'provinces']);
             $bar->advance();
             print("\n");
-            $this->command->call('permission:backend-permissions', ['name' => 'cities']);
+            $this->command->call('permission:backend-permissions', ['name' => 'casestages']);
+            $bar->advance();
+            print("\n");
+            $this->command->call('permission:backend-permissions', ['name' => 'casestagedetails']);
+            $bar->advance();
+            print("\n");
+            $this->command->call('permission:backend-permissions', ['name' => 'statefunctions']);
+            $bar->advance();
+            print("\n");
+            $this->command->call('permission:backend-permissions', ['name' => 'institutions']);
+            $bar->advance();
+            print("\n");
+            $this->command->call('permission:backend-permissions', ['name' => 'officials']);
             $bar->advance();
             print("\n");
 
             // Permisos para modulo de contenido
-            $this->command->call('permission:backend-permissions', ['name' => 'contentsections']);
+            $this->command->call('permission:backend-permissions', ['name' => 'contentcategories']);
             $bar->advance();
             print("\n");
             $this->command->call('permission:backend-permissions', ['name' => 'contentarticles']);
             $bar->advance();
             print("\n");
-            $this->command->call('permission:backend-permissions', ['name' => 'contentmultimedias']);
+            $this->command->call('permission:backend-permissions', ['name' => 'corruptioncases']);
+            $bar->advance();
+            print("\n");
+            $this->command->call('permission:backend-permissions', ['name' => 'successstories']);
             $bar->advance();
             print("\n");
             $this->command->call('permission:backend-permissions', ['name' => 'menus']);
@@ -84,7 +96,7 @@ class DatabaseSeeder extends Seeder
         if ($this->command->confirm('Crear Roles para usuarios, por defecto son Super Administrator, Administrator, Editor, Reporter y Visitor? [y|N]', true)) {
 
             // Ask for roles from input
-            $input_roles = $this->command->ask('Ingrese los roles separados por coma.', 'Super Administrator,Administrator,Back Office,Reporter,Commerce,Standard User');
+            $input_roles = $this->command->ask('Ingrese los roles separados por coma.', 'Super Administrator,Administrator,Editor,Reporter,Visitor');
 
             // Explode roles
             $roles_array = explode(',', $input_roles);
@@ -122,6 +134,11 @@ class DatabaseSeeder extends Seeder
             $this->call(CatalogsTableSeeder::class);
             print("\n");
             $this->command->warn('Catalogos cargados.');
+        }
+
+        // Confirm menu
+        if ($this->command->confirm('Crear Menú Principal Superior? [y|N]', false)) {
+            $this->command->call('menu:manage', ['name' => 'Menu Principal Superior', 'position' => 'top', '--create' => true]);
         }
     }
 

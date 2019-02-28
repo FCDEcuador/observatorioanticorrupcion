@@ -19,7 +19,7 @@
             </div>
             <div class="col-md-7 align-self-center">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="javascript: void();" onclick="javascript: renderSection('{!! route('backend.dashboard') !!}');">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="{!! route('backend.dashboard') !!}">Dashboard</a></li>
                     <li class="breadcrumb-item">Parametrizacion</li>
                     <li class="breadcrumb-item active">Meta Tags</li>
                 </ol>
@@ -47,19 +47,13 @@
                             </div>
                             <div class="col-md-4">
                                 @can('backend_add_metatags')
-                                    <a href="javascript: void();" onclick="javascript: renderSection('{!! route('backend.parametrization.meta-tags.create') !!}');" class="btn btn-info btn-sm waves-effect waves-light" data-toggle="tooltip" title="Agregar Meta Tag">
+                                    <a href="{!! route('backend.parametrization.meta-tags.create') !!}" class="btn btn-info btn-sm waves-effect waves-light" data-toggle="tooltip" title="Agregar Meta Tag">
                                         <span class="btn-label">
                                             <i class="ti-plus"></i>
                                         </span>
                                         Agregar Meta Tag
                                     </a>
                                 @endcan
-                                <a href="javascript: void();" onclick="javascript: renderSection('{!! route('backend.parametrization.meta-tags.list') !!}');" class="btn btn-info btn-sm waves-effect waves-light" data-toggle="tooltip" title="Actualizar lista">
-                                    <span class="btn-label">
-                                        <i class="ti-reload"></i>
-                                    </span>
-                                    Actualizar
-                                </a>
                             </div>
                             <div class="col-md-12">
                                 <div class="table-responsive m-t-40 p-b-40">

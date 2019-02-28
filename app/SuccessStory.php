@@ -12,7 +12,7 @@ use Alsofronie\Uuid\UuidModelTrait;
 * @Content
 */
 
-class ExternalLink extends Model
+class SuccessStory extends Model
 {
     use UuidModelTrait;
 
@@ -21,7 +21,7 @@ class ExternalLink extends Model
      *
      * @var string
      */
-    protected $table = 'external_links';
+    protected $table = 'success_stories';
 
     /**
      * The attributes that are mass assignable.
@@ -36,8 +36,6 @@ class ExternalLink extends Model
         'image',
         'icon',
         'url',
-        'active', // 1 (Activo), 0 (Inactivo)
-        'target', // _self, _blank
     ];
 
     /**
@@ -52,32 +50,15 @@ class ExternalLink extends Model
     ];
 
 
-    /*************************************************************************************************
-        Metodos scope para utilizar en el controlador
-        Autor Raúl Chauvin
-        FechaCreacion  2017/06/07
-        EJ:
-        $aActiveLinks = ExternalLink::active()->get();
-    **************************************************************************************************/
-
-    public function scopeActive($sQuery){
-        return $sQuery->whereActive(1);
-    }
-
-    public function scopeInactive($sQuery){
-        return $sQuery->whereActive(0);
-    }
-
-
     /**
-    * Metodo que devuelve un modelo ExternalLink encontrado por nombre o falso en caso de no encontrarlo
+    * Metodo que devuelve un modelo SuccessStory encontrado por nombre o falso en caso de no encontrarlo
     * @Autor Raúl Chauvin
     * @FechaCreacion  2017/07/05
     *
     * @param string sName
-    * @return ExternalLink
+    * @return SuccessStory
     */
     public static function byName($sName = ''){
-        return $sName ? ExternalLink::whereName($sName)->first() : FALSE;
+        return $sName ? SuccessStory::whereName($sName)->first() : FALSE;
     }
 }

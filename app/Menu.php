@@ -74,6 +74,10 @@ class Menu extends Model
         return $sQuery->whereActive(0);
     }
 
+    public function scopeByPosition($sQuery, $sPosition){
+        return $sQuery->wherePosition($sPosition);
+    }
+
 
     /**
     * Metodo que devuelve un modelo Menu encontrado por nombre o falso en caso de no encontrarlo

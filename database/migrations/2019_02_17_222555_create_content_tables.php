@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Symfony\Component\Console\Helper\ProgressBar;
+use Symfony\Component\Console\Output\ConsoleOutput;
 
 class CreateContentTables extends Migration
 {
@@ -13,20 +15,79 @@ class CreateContentTables extends Migration
      */
     public function up()
     {
-        if(!Schema::hasTable('cuts')){
-            Schema::create('cuts', function (Blueprint $table) {
+
+        $output = new ConsoleOutput();
+        $bar = new ProgressBar($output, 7);
+        $bar->start();
+
+        if( ! Schema::hasTable('corruption_cases')){
+            Schema::create('corruption_cases', function (Blueprint $table) {
                 $table->uuid('id');
-                $table->string('name')->unique();
-                $table->text('description')->nullable();
-                $table->integer('width');
-                $table->integer('height');
-                $table->boolean('active')->default(1);
+                $table->string('case_stage', 200)->nullable();
+                $table->string('case_stage_detail', 200)->nullable();
+                $table->string('province')->nullable();
+                $table->string('state_function')->nullable();
+                $table->string('tags')->nullable();
+                $table->integer('involved_number')->default(0);
+                $table->text('linked_institutions')->nullable();
+                $table->text('public_officials_involved')->nullable();
+                $table->string('main_multimedia')->nullable();
+                $table->string('home_image')->nullable();
+                $table->string('title')->unique();
+                $table->string('slug')->unique();
+                $table->text('summary')->nullable();
+                $table->text('history')->nullable();
+                $table->text('history_image')->nullable();
+                $table->text('legal_causes')->nullable();
+                $table->text('political_causes')->nullable();
+                $table->text('consequences_introduction')->nullable();
+                $table->text('consequences_title')->nullable();
+                $table->text('consequences_description')->nullable();
+                $table->text('economic_consequences')->nullable();
+                $table->text('social_consequences')->nullable();
+                $table->text('sources')->nullable();
+                $table->text('consequences_image')->nullable();
                 $table->timestamps();
                 $table->primary('id');
             });
         }
+        $bar->advance();
 
-        if(!Schema::hasTable('content_categories')){
+
+        if( ! Schema::hasTable('what_happened')){
+            Schema::create('what_happened', function (Blueprint $table) {
+                $table->uuid('id');
+                $table->string('year')->nullable();
+                $table->string('month')->nullable();
+                $table->string('day')->nullable();
+                $table->text('description')->nullable();
+                $table->integer('order')->default(1);
+                $table->uuid('corruption_case_id')->nullable();
+                $table->timestamps();
+                $table->primary('id');
+                $table->foreign('corruption_case_id')->references('id')->on('corruption_cases');
+            });
+        }
+        $bar->advance();
+
+        if(!Schema::hasTable('success_stories')){
+            Schema::create('success_stories', function(Blueprint $table){
+                $table->uuid('id');
+                $table->string('name')->unique();
+                $table->string('title');
+                $table->string('subtitle')->nullable();
+                $table->string('description')->nullable();
+                $table->string('image')->nullable();
+                $table->string('icon')->nullable();
+                $table->string('url');
+                $table->timestamps();
+                $table->primary('id');
+            });
+        }
+        $bar->advance();
+
+
+        if( ! Schema::hasTable('content_categories')){
             Schema::create('content_categories', function (Blueprint $table) {
                 $table->uuid('id');
                 $table->string('name')->unique();
@@ -37,87 +98,27 @@ class CreateContentTables extends Migration
                 $table->text('meta_description')->nullable();
                 $table->text('meta_keywords')->nullable();
                 $table->text('extra_headers')->nullable();
-                $table->boolean('active')->default(1);
-                $table->integer('num_list_items')->default(1);
-                $table->text('advertising_positions')->nullable();
-                $table->integer('hits')->default(0);
                 $table->uuid('content_category_id')->nullable();
-                $table->string('created_by');
-                $table->string('updated_by');
                 $table->timestamps();
                 $table->primary('id');
                 $table->foreign('content_category_id')->references('id')->on('content_categories');
             });
         }
-
-
-        if(!Schema::hasTable('multimedia_contents')){
-            Schema::create('multimedia_contents', function (Blueprint $table) {
-                $table->uuid('id');
-                $table->string('author')->nullable();
-                $table->string('author_email')->nullable();
-                $table->integer('content_type')->default(1);
-                /*
-                    1 -> Archivo
-                    2 -> Audio
-                    3 -> Galerias de Imagenes/Videos
-                    4 -> HTML libre
-                    5 -> Imagen
-                    6 -> Video
-                */
-                $table->string('name')->unique();
-                $table->string('slug')->unique();
-                $table->string('title');
-                $table->string('subtitle')->nullable();
-                $table->text('description')->nullable();
-                $table->string('geolocation')->nullable();
-                $table->string('file')->nullable();
-                $table->string('audio')->nullable();
-                $table->text('gallery_items')->nullable();
-                $table->text('free_html')->nullable();
-                $table->string('image')->nullable();
-                $table->text('video')->nullable();
-                $table->boolean('active')->default(1);
-                $table->integer('sum_votes')->default(0);
-                $table->integer('total_votes')->default(0);
-                $table->integer('hits')->default(0);
-                $table->text('tags')->nullable();
-                $table->text('meta_description')->nullable();
-                $table->text('meta_keywords')->nullable();
-                $table->text('extra_headers')->nullable();
-                $table->uuid('content_category_id')->nullable();
-                $table->string('created_by');
-                $table->string('updated_by');
-                $table->timestamps();
-                $table->primary('id');
-                $table->foreign('content_category_id')->references('id')->on('content_categories');
-            });
-        }
+        $bar->advance();
 
 
         if(!Schema::hasTable('content_articles')){
             Schema::create('content_articles', function (Blueprint $table) {
                 $table->uuid('id');
-                $table->char('content_type', 1)->default('A');
-                /*
-                    A -> Articulo
-                    S -> Pagina estatica
-                */
                 $table->string('title')->unique();
-                $table->string('short_title')->unique();
                 $table->string('slug')->unique();
                 $table->string('summary');
                 $table->text('content')->nullable();
-                $table->integer('state')->default(1);
-                $table->datetime('publication_date')->nullable();
-                $table->datetime('release_date')->nullable();
                 $table->string('author')->nullable();
                 $table->string('author_email')->nullable();
                 $table->string('source')->nullable();
-                $table->integer('sum_votes')->default(0);
-                $table->integer('total_votes')->default(0);
-                $table->integer('hits')->default(0);
                 $table->text('tags')->nullable();
+                $table->text('main_multimedia')->nullable();
                 $table->text('meta_description')->nullable();
                 $table->text('meta_keywords')->nullable();
                 $table->text('extra_headers')->nullable();
@@ -125,42 +126,24 @@ class CreateContentTables extends Migration
                 $table->boolean('main_category')->default(0);
                 $table->boolean('main_home')->default(0);
                 $table->uuid('content_category_id')->nullable();
-                $table->string('created_by');
-                $table->string('updated_by');
                 $table->timestamps();
                 $table->primary('id');
                 $table->foreign('content_category_id')->references('id')->on('content_categories');
             });
         }
-
-
-        if(!Schema::hasTable('article_multimedias')){
-            Schema::create('article_multimedias', function (Blueprint $table) {
-                $table->uuid('id');
-                $table->string('path');
-                $table->boolean('main_content')->default(0);
-                $table->boolean('list_image')->default(0);
-                $table->uuid('multimedia_content_id');
-                $table->uuid('content_article_id');
-                $table->uuid('cut_id')->nullable();
-                $table->timestamps();
-                $table->primary('id');
-                $table->foreign('multimedia_content_id')->references('id')->on('multimedia_contents');
-                $table->foreign('content_article_id')->references('id')->on('content_articles');
-                $table->foreign('cut_id')->references('id')->on('cuts');
-            });
-        }
+        $bar->advance();
 
         if(!Schema::hasTable('menus')){
             Schema::create('menus', function (Blueprint $table) {
                 $table->uuid('id');
                 $table->string('name')->unique();
-                $table->integer('position')->default(1);
+                $table->string('position');
                 $table->boolean('active')->default(1);
                 $table->timestamps();
                 $table->primary('id');
             });
         }
+        $bar->advance();
 
         if(!Schema::hasTable('menu_items')){
             Schema::create('menu_items', function (Blueprint $table) {
@@ -192,27 +175,12 @@ class CreateContentTables extends Migration
                 $table->foreign('menu_id')->references('id')->on('menus');
             });
         }
+        $bar->advance();
 
-        if(!Schema::hasTable('external_links')){
-            Schema::create('external_links', function(Blueprint $table){
-                $table->uuid('id');
-                $table->string('name')->unique();
-                $table->string('title');
-                $table->string('subtitle')->nullable();
-                $table->string('description')->nullable();
-                $table->string('image')->nullable();
-                $table->string('icon')->nullable();
-                $table->string('url');
-                $table->boolean('active')->default(1);
-                $table->string('target')->default('_self');
-                /*
-                    _self
-                    _blank
-                */
-                $table->timestamps();
-                $table->primary('id');
-            });
-        }
+        $bar->finish();
+        print("\n");
+
+        
     }
 
     /**
@@ -222,13 +190,27 @@ class CreateContentTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('external_links');
+
+        $output = new ConsoleOutput();
+        $bar = new ProgressBar($output, 7);
+        $bar->start();
+        
         Schema::dropIfExists('menu_items');
+        $bar->advance();
         Schema::dropIfExists('menus');
-        Schema::dropIfExists('article_multimedias');
+        $bar->advance();
         Schema::dropIfExists('content_articles');
-        Schema::dropIfExists('multimedia_contents');
+        $bar->advance();
         Schema::dropIfExists('content_categories');
-        Schema::dropIfExists('cuts');
+        $bar->advance();
+        Schema::dropIfExists('success_stories');
+        $bar->advance();
+        Schema::dropIfExists('what_happened');
+        $bar->advance();
+        Schema::dropIfExists('corruption_cases');
+        $bar->advance();
+
+        $bar->finish();
+        print("\n");
     }
 }

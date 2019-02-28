@@ -21,9 +21,9 @@
             </div>
             <div class="col-md-7 align-self-center">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a onclick="javascript: renderSection('{!! route('backend.dashboard') !!}');" href="javascript: void();">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="{!! route('backend.dashboard') !!}">Dashboard</a></li>
                     <li class="breadcrumb-item">Parametrizacion</li>
-                    <li class="breadcrumb-item"><a onclick="javascript: renderSection('{!! route('backend.auth.roles.list') !!}')" href="javascript: void();">Roles</a></li>
+                    <li class="breadcrumb-item"><a href="{!! route('backend.auth.roles.list') !!}">Roles</a></li>
                     <li class="breadcrumb-item active">
                         @if(is_object($oRole))
                             Editar Rol
@@ -60,7 +60,7 @@
                             </div>
                             <div class="col-md-4">
                                 @can('backend_view_roles')
-                                    <a href="javascript: void();" onclick="renderSection('{!! route('backend.auth.roles.list') !!}')" class="btn btn-info btn-sm waves-effect waves-light" data-toggle="tooltip" title="Lista de Roles">
+                                    <a href="{!! route('backend.auth.roles.list') !!}" class="btn btn-info btn-sm waves-effect waves-light" data-toggle="tooltip" title="Lista de Roles">
                                         <span class="btn-label">
                                             <i class="ti-menu-alt"></i>
                                         </span>

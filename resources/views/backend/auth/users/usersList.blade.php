@@ -19,7 +19,7 @@
             </div>
             <div class="col-md-7 align-self-center">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="javascript: void();" onclick="javascript: renderSection('{!! route('backend.dashboard') !!}');">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="{!! route('backend.dashboard') !!}">Dashboard</a></li>
                     <li class="breadcrumb-item">Auth</li>
                     <li class="breadcrumb-item active">Usuarios</li>
                 </ol>
@@ -47,7 +47,7 @@
                             </div>
                             <div class="col-md-4">
                                 @can('backend_add_users')
-                                    <a href="javascript: void();" onclick="renderSection('{!! route('backend.auth.users.create') !!}');" class="btn btn-info btn-sm waves-effect waves-light" data-toggle="tooltip" title="Agregar Usuario">
+                                    <a href="{!! route('backend.auth.users.create') !!}" class="btn btn-info btn-sm waves-effect waves-light" data-toggle="tooltip" title="Agregar Usuario">
                                         <span class="btn-label">
                                             <i class="ti-plus"></i>
                                         </span>
@@ -82,7 +82,7 @@
                                                                         <span class="ladda-spinner"></span>
                                                                     </button>
                                                                     <div class="dropdown-menu animated flipInX">
-                                                                        <a class="btn btn-xs btn-primary waves-effect waves-light text-white" onclick="javascript: renderSection('{!! route('backend.profile') !!}');" style="width:90%;margin-left:8px; cursor: pointer;">
+                                                                        <a class="btn btn-xs btn-primary waves-effect waves-light text-white" style="width:90%;margin-left:8px;" href="{!! route('backend.profile') !!}">
                                                                             <span class="btn-label"><i class="mdi mdi-account"></i></span>
                                                                             Mi Perfil
                                                                         </a>
@@ -99,7 +99,7 @@
                                                                             {!! Form::open(['route' => ['backend.auth.users.delete', $oUser->id], 'method' => 'DELETE', 'name' => 'deleteUserForm_'.$oUser->id, 'id' => 'deleteUserForm_'.$oUser->id]) !!}
                                                                         @endcan
                                                                         @can('backend_edit_users')
-                                                                            <a class="btn btn-xs btn-info waves-effect waves-light text-white" onclick="javascript: renderSection('{!! route('backend.auth.users.edit', [$oUser->id]) !!}');" style="width:90%;margin-left:8px; cursor: pointer;">
+                                                                            <a class="btn btn-xs btn-info waves-effect waves-light text-white" style="width:90%;margin-left:8px;" href="{!! route('backend.auth.users.edit', [$oUser->id]) !!}">
                                                                                 <span class="btn-label"><i class="mdi mdi-pencil"></i></span>
                                                                                 Editar Usuario
                                                                             </a>

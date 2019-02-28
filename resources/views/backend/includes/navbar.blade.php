@@ -19,7 +19,7 @@
                                 <span class="hide-menu">{!! substr(Auth::user()->name,0,1) !!}. {!! Auth::user()->lastname !!}</span>
                             </a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a onclick="javascript: renderSection('{!! route('backend.profile') !!}');">Mi Perfil </a></li>
+                                <li><a href="{!! route('backend.profile') !!}">Mi Perfil </a></li>
                                 <li><a href="javascript:void()">Inbox</a></li>
                                 <li><a href="{!! route('backend.logout') !!}">Logout</a></li>
                             </ul>
@@ -38,40 +38,15 @@
                             <ul aria-expanded="false" class="collapse">
                                 @can('backend_edit_configurations')
                                     <li>
-                                        <a onclick="javascript: renderSection('{!! route('backend.parametrization.configuration') !!}');">
+                                        <a href="{!! route('backend.parametrization.configuration') !!}">
                                             Configuracion
                                         </a>
                                     </li>
                                 @endcan
                                 @can('backend_view_metatags')
                                     <li>
-                                        <a onclick="javascript: renderSection('{!! route('backend.parametrization.meta-tags.list') !!}');">
+                                        <a href="{!! route('backend.parametrization.meta-tags.list') !!}">
                                             Meta Tags
-                                        </a>
-                                    </li>
-                                @endcan
-                            </ul>
-                        </li>
-
-                        <li> 
-                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
-                                <i class="mdi mdi-book-open-variant"></i>
-                                <span class="hide-menu">
-                                    Catalogos 
-                                </span>
-                            </a>
-                            <ul aria-expanded="false" class="collapse">
-                                @can('backend_view_states')
-                                    <li>
-                                        <a onclick="javascript: renderSection('{!! route('backend.parametrization.catalogs.states.list') !!}');">
-                                            Provincias
-                                        </a>
-                                    </li>
-                                @endcan
-                                @can('backend_view_cities')
-                                    <li>
-                                        <a onclick="javascript: renderSection('{!! route('backend.parametrization.catalogs.cities.list') !!}');">
-                                            Ciudades
                                         </a>
                                     </li>
                                 @endcan
@@ -82,20 +57,20 @@
                             <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
                                 <i class="mdi mdi-account-key"></i>
                                 <span class="hide-menu">
-                                    Auth 
+                                    Seguridades
                                 </span>
                             </a>
                             <ul aria-expanded="false" class="collapse">
                                 @can('backend_view_users')
                                     <li>
-                                        <a onclick="javascript: renderSection('{!! route('backend.auth.users.list') !!}');">
+                                        <a href="{!! route('backend.auth.users.list') !!}">
                                             Usuarios
                                         </a>
                                     </li>
                                 @endcan
                                 @can('backend_view_roles')
                                     <li>
-                                        <a onclick="javascript: renderSection('{!! route('backend.auth.roles.list') !!}');">
+                                        <a href="{!! route('backend.auth.roles.list') !!}">
                                             Roles
                                         </a>
                                     </li>
@@ -106,6 +81,115 @@
                         <li class="nav-devider"></li>
 
                         <li class="nav-small-cap">CONTENIDO</li>
+
+                        <li> 
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                <i class="mdi mdi-book-open-variant"></i>
+                                <span class="hide-menu">
+                                    Catalogos 
+                                </span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                @can('backend_view_provinces')
+                                    <li>
+                                        <a href="{!! route('backend.parametrization.catalogs.provinces.list') !!}">
+                                            Provincias
+                                        </a>
+                                    </li>
+                                @endcan
+
+                                @can('backend_view_officials')
+                                    <li>
+                                        <a href="#">
+                                            Funcionarios
+                                        </a>
+                                    </li>
+                                @endcan
+
+                                @can('backend_view_institutions')
+                                    <li>
+                                        <a href="#">
+                                            Instituciones
+                                        </a>
+                                    </li>
+                                @endcan
+
+                                @can('backend_view_statefunctions')
+                                    <li>
+                                        <a href="#">
+                                            Funciones del Estado
+                                        </a>
+                                    </li>
+                                @endcan
+
+                                @can('backend_view_casestages')
+                                    <li>
+                                        <a href="#">
+                                            Etapas del Caso
+                                        </a>
+                                    </li>
+                                @endcan
+
+                                @can('backend_view_casestagedetails')
+                                    <li>
+                                        <a href="#">
+                                            Detalles de Etapa
+                                        </a>
+                                    </li>
+                                @endcan
+                                
+                            </ul>
+                        </li>
+
+                        <li> 
+                            <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                <i class="mdi mdi-clipboard-text"></i>
+                                <span class="hide-menu">
+                                    Contenido 
+                                </span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse">
+                                @can('backend_view_corruptioncases')
+                                    <li>
+                                        <a href="{!! route('backend.content.corruption-cases.list') !!}">
+                                            Casos de Corrupción
+                                        </a>
+                                    </li>
+                                @endcan
+
+                                @can('backend_view_successstories')
+                                    <li>
+                                        <a href="{!! route('backend.content.success-stories.list') !!}">
+                                            Historias de Exito
+                                        </a>
+                                    </li>
+                                @endcan
+
+                                @can('backend_view_contentcategories')
+                                    <li>
+                                        <a href="{!! route('backend.content.content-categories.list') !!}">
+                                            Categorías de Contenido
+                                        </a>
+                                    </li>
+                                @endcan
+
+                                @can('backend_view_contentarticles')
+                                    <li>
+                                        <a href="{!! route('backend.content.content-articles.list') !!}">
+                                            Artículos de Contenido
+                                        </a>
+                                    </li>
+                                @endcan
+
+                                @can('backend_view_menuitems')
+                                    <li>
+                                        <a href="{!! route('backend.content.menu-items.list') !!}">
+                                            Items de Menú
+                                        </a>
+                                    </li>
+                                @endcan
+                            </ul>
+                        </li>
 
 
                     </ul>

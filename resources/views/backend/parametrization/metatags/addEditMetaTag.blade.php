@@ -21,9 +21,9 @@
             </div>
             <div class="col-md-7 align-self-center">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a onclick="javascript: renderSection('{!! route('backend.dashboard') !!}');" href="javascript: void();">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="{!! route('backend.dashboard') !!}">Dashboard</a></li>
                     <li class="breadcrumb-item">Parametrizacion</li>
-                    <li class="breadcrumb-item"><a onclick="javascript: renderSection('{!! route('backend.parametrization.meta-tags.list') !!}')" href="javascript: void();">Meta Tags</a></li>
+                    <li class="breadcrumb-item"><a href="{!! route('backend.parametrization.meta-tags.list') !!}">Meta Tags</a></li>
                     <li class="breadcrumb-item active">
                         @if(is_object($oMetaTag))
                             Editar Meta Tag

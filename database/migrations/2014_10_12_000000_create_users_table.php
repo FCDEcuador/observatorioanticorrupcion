@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Symfony\Component\Console\Helper\ProgressBar;
+use Symfony\Component\Console\Output\ConsoleOutput;
 
 class CreateUsersTable extends Migration
 {
@@ -13,6 +15,10 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
+        $output = new ConsoleOutput();
+        $bar = new ProgressBar($output, 1);
+        $bar->start();
+
         // TABLE users
         if(!Schema::hasTable('users')){
             Schema::create('users', function(Blueprint $table){
@@ -39,20 +45,10 @@ class CreateUsersTable extends Migration
                 $table->primary('id');
             });
         }
+        $bar->advance();
 
-        // TABLE param_users
-        if(!Schema::hasTable('param_users')){
-            Schema::create('param_users', function (Blueprint $table) {
-                $table->uuid('id');
-                $table->string('context', 128);
-                $table->string('code', 128);
-                $table->string('description', 128);
-                $table->uuid('user_id');
-                $table->timestamps();
-                $table->primary('id');
-                $table->foreign('user_id')->references('id')->on('users');
-            });
-        }
+        $bar->finish();
+        print("\n");
     }
 
     /**
@@ -62,7 +58,14 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('param_users');
+        $output = new ConsoleOutput();
+        $bar = new ProgressBar($output, 7);
+        $bar->start();
+
         Schema::dropIfExists('users');
+        $bar->advance();
+
+        $bar->finish();
+        print("\n");
     }
 }

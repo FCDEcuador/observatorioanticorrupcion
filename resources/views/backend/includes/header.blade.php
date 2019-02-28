@@ -30,98 +30,6 @@
                     <!-- ============================================================== -->
                     <ul class="navbar-nav my-lg-0">
                         
-                        <!-- ============================================================== -->
-                        <!-- Messages -->
-                        <!-- ============================================================== -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-email"></i>
-                                @if($cantUnreadMessages > 0)
-                                    <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
-                                @endif
-                            </a>
-                            <div class="dropdown-menu mailbox dropdown-menu-right animated bounceInDown" aria-labelledby="2">
-                                <ul>
-                                    <li>
-                                        <div class="drop-title">{!! $cantUnreadMessages !!} mensaje(s) pendientes</div>
-                                    </li>
-                                    <li>
-                                        <div class="message-center">
-                                            @if($unreadMessages->isNotEmpty())
-                                                @foreach($unreadMessages as $unreadMessage)
-                                                    @if($unreadMessage->type == 'consulta')
-                                                        @php
-                                                          $text = 'Nueva consulta';
-                                                          $icon = 'fa-question';
-                                                          $btn = 'btn-danger';
-                                                        @endphp
-                                                      @endif
-
-                                                      @if($unreadMessage->type == 'pedido')
-                                                          @php
-                                                              $text = 'Nuevo pedido de información';
-                                                              $icon = 'fa-rocket';
-                                                              $btn = 'btn-info';
-                                                          @endphp
-                                                      @endif
-
-                                                      @if($unreadMessage->type == 'sugerencia')
-                                                          @php
-                                                              $text = 'Nueva sugerencia';
-                                                              $icon = 'fa-certificate';
-                                                              $btn = 'btn-success';
-                                                          @endphp
-                                                      @endif
-
-                                                      @if($unreadMessage->type == 'comentario')
-                                                          @php
-                                                              $text = 'Nuevo comentario';
-                                                              $icon = 'fa-comments';
-                                                              $btn = 'btn-warning';
-                                                          @endphp
-                                                      @endif
-                                                      @php
-                                                        $now = Carbon\Carbon::now();
-                                                        $messageDate = Carbon\Carbon::parse($unreadMessage->created_at);
-                                                        $time = $messageDate->diffInSeconds($now);
-                                                        if($time < 60){
-                                                            $unitTime = 'segundos';
-                                                        }else{
-                                                            $time = $messageDate->diffInMinutes($now);
-                                                            if($time < 60){
-                                                                $unitTime = 'minutos';
-                                                            }else{
-                                                                $time = $messageDate->diffInHours($now);
-                                                                if($time < 24){
-                                                                    $unitTime = 'horas';    
-                                                                }else{
-                                                                    $time = $messageDate->diffInDays($now);
-                                                                    $unitTime = 'días';
-                                                                }
-                                                            }
-                                                        }
-                                                      @endphp
-                                                    <!-- Message -->
-                                                    <a href="#">
-                                                        <div class="btn {!! $btn !!} btn-circle"><i class="fa {!! $icon !!}"></i></div>
-                                                        <div class="mail-contnet">
-                                                            <h5>{!! $text !!}</h5> <span class="mail-desc">{!! $unreadMessage->subject !!}</span> <span class="time">Hace {!! $time !!} {!! $unitTime !!}</span> </div>
-                                                    </a>
-                                                @endforeach
-                                            @endif
-                                        </div>
-                                    </li>
-                                    @if($cantUnreadMessages > 0)
-                                        <li>
-                                            <a class="nav-link text-center" href="javascript:void(0);"> <strong>Ver todos los mensajes</strong> <i class="fa fa-angle-right"></i> </a>
-                                        </li>
-                                    @endif
-                                </ul>
-                            </div>
-                        </li>
-                        <!-- ============================================================== -->
-                        <!-- End Messages -->
-                        <!-- ============================================================== -->
-                        
                         
                         <!-- ============================================================== -->
                         <!-- Profile -->
@@ -156,7 +64,7 @@
                                             <div class="u-text">
                                                 <h4>{!! substr(Auth::user()->name,0,1) !!}. {!! Auth::user()->lastname !!}</h4>
                                                 <p class="text-muted">{!! Auth::user()->email !!}</p>
-                                                <a onclick="javascript: renderSection('{!! route('backend.profile') !!}');" class="btn btn-rounded btn-danger btn-sm">
+                                                <a href="{!! route('backend.profile') !!}" class="btn btn-rounded btn-danger btn-sm">
                                                     Ver perfil
                                                 </a>
                                             </div>
@@ -164,7 +72,7 @@
                                     </li>
                                     <li role="separator" class="divider"></li>
                                     <li>
-                                        <a onclick="javascript: renderSection('{!! route('backend.profile') !!}');" style="cursor: pointer;">
+                                        <a href="{!! route('backend.profile') !!}">
                                             <i class="ti-user"></i> Mi Perfil
                                         </a>
                                     </li>

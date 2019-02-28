@@ -8,7 +8,6 @@ use BlaudCMS\Http\Traits\BackendAuthorizable;
 
 use BlaudCMS\Helpers\TimeFormat;
 
-use BlaudCMS\Message;
 use BlaudCMS\Configuration;
 use BlaudCMS\Role;
 use BlaudCMS\Permission;
@@ -61,20 +60,6 @@ class RolesController extends Controller
     private $activeMenu;
 
     /**
-     * Variable para almacenar la lista de mensajes no leidos.
-     *
-     * @var unreadMessages
-     */
-    private $unreadMessages;
-
-    /**
-     * Variable para almacenar la cantidad de mensajes no leidos.
-     *
-     * @var cantUnreadMessages
-     */
-    private $cantUnreadMessages;
-
-    /**
      * Constructor del Controller, iniciamos los middlewares para validar que el usuario tenga los permisos correctos
      * @Autor Raúl Chauvin
      * @FechaCreacion  2018/08/30
@@ -83,10 +68,6 @@ class RolesController extends Controller
     	
     	// Agregando restriccion para usuarios logueados y que sean de backend
     	$this->middleware('auth');
-
-        // Obteniendo ultimos mensajes no leidos y la cantidad total de los mismos
-        $this->unreadMessages = Message::unread()->orderBy('created_at', 'DESC')->limit(10)->get();
-        $this->cantUnreadMessages = Message::unread()->count();
 
         // Instanciamos el objeto de configuracion para obtener su data, si no existe creamos un nuevo objeto
         $oConfiguration = Configuration::find(1);
@@ -119,9 +100,6 @@ class RolesController extends Controller
     {
         $rolesList = Role::paginate(20);
         $data = [
-            // Datos generales para todas las vistas
-            'cantUnreadMessages' => $this->cantUnreadMessages,
-            'unreadMessages' => $this->unreadMessages,
             'activeMenu' => $this->activeMenu,
             'oConfiguration' => $this->oConfiguration,
 
@@ -167,9 +145,6 @@ class RolesController extends Controller
         }
 
         $data = [
-            // Datos generales para todas las vistas
-            'cantUnreadMessages' => $this->cantUnreadMessages,
-            'unreadMessages' => $this->unreadMessages,
             'activeMenu' => $this->activeMenu,
             'oConfiguration' => $this->oConfiguration,
 
@@ -293,9 +268,6 @@ class RolesController extends Controller
         }
 
         $data = [
-            // Datos generales para todas las vistas
-            'cantUnreadMessages' => $this->cantUnreadMessages,
-            'unreadMessages' => $this->unreadMessages,
             'activeMenu' => $this->activeMenu,
             'oConfiguration' => $this->oConfiguration,
 
