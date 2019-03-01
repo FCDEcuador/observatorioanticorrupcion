@@ -100,6 +100,9 @@ let mix = require('laravel-mix');
 			// Categorias de Contenido
 				.minify('resources/assets/backend/js/form-validation/form-validation-content-category.js')
 			   	.copy('resources/assets/backend/js/form-validation/form-validation-content-category.min.js', 'public/backend/assets/js/form-validate')
+			// Articulos de Contenido
+				.minify('resources/assets/backend/js/form-validation/form-validation-content-articles.js')
+			   	.copy('resources/assets/backend/js/form-validation/form-validation-content-articles.min.js', 'public/backend/assets/js/form-validate')
 			// Items de Menu
 				.minify('resources/assets/backend/js/form-validation/form-validation-menu-item.js')
 			   	.copy('resources/assets/backend/js/form-validation/form-validation-menu-item.min.js', 'public/backend/assets/js/form-validate');

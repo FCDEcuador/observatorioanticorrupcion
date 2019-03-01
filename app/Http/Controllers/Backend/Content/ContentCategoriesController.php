@@ -21,10 +21,10 @@ use Storage;
 use Auth;
 
 /**
-* Clase para manejo de meta tags del portal web
+* Clase para manejo de categorias de contenido del portal web
 * @Autor Raúl Chauvin
 * @FechaCreacion  2018/08/30
-* @Parametrization
+* @content
 */
 
 class ContentCategoriesController extends Controller

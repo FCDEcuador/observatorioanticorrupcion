@@ -32,7 +32,7 @@
             <div class="col-md-7 align-self-center">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{!! route('backend.dashboard') !!}">Dashboard</a></li>
-                    <li class="breadcrumb-item">Auth</li>
+                    <li class="breadcrumb-item">Contenido</li>
                     <li class="breadcrumb-item">
                         <a href="{!! route('backend.content.corruption-cases.list') !!}">
                             Casos de Corrupción
