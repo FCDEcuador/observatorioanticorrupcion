@@ -95,9 +95,6 @@
                                                                         <span class="ladda-spinner"></span>
                                                                     </button>
                                                                     <div class="dropdown-menu animated flipInX">
-                                                                        @can('backend_delete_users')
-                                                                            {!! Form::open(['route' => ['backend.auth.users.delete', $oUser->id], 'method' => 'DELETE', 'name' => 'deleteUserForm_'.$oUser->id, 'id' => 'deleteUserForm_'.$oUser->id]) !!}
-                                                                        @endcan
                                                                         @can('backend_edit_users')
                                                                             <a class="btn btn-xs btn-info waves-effect waves-light text-white" style="width:90%;margin-left:8px;" href="{!! route('backend.auth.users.edit', [$oUser->id]) !!}">
                                                                                 <span class="btn-label"><i class="mdi mdi-pencil"></i></span>
@@ -106,10 +103,11 @@
                                                                             <div class="dropdown-divider"></div>
                                                                         @endcan
                                                                         @can('backend_delete_users')
-                                                                            <button class="btn btn-xs btn-danger waves-effect waves-light text-white" type="button" onclick="javascript: confirmDelete('deleteUserForm_{!! $oUser->id !!}', 'deleteUserBtn_{!! $oUser->id !!}', 'BlaudCMS :: Usuarios', 'Esta seguro que desea eliminar el usuario {!! $oUser->full_name !!}', '{!! route('backend.auth.users.list') !!}', true);" style="cursor:pointer;width:90%;margin:8px;">
+                                                                            <a class="btn btn-xs btn-danger waves-effect waves-light text-white" onclick="javascript: confirmDelete('deleteUserForm_{!! $oUser->id !!}', 'deleteUserBtn_{!! $oUser->id !!}', 'BlaudCMS :: Usuarios', 'Esta seguro que desea eliminar el usuario {!! $oUser->full_name !!}', '{!! route('backend.auth.users.list') !!}', true);" style="cursor:pointer;width:90%;margin:8px;cursor: pointer;">
                                                                                 <span class="btn-label"><i class="mdi mdi-delete"></i></span>
                                                                                 Eliminar Usuario
-                                                                            </button>
+                                                                            </a>
+                                                                            {!! Form::open(['route' => ['backend.auth.users.delete', $oUser->id], 'method' => 'DELETE', 'name' => 'deleteUserForm_'.$oUser->id, 'id' => 'deleteUserForm_'.$oUser->id]) !!}
                                                                             {!! Form::close() !!}
                                                                         @endcan
                                                                     </div>
@@ -118,11 +116,7 @@
                                                         </td>
                                                         <td>
                                                             @if(Auth::user()->avatar != '')
-                                                                @if($env == 'production')
-                                                                    <img src="{!! asset($oStorage->url(Auth::user()->avatar)) !!}" alt="{!! Auth::user()->full_name !!}" width="40" class="img-circle" />
-                                                                @else
-                                                                    <img src="{!! asset('public'.$oStorage->url(Auth::user()->avatar)) !!}" alt="{!! Auth::user()->full_name !!}" width="40" class="img-circle" />
-                                                                @endif
+                                                                <img src="{!! asset($oStorage->url(Auth::user()->avatar)) !!}" alt="{!! Auth::user()->full_name !!}" width="40" class="img-circle" />
                                                             @else
                                                                 <img src="{!! asset('public/backend/assets/images/default-user.png') !!}" alt="{!! Auth::user()->full_name !!}" width="40" class="img-circle" />
                                                             @endif

@@ -12,7 +12,6 @@
     {!! Html::style('public/backend/assets/plugins/bootstrap-select/bootstrap-select.min.css') !!}
     {!! Html::style('public/backend/assets/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.css') !!}
     {!! Html::style('public/backend/assets/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css') !!}
-    {!! Html::style('public/backend/assets/plugins/html5-editor/bootstrap-wysihtml5.css') !!}
 
 @endsection
 
@@ -110,7 +109,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="case_stage"> Etapa actual del caso : <span class="danger">*</span> </label>
-                                            <select name="case_stage" id="case_stage" class="custom-select form-control required" required onchange="javascript: loadCaseStageDetail('{!! route('backend.content.corruption-cases.case-stage-details') !!}', '{!! is_object($oCorruptionCase) ? $oCorruptionCase->case_stage_detail : '' !!}');">
+                                            <select name="case_stage" id="case_stage" class="select2 custom-select form-control required" required onchange="javascript: loadCaseStageDetail('{!! route('backend.content.corruption-cases.case-stage-details') !!}', '{!! is_object($oCorruptionCase) ? $oCorruptionCase->case_stage_detail : '' !!}');">
                                                 <option value="">Seleccione una Etapa</option>
                                                 @if($aCaseStages->isNotEmpty())
                                                     @foreach($aCaseStages as $oCaseStage)
@@ -133,7 +132,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="case_stage_detail"> Detalle de la Etapa : </label>
-                                            <select name="case_stage_detail" id="case_stage_detail" class="custom-select form-control">
+                                            <select name="case_stage_detail" id="case_stage_detail" class="select2 custom-select form-control">
                                                 <option value="">Seleccione un Detalle de Etapa</option>
                                             </select>
                                         </div>
@@ -144,7 +143,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="province"> Provincia : <span class="danger">*</span> </label>
-                                            <select name="province" id="province" class="custom-select form-control required" required>
+                                            <select name="province" id="province" class="select2 custom-select form-control required" required>
                                                 <option value="">Seleccione una Provincia</option>
                                                 @if($aProvinces->isNotEmpty())
                                                     @foreach($aProvinces as $oProvince)
@@ -167,7 +166,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="state_function"> Función del Estado : <span class="danger">*</span> </label>
-                                            <select name="state_function" id="state_function" class="custom-select form-control required" required>
+                                            <select name="state_function" id="state_function" class="select2 custom-select form-control required" required>
                                                 <option value="">Seleccione una Función del Estado</option>
                                                 @if($aStateFunctions->isNotEmpty())
                                                     @foreach($aStateFunctions as $oStateFunction)
@@ -196,7 +195,7 @@
                                             <label for="tags"> Tags : </label>
                                             <div class="tags-default">
                                                 <div class="tags-default">
-                                                    {!! Form::text('tags', null, ['id' => 'tags', 'placeholder' => '', 'class' => 'form-control']) !!}
+                                                    {!! Form::text('tags', is_object($oCorruptionCase) ? implode(',', $oCorruptionCase->tags) : null, ['id' => 'tags', 'placeholder' => 'Por favor ingrese los tags separados por coma (,)', 'class' => 'form-control']) !!}
                                                 </div>
                                             </div>
                                         </div>
@@ -219,8 +218,12 @@
                                                         @php
                                                             $selected = '';
                                                             if(is_object($oCorruptionCase)){
-                                                                if($oInstitution->description == $oCorruptionCase->linked_institutions){
-                                                                    $selected = 'selected="selected"';
+                                                                if(count($oCorruptionCase->linked_institutions)){
+                                                                    foreach ($oCorruptionCase->linked_institutions as $institution) {
+                                                                        if($oInstitution->description == $institution){
+                                                                            $selected = 'selected="selected"';
+                                                                        }       
+                                                                    }
                                                                 }
                                                             }
                                                         @endphp
@@ -241,8 +244,12 @@
                                                         @php
                                                             $selected = '';
                                                             if(is_object($oCorruptionCase)){
-                                                                if($oOfficial->description == $oCorruptionCase->public_officials_involved){
-                                                                    $selected = 'selected="selected"';
+                                                                if(count($oCorruptionCase->public_officials_involved)){
+                                                                    foreach ($oCorruptionCase->public_officials_involved as $official) {
+                                                                        if($oOfficial->description == $official){
+                                                                            $selected = 'selected="selected"';
+                                                                        }       
+                                                                    }
                                                                 }
                                                             }
                                                         @endphp
@@ -307,7 +314,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="summary"> Resumen : <span class="danger">*</span> </label>
-                                            {!! Form::textarea('summary', null, ['id' => 'summary', 'class' => 'form-control', 'placeholder' => 'Ingrese el resumen del caso de corrupción']) !!}
+                                            {!! Form::textarea('summary', null, ['id' => 'summary', 'class' => 'form-control', 'placeholder' => 'Ingrese el resumen del caso de corrupción', 'required']) !!}
                                         </div>
                                     </div>
                                 </div>
@@ -336,7 +343,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="history"> Antecedentes: </label>
-                                            {!! Form::textarea('history', null, ['id' => 'history', 'class' => 'form-control', 'placeholder' => 'Ingrese los antecedentes del caso de corrupción']) !!}
+                                            {!! Form::textarea('history', null, ['id' => 'history', 'class' => 'form-control', 'placeholder' => 'Ingrese los antecedentes del caso de corrupción', 'required']) !!}
                                         </div>
                                     </div>
                                 </div>
@@ -539,12 +546,20 @@
     {!! Html::script('public/backend/assets/plugins/bootstrap-select/bootstrap-select.min.js', ['type' => 'text/javascript']) !!}
     {!! Html::script('public/backend/assets/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js', ['type' => 'text/javascript']) !!}
     {!! Html::script('public/backend/assets/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js', ['type' => 'text/javascript']) !!}
-    <!-- wysuhtml5 Plugin JavaScript -->
-    {!! Html::script('public/backend/assets/plugins/html5-editor/wysihtml5-0.3.0.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/html5-editor/bootstrap-wysihtml5.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('public/vendor/unisharp/laravel-ckeditor/ckeditor.js', ['type' => 'text/javascript']) !!}
+    
     <script type="text/javascript">
+        
         var urlCorruptionCasesList = '{!! route('backend.content.corruption-cases.list') !!}';
         var nextWH = {!! $nextWH !!};
+        
+        var CKEditorOptions = {
+            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token={!! csrf_token() !!}',
+            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token={!! csrf_token() !!}'
+        };
     </script>
+    
     {!! Html::script('public/backend/assets/js/form-validate/form-validation-corruption-case.min.js', ['type' => 'text/javascript']) !!}
 @endsection

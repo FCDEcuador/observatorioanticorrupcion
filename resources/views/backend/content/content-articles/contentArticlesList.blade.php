@@ -80,24 +80,22 @@
                                                             <span class="ladda-spinner"></span>
                                                         </button>
                                                         <div class="dropdown-menu animated flipInX">
-                                                            @can('backend_delete_contentarticles')
-                                                                {!! Form::open(['route' => ['backend.content.content-articles.delete', $oContentArticle->id], 'method' => 'DELETE', 'name' => 'deleteContentArticleForm_'.$oContentArticle->id, 'id' => 'deleteContentArticleForm_'.$oContentArticle->id]) !!}
-                                                            @endcan
                                                             @can('backend_edit_contentarticles')
                                                                 <a class="btn btn-xs btn-info waves-effect waves-light text-white" href="{!! route('backend.content.content-articles.edit', [$oContentArticle->id]) !!}" style="width:90%;margin-left:8px;margin-top:5px">
                                                                     <span class="btn-label">
-                                                                        <i class="fa fa-pencil text-themecolor"></i>
+                                                                        <i class="fa fa-pencil text-white"></i>
                                                                     </span>
                                                                     Editar Artículo
                                                                 </a>
                                                             @endcan
                                                             @can('backend_delete_contentarticles')
-                                                                <button class="btn btn-xs btn-danger waves-effect waves-light text-white" type="button" onclick="javascript: confirmDelete('deleteContentArticleForm_{!! $oContentArticle->id !!}', 'deleteContentArticleBtn_{!! $oContentArticle->id !!}', 'BlaudCMS :: Artículos de Contenido', 'Esta seguro que desea eliminar el artículo {!! $oContentArticle->title !!}', '{!! route('backend.content.content-article.list') !!}', true);"  style="width:90%;margin-left:8px;margin-top:5px;">
+                                                                <a class="btn btn-xs btn-danger waves-effect waves-light text-white" onclick="javascript: confirmDelete('deleteContentArticleForm_{!! $oContentArticle->id !!}', 'deleteContentArticleBtn_{!! $oContentArticle->id !!}', 'BlaudCMS :: Artículos de Contenido', 'Esta seguro que desea eliminar el artículo {!! $oContentArticle->title !!}', '{!! route('backend.content.content-articles.list') !!}', true);"  style="width:90%;margin-left:8px;margin-top:5px;">
                                                                     <span class="btn-label">
-                                                                        <i class="fa fa-trash text-danger"></i>
+                                                                        <i class="fa fa-trash text-white"></i>
                                                                     </span>
                                                                     Eliminar Artículo
-                                                                </button>
+                                                                </a>
+                                                                {!! Form::open(['route' => ['backend.content.content-articles.delete', $oContentArticle->id], 'method' => 'DELETE', 'name' => 'deleteContentArticleForm_'.$oContentArticle->id, 'id' => 'deleteContentArticleForm_'.$oContentArticle->id]) !!}
                                                                 {!! Form::close() !!}
                                                             @endcan
                                                         </div>

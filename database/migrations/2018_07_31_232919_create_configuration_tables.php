@@ -45,6 +45,7 @@ class CreateConfigurationTables extends Migration
                 $table->string('sales_emails')->nullable();
                 $table->string('admin_email')->nullable();
                 $table->string('backend_logo')->nullable();
+                $table->string('frontend_logo')->nullable();
                 $table->timestamps();
             });
         }

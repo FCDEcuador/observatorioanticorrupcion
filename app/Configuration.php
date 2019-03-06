@@ -48,6 +48,7 @@ class Configuration extends Model
         'sales_emails',
         'admin_email',
         'backend_logo',
+        'frontend_logo',
     ];
 
     /**

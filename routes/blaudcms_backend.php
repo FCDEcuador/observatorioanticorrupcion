@@ -11,13 +11,19 @@
 |
 */
 
+Route::get('/backend', function(){
+	return redirect()->route('backend.login');
+});
+
+Route::get('/backend/', function(){
+	return redirect()->route('backend.login');
+});
+
 Route::group(array('prefix' => '/backend'), function(){
 
-	Route::get('/', function(){
-		return redirect()->route('backend.login');
-	})->name('backend.home');
-
 	// Rutas para pantalla de login de backend
+	Route::get('', 'Backend\Auth\LoginController@login');
+	Route::get('/', 'Backend\Auth\LoginController@login')->name('login');
 	Route::get('/login', 'Backend\Auth\LoginController@login')->name('backend.login');
 	Route::post('/login', 'Backend\Auth\LoginController@loginValidate')->name('backend.login.validate');
 
@@ -142,7 +148,7 @@ Route::group(array('prefix' => '/backend'), function(){
 
 
 		*****************************************************************************************************/
-		Route::group(array('prefix' => '/catalogs'), function(){
+		Route::group(array('prefix' => '/catalogues'), function(){
 
 			/*************************************************************************************************
 
@@ -153,18 +159,18 @@ Route::group(array('prefix' => '/backend'), function(){
 			*************************************************************************************************/
 			Route::group(array('prefix' => '/provinces'), function(){
 				// Ruta para ver la lista de provincias
-				Route::match(['GET', 'POST'], '/list', 'Backend\Parametrization\Catalogs\ProvincesController@index')->name('backend.parametrization.catalogs.provinces.list');
+				Route::match(['GET', 'POST'], '/list', 'Backend\Parametrization\Catalogues\ProvincesController@index')->name('backend.parametrization.catalogues.provinces.list');
 
 				// Rutas para crear una nueva provincia en el sistema
-				Route::get('/add', 'Backend\Parametrization\Catalogs\ProvincesController@create')->name('backend.parametrization.catalogs.provinces.create');
-				Route::post('/add', 'Backend\Parametrization\Catalogs\ProvincesController@store')->name('backend.parametrization.catalogs.provinces.store');
+				Route::get('/add', 'Backend\Parametrization\Catalogues\ProvincesController@create')->name('backend.parametrization.catalogues.provinces.create');
+				Route::post('/add', 'Backend\Parametrization\Catalogues\ProvincesController@store')->name('backend.parametrization.catalogues.provinces.store');
 
 				// Rutas para editar una provincia de acuerdo a su ID
-				Route::get('/edit/{iId?}', 'Backend\Parametrization\Catalogs\ProvincesController@edit')->name('backend.parametrization.catalogs.provinces.edit');
-				Route::match(['PUT', 'PATCH'], '/edit/{iId?}', 'Backend\Parametrization\Catalogs\ProvincesController@update')->name('backend.parametrization.catalogs.provinces.update');
+				Route::get('/edit/{iId?}', 'Backend\Parametrization\Catalogues\ProvincesController@edit')->name('backend.parametrization.catalogues.provinces.edit');
+				Route::match(['PUT', 'PATCH'], '/edit/{iId?}', 'Backend\Parametrization\Catalogues\ProvincesController@update')->name('backend.parametrization.catalogues.provinces.update');
 
 				// Ruta para eliminar una provincia en particular seleccionado por su ID
-				Route::delete('/delete/{iId?}', 'Backend\Parametrization\Catalogs\ProvincesController@destroy')->name('backend.parametrization.catalogs.provinces.delete');
+				Route::delete('/delete/{iId?}', 'Backend\Parametrization\Catalogues\ProvincesController@destroy')->name('backend.parametrization.catalogues.provinces.delete');
 			});
 
 			
@@ -269,7 +275,7 @@ Route::group(array('prefix' => '/backend'), function(){
 
 		*******************************************************************************************************/
 		Route::group(array('prefix' => '/success-stories'), function(){
-			// Ruta para ver la lista de links externos del sistema
+			// Ruta para ver la lista de historias de exito del sistema
 			Route::match(['GET', 'POST'], '/list', 'Backend\Content\SuccessStoriesController@index')->name('backend.content.success-stories.list');
 
 			// Rutas para crear una nueva Historia de Exito
@@ -280,11 +286,31 @@ Route::group(array('prefix' => '/backend'), function(){
 			Route::get('/edit/{sId?}', 'Backend\Content\SuccessStoriesController@edit')->name('backend.content.success-stories.edit');
 			Route::match(['PUT', 'PATCH'], '/edit/{sId?}', 'Backend\Content\SuccessStoriesController@update')->name('backend.content.success-stories.update');
 
-			// Ruta para cambiar el estado de una historia de exito
-			Route::get('/change-status/{sId?}', 'Backend\Content\SuccessStoriesController@changeStatus')->name('backend.content.success-stories.changeStatus');
-
 			// Ruta para eliminar una historia de exito en particular seleccionada por su ID
 			Route::delete('/delete/{sId?}', 'Backend\Content\SuccessStoriesController@destroy')->name('backend.content.success-stories.delete');
+		});
+
+		/******************************************************************************************************
+
+
+				RUTAS PARA ADMINISTRACION DE BIBLIOTECA LEGAL
+
+
+		*******************************************************************************************************/
+		Route::group(array('prefix' => '/legal-libraries'), function(){
+			// Ruta para ver la lista de articulos de biblioteca legal del sistema
+			Route::match(['GET', 'POST'], '/list', 'Backend\Content\LegalLibrariesController@index')->name('backend.content.legal-libraries.list');
+
+			// Rutas para crear una nueva Biblioteca Legal
+			Route::get('/add', 'Backend\Content\LegalLibrariesController@create')->name('backend.content.legal-libraries.create');
+			Route::post('/add', 'Backend\Content\LegalLibrariesController@store')->name('backend.content.legal-libraries.store');
+
+			// Rutas para editar una biblioteca legal acuerdo a su ID
+			Route::get('/edit/{sId?}', 'Backend\Content\LegalLibrariesController@edit')->name('backend.content.legal-libraries.edit');
+			Route::match(['PUT', 'PATCH'], '/edit/{sId?}', 'Backend\Content\LegalLibrariesController@update')->name('backend.content.legal-libraries.update');
+
+			// Ruta para eliminar una biblioteca legal en particular seleccionada por su ID
+			Route::delete('/delete/{sId?}', 'Backend\Content\LegalLibrariesController@destroy')->name('backend.content.legal-libraries.delete');
 		});
 
 

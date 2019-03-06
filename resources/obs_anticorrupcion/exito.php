@@ -15,12 +15,12 @@
 
 <!-- BEGIN SECCION NOTA DESTACADA -->
 <div class="container-fluid p-3 bg-light">
-	<div class="row imagen-exito" style="background-image: url('https://picsum.photos/1000/260?auto=yes&bg=666&fg=444&text=banner');">
+	<div class="row imagen-exito" style="background-image: url('https://via.placeholder.com/1000x260');">
 		<div class="col-sm-6 d-flex align-items-end justify-content-center" style="background:rgba(57,0,148,0.2);">
 			<div class="row">
 				<div class="offset-sm-4 col-8">
 					<h3 class="subtitulo text-white text-uppercase text-right">Pellentesque convallis dolor ac nibh sollicitudin faucibus</h3>
-					<p class="text-right text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. Donec facilisis enim gravida lectus pretium egestas. Aenean tempus lectus ut risus suscipit, tempus vestibulum</p>
+					<p class="text-right text-white text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. Donec facilisis enim gravida lectus pretium egestas. Aenean tempus lectus ut risus suscipit, tempus vestibulum</p>
 				</div>
 			</div>
 		</div>
@@ -41,31 +41,31 @@
 	<!-- BEGIN SECCION RESULTADO DE BUSQUEDA -->
 	<div class="row mt-3 no-gutters p-3 p-sm-0">
 		<div class="col-sm-3">
-			<img class="d-block w-100" src="https://picsum.photos/280/400?auto=yes&bg=666&fg=444&text=1" alt="Publicacion1">
+			<img class="d-block w-100" src="https://via.placeholder.com/280x300" alt="Publicacion1">
 			<div class="cont-text border-left border-right bormorado pl-3 pr-3 pt-3 pb-0">
 				<h6 class="text-center mt-3 font-weight-bold"><a href="" class="morado">Lorem ipsum dolor sit amet.</a></h6>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. Donec facilisis enim gravida lectus pretium egestas. Aenean tempus lectus ut risus suscipit, tempus vestibulum</p>
+				<div class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. Donec facilisis enim gravida lectus pretium egestas. Aenean tempus lectus ut risus suscipit, tempus vestibulum</div>
 			</div>
 		</div>
 		<div class="col-sm-3">
-			<img class="d-block w-100" src="https://picsum.photos/280/400?auto=yes&bg=666&fg=444&text=2" alt="Publicacion1">
+			<img class="d-block w-100" src="https://via.placeholder.com/280x300" alt="Publicacion1">
 			<div class="cont-text border-left border-right bormorado pl-3 pr-3 pt-3 pb-0">
 				<h6 class="text-center mt-3 font-weight-bold"><a href="" class="morado">Lorem ipsum dolor sit amet.</a></h6>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. Donec facilisis enim gravida lectus pretium egestas. Aenean tempus lectus ut risus suscipit, tempus vestibulum</p>
+				<div class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. Donec facilisis enim gravida lectus pretium egestas. Aenean tempus lectus ut risus suscipit, tempus vestibulum</div>
 			</div>
 		</div>
 		<div class="col-sm-3">
-			<img class="d-block w-100" src="https://picsum.photos/280/400?auto=yes&bg=666&fg=444&text=3" alt="Publicacion1">
+			<img class="d-block w-100" src="https://via.placeholder.com/280x300" alt="Publicacion1">
 			<div class="cont-text border-left border-right bormorado pl-3 pr-3 pt-3 pb-0">
 				<h6 class="text-center mt-3 font-weight-bold"><a href="" class="morado">Lorem ipsum dolor sit amet.</a></h6>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. Donec facilisis enim gravida lectus pretium egestas. Aenean tempus lectus ut risus suscipit, tempus vestibulum</p>
+				<div class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. Donec facilisis enim gravida lectus pretium egestas. Aenean tempus lectus ut risus suscipit, tempus vestibulum</div>
 			</div>
 		</div>
 		<div class="col-sm-3">
-			<img class="d-block w-100" src="https://picsum.photos/280/400?auto=yes&bg=666&fg=444&text=4" alt="Publicacion1">
+			<img class="d-block w-100" src="https://via.placeholder.com/280x300" alt="Publicacion1">
 			<div class="cont-text border-left border-right bormorado pl-3 pr-3 pt-3 pb-0">
 				<h6 class="text-center mt-3 font-weight-bold"><a href="" class="morado">Lorem ipsum dolor sit amet.</a></h6>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. Donec facilisis enim gravida lectus pretium egestas. Aenean tempus lectus ut risus suscipit, tempus vestibulum</p>
+				<div class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. Donec facilisis enim gravida lectus pretium egestas. Aenean tempus lectus ut risus suscipit, tempus vestibulum</div>
 			</div>
 		</div>
 	</div>

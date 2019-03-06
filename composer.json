@@ -32,6 +32,8 @@
         "mercuryseries/flashy": "^1.0",
         "sammyk/laravel-facebook-sdk": "^3.5",
         "spatie/laravel-permission": "^2.12",
+        "unisharp/laravel-ckeditor": "^4.7",
+        "unisharp/laravel-filemanager": "v2.0.0-alpha7",
         "watson/sitemap": "^2.0",
         "willvincent/feeds": "^1.1"
     },

@@ -272,6 +272,16 @@ return [
          */
         BlaudCMS\Providers\UtilityServiceProvider::class,
 
+        /*
+         *  CKEditor con File Manager para Laravel
+         *  Raúl Chauvin
+         *  02 Marzo 2019
+         *
+         */
+        Unisharp\Ckeditor\ServiceProvider::class,
+        UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+
     ],
 
     /*
@@ -436,6 +446,9 @@ return [
          *
          */
         'Utility' => BlaudCMS\Helpers\Utility::class,
+
+
+        'Image' => Intervention\Image\Facades\Image::class,
 
     ],
 

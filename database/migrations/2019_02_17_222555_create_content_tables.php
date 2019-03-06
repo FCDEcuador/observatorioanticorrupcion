@@ -17,7 +17,7 @@ class CreateContentTables extends Migration
     {
 
         $output = new ConsoleOutput();
-        $bar = new ProgressBar($output, 7);
+        $bar = new ProgressBar($output, 8);
         $bar->start();
 
         if( ! Schema::hasTable('corruption_cases')){
@@ -86,6 +86,21 @@ class CreateContentTables extends Migration
         }
         $bar->advance();
 
+        if(!Schema::hasTable('legal_libraries')){
+            Schema::create('legal_libraries', function(Blueprint $table){
+                $table->uuid('id');
+                $table->string('title')->unique();
+                $table->string('slug')->unique();
+                $table->text('description')->nullable();
+                $table->integer('issue_year')->nullable();
+                $table->string('pdf_document')->nullable();
+                $table->text('tags')->nullable();
+                $table->timestamps();
+                $table->primary('id');
+            });
+        }
+        $bar->advance();
+
 
         if( ! Schema::hasTable('content_categories')){
             Schema::create('content_categories', function (Blueprint $table) {
@@ -112,7 +127,7 @@ class CreateContentTables extends Migration
                 $table->uuid('id');
                 $table->string('title')->unique();
                 $table->string('slug')->unique();
-                $table->string('summary');
+                $table->text('summary');
                 $table->text('content')->nullable();
                 $table->string('author')->nullable();
                 $table->string('author_email')->nullable();
@@ -192,7 +207,7 @@ class CreateContentTables extends Migration
     {
 
         $output = new ConsoleOutput();
-        $bar = new ProgressBar($output, 7);
+        $bar = new ProgressBar($output, 8);
         $bar->start();
         
         Schema::dropIfExists('menu_items');
@@ -202,6 +217,8 @@ class CreateContentTables extends Migration
         Schema::dropIfExists('content_articles');
         $bar->advance();
         Schema::dropIfExists('content_categories');
+        $bar->advance();
+        Schema::dropIfExists('legal_libraries');
         $bar->advance();
         Schema::dropIfExists('success_stories');
         $bar->advance();

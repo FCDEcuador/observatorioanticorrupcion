@@ -22,7 +22,7 @@ class WhatHappened extends Model
      *
      * @var string
      */
-    protected $table = 'corruption_cases';
+    protected $table = 'what_happened';
 
     /**
      * The attributes that are mass assignable.

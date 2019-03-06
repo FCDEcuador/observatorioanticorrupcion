@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
             // Seed the default permissions
             $this->command->warn('Creando permisos por defecto en el sistema.');
 
-            $bar = new ProgressBar($output, 16);
+            $bar = new ProgressBar($output, 17);
             $bar->start();
             
             // Permisos para modulo de Autenticacion/Autorizacion
@@ -78,6 +78,9 @@ class DatabaseSeeder extends Seeder
             $bar->advance();
             print("\n");
             $this->command->call('permission:backend-permissions', ['name' => 'successstories']);
+            $bar->advance();
+            print("\n");
+            $this->command->call('permission:backend-permissions', ['name' => 'legallibraries']);
             $bar->advance();
             print("\n");
             $this->command->call('permission:backend-permissions', ['name' => 'menus']);

@@ -10,7 +10,7 @@
 				<div class="titulo border-bottom border-info text-info text-uppercase">Biblioteca legal</div>
 			</div>
 			<div class="col-12 mt-3">
-				<p>A continuación te presentamos las principales leyes, reglamentos y decretos que abordan temas y mecanismos de prevención y sanción a los actos de corrupción en Ecuador. Utiliza el buscador para acceder a los documentos de tu interés.</p>
+				<p class="text-justify">A continuación te presentamos las principales leyes, reglamentos y decretos que abordan temas y mecanismos de prevención y sanción a los actos de corrupción en Ecuador. Utiliza el buscador para acceder a los documentos de tu interés.</p>
 			</div>
 		</div>
 
@@ -54,7 +54,7 @@
 					<h6 class="text-info">Loren ipsun dolor didiad,madmafa</h6>
 				</div>
 				<div class="col-sm-8">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. Donec facilisis enim gravida lectus pretium egestas. Aenean tempus lectus ut risus suscipit, tempus vestibulum</p>
+					<div class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. Donec facilisis enim gravida lectus pretium egestas. Aenean tempus lectus ut risus suscipit, tempus vestibulum</div>
 					<a href="#" role="button" class="btn btn-info btn-sm float-right">Descargar</a>
 				</div>
 			</div>
@@ -65,7 +65,7 @@
 					<h6 class="text-info">Loren ipsun dolor didiad,madmafa</h6>
 				</div>
 				<div class="col-sm-8">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. Donec facilisis enim gravida lectus pretium egestas. Aenean tempus lectus ut risus suscipit, tempus vestibulum</p>
+					<div class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. Donec facilisis enim gravida lectus pretium egestas. Aenean tempus lectus ut risus suscipit, tempus vestibulum</div>
 					<a href="#" role="button" class="btn btn-info btn-sm float-right">Descargar</a>
 				</div>
 			</div>
@@ -76,7 +76,7 @@
 					<h6 class="text-info">Loren ipsun dolor didiad,madmafa</h6>
 				</div>
 				<div class="col-sm-8">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. Donec facilisis enim gravida lectus pretium egestas. Aenean tempus lectus ut risus suscipit, tempus vestibulum</p>
+					<div class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. Donec facilisis enim gravida lectus pretium egestas. Aenean tempus lectus ut risus suscipit, tempus vestibulum</div>
 					<a href="#" role="button" class="btn btn-info btn-sm float-right">Descargar</a>
 				</div>
 			</div>

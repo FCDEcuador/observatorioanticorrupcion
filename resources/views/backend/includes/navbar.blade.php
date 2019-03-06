@@ -81,7 +81,7 @@
                         <li class="nav-devider"></li>
 
                         <li class="nav-small-cap">CONTENIDO</li>
-
+                        
                         <li> 
                             <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
                                 <i class="mdi mdi-book-open-variant"></i>
@@ -92,7 +92,7 @@
                             <ul aria-expanded="false" class="collapse">
                                 @can('backend_view_provinces')
                                     <li>
-                                        <a href="{!! route('backend.parametrization.catalogs.provinces.list') !!}">
+                                        <a href="{!! route('backend.parametrization.catalogues.provinces.list') !!}">
                                             Provincias
                                         </a>
                                     </li>
@@ -140,6 +140,7 @@
                                 
                             </ul>
                         </li>
+                        
 
                         <li> 
                             <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
@@ -156,7 +157,7 @@
                                         </a>
                                     </li>
                                 @endcan
-
+                                
                                 @can('backend_view_successstories')
                                     <li>
                                         <a href="{!! route('backend.content.success-stories.list') !!}">
@@ -164,6 +165,15 @@
                                         </a>
                                     </li>
                                 @endcan
+
+                                @can('backend_view_legallibraries')
+                                    <li>
+                                        <a href="{!! route('backend.content.legal-libraries.list') !!}">
+                                            Biblioteca Legal
+                                        </a>
+                                    </li>
+                                @endcan
+
 
                                 @can('backend_view_contentcategories')
                                     <li>

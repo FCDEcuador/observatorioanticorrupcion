@@ -14,6 +14,7 @@ use BlaudCMS\ContentCategory;
 use BlaudCMS\ContentArticle;
 use BlaudCMS\CorruptionCase;
 use BlaudCMS\SuccessStory;
+use BlaudCMS\LegalLibrary;
 use BlaudCMS\Menu;
 use BlaudCMS\MenuItem;
 
@@ -92,8 +93,8 @@ class MenuItemsController extends Controller
 
         $this->oSlugify = new Slugify();
 
-        $this->sStorageDisk = config('app.env') == 'production' ? 's3' : 'local';
-        $this->oStorage = config('app.env') == 'production' ? Storage::disk('s3') : Storage::disk('local');
+        $this->sStorageDisk = config('app.env') == 'production' ? 'public' : 'public';
+        $this->oStorage = config('app.env') == 'production' ? Storage::disk('public') : Storage::disk('public');
 
         // Colocamos el valor en la variable $this->activeMenu 
         // para saber que item del menu de navegacion debe pintarse
@@ -235,6 +236,7 @@ class MenuItemsController extends Controller
             'contentArticlesList' => ContentArticle::all(),
             'successStoriesList' => SuccessStory::all(),
             'corruptionCasesList' => CorruptionCase::all(),
+            'legalLibraryList' => LegalLibrary::all(),
             
             'sMenuId' => $sMenuId,
             'sMenuItemId' => $sMenuItemId,
@@ -354,6 +356,7 @@ class MenuItemsController extends Controller
             'contentArticlesList' => ContentArticle::all(),
             'successStoriesList' => SuccessStory::all(),
             'corruptionCasesList' => CorruptionCase::all(),
+            'legalLibraryList' => LegalLibrary::all(),
             
             'sMenuId' => $oMenuItem->menu_id,
             'sMenuItemId' => $oMenuItem->menu_item_id,

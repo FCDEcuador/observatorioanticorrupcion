@@ -8,9 +8,15 @@
                         <!-- Logo icon --><b>
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="{!! asset('public/backend/assets/images/logoBlaud.png') !!}" alt="BlaudCMS" class="dark-logo" width="70%" />
-                            <!-- Light Logo icon -->
-                            <img src="{!! asset('public/backend/assets/images/logoBlaud.png') !!}" alt="BlaudCMS" class="light-logo" width="70%" />
+                            @if($oConfiguration->backend_logo != '')
+                                <img src="{!! asset($oStorage->url($oConfiguration->backend_logo)) !!}" alt="BlaudCMS" class="dark-logo" height="70" />
+                                <!-- Light Logo icon -->
+                                <img src="{!! asset($oStorage->url($oConfiguration->backend_logo)) !!}" alt="BlaudCMS" class="light-logo" height="70" />
+                            @else
+                                <img src="{!! asset('public/backend/assets/images/logoBlaud.png') !!}" alt="BlaudCMS" class="dark-logo" height="70" />
+                                <!-- Light Logo icon -->
+                                <img src="{!! asset('public/backend/assets/images/logoBlaud.png') !!}" alt="BlaudCMS" class="light-logo" height="70" />
+                            @endif
                         </b>
                         <!--End Logo icon -->
                     </a>
@@ -37,11 +43,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 @if(Auth::user()->avatar != '')
-                                    @if($env == 'production')
-                                        <img src="{!! asset($oStorage->url(Auth::user()->avatar)) !!}" alt="{!! Auth::user()->name !!} {!! Auth::user()->lastname !!}" class="profile-pic" />
-                                    @else
-                                        <img src="{!! asset('public'.$oStorage->url(Auth::user()->avatar)) !!}" alt="user" class="profile-pic" />
-                                    @endif
+                                    <img src="{!! asset($oStorage->url(Auth::user()->avatar)) !!}" alt="user" class="profile-pic" />
                                 @else
                                     <img src="{!! asset('public/backend/assets/images/default-user.png') !!}" alt="{!! Auth::user()->name !!} {!! Auth::user()->lastname !!}" class="profile-pic" />
                                 @endif
@@ -52,11 +54,7 @@
                                         <div class="dw-user-box">
                                             <div class="u-img">
                                                 @if(Auth::user()->avatar != '')
-                                                    @if($env == 'production')
-                                                        <img src="{!! asset($oStorage->url(Auth::user()->avatar)) !!}" alt="{!! Auth::user()->name !!} {!! Auth::user()->lastname !!}" />
-                                                    @else
-                                                        <img src="{!! asset('public'.$oStorage->url(Auth::user()->avatar)) !!}" alt="{!! Auth::user()->name !!} {!! Auth::user()->lastname !!}" />
-                                                    @endif
+                                                    <img src="{!! asset($oStorage->url(Auth::user()->avatar)) !!}" alt="{!! Auth::user()->name !!} {!! Auth::user()->lastname !!}" />
                                                 @else
                                                     <img src="{!! asset('public/backend/assets/images/default-user.png') !!}" alt="{!! Auth::user()->name !!} {!! Auth::user()->lastname !!}" class="profile-pic" />
                                                 @endif

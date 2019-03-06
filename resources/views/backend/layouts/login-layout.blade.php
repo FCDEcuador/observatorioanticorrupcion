@@ -55,6 +55,14 @@
     <!-- Bootstrap tether Core JavaScript -->
     {!! Html::script('public/backend/assets/plugins/bootstrap/js/popper.min.js', ['type' => 'text/javascript']) !!}
     {!! Html::script('public/backend/assets/plugins/bootstrap/js/bootstrap.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('public/backend/assets/js/perfect-scrollbar.jquery.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('public/backend/assets/js/sidebarmenu.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('public/backend/assets/plugins/bootstrap-sweetalert/sweetalert.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('public/backend/assets/js/ui-sweetalert.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('public/backend/assets/plugins/ladda/spin.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('public/backend/assets/plugins/ladda/ladda.min.js', ['type' => 'text/javascript']) !!}
+    <!--Custom JavaScript -->
+    {!! Html::script('public/backend/assets/js/custom.min.js', ['type' => 'text/javascript']) !!}
     
     @yield('custom-js')
     

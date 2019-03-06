@@ -88,8 +88,8 @@ class ContentArticlesController extends Controller
 
         $this->oSlugify = new Slugify();
 
-        $this->sStorageDisk = config('app.env') == 'production' ? 's3' : 'local';
-        $this->oStorage = config('app.env') == 'production' ? Storage::disk('s3') : Storage::disk('local');
+        $this->sStorageDisk = config('app.env') == 'production' ? 'public' : 'public';
+        $this->oStorage = config('app.env') == 'production' ? Storage::disk('public') : Storage::disk('public');
 
         // Colocamos el valor en la variable $this->activeMenu 
         // para saber que item del menu de navegacion debe pintarse
@@ -199,7 +199,7 @@ class ContentArticlesController extends Controller
         $oContentArticle->author = $request->author;
         $oContentArticle->author_email = $request->author_email;
         $oContentArticle->source = $request->source;
-        $oContentArticle->tags = $request->tags;
+        $oContentArticle->tags = explode(',', $request->tags);
         $oContentArticle->outstanding = 0;
         $oContentArticle->main_category = 0;
         $oContentArticle->main_home = 0;
@@ -233,7 +233,7 @@ class ContentArticlesController extends Controller
      * @param  string $sId
      * @return \Illuminate\Http\Response
      */
-    public function edit($sId = '')
+    public function edit(Request $request, $sId = '')
     {
     	if( ! $sId){
             if($request->ajax()){
@@ -329,7 +329,7 @@ class ContentArticlesController extends Controller
             return response()->json($aResponseData, 200);
         }
 
-        $oldMainMultimedia = $oContentArticle->main_multimedia;
+        
 
         $oContentArticle->title = $request->title;
         $oContentArticle->slug = $this->oSlugify->slugify($request->title);
@@ -347,6 +347,7 @@ class ContentArticlesController extends Controller
         $oContentArticle->extra_headers = $request->extra_headers;
         $oContentArticle->content_category_id = $request->content_category_id;
 
+        $oldMainMultimedia = $oContentArticle->main_multimedia;
         if($request->hasFile('main_multimedia')){
             $mainImage = $request->file('main_multimedia');
             $name = $mainImage->getClientOriginalName();
@@ -376,7 +377,7 @@ class ContentArticlesController extends Controller
      * @param  string $sId
      * @return \Illuminate\Http\Response
      */
-    public function destroy($sId = '')
+    public function destroy(Request $request, $sId = '')
     {
 
     	if( ! $request->ajax() ){
@@ -408,9 +409,9 @@ class ContentArticlesController extends Controller
             if($oldMainMultimedia != ''){
                 $this->oStorage->delete($oldMainMultimedia);
             }
-            return response()->json(['status' => true , 'message' => 'El artículo de contenido '.$oContentArticle->title.' ha sido eliminado exitosamente.',], 200);    
+            return response()->json(['status' => true, 'message' => 'El artículo de contenido '.$oContentArticle->title.' ha sido eliminado exitosamente.',], 200);    
         }else{
-            return response()->json(['status' => true , 'message' => 'El artículo de contenido '.$oContentArticle->title.' no pudo ser eliminado, por favor intentelo nuevamente luego de unos minutos.',], 200);    
+            return response()->json(['status' => false, 'message' => 'El artículo de contenido '.$oContentArticle->title.' no pudo ser eliminado, por favor intentelo nuevamente luego de unos minutos.',], 200);    
         }
     }
 }

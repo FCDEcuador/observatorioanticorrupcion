@@ -8,74 +8,169 @@
 @endsection
 
 @section('main-content')
+	
 	<!-- BEGIN SECCION CASOS DE CORRUPCION -->
-		<div class="row mt-3 shadow p-3 mb-5 bg-white rounded">
+	
+		<div class="row mb-5">
 			<div class="col-md-6 mb-3 mb-md-0">
-				<!--  BEGIN CAROUSEL  -->
-		      	<div id="casos-corrupcion" class="carousel slide" data-ride="carousel">
-		      	  <ol class="carousel-indicators">
-				    <li data-target="#casos-corrupcion" data-slide-to="0" class="active"></li>
-				    <li data-target="#casos-corrupcion" data-slide-to="1"></li>
-				    <li data-target="#casos-corrupcion" data-slide-to="2"></li>
-				  </ol>
-				  <div class="carousel-inner">
-				    <div class="carousel-item active">
-				    	<div class="row">
-				    		<div class="col-4 col-md-5">
-				    			<img class="d-block w-100" src="https://picsum.photos/200/400?auto=yes&bg=777&fg=555&text=First slide" alt="First slide">
-				    		</div>
-				    		<div class="col-8 col-md-7">
-				    			<h1 class="titulo border-bottom border-info text-info text-uppercase">NUEVOS CASOS DE CORRUPCIÓN</h1>
-				    			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. Donec facilisis enim gravida lectus pretium egestas. Aenean tempus lectus ut risus suscipit, tempus vestibulum ex aliquet. Mauris ac vehicula sem, a sodales urna. In eget condimentum tellus, non porttitor diam. Ut consectetur dolor eget velit semper, id congue lectus maximus.</p>
-				    			<a href="" role="button" class="btn btn-success btn-sm float-right">Entérate</a>
-				    		</div>
-				    	</div>
-				    </div>
-				    <div class="carousel-item">
-				    	<div class="row">
-				    		<div class="col-4 col-md-5">
-				    			<img class="d-block w-100" src="https://picsum.photos/200/400?auto=yes&bg=666&fg=444&text=Second slide" alt="Second slide">
-				    		</div>
-				    		<div class="col-8 col-md-7">
-				    			<h1 class="titulo border-bottom border-info text-info text-uppercase">NUEVOS CASOS DE CORRUPCIÓN</h1>
-				    			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. Donec facilisis enim gravida lectus pretium egestas. Aenean tempus lectus ut risus suscipit, tempus vestibulum ex aliquet. Mauris ac vehicula sem, a sodales urna. In eget condimentum tellus, non porttitor diam. Ut consectetur dolor eget velit semper, id congue lectus maximus.</p>
-				    			<a href="" role="button" class="btn btn-success btn-sm float-right">Entérate</a>
-				    		</div>
-				    	</div>
-				    </div>
-				    <div class="carousel-item">
-				      	<div class="row">
-				    		<div class="col-4 col-md-5">
-				    			<img class="d-block w-100" src="https://picsum.photos/200/400?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide">
-				    		</div>
-				    		<div class="col-8 col-md-7">
-				    			<h1 class="titulo border-bottom border-info text-info text-uppercase">NUEVOS CASOS DE CORRUPCIÓN</h1>
-				    			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. Donec facilisis enim gravida lectus pretium egestas. Aenean tempus lectus ut risus suscipit, tempus vestibulum ex aliquet. Mauris ac vehicula sem, a sodales urna. In eget condimentum tellus, non porttitor diam. Ut consectetur dolor eget velit semper, id congue lectus maximus.</p>
-				    			<a href="" role="button" class="btn btn-success btn-sm float-right">Entérate</a>
-				    		</div>
-				    	</div>
-				    </div>
-				  </div>
-				  <a class="carousel-control-prev" href="#casos-corrupcion" role="button" data-slide="prev">
-				    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				    <span class="sr-only">Previous</span>
-				  </a>
-				  <a class="carousel-control-next" href="#casos-corrupcion" role="button" data-slide="next">
-				    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-				    <span class="sr-only">Next</span>
-				  </a>
-				</div>
+				<div class="p-3 shadow bg-white rounded home-bq">
+					<!--  BEGIN CAROUSEL  -->
+			      	<div id="casos-corrupcion" class="carousel slide" data-ride="carousel">
+			      	  
+					  <div class="carousel-inner">
+					    @if($corruptionCasesList->isNotEmpty())
+						    @foreach($corruptionCasesList as $oCorruptionCase)
+							    <div class="carousel-item {!! $loop->first ? 'active' : '' !!}">
+							    	<div class="row">
+							    		<div class="col-4 col-md-5">
+							    			<img class="d-block w-100" src="{!! $oStorage->url($oCorruptionCase->home_image) !!}" alt="{!! $oCorruptionCase->title !!}">
+							    		</div>
+							    		<div class="col-8 col-md-7">
+							    			<h1 class="titulo border-bottom border-info text-info text-uppercase">
+								    			{!! $oCorruptionCase->title !!}
+								    		</h1>
+							    			<p>{!! $oCorruptionCase->summary !!}</p>
+							    			<a href="{!! url('/casos-de-corrupcion/'.$oCorruptionCase->slug) !!}" role="button" class="btn btn-success btn-sm float-right">Entérate</a>
+							    		</div>
+							    	</div>
+							    </div>
+						    @endforeach
+					    @endif
+					  </div>
+					  <a class="carousel-control-prev" href="#casos-corrupcion" role="button" data-slide="prev">
+					    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					    <span class="sr-only">Anterior</span>
+					  </a>
+					  <a class="carousel-control-next" href="#casos-corrupcion" role="button" data-slide="next">
+					    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+					    <span class="sr-only">Siguiente</span>
+					  </a>
+					  <ol class="carousel-indicators d-none d-sm-flex">
+					  	@if($corruptionCasesList->isNotEmpty())
+						    @foreach($corruptionCasesList as $oCorruptionCase)
+						    	<li data-target="#casos-corrupcion" data-slide-to="{!! $loop->index !!}" {!! $loop->first ? 'class="active"' : '' !!}></li>
+						    @endforeach
+					    @endif
+					  </ol>
+					</div>
 		      	<!--  END CAROUSEL -->
+		      </div>
 			</div>
-			<div class="col-md-6">
-				<a href="" role="button" class="btn btn-success btn-sm float-right bgmorado">conoce más aquí</a>
+			<div class="col-sm-6">
+				<div class="p-3 shadow bg-white rounded home-bq">
+					<h1 class="titulo border-bottom border-info text-default text-uppercase text-center mb-3">Estadísticas</h1>
+					<p class="mb-0 text-muted">Conoce cuál es el estado de los casos de corrupción, cuya información es recopilada por nuestro Observatorio</p>
+					<div class="row">
+						@if($caseStages->isNotEmpty())
+							@php
+								$aDataGraph = [];	
+								$aColors = [
+									'#a9d42c',
+									'#390094',
+									'#4db1e0',
+								];
+							@endphp
+							@foreach($caseStages as $oCaseStage)
+								@php
+									$aDataGraph[$loop->index] = [
+										'id' => $oCaseStage->id,
+										'casesNum' => BlaudCMS\CorruptionCase::where('case_stage', $oCaseStage->description)->count(),
+										'color' => $aColors[$loop->index],
+									];
+								@endphp
+								<div class="col-sm-4">
+									<div class="pl-3 pr-3">
+										<canvas id="{!! $oCaseStage->id !!}" class="m-100 "></canvas>
+									</div>
+									<div class="titulo text-uppercase fz14 mt-1 mb-3 mb-sm-0 text-center">
+										{!! $oCaseStage->description !!}
+									</div>
+								</div>
+							@endforeach
+						@endif
+					</div>
+					
+					
+					<script>
+					@if(count($aDataGraph))
+						@foreach($aDataGraph as $dataGraph)
+							setupChart('{!! $dataGraph['id'] !!}', {!! $dataGraph['casesNum'] !!}, '{!! $dataGraph['color'] !!}');
+						@endforeach
+					@endif
+
+
+					function setupChart(chartId, progress, fondo ) {
+					  var canvas = document.getElementById(chartId);
+					  var context = canvas.getContext('2d');
+
+					  var remaining = 100 - progress;
+					  var data = {
+					    labels: [ 'Progress', '', ],
+					    datasets: [{
+					      data: [progress, remaining],
+					      backgroundColor: [
+					        fondo,
+					        '#d2e6ed'
+					      ],
+					      borderColor: [
+					        fondo,
+					        '#d2e6ed'
+					      ],
+					      hoverBackgroundColor: [
+					        fondo,
+					        '#FFFFFF'
+					      ]
+					    }]
+					  };
+
+					  var options = {
+					    responsive: true,
+					    maintainAspectRatio: false,
+					    scaleShowVerticalLines: false,
+
+					    cutoutPercentage: 80,
+					    legend: {
+					      display: false
+					    },
+					    animation: {
+					      onComplete: function (event) {
+					      	console.log(this.chart.height);
+					        var xCenter = this.chart.width/2;
+					        var yCenter = this.chart.height/2;
+
+					        context.textAlign = 'center';
+					        context.textBaseline = 'middle';
+
+					        var progressLabel = data.datasets[0].data[0] + '%';
+					        context.font = '32px Helvetica';
+					        context.fillStyle = 'black';
+					        context.fillText(progressLabel, xCenter, yCenter);
+					      }
+					    }
+					  };
+
+					  Chart.defaults.global.tooltips.enabled = false;
+					  var chart = new Chart(context, {
+					    type: 'doughnut',
+					    data: data,
+					    options: options
+					  });
+					}
+
+					</script>
+
+					<div class="clearfix">
+						<a href="#" role="button" class="btn btn-success btn-sm bgmorado mt-2 float-right">conoce más aquí</a>
+					</div>
+				</div>			
 			</div>
 		</div>
-
+	
 	<!-- END SECCION CASOS DE CORRUPCION -->
 
+
 	<!-- BEGIN BANNER JUEGO -->
-		
+		<!--
 		<div class="row mt-3 shadow mb-5 bg-white rounded banner-juego" style="background-image: url('https://picsum.photos/1000/260?auto=yes&bg=666&fg=444&text=banner');" >
 			<div class="col-8 col-sm-6 d-flex align-items-center">
 				<h3 class="text-white">¿Sabes como se sancionan los casos de corrupción?</h3>
@@ -84,70 +179,76 @@
 				<button type="button" class="btn btn-success btn-sm float-right">Descúbrelo jugando</button>
 			</div>
 		</div>
-		
+		-->
 	<!-- END BANNER JUEGO -->
 
-	<!-- BEGIN SECCION PUBLICACIONES -->
-		<div class="row mt-3 shadow p-3 mb-5 bg-white rounded">
-			<div class="col-12">
-				<h1 class="titulo border-bottom border-info text-info">PUBLICACIONES</h1>
-			</div>
-				<div class="col-6">
-					<div class="row">
-						<div class="col-sm-3 d-flex align-items-center">
-							<img class="d-block w-100" src="https://picsum.photos/80/80" alt="Publicacion1">
-						</div>
-						<div class="col-sm-9">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. Donec facilisis enim gravida lectus pretium egestas. Aenean tempus lectus ut risus suscipit, tempus vestibulum</p>
-						</div>
+	@if(is_object($oContentCategory))
+
+		<!-- BEGIN SECCION PUBLICACIONES -->
+			<div class="container mb-5">
+				<div class="row pb-3 pt-3 shadow bg-white rounded">
+					<div class="col-12">
+						<h1 class="titulo border-bottom border-info text-default mb-3">{!! strtoupper($oContentCategory->name) !!}</h1>
+					</div>
+					@php
+						$aContentArticles = $oContentCategory->contentArticles()->take(2)->get();	
+					@endphp
+					@if($aContentArticles->isNotEmpty())
+						@foreach($aContentArticles as $oContentArticle)
+							<div class="col-sm-6">
+								<div class="row">
+									<div class="col-4 d-flex align-items-start  pr-0 pl-sm-3 pr-sm-3">
+										<img class="d-block w-100" src="{!! $oStorage->url($oContentArticle->main_multimedia) !!}" alt="{!! $oContentArticle->title !!}">
+									</div>
+									<div class="col-8 text-justify">
+										<a href="{!! url($oContentCategory->slug.'/'.$oContentArticle->slug) !!}" class="subtitulo text-default">{!! $oContentArticle->title !!}</a>
+										<p class="text-muted">{!! $oContentArticle->summary !!}</p>
+									</div>
+								</div>
+							</div>
+						@endforeach
+					@endif
+						
+					<div class="col-12">
+						<a href="{!! url($oContentCategory->slug) !!}" role="button" class="btn btn-info btn-sm float-right ">Ver más</a>
 					</div>
 				</div>
-				<div class="col-6">
-					<div class="row">
-						<div class="col-sm-3 d-flex align-items-center">
-							<img class="d-block w-100" src="https://picsum.photos/80/80" alt="Publicacion1">
-						</div>
-						<div class="col-sm-9">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. Donec facilisis enim gravida lectus pretium egestas. Aenean tempus lectus ut risus suscipit, tempus vestibulum</p>
-						</div>
-					</div>
-				</div>
-			<div class="col-12">
-				<button type="button" class="btn btn-info btn-sm float-right">Ver más</button>
 			</div>
-		</div>
-	<!-- END SECCION PUBLICACIONES -->	
+		<!-- END SECCION PUBLICACIONES -->	
+	@endif
 
 
 	<!-- BEGIN SECCION BIBLIOTECA E HISTORIAS -->
-		<div class="row mt-3 shadow p-3 mb-5 bg-white rounded ">
-			<div class="col-sm-6">
-				<div class="row no-gutters">
-					<div class="col-sm-5 align-self-start">
-						<img class="d-block w-100" src="https://picsum.photos/400/400" alt="Publicacion1">
+		<div class="container mb-5">
+			<div class="row pb-3 pt-3 shadow  bg-white rounded">
+					<div class="col-sm-6">
+						<div class="row no-gutters">
+							<div class="col-sm-5 align-self-start pr-0 pr-sm-3">
+								<img class="d-block w-100" src="https://via.placeholder.com/280x300" alt="Biblioteca Legal">
+							</div>
+							<div class="col-sm-7 pl-3">
+								<h1 class="titulo text-default text-uppercase mt-3 mt-sm-0">Biblioteca Legal</h1>
+								<p class="text-justify text-muted">Aquí puedes encontrar  las principales leyes, reglamentos y decretos que abordan temas y mecanismos de prevención y sanción a los actos de corrupción en Ecuador</p>
+								<a href="{!! url('biblioteca-legal') !!}" role="button" class="btn btn-info btn-sm float-right">Ver más</a>
+							</div>
+						</div>
 					</div>
-					<div class="col-sm-7 pl-3">
-						<h1 class="titulo text-info text-uppercase">Biblioteca Legal</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. Donec facilisis enim gravida lectus pretium egestas. Aenean tempus lectus ut risus suscipit, tempus vestibulum</p>
-						<button type="button" class="btn btn-info btn-sm float-right">Ver más</button>
+					<div class="col-sm-6">
+						<div class="row no-gutters bgvioleta mt-3 mt-sm-0" >
+							<div class="col-12">
+								<h4 class="pl-4 pr-4 pb-3 pt-3 text-white text-uppercase" style="font-size: 18px;line-height: 22px;text-align: justify;margin-bottom: 0px;">Conoce historias de éxito sobre la lucha contra la corrupción</h4>
+							</div>
+						</div>
+						<div class="row no-gutters border-left borazul">
+							<div class="col-sm-9 p-3">
+								<p class="text-justify text-muted">Entérate de experiencias exitosas a nivel mundial sobre la lucha contra la corrupción. </p>
+								<a href="{!! url('historias-de-exito') !!}" role="button" class="btn btn-success btn-sm float-right">Ver más</a>
+							</div>
+							<div class="col-sm-3 align-self-start">
+								<img class="d-block w-100" src="https://via.placeholder.com/280x300" alt="Historias de Exito">
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
-			<div class="col-sm-6">
-				<div class="row no-gutters bgvioleta mt-3 mt-sm-0" >
-					<div class="col-12">
-						<h4 class="p-3 text-white text-uppercase fz14">Conoce historias de éxito sobre la lucha contra la corrupción</h4>
-					</div>
-				</div>
-				<div class="row no-gutters border-left borazul">
-					<div class="col-sm-8 p-3">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. </p>
-						<button type="button" class="btn btn-success btn-sm float-right">Ver más</button>
-					</div>
-					<div class="col-sm-4 align-self-start">
-						<img class="d-block w-100" src="https://picsum.photos/400/400" alt="Publicacion1">
-					</div>
-				</div>
 			</div>
 		</div>
 	<!-- END SECCION BIBLIOTECA E HISTORIAS -->

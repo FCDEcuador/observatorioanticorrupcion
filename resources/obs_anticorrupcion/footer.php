@@ -14,9 +14,9 @@
       <div class="modal-body bg-light">
         <div class="container p-0">
         	<div class="row no-gutters">
-        		<div class="col-4 col-sm-2">
+        		<div class="col-6 col-sm-2">
         			<p class="text-center mb-0 fz40 text-info"><i class="fas fa-university"></i></p>
-        			<p class="text-default text-uppercase letter-spacing-1 text-center font-weight-bold mt-2 fz14">Institución</p>
+        			<p class="text-default text-uppercase letter-spacing-1 text-center font-weight-bold mt-2 fz14 mb-0 align-middle" style="height:40px;">Institución</p>
         			<div class="row no-gutters bg-white border p-1 mb-1 minh80 align-items-center">
         				<div class="col-4">
         					<img src="images/logo-contraloria.png" class="w-100" />
@@ -42,9 +42,9 @@
         				</div>
         			</div>
         		</div>
-        		<div class="col-4 col-sm-2">
+        		<div class="col-6 col-sm-2">
         			<p class="text-center mb-0 fz40 text-info"><i class="fas fa-map-marker-alt"></i></p>
-        			<p class="text-default text-uppercase letter-spacing-1 text-center font-weight-bold mt-2 fz14">Dirección</p>
+        			<p class="text-default text-uppercase letter-spacing-1 text-center font-weight-bold mt-2 fz14 mb-0 align-middle" style="height:40px;">Dirección</p>
         			<div class="row no-gutters bg-white border p-1 mb-1 minh80 align-items-center">
         				<div class="col-12 letter-spacing-1 fz12 text-center">
         					Quito:<br />
@@ -67,9 +67,9 @@
         				</div>
         			</div>
         		</div>
-        		<div class="col-4 col-sm-2">
+        		<div class="col-6 col-sm-2">
         			<p class="text-center mb-0 fz40 text-info"><i class="fas fa-phone"></i></p>
-        			<p class="text-default text-uppercase letter-spacing-1 text-center font-weight-bold mt-2 fz14">Teléfonos</p>
+        			<p class="text-default text-uppercase letter-spacing-1 text-center font-weight-bold mt-2 fz14 mb-0 align-middle" style="height:40px;">Teléfonos</p>
         			<div class="row no-gutters bg-white border p-1 mb-1 minh80 align-items-center">
         				<div class="col-12 text-uppercase letter-spacing-1 fz12 text-center">
         					3 987-100<br />
@@ -88,9 +88,9 @@
         				</div>
         			</div>
         		</div>
-        		<div class="col-4 col-sm-2">
+        		<div class="col-6 col-sm-2">
         			<p class="text-center mb-0 fz40 text-info"><i class="fas fa-globe"></i></p>
-        			<p class="text-default text-uppercase letter-spacing-1 text-center font-weight-bold mt-2 fz14">Web</p>
+        			<p class="text-default text-uppercase letter-spacing-1 text-center font-weight-bold mt-2 fz14 mb-0 align-middle" style="height:40px;">Web</p>
         			<div class="row no-gutters bg-white border p-1 mb-1 minh80 align-items-center">
         				<div class="col-12 text-uppercase letter-spacing-1 fz12 text-center">
         					<a href="https://servicios.contraloria.gob.ec:4443/CGE_Denuncias_WEB/WFDenuncia.aspx" target="_blank" role="button" class="btn btn-info btn-sm text-uppercase">Ir a la web</a>
@@ -107,9 +107,9 @@
         				</div>
         			</div>
         		</div>
-        		<div class="col-4 col-sm-2">
+        		<div class="col-6 col-sm-2">
         			<p class="text-center mb-0 fz40 text-info"><i class="far fa-envelope"></i></p>
-        			<p class="text-default text-uppercase letter-spacing-1 text-center font-weight-bold mt-2 fz14">Email</p>
+        			<p class="text-default text-uppercase letter-spacing-1 text-center font-weight-bold mt-2 fz14 mb-0 align-middle" style="height:40px;">Correos de contacto</p>
         			<div class="row no-gutters bg-white border p-1 mb-1 minh80 align-items-center">
         				<div class="col-12  letter-spacing-1 fz12 text-center">
         					DESPACHO CONTRALOR:<br />
@@ -130,9 +130,9 @@
         				</div>
         			</div>
         		</div>
-        		<div class="col-4 col-sm-2">
+        		<div class="col-6 col-sm-2">
         			<p class="text-center mb-0 fz40 text-info"><i class="fas fa-share-alt"></i></p>
-        			<p class="text-default text-uppercase letter-spacing-1 text-center font-weight-bold mt-2 fz14">Redes Sociales</p>
+        			<p class="text-default text-uppercase letter-spacing-1 text-center font-weight-bold mt-2 fz14 mb-0 align-middle" style="height:40px;">Redes Sociales</p>
         			<div class="row no-gutters bg-white border p-1 mb-1 minh80 align-items-center">
         				<div class="col-12 letter-spacing-1 fz12">
         					
@@ -141,7 +141,7 @@
         			<div class="row no-gutters bg-white border p-1 mb-1 minh80 align-items-center">
         				<div class="col-12 letter-spacing-1 fz12">
         					<a href="#" class="text-body"><i class="fab fa-twitter text-info"></i> @CPCCS</a><br />
-        					<a href="#"  onclick="javascript:window.open('https://twitter.com/intent/tweet?text=Saludos%20@CPCCS%20Me%20contacto%20con%20ustedes%20por%20el%20siguiente%20motivo%20vinculado%20a%20un%20caso%20de%20corrupci%C3%B3n.%20FCD_Ecuador%20webdelobservatorio.ec','popup',width=500,height=500);return false;" class="text-body"><i class="fab fa-twitter text-info"></i> Mandale un twit</a><br />
+        					<a href="#"  onclick="javascript:window.open('https://twitter.com/intent/tweet?text=Saludos%20@CPCCS%20Me%20contacto%20con%20ustedes%20por%20el%20siguiente%20motivo%20vinculado%20a%20un%20caso%20de%20corrupci%C3%B3n.%20FCD_Ecuador%20webdelobservatorio.ec','popup',width=500,height=500);return false;" class="text-body"><i class="fab fa-twitter text-info"></i> Mandale un tweet</a><br />
         					<a href="#" class="text-body"><i class="fab fa-facebook-f text-default"></i> ParticipaEcuador</a>
 							
         				</div>
@@ -149,7 +149,7 @@
         			<div class="row no-gutters bg-white border p-1 mb-1 minh80 align-items-center">
         				<div class="col-12 letter-spacing-1 fz12">
         					<a href="#" class="text-body"><i class="fab fa-twitter text-info"></i> @FiscaliaEcuador<br /></a>
-        					<a href="#"  onclick="javascript:window.open('https://twitter.com/intent/tweet?text=Saludos%20@FiscaliaEcuador%20Me%20contacto%20con%20ustedes%20por%20el%20siguiente%20motivo%20vinculado%20a%20un%20caso%20de%20corrupci%C3%B3n.%20FCD_Ecuador%20webdelobservatorio.ec','popup',width=500,height=500);return false;" class="text-body"><i class="fab fa-twitter text-info"></i> Mandale un twit</a><br />
+        					<a href="#"  onclick="javascript:window.open('https://twitter.com/intent/tweet?text=Saludos%20@FiscaliaEcuador%20Me%20contacto%20con%20ustedes%20por%20el%20siguiente%20motivo%20vinculado%20a%20un%20caso%20de%20corrupci%C3%B3n.%20FCD_Ecuador%20webdelobservatorio.ec','popup',width=500,height=500);return false;" class="text-body"><i class="fab fa-twitter text-info"></i> Mandale un tweet</a><br />
         					<a href="#" class="text-body"><i class="fab fa-facebook-f text-default"></i> FiscaliaGeneralDelEstado</a>
         				</div>
         			</div>
@@ -167,12 +167,12 @@
 <div class="container-fluid mt-4">
 	<div class="row bg-secondary text-white p-3">
 		<div class="col-sm-4 align-self-center d-flex justify-content-center">
-			<a href="" class="text-white"><span class="pr-3">Suscríbete a nuestro newsletter</span> <i class="far fa-envelope"></i> </a>
+			<a href="" class="text-white border pt-1 pb-1 pl-3 pr-3" style="background: rgba(255,255,255,0.4);border-radius: 5px;"><span class="pr-3">Suscríbete a nuestro newsletter</span> <i class="far fa-envelope"></i> </a>
 		</div>
 		<div class="col-sm-4 align-self-center d-flex justify-content-center mt-4 mt-sm-0">
-			<a href="https://www.facebook.com/ECSinCorrupcion/" class="text-white fz40"><span class="pr-3"><i class="fab fa-facebook-f"></i></span></a>
-			<a href="https://twitter.com/ECSinCorrupcion" class="text-white fz40"><span class="pr-3"><i class="fab fa-twitter"></i></span></a>
-			<a href="https://www.instagram.com/fcd_ecuador/?hl=es-la" class="text-white fz40"><span class="pr-3"><i class="fab fa-instagram"></i></span></a>
+			<a href="https://www.facebook.com/ECSinCorrupcion/" class="text-white fz24 border redes-ico mr-3"><span class=""><i class="fab fa-facebook-f"></i></span></a>
+			<a href="https://twitter.com/ECSinCorrupcion" class="text-white fz24 border redes-ico mr-3"><span class=""><i class="fab fa-twitter"></i></span></a>
+			<a href="https://www.instagram.com/fcd_ecuador/?hl=es-la" class="text-white fz24 border redes-ico"><span class=""><i class="fab fa-instagram"></i></span></a>
 		</div>
 		<div class="col-sm-4 align-self-center d-flex justify-content-center mt-4 mt-sm-0">
 			<div> Una iniciativa de: <a href=""><img src="images/fcd.png" class="pl-3" /></a></div>
@@ -190,7 +190,7 @@
 
 	<!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/jquery-3.3.1.slim.min.js"  crossorigin="anonymous"></script>    
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"  crossorigin="anonymous"></script>    
     <script src="js/popper.min.js"  crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js"  crossorigin="anonymous"></script>
     <script src="js/Chart.min.js"  crossorigin="anonymous"></script>

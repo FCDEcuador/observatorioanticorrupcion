@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Alsofronie\Uuid\UuidModelTrait;
 
 /**
-* Clase para administración de enlaces externos
+* Clase para administración de historias de exito
 * @Autor Raúl Chauvin
 * @FechaCreacion  2017/07/05
 * @Content

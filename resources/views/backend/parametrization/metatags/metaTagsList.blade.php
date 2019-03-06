@@ -79,21 +79,20 @@
                                                                     <span class="ladda-spinner"></span>
                                                                 </button>
                                                                 <div class="dropdown-menu animated flipInX">
-                                                                    @can('backend_delete_metatags')
-                                                                        {!! Form::open(['route' => ['backend.parametrization.meta-tags.delete', $oMetaTag->id], 'method' => 'DELETE', 'name' => 'deleteMetaTagForm_'.$oMetaTag->id, 'id' => 'deleteMetaTagForm_'.$oMetaTag->id]) !!}
-                                                                    @endcan
                                                                     @can('backend_edit_metatags')
-                                                                        <a class="btn btn-xs btn-info waves-effect waves-light text-white" href="{!! route('backend.parametrization.meta-tags.edit', [$oMetaTag->id]) !!}" style="width:90%;margin-left:8px;">
-                                                                            <span class="btn-label"><i class="mdi mdi-pencil"></i></span>
-                                                                            Editar Meta Tag
+                                                                        <a class="dropdown-item" href="{!! route('backend.parametrization.meta-tags.edit', [$oMetaTag->id]) !!}">
+                                                                            <small>
+                                                                                <i class="mdi mdi-pencil"></i> Editar Meta Tag
+                                                                            </small>
                                                                         </a>
-                                                                        <div class="dropdown-divider"></div>
                                                                     @endcan
                                                                     @can('backend_delete_metatags')
-                                                                        <button class="btn btn-xs btn-danger waves-effect waves-light text-white" type="button" onclick="javascript: confirmDelete('deleteMetaTagForm_{!! $oMetaTag->id !!}', 'deleteMetaTagBtn_{!! $oMetaTag->id !!}', 'BlaudCMS :: Meta Tags', 'Esta seguro que desea eliminar el meta tag {!! $oMetaTag->name !!}', '{!! route('backend.parametrization.meta-tags.list') !!}', true);" style="cursor:pointer;width:90%;margin:8px;">
-                                                                            <span class="btn-label"><i class="mdi mdi-delete"></i></span>
-                                                                            Eliminar Meta Tag
-                                                                        </button>
+                                                                        <a class="dropdown-item" onclick="javascript: confirmDelete('deleteMetaTagForm_{!! $oMetaTag->id !!}', 'deleteMetaTagBtn_{!! $oMetaTag->id !!}', 'BlaudCMS :: Meta Tags', 'Esta seguro que desea eliminar el meta tag {!! $oMetaTag->name !!}', '{!! route('backend.parametrization.meta-tags.list') !!}', true);" href="#">
+                                                                            <small>
+                                                                                <i class="mdi mdi-delete"></i> Eliminar Meta Tag
+                                                                            </small>
+                                                                        </a>
+                                                                        {!! Form::open(['route' => ['backend.parametrization.meta-tags.delete', $oMetaTag->id], 'method' => 'DELETE', 'name' => 'deleteMetaTagForm_'.$oMetaTag->id, 'id' => 'deleteMetaTagForm_'.$oMetaTag->id]) !!}
                                                                         {!! Form::close() !!}
                                                                     @endcan
                                                                 </div>

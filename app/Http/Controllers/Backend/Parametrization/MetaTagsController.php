@@ -15,7 +15,6 @@ use BlaudCMS\Http\Requests\Parametrization\MetaTagUpdateRequest;
 
 use Storage;
 
-use Flashy;
 use Auth;
 
 /**
@@ -76,8 +75,8 @@ class MetaTagsController extends Controller
         }
         $this->oConfiguration = $oConfiguration;
 
-        $this->sStorageDisk = config('app.env') == 'production' ? 's3' : 'local';
-        $this->oStorage = config('app.env') == 'production' ? Storage::disk('s3') : Storage::disk('local');
+        $this->sStorageDisk = 'public';
+        $this->oStorage = Storage::disk($this->sStorageDisk);
 
         // Colocamos el valor en la variable $this->activeMenu 
         // para saber que item del menu de navegacion debe pintarse
@@ -172,6 +171,11 @@ class MetaTagsController extends Controller
     public function store(MetaTagCreateRequest $request)
     {
 
+        if( ! $request->ajax() ){
+            $request->session()->flash('errorMsg', 'Unicamente se aceptan peticiones Ajax');
+            return back();
+        }
+
         $oMetaTag = new MetaTag;
         $oMetaTag->name = $request->name;
         $oMetaTag->type = $request->type;
@@ -179,17 +183,10 @@ class MetaTagsController extends Controller
         $oMetaTag->extra_attributes = $request->extra_attributes;
 
         if($oMetaTag->save()){
-            $request->session()->flash('successMsg', 'El meta tag '.$oMetaTag->name.' ha sido agregado exisotamente.');
-            if($request->ajax()){
-	        	return response()->json(['status' => true , 'message' => 'El meta tag '.$oMetaTag->name.' ha sido agregado exisotamente.',], 200);
-	        }
+            return response()->json(['status' => true , 'message' => 'El meta tag '.$oMetaTag->name.' ha sido agregado exisotamente.',], 200);
         }else{
-            if($request->ajax()){
-            	return response()->json(['status' => false , 'message' => 'El meta tag '.$oMetaTag->name.' no pudo ser agregado. Por favor intentelo nuevamente luego de unos minutos',], 200);
-            }
-            $request->session()->flash('errorMsg', 'El meta tag '.$oMetaTag->name.' no pudo ser agregado. Por favor intentelo nuevamente luego de unos minutos.');
+            return response()->json(['status' => false , 'message' => 'El meta tag '.$oMetaTag->name.' no pudo ser agregado. Por favor intentelo nuevamente luego de unos minutos',], 200);
         }
-        return redirect()->route('backend.parametrization.meta-tags.list');
     }
 
     /**

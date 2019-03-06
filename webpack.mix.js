@@ -13,99 +13,109 @@ let mix = require('laravel-mix');
 
 /******************************************************************************************
 
-	CUPONCITY BACKEND ASSETS
+	BLAUDCMS BACKEND ASSETS
 
 *******************************************************************************************/
 
 	// JS
 	
-	mix.minify('resources/assets/backend/js/chat.js')
-	   .minify('resources/assets/backend/js/custom.js')
-	   .minify('resources/assets/backend/js/dashboard1.js')
-	   .minify('resources/assets/backend/js/dashboard2.js')
-	   .minify('resources/assets/backend/js/dashboard3.js')
-	   .minify('resources/assets/backend/js/dashboard4.js')
-	   .minify('resources/assets/backend/js/flot-data.js')
-	   .minify('resources/assets/backend/js/footable-init.js')
-	   .minify('resources/assets/backend/js/jasny-bootstrap.js')
-	   .minify('resources/assets/backend/js/jquery.PrintArea.js')
-	   .minify('resources/assets/backend/js/jquery.slimscroll.js')
-	   .minify('resources/assets/backend/js/jsgrid-init.js')
-	   .minify('resources/assets/backend/js/mask.js')
-	   .minify('resources/assets/backend/js/morris-data.js')
-	   .minify('resources/assets/backend/js/sidebarmenu.js')
-	   .minify('resources/assets/backend/js/toastr.js')
-	   .minify('resources/assets/backend/js/ui-sweetalert.js')
-	   .minify('resources/assets/backend/js/validation.js')
-	   .minify('resources/assets/backend/js/validator.js')
-	   .minify('resources/assets/backend/js/waves.js')
-	   .minify('resources/assets/backend/js/widget-charts.js')
-	   .minify('resources/assets/backend/js/widget-data.js')
-	   .copy('resources/assets/backend/js/chat.min.js', 'public/backend/assets/js')
-	   .copy('resources/assets/backend/js/custom.min.js', 'public/backend/assets/js')
-	   .copy('resources/assets/backend/js/dashboard1.min.js', 'public/backend/assets/js')
-	   .copy('resources/assets/backend/js/dashboard2.min.js', 'public/backend/assets/js')
-	   .copy('resources/assets/backend/js/dashboard3.min.js', 'public/backend/assets/js')
-	   .copy('resources/assets/backend/js/dashboard4.min.js', 'public/backend/assets/js')
-	   .copy('resources/assets/backend/js/flot-data.min.js', 'public/backend/assets/js')
-	   .copy('resources/assets/backend/js/footable-init.min.js', 'public/backend/assets/js')
-	   .copy('resources/assets/backend/js/jasny-bootstrap.min.js', 'public/backend/assets/js')
-	   .copy('resources/assets/backend/js/jquery.PrintArea.min.js', 'public/backend/assets/js')
-	   .copy('resources/assets/backend/js/jquery.slimscroll.min.js', 'public/backend/assets/js')
-	   .copy('resources/assets/backend/js/jsgrid-init.min.js', 'public/backend/assets/js')
-	   .copy('resources/assets/backend/js/mask.min.js', 'public/backend/assets/js')
-	   .copy('resources/assets/backend/js/morris-data.min.js', 'public/backend/assets/js')
+	mix.copy('resources/assets/backend/js/chat.js', 'public/backend/assets/js')
+	   .copy('resources/assets/backend/js/custom.js', 'public/backend/assets/js')
+	   .copy('resources/assets/backend/js/dashboard1.js', 'public/backend/assets/js')
+	   .copy('resources/assets/backend/js/dashboard2.js', 'public/backend/assets/js')
+	   .copy('resources/assets/backend/js/dashboard3.js', 'public/backend/assets/js')
+	   .copy('resources/assets/backend/js/dashboard4.js', 'public/backend/assets/js')
+	   .copy('resources/assets/backend/js/flot-data.js', 'public/backend/assets/js')
+	   .copy('resources/assets/backend/js/footable-init.js', 'public/backend/assets/js')
+	   .copy('resources/assets/backend/js/jasny-bootstrap.js', 'public/backend/assets/js')
+	   .copy('resources/assets/backend/js/jquery.PrintArea.js', 'public/backend/assets/js')
+	   .copy('resources/assets/backend/js/jquery.slimscroll.js', 'public/backend/assets/js')
+	   .copy('resources/assets/backend/js/jsgrid-init.js', 'public/backend/assets/js')
+	   .copy('resources/assets/backend/js/mask.js', 'public/backend/assets/js')
+	   .copy('resources/assets/backend/js/morris-data.js', 'public/backend/assets/js')
 	   .copy('resources/assets/backend/js/perfect-scrollbar.jquery.min.js', 'public/backend/assets/js')
-	   .copy('resources/assets/backend/js/sidebarmenu.min.js', 'public/backend/assets/js')
-	   .copy('resources/assets/backend/js/toastr.min.js', 'public/backend/assets/js')
-	   .copy('resources/assets/backend/js/ui-sweetalert.min.js', 'public/backend/assets/js')
-	   .copy('resources/assets/backend/js/validation.min.js', 'public/backend/assets/js')
-	   .copy('resources/assets/backend/js/validator.min.js', 'public/backend/assets/js')
-	   .copy('resources/assets/backend/js/waves.min.js', 'public/backend/assets/js')
-	   .copy('resources/assets/backend/js/widget-charts.min.js', 'public/backend/assets/js')
-	   .copy('resources/assets/backend/js/widget-data.min.js', 'public/backend/assets/js')
+	   .copy('resources/assets/backend/js/sidebarmenu.js', 'public/backend/assets/js')
+	   .copy('resources/assets/backend/js/toastr.js', 'public/backend/assets/js')
+	   .copy('resources/assets/backend/js/ui-sweetalert.js', 'public/backend/assets/js')
+	   .copy('resources/assets/backend/js/validation.js', 'public/backend/assets/js')
+	   .copy('resources/assets/backend/js/validator.js', 'public/backend/assets/js')
+	   .copy('resources/assets/backend/js/waves.js', 'public/backend/assets/js')
+	   .copy('resources/assets/backend/js/widget-charts.js', 'public/backend/assets/js')
+	   .copy('resources/assets/backend/js/widget-data.js', 'public/backend/assets/js')
+	   .minify('public/backend/assets/js/chat.js')
+	   .minify('public/backend/assets/js/custom.js')
+	   .minify('public/backend/assets/js/dashboard1.js')
+	   .minify('public/backend/assets/js/dashboard2.js')
+	   .minify('public/backend/assets/js/dashboard3.js')
+	   .minify('public/backend/assets/js/dashboard4.js')
+	   .minify('public/backend/assets/js/flot-data.js')
+	   .minify('public/backend/assets/js/footable-init.js')
+	   .minify('public/backend/assets/js/jasny-bootstrap.js')
+	   .minify('public/backend/assets/js/jquery.PrintArea.js')
+	   .minify('public/backend/assets/js/jquery.slimscroll.js')
+	   .minify('public/backend/assets/js/jsgrid-init.js')
+	   .minify('public/backend/assets/js/mask.js')
+	   .minify('public/backend/assets/js/morris-data.js')
+	   .minify('public/backend/assets/js/sidebarmenu.js')
+	   .minify('public/backend/assets/js/toastr.js')
+	   .minify('public/backend/assets/js/ui-sweetalert.js')
+	   .minify('public/backend/assets/js/validation.js')
+	   .minify('public/backend/assets/js/validator.js')
+	   .minify('public/backend/assets/js/waves.js')
+	   .minify('public/backend/assets/js/widget-charts.js')
+	   .minify('public/backend/assets/js/widget-data.js')
+	   
 
 	   // PAGES
 	   		// Meta Tags
-			   	.minify('resources/assets/backend/js/pages/meta-tags-list.js')
-			   	.copy('resources/assets/backend/js/pages/meta-tags-list.min.js', 'public/backend/assets/js/pages')
+			   	.copy('resources/assets/backend/js/pages/meta-tags-list.js', 'public/backend/assets/js/pages')
+			   	.minify('public/backend/assets/js/pages/meta-tags-list.js')
 		   // Roles
-			   	.minify('resources/assets/backend/js/pages/roles-list.js')
-			   	.copy('resources/assets/backend/js/pages/roles-list.min.js', 'public/backend/assets/js/pages')
+			   	.copy('resources/assets/backend/js/pages/roles-list.js', 'public/backend/assets/js/pages')
+			   	.minify('public/backend/assets/js/pages/roles-list.js')
 			// Usuarios
-			   	.minify('resources/assets/backend/js/pages/users-list.js')
-			   	.copy('resources/assets/backend/js/pages/users-list.min.js', 'public/backend/assets/js/pages')
+			   	.copy('resources/assets/backend/js/pages/users-list.js', 'public/backend/assets/js/pages')
+			   	.minify('public/backend/assets/js/pages/users-list.js')
 	   // FORM VALIDATE
 	   		// Login
-			   	.minify('resources/assets/backend/js/form-validation/form-validation-login.js')
-			   	.copy('resources/assets/backend/js/form-validation/form-validation-login.min.js', 'public/backend/assets/js/form-validate')
+			   	.copy('resources/assets/backend/js/form-validation/form-validation-login.js', 'public/backend/assets/js/form-validate')
+			   	.minify('public/backend/assets/js/form-validate/form-validation-login.js')
 			// Profile
-			   	.minify('resources/assets/backend/js/form-validation/form-validation-profile.js')
-			   	.copy('resources/assets/backend/js/form-validation/form-validation-profile.min.js', 'public/backend/assets/js/form-validate')
+			   	.copy('resources/assets/backend/js/form-validation/form-validation-profile.js', 'public/backend/assets/js/form-validate')
+			   	.minify('public/backend/assets/js/form-validate/form-validation-profile.js')
 			// Config
-			   	.minify('resources/assets/backend/js/form-validation/form-validation-config.js')
-			   	.copy('resources/assets/backend/js/form-validation/form-validation-config.min.js', 'public/backend/assets/js/form-validate')
+			   	.copy('resources/assets/backend/js/form-validation/form-validation-config.js', 'public/backend/assets/js/form-validate')
+			   	.minify('public/backend/assets/js/form-validate/form-validation-config.js')
 			// Meta Tags
-			   	.minify('resources/assets/backend/js/form-validation/form-validation-meta-tag.js')
-			   	.copy('resources/assets/backend/js/form-validation/form-validation-meta-tag.min.js', 'public/backend/assets/js/form-validate')
+			   	.copy('resources/assets/backend/js/form-validation/form-validation-meta-tag.js', 'public/backend/assets/js/form-validate')
+			   	.minify('public/backend/assets/js/form-validate/form-validation-meta-tag.js')
+			// Provincias
+			   	.copy('resources/assets/backend/js/form-validation/form-validation-province.js', 'public/backend/assets/js/form-validate')
+			   	.minify('public/backend/assets/js/form-validate/form-validation-province.js')
 			// Roles
-			   	.minify('resources/assets/backend/js/form-validation/form-validation-roles.js')
-			   	.copy('resources/assets/backend/js/form-validation/form-validation-roles.min.js', 'public/backend/assets/js/form-validate')
+			   	.copy('resources/assets/backend/js/form-validation/form-validation-roles.js', 'public/backend/assets/js/form-validate')
+			   	.minify('public/backend/assets/js/form-validate/form-validation-roles.js')
 			// Usuarios
-			   	.minify('resources/assets/backend/js/form-validation/form-validation-users.js')
-			   	.copy('resources/assets/backend/js/form-validation/form-validation-users.min.js', 'public/backend/assets/js/form-validate')
+			   	.copy('resources/assets/backend/js/form-validation/form-validation-users.js', 'public/backend/assets/js/form-validate')
+			   	.minify('public/backend/assets/js/form-validate/form-validation-users.js')
 			// Casos de Corrupcion
-				.minify('resources/assets/backend/js/form-validation/form-validation-corruption-case.js')
-			   	.copy('resources/assets/backend/js/form-validation/form-validation-corruption-case.min.js', 'public/backend/assets/js/form-validate')
+			   	.copy('resources/assets/backend/js/form-validation/form-validation-corruption-case.js', 'public/backend/assets/js/form-validate')
+			   	.minify('public/backend/assets/js/form-validate/form-validation-corruption-case.js')
+			// Historias de Exito
+			   	.copy('resources/assets/backend/js/form-validation/form-validation-success-story.js', 'public/backend/assets/js/form-validate')
+			   	.minify('public/backend/assets/js/form-validate/form-validation-success-story.js')
+			// Biblioteca Legal
+			   	.copy('resources/assets/backend/js/form-validation/form-validation-legal-library.js', 'public/backend/assets/js/form-validate')
+			   	.minify('public/backend/assets/js/form-validate/form-validation-legal-library.js')
 			// Categorias de Contenido
-				.minify('resources/assets/backend/js/form-validation/form-validation-content-category.js')
-			   	.copy('resources/assets/backend/js/form-validation/form-validation-content-category.min.js', 'public/backend/assets/js/form-validate')
+			   	.copy('resources/assets/backend/js/form-validation/form-validation-content-category.js', 'public/backend/assets/js/form-validate')
+			   	.minify('public/backend/assets/js/form-validate/form-validation-content-category.js')
 			// Articulos de Contenido
-				.minify('resources/assets/backend/js/form-validation/form-validation-content-articles.js')
-			   	.copy('resources/assets/backend/js/form-validation/form-validation-content-articles.min.js', 'public/backend/assets/js/form-validate')
+			   	.copy('resources/assets/backend/js/form-validation/form-validation-content-articles.js', 'public/backend/assets/js/form-validate')
+			   	.minify('public/backend/assets/js/form-validate/form-validation-content-articles.js')
 			// Items de Menu
-				.minify('resources/assets/backend/js/form-validation/form-validation-menu-item.js')
-			   	.copy('resources/assets/backend/js/form-validation/form-validation-menu-item.min.js', 'public/backend/assets/js/form-validate');
+			   	.copy('resources/assets/backend/js/form-validation/form-validation-menu-item.js', 'public/backend/assets/js/form-validate')
+			   	.minify('public/backend/assets/js/form-validate/form-validation-menu-item.js');
 
 	// SASS
 
@@ -162,7 +172,7 @@ let mix = require('laravel-mix');
 
 /******************************************************************************************
 
-	CUPONCITY FRONTEND ASSETS
+	BLAUD FRONTEND ASSETS
 
 *******************************************************************************************/
 

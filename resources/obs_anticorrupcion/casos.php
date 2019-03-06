@@ -41,7 +41,7 @@
 			<div class="row no-gutters">
 				<div class="col-6 col-sm-4 mt-3">
 					<div class="shadow m-2 bg-white rounded">
-						<img class="d-block w-100" src="https://picsum.photos/280/300?auto=yes&bg=666&fg=444&text=1" alt="Publicacion1">
+						<img class="d-block w-100" src="https://via.placeholder.com/280x300" alt="Publicacion1">
 						<div class="cont-text p-1">
 							<h6 class="text-center mt-3"><a class="morado" href="#" data-toggle="modal" data-target="#casos-resumen">Lipsum sjfn lsasd skad</a></h6>
 						</div>
@@ -49,7 +49,7 @@
 				</div>
 				<div class="col-6 col-sm-4 mt-3">
 					<div class="shadow m-2 bg-white rounded">
-						<img class="d-block w-100" src="https://picsum.photos/280/300?auto=yes&bg=666&fg=444&text=2" alt="Publicacion1">
+						<img class="d-block w-100" src="https://via.placeholder.com/280x300" alt="Publicacion1">
 						<div class="cont-text p-1">
 							<h6 class="text-center mt-3"><a class="morado" href="#" data-toggle="modal" data-target="#casos-resumen">Lipsum sjfn lsasd skad</a></h6>
 						</div>
@@ -57,7 +57,7 @@
 				</div>
 				<div class="col-6 col-sm-4 mt-3">
 					<div class="shadow m-2 bg-white rounded">
-						<img class="d-block w-100" src="https://picsum.photos/280/300?auto=yes&bg=666&fg=444&text=3" alt="Publicacion1">
+						<img class="d-block w-100" src="https://via.placeholder.com/280x300" alt="Publicacion1">
 						<div class="cont-text p-1">
 							<h6 class="text-center mt-3"><a class="morado" href="#" data-toggle="modal" data-target="#casos-resumen">Lipsum sjfn lsasd skad</a></h6>
 						</div>
@@ -65,7 +65,7 @@
 				</div>
 				<div class="col-6 col-sm-4 mt-3">
 					<div class="shadow m-2 bg-white rounded">
-						<img class="d-block w-100" src="https://picsum.photos/280/300?auto=yes&bg=666&fg=444&text=4" alt="Publicacion1">
+						<img class="d-block w-100" src="https://via.placeholder.com/280x300" alt="Publicacion1">
 						<div class="cont-text p-1">
 							<h6 class="text-center mt-3"><a class="morado" href="#" data-toggle="modal" data-target="#casos-resumen">Lipsum sjfn lsasd skad</a></h6>
 						</div>
@@ -73,7 +73,7 @@
 				</div>
 				<div class="col-6 col-sm-4 mt-3">
 					<div class="shadow m-2 bg-white rounded">
-						<img class="d-block w-100" src="https://picsum.photos/280/300?auto=yes&bg=666&fg=444&text=5" alt="Publicacion1">
+						<img class="d-block w-100" src="https://via.placeholder.com/280x300" alt="Publicacion1">
 						<div class="cont-text p-1">
 							<h6 class="text-center mt-3"><a class="morado" href="#" data-toggle="modal" data-target="#casos-resumen">Lipsum sjfn lsasd skad</a></h6>
 						</div>
@@ -81,7 +81,7 @@
 				</div>
 				<div class="col-6 col-sm-4 mt-3">
 					<div class="shadow m-2 bg-white rounded">
-						<img class="d-block w-100" src="https://picsum.photos/280/300?auto=yes&bg=666&fg=444&text=6" alt="Publicacion1">
+						<img class="d-block w-100" src="https://via.placeholder.com/280x300" alt="Publicacion1">
 						<div class="cont-text p-1">
 							<h6 class="text-center mt-3"><a class="morado" href="#" data-toggle="modal" data-target="#casos-resumen">Lipsum sjfn lsasd skad</a></h6>
 						</div>
@@ -135,20 +135,20 @@
         <div class="container-fluid p-0 bg-light">
     		<div class="row no-gutters">
     			<div class="col-sm-5 d-none d-sm-block">
-    				<img class="d-block w-100 h-100" src="https://picsum.photos/400/420?auto=yes&bg=666&fg=444&text=6" alt="Publicacion1">
+    				<img class="d-block w-100 h-100" src="https://via.placeholder.com/280x300" alt="Publicacion1">
     			</div>
     			<div class="col-sm-7 p-3">
     				<div class="row">
 						<div class="col-12">
-							<h6 class="text-default mb-2">ÚLTIMAS HISTORIAS</h6>
-							<p class="pb-0 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar.</p>
+							<h6 class="text-default mb-3 text-center text-uppercase">Breve descripción del caso</h6>
+							<p class="pb-0 mb-0 text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar.</p>
 						</div>
 					</div>
 					<hr class="border-success">
 					<div class="row">
 						<div class="col-6">
 							<div class="row">
-								<div class="col-sm-2 fz20 mb-1 mb-sm-0 mt-1 mb-sm-0">
+								<div class="col-sm-2 fz20 mb-1 mb-sm-0 mt-1 mb-sm-0 pt-3 pb-2">
 									<i class="fas fa-sync-alt"></i>
 								</div>
 								<div class="col-sm-10 p-1">
@@ -159,7 +159,7 @@
 										<p class="text-uppercase pb-1 mb-0 text-default font-weight-bold letter-spacing-1">Sobrestimiento</p>
 									</div>
 								</div>
-								<div class="col-sm-2 fz20 mb-1 mb-sm-0 mt-1 mb-sm-0">
+								<div class="col-sm-2 fz20 mb-1 mb-sm-0 mt-1 mb-sm-0 pt-3 pb-2">
 									<i class="fas fa-users"></i>
 								</div>
 								<div class="col-sm-10 p-1">
@@ -168,7 +168,7 @@
 										<p class="text-uppercase pb-1 mb-0 text-default font-weight-bold letter-spacing-1">3 personas</p>
 									</div>
 								</div>
-								<div class="col-sm-2 fz20 mb-1 mb-sm-0 mt-1 mb-sm-0">
+								<div class="col-sm-2 fz20 mb-1 mb-sm-0 mt-1 mb-sm-0 pt-3 pb-2">
 									<i class="far fa-calendar-alt"></i>
 								</div>
 								<div class="col-sm-10 p-1">
@@ -181,7 +181,7 @@
 						</div>
 						<div class="col-6">
 							<div class="row">
-								<div class="col-sm-2 fz20 mb-1 mb-sm-0 mt-1 mb-sm-0">
+								<div class="col-sm-2 fz20 mb-1 mb-sm-0 mt-1 mb-sm-0 pt-3 pb-2">
 									<i class="fas fa-university"></i>
 								</div>
 								<div class="col-sm-10 p-1">
@@ -190,28 +190,31 @@
 										<p class="text-uppercase pb-1 mb-0 text-default font-weight-bold letter-spacing-1">Función legislativa</p>
 									</div>
 								</div>
-								<div class="col-sm-2 fz20 mb-1 mb-sm-0 mt-1 mb-sm-0">
+								<div class="col-sm-2 fz20 mb-1 mb-sm-0 mt-1 mb-sm-0 pt-3 pb-2">
 									<i class="fas fa-landmark"></i>
 								</div>
 								<div class="col-sm-10 p-1">
 									<div class="bg-white mb-1 p-2 p-sm-2" > 
 										<small class="display-block border-bottom border-secondary text-uppercase">Instituciones Vinvuladas</small>
-										<p class="text-uppercase pb-1 mb-0 text-default font-weight-bold letter-spacing-1">Congreso Nacional</p>
+										<select class="form-control form-control-sm text-uppercase pb-1 mb-0 border-0 text-default font-weight-bold">
+										  <option>Contraloría General del Estado</option>
+										  <option>SRI</option>
+										</select>
 									</div>
 								</div>
-								<div class="col-sm-2 fz20 mb-1 mb-sm-0 mt-1 mb-sm-0">
+								<div class="col-sm-2 fz20 mb-1 mb-sm-0 mt-1 mb-sm-0 pt-3 pb-2">
 									<i class="fas fa-user"></i>
 								</div>
 								<div class="col-sm-10 p-1">
 									<div class="bg-white mb-1 p-2 p-sm-2" > 
 										<small class="display-block border-bottom border-secondary text-uppercase">Funcionarios involucrados</small>
-										<select class="form-control form-control-sm text-uppercase pb-1 mb-0 border-0">
+										<select class="form-control form-control-sm text-uppercase pb-1 mb-0 border-0 text-default font-weight-bold">
 										  <option>Fabián Alarcón</option>
 										  <option>Juan Perez</option>
 										</select>
 									</div>
 								</div>
-								<div class="col-sm-2 fz20 mb-1 mb-sm-0 mt-1 mb-sm-0">
+								<div class="col-sm-2 fz20 mb-1 mb-sm-0 mt-1 mb-sm-0 pt-3 pb-2">
 									<i class="fas fa-map-marker-alt"></i>
 								</div>
 								<div class="col-sm-10 p-1">
@@ -221,12 +224,12 @@
 									</div>
 								</div>
 							</div>
+							<div class="col-sm-2 fz20 mb-1 mb-sm-0 mt-1 mb-sm-0">
+								<div class="align-self-center d-flex justify-content-center mt-2">
+							  		<a href="#" role="button" class="btn btn-info btn-sm">¿Quieres conocer más?</a>
+							  	</div>
+							</div>
 						</div>
-					</div>
-					<div class="col-sm-2 fz20 mb-1 mb-sm-0 mt-1 mb-sm-0">
-						<div class="align-self-center d-flex justify-content-center mt-2">
-					  		<a href="#" role="button" class="btn btn-info btn-sm">¿Quieres conocer más?</a>
-					  	</div>
 					</div>
     			</div>
     		</div>

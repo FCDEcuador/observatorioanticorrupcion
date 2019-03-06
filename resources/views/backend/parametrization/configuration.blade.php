@@ -1,7 +1,7 @@
 @extends('backend.layouts.backend-layout')
 
 @section('custom-css')
-    
+    {!! Html::style('public/backend/assets/plugins/dropify/dist/css/dropify.min.css') !!}
 @endsection
 
 @section('title')
@@ -58,7 +58,7 @@
                         @endif
 
                         <!-- Formulario de usuarios -->
-                        {!! Form::model($oConfiguration, ['route' => ['backend.parametrization.configuration.save'], 'method' => 'PUT', 'class' => 'form p-t-20', 'name' => 'configForm', 'id' => 'configForm']) !!}
+                        {!! Form::model($oConfiguration, ['route' => ['backend.parametrization.configuration.save'], 'method' => 'PUT', 'class' => 'form p-t-20', 'name' => 'configForm', 'id' => 'configForm', 'files' => true]) !!}
 
                             <div class="form-group">
                                 <label for="title_website"><strong>Titulo del Web Site</strong></label>
@@ -180,6 +180,39 @@
                                 </div>
                             </div>
 
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="backend_logo">
+                                            <strong>Logo para Backend : </strong><br />
+                                            <small>Por favor seleccione el logo que se colocará en el backend de este sitio. Unicamente archivos de imagen (PNG, JPG, JPEG, GIF).</small>
+                                        </label>
+                                        @php
+                                            $dataDefaultFile = '';
+                                            if($oConfiguration->backend_logo){
+                                                $dataDefaultFile = asset($oStorage->url($oConfiguration->backend_logo));
+                                            }
+                                        @endphp
+                                        {!! Form::file('backend_logo', ['id' => 'backend_logo', 'class' => 'dropify', 'data-max-file-size' => '1M', 'data-show-errors' => 'true', 'data-default-file' => $dataDefaultFile ]) !!}
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="frontend_logo">
+                                            <strong>Logo para Frontend : </strong><br />
+                                            <small>Por favor seleccione el logo que se colocará en el frontend de este sitio. Unicamente archivos de imagen (PNG, JPG, JPEG, GIF).</small>
+                                        </label>
+                                        @php
+                                            $dataDefaultFile = '';
+                                            if($oConfiguration->frontend_logo){
+                                                $dataDefaultFile = asset($oStorage->url($oConfiguration->frontend_logo));
+                                            }
+                                        @endphp
+                                        {!! Form::file('frontend_logo', ['id' => 'frontend_logo', 'class' => 'dropify', 'data-max-file-size' => '1M', 'data-show-errors' => 'true', 'data-default-file' => $dataDefaultFile ]) !!}
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="form-group">
                                 <label for="google_analytics_script">
                                     <strong>
@@ -207,6 +240,7 @@
                                 {!! Form::textarea('another_mark_bottom_script', null, ['id' => 'another_mark_bottom_script', 'placeholder' => 'Pegue aqui el script que se deba colocar en el pie del sitio proporcionado por su proveedor', 'class' => 'form-control']) !!}
                             </div>
 
+                            <!--
                             <div class="form-group">
                                 <label for="advertising_top_script">
                                     <strong>
@@ -233,6 +267,8 @@
                                 </label>
                                 {!! Form::textarea('advertising_bottom_script', null, ['id' => 'advertising_bottom_script', 'placeholder' => 'Coloque aqui las posiciones de publicidad que se van a configurar en el sitio.', 'class' => 'form-control']) !!}
                             </div>
+
+                            -->
 
                             <div class="form-group">
                                 <label for="add_this_script">
@@ -261,6 +297,7 @@
                                 {!! Form::textarea('contact_emails', null, ['id' => 'contact_emails', 'placeholder' => 'Coloque aqui la o las direcciones de email para el envio de los datos del formulario de contacto. Si es mas de una por favor ingreselas separadas por una coma (,): Ej: contacto_1@dominio.com, contacto_2@dominio.com', 'class' => 'form-control']) !!}
                             </div>
 
+                            <!--
                             <div class="form-group">
                                 <label for="sales_emails">
                                     <strong>
@@ -269,6 +306,7 @@
                                 </label>
                                 {!! Form::textarea('sales_emails', null, ['id' => 'sales_emails', 'placeholder' => 'Coloque aqui la o las direcciones de email para el envio de los datos de formularios de consulta de usuarios acerca de productos del e-commerce. Si es mas de una por favor ingreselas separadas por una coma (,): Ej: ventas_1@dominio.com, ventas_2@dominio.com', 'class' => 'form-control']) !!}
                             </div>
+                            -->
 
                             <div class="text-xs-right">
                                 <button type="submit" class="btn btn-outline-info ladda-button" data-style="zoom-out" name="configBtn" id="configBtn">
@@ -294,5 +332,6 @@
     {!! Html::script('public/backend/assets/plugins/jquery-validation/js/additional-methods.min.js', ['type' => 'text/javascript']) !!}
     {!! Html::script('public/backend/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js', ['type' => 'text/javascript']) !!}
     {!! Html::script('public/backend/assets/plugins/jquery.blockui.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('public/backend/assets/plugins/dropify/dist/js/dropify.min.js', ['type' => 'text/javascript']) !!}
     {!! Html::script('public/backend/assets/js/form-validate/form-validation-config.min.js', ['type' => 'text/javascript']) !!}
 @endsection

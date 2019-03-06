@@ -243,9 +243,9 @@ class ContentCategory extends Model
         if($aContentCategories->isNotEmpty()){
             foreach($aContentCategories as $oContentCategory){
                 if($selectedItemId == $oContentCategory->id){
-                    $selectItems .= '<option selected="selected" value="/contenido/'.$oContentCategory->slug.'">'.$sSpacesString.$oContentCategory->name.'</option>';
+                    $selectItems .= '<option selected="selected" value="'.$oContentCategory->slug.'">'.$sSpacesString.$oContentCategory->name.'</option>';
                 }else{
-                    $selectItems .= '<option value="/contenido/'.$oContentCategory->slug.'">'.$sSpacesString.$oContentCategory->name.'</option>';
+                    $selectItems .= '<option value="'.$oContentCategory->slug.'">'.$sSpacesString.$oContentCategory->name.'</option>';
                 }
                 $subCategories = ContentCategory::subCategories($oContentCategory->id)->count();
                 if($subCategories){

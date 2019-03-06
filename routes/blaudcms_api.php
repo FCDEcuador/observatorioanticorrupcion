@@ -26,6 +26,7 @@ Route::group(['prefix' => '/v1'], function(){
 	*********************************************************/
 	route::group(['prefix' => '/catalogues'], function(){
 		
+		
 		// Ruta que devuelve todos los catalogos del sistema
 		/* /api/v1/catalogues/list  */
 		Route::get('/list', 'Api\CataloguesController@index')->name('api.v1.catalogues.list');

@@ -76,8 +76,8 @@ class ConfigurationsController extends Controller
         }
         $this->oConfiguration = $oConfiguration;
 
-        $this->sStorageDisk = config('app.env') == 'production' ? 's3' : 'local';
-        $this->oStorage = config('app.env') == 'production' ? Storage::disk('s3') : Storage::disk('local');
+        $this->sStorageDisk = config('app.env') == 'production' ? 'public' : 'public';
+        $this->oStorage = config('app.env') == 'production' ? Storage::disk('public') : Storage::disk('public');
 
         // Colocamos el valor en la variable $this->activeMenu 
         // para saber que item del menu de navegacion debe pintarse
@@ -132,7 +132,13 @@ class ConfigurationsController extends Controller
      * @param  \BlaudCMS\Http\Requests\Parametrization\ConfigUpdateRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function update(ConfigUpdateRequest $request){
+    public function update(ConfigUpdateRequest $request)
+    {
+
+        if( ! $request->ajax() ){
+            $request->session()->flash('errorMsg', 'Unicamente se aceptan peticiones Ajax');
+            return back();
+        }
         
         $this->oConfiguration->title_website = $request->title_website;
         $this->oConfiguration->facebook_account = $request->facebook_account;
@@ -155,18 +161,32 @@ class ConfigurationsController extends Controller
         $this->oConfiguration->sales_emails = $request->sales_emails;
         $this->oConfiguration->admin_email = $request->admin_email;
 
-        if($this->oConfiguration->save()){
-            $request->session()->flash('successMsg', 'Los parametros han sido actualizados exitosamente.');
-            if($request->ajax()){
-                return response()->json(['status' => true , 'message' => 'Los parametros han sido actualizados exitosamente.',], 200);
-            }
-        }else{
-            if($request->ajax()){
-                return response()->json(['status' => false , 'message' => 'Los parametros no pudieron ser actualizados. Por favor intentelo nuevamente luego de unos minutos.',], 200);
-            }
-            $request->session()->flash('successMsg', 'Los parametros no pudieron ser actualizados. Por favor intentelo nuevamente luego de unos minutos.');
+        $oldBackendLogo = $this->oConfiguration->backend_logo;
+        if($request->hasFile('backend_logo')){
+            $mainImage = $request->file('backend_logo');
+            $name = $mainImage->getClientOriginalName();
+            $path = $mainImage->storePubliclyAs('config',$name, ['disk' => $this->sStorageDisk]);
+            $this->oConfiguration->backend_logo = $path;
         }
 
-        return redirect()->route('backend.parametrization.configuration');
+        $oldFrontendLogo = $this->oConfiguration->frontend_logo;
+        if($request->hasFile('frontend_logo')){
+            $mainImage = $request->file('frontend_logo');
+            $name = $mainImage->getClientOriginalName();
+            $path = $mainImage->storePubliclyAs('config',$name, ['disk' => $this->sStorageDisk]);
+            $this->oConfiguration->frontend_logo = $path;
+        }
+
+        if($this->oConfiguration->save()){
+            if($oldBackendLogo != $this->oConfiguration->backend_logo && $oldBackendLogo != ''){
+                $this->oStorage->delete($oldBackendLogo);
+            }
+            if($oldFrontendLogo != $this->oConfiguration->frontend_logo && $oldFrontendLogo != ''){
+                $this->oStorage->delete($oldFrontendLogo);
+            }
+            return response()->json(['status' => true , 'message' => 'Los parametros han sido actualizados exitosamente.',], 200);
+        }else{
+            return response()->json(['status' => false , 'message' => 'Los parametros no pudieron ser actualizados. Por favor intentelo nuevamente luego de unos minutos.',], 200);
+        }
     }
 }

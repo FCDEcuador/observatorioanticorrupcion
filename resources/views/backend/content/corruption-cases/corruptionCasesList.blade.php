@@ -92,7 +92,7 @@
                                                                         <div class="dropdown-divider"></div>
                                                                     @endcan
                                                                     @can('backend_delete_corruptioncases')
-                                                                        <button class="btn btn-xs btn-danger waves-effect waves-light text-white" type="button" onclick="javascript: confirmDelete('deleteCorruptionCaseForm_{!! $oCorruptionCase->id !!}', 'deleteCorruptionCaseBtn_{!! $oCorruptionCase->id !!}', 'BlaudCMS :: Casos de Corrupción', 'Esta seguro que desea eliminar el caso de corrupción {!! $oCorruptionCase->title !!}', '{!! route('backend.content.corruption-case.list') !!}', true);" style="cursor:pointer;width:90%;margin:8px;">
+                                                                        <button class="btn btn-xs btn-danger waves-effect waves-light text-white" type="button" onclick="javascript: confirmDelete('deleteCorruptionCaseForm_{!! $oCorruptionCase->id !!}', 'deleteCorruptionCaseBtn_{!! $oCorruptionCase->id !!}', 'BlaudCMS :: Casos de Corrupción', 'Esta seguro que desea eliminar el caso de corrupción {!! $oCorruptionCase->title !!}', '{!! route('backend.content.corruption-cases.list') !!}', true);" style="cursor:pointer;width:90%;margin:8px;">
                                                                             <span class="btn-label"><i class="mdi mdi-delete"></i></span>
                                                                             Eliminar Caso de Corrupción
                                                                         </button>

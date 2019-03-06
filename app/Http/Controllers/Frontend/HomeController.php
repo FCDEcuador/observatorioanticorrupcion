@@ -7,6 +7,20 @@ use BlaudCMS\Http\Controllers\Controller;
 
 use BlaudCMS\Message;
 use BlaudCMS\Configuration;
+use BlaudCMS\Menu;
+use BlaudCMS\MenuItem;
+use BlaudCMS\Catalogue;
+use BlaudCMS\ContentCategory;
+use BlaudCMS\ContentArticle;
+use BlaudCMS\CorruptionCase;
+use BlaudCMS\LegalLibrary;
+use BlaudCMS\MetaTag;
+use BlaudCMS\SuccessStory;
+
+use SEOMeta;
+use OpenGraph;
+use Twitter;
+use SEO;
 
 use Storage;
 use Auth;
@@ -56,8 +70,8 @@ class HomeController extends Controller
         }
         $this->oConfiguration = $oConfiguration;
 
-        $this->sStorageDisk = config('app.env') == 'production' ? 's3' : 'local';
-        $this->oStorage = config('app.env') == 'production' ? Storage::disk('s3') : Storage::disk('local');
+        $this->sStorageDisk = 'public';
+        $this->oStorage = Storage::disk($this->sStorageDisk);
     }
 
 
@@ -72,12 +86,45 @@ class HomeController extends Controller
      */
     public function home(Request $request){
 
-        $data = [
-    		'oConfiguration' => $this->oConfiguration,
-            'oStorage' => $this->oStorage,
-            'env' => config('app.env'),
+        $aMetas = MetaTag::all();
+        $title = $this->oConfiguration->title_website ? $this->oConfiguration->title_website : 'Inicio';
+        SEO::setTitle($title);
 
-            // Datos para el dashboard
+        if($aMetas->isNotEmpty()){
+            foreach($aMetas as $metaTag){
+                if($metaTag->name == 'description'){
+                    SEO::setDescription($metaTag->value);
+                }elseif($metaTag->name == 'keywords'){
+                    SEOMeta::addKeyword(explode(',', $metaTag->value));
+                }else{
+                    SEOMeta::addMeta($metaTag->name, $metaTag->value, $metaTag->type);
+                }
+            }
+        }
+
+        // SEO::opengraph()->setUrl('http://current.url.com');
+        // SEO::setCanonical('https://codecasts.com.br/lesson');
+        //  SEO::opengraph()->addProperty('type', 'articles');
+        // SEO::twitter()->setSite('@LuizVinicius73');
+
+        $oTopMenu = Menu::byName('Menu Principal Superior');
+
+        $oContentCategory = ContentCategory::has('contentArticles')->inRandomOrder()->first();
+
+        $data = [
+    		// Datos de configuracion general del sitio
+            'title' => $title,
+            'oConfiguration' => $this->oConfiguration,
+            'oStorage' => $this->oStorage,
+
+            // menus de navegacion
+            'topMenuItems' => $oTopMenu ? $oTopMenu->menuItems()->firstLevel()->orderBy('order', 'asc')->get() : null,
+
+            // Datos para el contenido de la pagina
+            'corruptionCasesList' => CorruptionCase::orderBy('created_at', 'desc')->take(3)->get(),
+            'caseStages' => Catalogue::byContext('Etapa Actual del Caso')->get(),
+            'oContentCategory' => $oContentCategory,
+            
             
     	];
 

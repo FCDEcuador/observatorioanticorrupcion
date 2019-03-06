@@ -91,8 +91,8 @@ class CorruptionCasesController extends Controller
 
         $this->oSlugify = new Slugify();
 
-        $this->sStorageDisk = config('app.env') == 'production' ? 's3' : 'local';
-        $this->oStorage = config('app.env') == 'production' ? Storage::disk('s3') : Storage::disk('local');
+        $this->sStorageDisk = config('app.env') == 'production' ? 'public' : 'public';
+        $this->oStorage = config('app.env') == 'production' ? Storage::disk('public') : Storage::disk('public');
 
         // Colocamos el valor en la variable $this->activeMenu 
         // para saber que item del menu de navegacion debe pintarse

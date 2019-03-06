@@ -12,7 +12,6 @@
     {!! Html::style('public/backend/assets/plugins/bootstrap-select/bootstrap-select.min.css') !!}
     {!! Html::style('public/backend/assets/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.css') !!}
     {!! Html::style('public/backend/assets/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css') !!}
-    {!! Html::style('public/backend/assets/plugins/html5-editor/bootstrap-wysihtml5.css') !!}
 
 @endsection
 
@@ -101,8 +100,8 @@
                         
                         <!-- Formulario de usuarios -->
                         @if(is_object($oContentArticle))
-                            {!! Form::model($oContentArticle, ['route' => ['backend.content.content-article.update', $oContentArticle->id], 'method' => 'PUT', 'class' => 'form p-t-20', 'name' => 'contentArticleForm', 'id' => 'contentArticleForm', 'files' => true]) !!}
-                            {!! Form::hidden('id', $oCorruptionCase->id) !!}
+                            {!! Form::model($oContentArticle, ['route' => ['backend.content.content-articles.update', $oContentArticle->id], 'method' => 'PUT', 'class' => 'form p-t-20', 'name' => 'contentArticleForm', 'id' => 'contentArticleForm', 'files' => true]) !!}
+                            {!! Form::hidden('id', $oContentArticle->id) !!}
                         @else
                             {!! Form::open(['route' => 'backend.content.content-articles.store', 'method' => 'POST', 'name' => 'contentArticleForm', 'id' => 'contentArticleForm', 'class' => 'form p-t-20', 'files' => true]) !!}
                         @endif
@@ -241,10 +240,16 @@
     {!! Html::script('public/backend/assets/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js', ['type' => 'text/javascript']) !!}
     {!! Html::script('public/backend/assets/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js', ['type' => 'text/javascript']) !!}
     <!-- wysuhtml5 Plugin JavaScript -->
-    {!! Html::script('public/backend/assets/plugins/html5-editor/wysihtml5-0.3.0.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/html5-editor/bootstrap-wysihtml5.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('public/vendor/unisharp/laravel-ckeditor/ckeditor.js', ['type' => 'text/javascript']) !!}
     <script type="text/javascript">
         var urlContentArticlesList = '{!! route('backend.content.content-articles.list') !!}';
+
+        var CKEditorOptions = {
+            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token={!! csrf_token() !!}',
+            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token={!! csrf_token() !!}'
+        };
     </script>
     {!! Html::script('public/backend/assets/js/form-validate/form-validation-content-articles.min.js', ['type' => 'text/javascript']) !!}
 @endsection

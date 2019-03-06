@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	@include('frontend.includes.head')
-
-</head>
+		@include('frontend.includes.head')
+	</head>
 <body>
 
 	<!-- BEGIN SLIDER HEADER REPEAT ALL SITE -->

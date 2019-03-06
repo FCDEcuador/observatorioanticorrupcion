@@ -24,12 +24,12 @@
 				    <div class="carousel-item active">
 				    	<div class="row p-3 p-sm-0">
 				    		<div class="col-md-6">
-				    			<img class="d-block w-100" src="https://picsum.photos/600/280?auto=yes&bg=777&fg=555&text=First slide" alt="First slide">
+				    			<img class="d-block w-100" src="https://via.placeholder.com/600x280">
 				    		</div>
 				    		<div class="col-md-6 p-3">
 				    			<h6 class="text-success">Loren ipsun dolor didiad,madmafa</h6>
 				    			<h3 class="titulo text-default text-uppercase">NUEVOS CASOS DE CORRUPCIÓN</h3>
-				    			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. Donec facilisis enim gravida lectus pretium egestas. Aenean tempus lectus ut risus suscipit, tempus vestibulum ex aliquet. Mauris ac vehicula sem, a sodales urna. In eget condimentum tellus, non porttitor diam. </p>
+				    			<div class="pr-5 text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. Donec facilisis enim gravida lectus pretium egestas. Aenean tempus lectus ut risus suscipit, tempus vestibulum ex aliquet. Mauris ac vehicula sem, a sodales urna. </div>
 				    			<a href="" role="button" class="btn btn-success btn-sm float-right mr-3">Ver más</a>
 				    		</div>
 				    	</div>
@@ -37,12 +37,12 @@
 				    <div class="carousel-item">
 				    	<div class="row p-3 p-sm-0">
 				    		<div class="col-md-6">
-				    			<img class="d-block w-100" src="https://picsum.photos/600/280?auto=yes&bg=666&fg=444&text=Second slide" alt="Second slide">
+				    			<img class="d-block w-100" src="https://via.placeholder.com/600x280">
 				    		</div>
 				    		<div class="col-md-6 p-3">
 				    			<h6 class="text-success">Loren ipsun dolor didiad,madmafa</h6>
 				    			<h3 class="titulo text-default text-uppercase">NUEVOS CASOS DE CORRUPCIÓN</h3>
-				    			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. Donec facilisis enim gravida lectus pretium egestas. Aenean tempus lectus ut risus suscipit, tempus vestibulum ex aliquet. Mauris ac vehicula sem, a sodales urna. In eget condimentum tellus, non porttitor diam. </p>
+				    			<div class="pr-5 text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. Donec facilisis enim gravida lectus pretium egestas. Aenean tempus lectus ut risus suscipit, tempus vestibulum ex aliquet. Mauris ac vehicula sem, a sodales urna. </div>
 				    			<a href="" role="button" class="btn btn-success btn-sm float-right mr-3">Ver más</a>
 				    		</div>
 				    	</div>
@@ -50,12 +50,12 @@
 				    <div class="carousel-item">
 				      	<div class="row p-3 p-sm-0">
 				    		<div class="col-md-6">
-				    			<img class="d-block w-100" src="https://picsum.photos/600/280?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide">
+				    			<img class="d-block w-100" src="https://via.placeholder.com/600x280">
 				    		</div>
 				    		<div class="col-md-6 p-3">
 				    			<h6 class="text-success">Loren ipsun dolor didiad,madmafa</h6>
 				    			<h3 class="titulo text-default text-uppercase">NUEVOS CASOS DE CORRUPCIÓN</h3>
-				    			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. Donec facilisis enim gravida lectus pretium egestas. Aenean tempus lectus ut risus suscipit, tempus vestibulum ex aliquet. Mauris ac vehicula sem, a sodales urna. In eget condimentum tellus, non porttitor diam. </p>
+				    			<div class="pr-5 text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. Donec facilisis enim gravida lectus pretium egestas. Aenean tempus lectus ut risus suscipit, tempus vestibulum ex aliquet. Mauris ac vehicula sem, a sodales urna. </div>
 				    			<a href="" role="button" class="btn btn-success btn-sm float-right mr-3">Ver más</a>
 				    		</div>
 				    	</div>
@@ -84,13 +84,13 @@
 		<div class="col-12 mb-3 border-bottom border-success pb-3">
 			<div class="row">
 				<div class="col-sm-5 d-flex align-items-center">
-					<img class="d-block w-100" src="https://picsum.photos/600/280" alt="Publicacion1">
+					<img class="d-block w-100" src="https://via.placeholder.com/600x280" alt="Publicacion1">
 				</div>
 				<div class="col-sm-7">
 					<span class="d-block text-right">16 de enero</span>
 					<h6 class="text-success">Loren ipsun dolor didiad,madmafa</h6>
 					<h3 class="subtitulo text-default text-uppercase">Pellentesque convallis dolor ac nibh sollicitudin faucibus</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. Donec facilisis enim gravida lectus pretium egestas. Aenean tempus lectus ut risus suscipit, tempus vestibulum</p>
+					<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. Donec facilisis enim gravida lectus pretium egestas. Aenean tempus lectus ut risus suscipit, tempus vestibulum</p>
 					<a href="" role="button" class="btn btn-success btn-sm float-right">Ver más</a>
 				</div>
 			</div>
@@ -98,13 +98,13 @@
 		<div class="col-12 mb-3 border-bottom border-success pb-3">
 			<div class="row">
 				<div class="col-sm-5 d-flex align-items-center">
-					<img class="d-block w-100" src="https://picsum.photos/600/280" alt="Publicacion1">
+					<img class="d-block w-100" src="https://via.placeholder.com/600x280" alt="Publicacion1">
 				</div>
 				<div class="col-sm-7">
 					<span class="d-block text-right">16 de enero</span>
 					<h6 class="text-success">Loren ipsun dolor didiad,madmafa</h6>
 					<h3 class="subtitulo text-default text-uppercase">Pellentesque convallis dolor ac nibh sollicitudin faucibus</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. Donec facilisis enim gravida lectus pretium egestas. Aenean tempus lectus ut risus suscipit, tempus vestibulum</p>
+					<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. Donec facilisis enim gravida lectus pretium egestas. Aenean tempus lectus ut risus suscipit, tempus vestibulum</p>
 					<a href="" role="button" class="btn btn-success btn-sm float-right">Ver más</a>
 				</div>
 			</div>

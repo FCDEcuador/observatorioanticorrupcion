@@ -7,27 +7,48 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    
+    <link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="images/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="images/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="images/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+	<link rel="manifest" href="images/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css"  crossorigin="anonymous">
     <!-- Font-awesome CSS -->
     <link href="css/all.css" rel="stylesheet"> <!--load all styles -->
 
-
+	
 
     <link rel="stylesheet" href="css/custom.css" >
 
     <script src="js/jquery-3.3.1.slim.min.js"  crossorigin="anonymous"></script>
     <script src="js/Chart.min.js"  crossorigin="anonymous"></script>
-
+    <script src="js/amcharts.js"  crossorigin="anonymous"></script>
+    <script src="js/serial.js"  crossorigin="anonymous"></script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c6df5f8f2935ace"></script>
 </head>
 <body>
 
 <!-- BEGIN SLIDER HEADER REPEAT ALL SITE -->
 
-<div class="container-fluid">
+<div class="container">
 	<div class="row mb-4">
-		    <div class="col-12 col-sm-3 media mt-3 mt-sm-0 mb-3 mb-md-0 justify-content-center">
-		      	<a href="#" class="mr-3 align-self-center"><img src="images/logo-sitio.png" ></a>
+		    <div class="col-12 col-sm-3 media mt-3 mt-sm-0 mb-3 mb-md-0 justify-content-end">
+		      	<a href="#" class="align-self-center mx-auto mx-sm-0 "><img src="images/logo-sitio.png" ></a>
 		    </div>
 		    <div class="col-12 col-sm-9">
 		    	<!--  BEGIN MENU  -->
@@ -82,13 +103,13 @@
 				  </ol>
 				  <div class="carousel-inner">
 				    <div class="carousel-item active">
-				      <img class="d-block w-100" src="https://picsum.photos/1000/260?auto=yes&bg=777&fg=555&text=First slide" alt="First slide">
+				      <img class="d-block w-100" src="https://via.placeholder.com/1000x260" alt="First slide">
 				    </div>
 				    <div class="carousel-item">
-				      <img class="d-block w-100" src="https://picsum.photos/1000/260?auto=yes&bg=666&fg=444&text=Second slide" alt="Second slide">
+				      <img class="d-block w-100" src="https://via.placeholder.com/1000x260" alt="Second slide">
 				    </div>
 				    <div class="carousel-item">
-				      <img class="d-block w-100" src="https://picsum.photos/1000/260?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide">
+				      <img class="d-block w-100" src="https://via.placeholder.com/1000x260" alt="Third slide">
 				    </div>
 				  </div>
 				  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

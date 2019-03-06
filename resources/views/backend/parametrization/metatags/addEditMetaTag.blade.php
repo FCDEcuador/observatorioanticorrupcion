@@ -7,7 +7,7 @@
 @endsection
 
 @section('title')
-	Configuracion
+	Meta Tags
 @endsection
 
 @section('main-content')	
