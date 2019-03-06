@@ -188,7 +188,9 @@
 			<div class="container mb-5">
 				<div class="row pb-3 pt-3 shadow bg-white rounded">
 					<div class="col-12">
-						<h1 class="titulo border-bottom border-info text-default mb-3">{!! strtoupper($oContentCategory->name) !!}</h1>
+						<h1 class="titulo border-bottom border-info text-default mb-3">
+							{!! strtoupper($oContentCategory->name) !!}
+						</h1>
 					</div>
 					@php
 						$aContentArticles = $oContentCategory->contentArticles()->take(2)->get();	
@@ -201,7 +203,9 @@
 										<img class="d-block w-100" src="{!! $oStorage->url($oContentArticle->main_multimedia) !!}" alt="{!! $oContentArticle->title !!}">
 									</div>
 									<div class="col-8 text-justify">
-										<a href="{!! url($oContentCategory->slug.'/'.$oContentArticle->slug) !!}" class="subtitulo text-default">{!! $oContentArticle->title !!}</a>
+										<a href="{!! route('content-article', [$oContentCategory->slug, $oContentArticle->slug]) !!}" class="subtitulo text-default">
+											{!! $oContentArticle->title !!}
+										</a>
 										<p class="text-muted">{!! $oContentArticle->summary !!}</p>
 									</div>
 								</div>
@@ -210,7 +214,7 @@
 					@endif
 						
 					<div class="col-12">
-						<a href="{!! url($oContentCategory->slug) !!}" role="button" class="btn btn-info btn-sm float-right ">Ver más</a>
+						<a href="{!! route('content-category', [$oContentCategory->slug]) !!}" role="button" class="btn btn-info btn-sm float-right ">Ver más</a>
 					</div>
 				</div>
 			</div>
@@ -229,7 +233,7 @@
 							<div class="col-sm-7 pl-3">
 								<h1 class="titulo text-default text-uppercase mt-3 mt-sm-0">Biblioteca Legal</h1>
 								<p class="text-justify text-muted">Aquí puedes encontrar  las principales leyes, reglamentos y decretos que abordan temas y mecanismos de prevención y sanción a los actos de corrupción en Ecuador</p>
-								<a href="{!! url('biblioteca-legal') !!}" role="button" class="btn btn-info btn-sm float-right">Ver más</a>
+								<a href="{!! route('legal-library') !!}" role="button" class="btn btn-info btn-sm float-right">Ver más</a>
 							</div>
 						</div>
 					</div>
@@ -242,7 +246,7 @@
 						<div class="row no-gutters border-left borazul">
 							<div class="col-sm-9 p-3">
 								<p class="text-justify text-muted">Entérate de experiencias exitosas a nivel mundial sobre la lucha contra la corrupción. </p>
-								<a href="{!! url('historias-de-exito') !!}" role="button" class="btn btn-success btn-sm float-right">Ver más</a>
+								<a href="{!! route('success-stories') !!}" role="button" class="btn btn-success btn-sm float-right">Ver más</a>
 							</div>
 							<div class="col-sm-3 align-self-start">
 								<img class="d-block w-100" src="https://via.placeholder.com/280x300" alt="Historias de Exito">

@@ -1,4 +1,4 @@
-<a class='flotante' href='#' data-toggle="modal" data-target="#modalDenuncias" ><img src='images/denuncia.png' border="0"/>
+<a class='flotante' href='#' data-toggle="modal" data-target="#modalDenuncias" ><img src='{!! asset('public/frontend/images/denuncia.png') !!}' border="0"/>
 </a>
 
 <!-- BEGIN MODAL DENUNCIAS -->
@@ -19,7 +19,7 @@
         			<p class="text-default text-uppercase letter-spacing-1 text-center font-weight-bold mt-2 fz14 mb-0 align-middle" style="height:40px;">Institución</p>
         			<div class="row no-gutters bg-white border p-1 mb-1 minh80 align-items-center">
         				<div class="col-4">
-        					<img src="images/logo-contraloria.png" class="w-100" />
+        					<img src="{!! asset('public/frontend/images/logo-contraloria.png') !!}" class="w-100" />
         				</div>
         				<div class="col-8 text-uppercase letter-spacing-1 fz12 pl-1 font-weight-bold">
         					CONTRALORÍA GENERAL DEL ESTADO
@@ -27,7 +27,7 @@
         			</div>
         			<div class="row no-gutters bg-white border p-1 mb-1 minh80 align-items-center">
         				<div class="col-4">
-        					<img src="images/logo-cpcc.png" class="w-100" />
+        					<img src="{!! asset('public/frontend/images/logo-cpcc.png') !!}" class="w-100" />
         				</div>
         				<div class="col-8 text-uppercase letter-spacing-1 fz12 pl-1 font-weight-bold">
         					CONCEJO DE PARTICIPACIÓN CIUDADANA Y CONTROL SOCIAL (CPCSS)
@@ -35,7 +35,7 @@
         			</div>
         			<div class="row no-gutters bg-white border p-1 mb-1 minh80 align-items-center">
         				<div class="col-4">
-        					<img src="images/ico-fiscalia.png" class="w-100" />
+        					<img src="{!! asset('public/frontend/images/ico-fiscalia.png') !!}" class="w-100" />
         				</div>
         				<div class="col-8 text-uppercase letter-spacing-1 fz12 pl-1 font-weight-bold">
         					FISCALIA GENERAL DEL ESTADO
@@ -170,21 +170,21 @@
 		</div>
 		<div class="col-sm-4 align-self-center d-flex justify-content-center mt-4 mt-sm-0">
 			@if($oConfiguration->facebook_account != '')
-				<a href="{!! $oConfiguration->facebook_account !!}" class="text-white fz24 border redes-ico mr-3">
+				<a href="{!! $oConfiguration->facebook_account !!}" class="text-white fz24 border redes-ico mr-3" target="_blank">
 					<span class="">
 						<i class="fab fa-facebook-f"></i>
 					</span>
 				</a>
 			@endif
 			@if($oConfiguration->twitter_account != '')
-				<a href="{!! $oConfiguration->twitter_account !!}" class="text-white fz24 border redes-ico mr-3">
+				<a href="{!! $oConfiguration->twitter_account !!}" class="text-white fz24 border redes-ico mr-3" target="_blank">
 					<span class="">
 						<i class="fab fa-twitter"></i>
 					</span>
 				</a>
 			@endif
 			@if($oConfiguration->instagram_account != '')
-				<a href="{!! $oConfiguration->instagram_account !!}" class="text-white fz24 border redes-ico">
+				<a href="{!! $oConfiguration->instagram_account !!}" class="text-white fz24 border redes-ico" target="_blank">
 					<span class="">
 						<i class="fab fa-instagram"></i>
 					</span>
