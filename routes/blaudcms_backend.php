@@ -221,6 +221,79 @@ Route::group(array('prefix' => '/backend'), function(){
 				Route::delete('/delete/{iId?}', 'Backend\Parametrization\Catalogues\CaseStagesDetailController@destroy')->name('backend.parametrization.catalogues.case-stage-details.delete');
 			});
 
+
+			/*************************************************************************************************
+
+
+					RUTAS PARA ADMINISTRACION DE FUNCIONES DEL ESTADO
+
+
+			*************************************************************************************************/
+			Route::group(array('prefix' => '/state-functions'), function(){
+				// Ruta para ver la lista de funciones del estado
+				Route::match(['GET', 'POST'], '/list', 'Backend\Parametrization\Catalogues\StateFunctionsController@index')->name('backend.parametrization.catalogues.state-functions.list');
+
+				// Rutas para crear una nueva funcion del estaso en el sistema
+				Route::get('/add', 'Backend\Parametrization\Catalogues\StateFunctionsController@create')->name('backend.parametrization.catalogues.state-functions.create');
+				Route::post('/add', 'Backend\Parametrization\Catalogues\StateFunctionsController@store')->name('backend.parametrization.catalogues.state-functions.store');
+
+				// Rutas para editar una funcion del estado de acuerdo a su ID
+				Route::get('/edit/{iId?}', 'Backend\Parametrization\Catalogues\StateFunctionsController@edit')->name('backend.parametrization.catalogues.state-functions.edit');
+				Route::match(['PUT', 'PATCH'], '/edit/{iId?}', 'Backend\Parametrization\Catalogues\StateFunctionsController@update')->name('backend.parametrization.catalogues.state-functions.update');
+
+				// Ruta para eliminar una funcion del estado en particular seleccionado por su ID
+				Route::delete('/delete/{iId?}', 'Backend\Parametrization\Catalogues\StateFunctionsController@destroy')->name('backend.parametrization.catalogues.state-functions.delete');
+			});
+
+
+
+			/*************************************************************************************************
+
+
+					RUTAS PARA ADMINISTRACION DE INSTITUCIONES
+
+
+			*************************************************************************************************/
+			Route::group(array('prefix' => '/institutions'), function(){
+				// Ruta para ver la lista de instituciones
+				Route::match(['GET', 'POST'], '/list', 'Backend\Parametrization\Catalogues\InstitutionsController@index')->name('backend.parametrization.catalogues.institutions.list');
+
+				// Rutas para crear una nueva institucion en el sistema
+				Route::get('/add', 'Backend\Parametrization\Catalogues\InstitutionsController@create')->name('backend.parametrization.catalogues.institutions.create');
+				Route::post('/add', 'Backend\Parametrization\Catalogues\InstitutionsController@store')->name('backend.parametrization.catalogues.institutions.store');
+
+				// Rutas para editar una institucion de acuerdo a su ID
+				Route::get('/edit/{iId?}', 'Backend\Parametrization\Catalogues\InstitutionsController@edit')->name('backend.parametrization.catalogues.institutions.edit');
+				Route::match(['PUT', 'PATCH'], '/edit/{iId?}', 'Backend\Parametrization\Catalogues\InstitutionsController@update')->name('backend.parametrization.catalogues.institutions.update');
+
+				// Ruta para eliminar una institucion en particular seleccionado por su ID
+				Route::delete('/delete/{iId?}', 'Backend\Parametrization\Catalogues\InstitutionsController@destroy')->name('backend.parametrization.catalogues.institutions.delete');
+			});
+
+
+			/*************************************************************************************************
+
+
+					RUTAS PARA ADMINISTRACION DE FUNCIONARIOS PUBLICOS
+
+
+			*************************************************************************************************/
+			Route::group(array('prefix' => '/public-officials'), function(){
+				// Ruta para ver la lista de funcionarios publicos
+				Route::match(['GET', 'POST'], '/list', 'Backend\Parametrization\Catalogues\PublicOfficialsController@index')->name('backend.parametrization.catalogues.public-officials.list');
+
+				// Rutas para crear un nuevo funcionario publico en el sistema
+				Route::get('/add', 'Backend\Parametrization\Catalogues\PublicOfficialsController@create')->name('backend.parametrization.catalogues.public-officials.create');
+				Route::post('/add', 'Backend\Parametrization\Catalogues\PublicOfficialsController@store')->name('backend.parametrization.catalogues.public-officials.store');
+
+				// Rutas para editar un funcionario publico de acuerdo a su ID
+				Route::get('/edit/{iId?}', 'Backend\Parametrization\Catalogues\PublicOfficialsController@edit')->name('backend.parametrization.catalogues.public-officials.edit');
+				Route::match(['PUT', 'PATCH'], '/edit/{iId?}', 'Backend\Parametrization\Catalogues\PublicOfficialsController@update')->name('backend.parametrization.catalogues.public-officials.update');
+
+				// Ruta para eliminar un funcionario publico en particular seleccionado por su ID
+				Route::delete('/delete/{iId?}', 'Backend\Parametrization\Catalogues\PublicOfficialsController@destroy')->name('backend.parametrization.catalogues.public-officials.delete');
+			});
+
 			
 		});
 	});
