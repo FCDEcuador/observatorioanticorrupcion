@@ -26,7 +26,7 @@ use Storage;
 use Auth;
 
 /**
-* Clase para manejo de dashboard del CMS
+* Clase para mostrar el home del sitio web
 * @Autor Raúl Chauvin
 * @FechaCreacion  2019/02/16
 */

@@ -127,6 +127,11 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="outstanding"><strong>Es Destacado?</strong></label>
+                                {!! Form::select('outstanding', [0 => 'NO', 1 => 'SI'], null, ['id' => 'outstanding', 'class' => 'form-control']) !!}
+                            </div>
+
+                            <div class="form-group">
                                 <label for="summary"><strong>Resumen <span class="danger">*</span></strong></label>
                                 {!! Form::textarea('summary', null, ['id' => 'summary', 'placeholder' => 'Ingrese el resumen del artículo de contenido, máximo 1 párrafo', 'class' => 'form-control', 'required']) !!}
                             </div>

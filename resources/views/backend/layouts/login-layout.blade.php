@@ -10,9 +10,9 @@
     {!! Html::meta('description', '') !!}
     {!! Html::meta('author', 'Buhoo Artesanos Digitales') !!}
     <!-- Favicon icon -->
-    {!! Html::favicon('public/images/logocuponcity-ID.png', ['type' => 'image/png', 'sizes' => '16x16']) !!}
+    {!! Html::favicon('public/images/faviconBlaud.png', ['type' => 'image/png', 'sizes' => '16x16']) !!}
 
-    <title>Cuponcity :: @yield('title')</title>
+    <title>BlaudCMS :: @yield('title')</title>
 
     <!-- Bootstrap Core CSS -->
     {!! Html::style('public/backend/assets/plugins/bootstrap/css/bootstrap.min.css') !!}

@@ -5,6 +5,9 @@ namespace BlaudCMS\Http\Controllers\Frontend;
 use Illuminate\Http\Request;
 use BlaudCMS\Http\Controllers\Controller;
 
+use BlaudCMS\Mail\ContactForm;
+use Illuminate\Support\Facades\Mail;
+
 use BlaudCMS\Message;
 use BlaudCMS\Configuration;
 use BlaudCMS\Menu;
@@ -16,6 +19,8 @@ use BlaudCMS\CorruptionCase;
 use BlaudCMS\LegalLibrary;
 use BlaudCMS\MetaTag;
 use BlaudCMS\SuccessStory;
+
+use BlaudCMS\Http\Requests\Frontend\ContactFormRequest;
 
 use SEOMeta;
 use OpenGraph;
@@ -192,5 +197,44 @@ class StaticPagesController extends Controller
         }
         
         return $view;
+    }
+
+
+    /**
+     * Metodo para enviar el email con los datos del formulario de contacto
+     * @Autor Raúl Chauvin
+     * @FechaCreacion  2019/02/16
+     *
+     * @route /contactenos
+     * @method GET
+     * @param BlaudCMS\Http\Requests\Frontend\ContactFormRequest $request
+     * @return \Illuminate\Http\Response
+     */
+    public function contactSend(ContactFormRequest $request){
+
+        if( ! $request->ajax() ){
+            $request->session()->flash('errorMsg', 'Unicamente se aceptan peticiones Ajax');
+            return back();
+        }
+
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'subject' => $request->subject,
+            'message' => $request->message,
+        ];
+
+        if($this->oConfiguration->contact_emails != ''){
+            $aEmails = explode(',', $this->oConfiguration->contact_emails);
+            if(count($aEmails)){
+                foreach($aEmails as $email){
+                    if( ! empty($email)){
+                        Mail::to($email)->send(new ContactForm($data));
+                    }
+                }
+            }
+        }
+
+        return response()->json(['status' => true , 'message' => 'Muchas gracias, sus comentarios y sugerencias han sido enviadas correctamente.',], 200);
     }
 }

@@ -104,7 +104,7 @@ class LegalLibrary extends Model
      * @Autor Raúl Chauvin
      * @FechaCreacion  2019/03/02
      *
-     * @param string sStringSearch
+     * @param string sTags
      * @param integer iIssueYear
      * @param integer iPaginate
      *
@@ -114,11 +114,11 @@ class LegalLibrary extends Model
     	
 	    $aLegalLibraryList = null;
 
-    	if($sStringSearch){
-    		$aLegalLibraryList = LegalLibrary::where(function($sQuery) use ($sStringSearch){
-            						$sQuery->where('title','like','%'.$sStringSearch.'%')
-                                    ->orWhere('description','like','%'.$sStringSearch.'%')
-                                    ->orWhere('tags','like','%'.$sStringSearch.'%');
+    	if($sTags){
+    		$aLegalLibraryList = LegalLibrary::where(function($sQuery) use ($sTags){
+            						$sQuery->where('title','like','%'.$sTags.'%')
+                                    ->orWhere('description','like','%'.$sTags.'%')
+                                    ->orWhere('tags','like','%'.$sTags.'%');
             					});
     	}
 
@@ -129,6 +129,12 @@ class LegalLibrary extends Model
 	    		$aLegalLibraryList = LegalLibrary::where('issue_year', $iIssueYear);
 	    	}
     	}
+
+        if($aLegalLibraryList){
+            $aLegalLibraryList = $aLegalLibraryList->orderBy('created_at', 'desc')->paginate($iPaginate);
+        }else{
+            $aLegalLibraryList = LegalLibrary::orderBy('created_at', 'desc')->paginate($iPaginate);
+        }
     	
     	return $aLegalLibraryList;
     }

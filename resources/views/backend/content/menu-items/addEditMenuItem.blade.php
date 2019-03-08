@@ -187,6 +187,7 @@
                                     <option value="casos-de-corrupcion">Casos de Corrupción</option>
                                     <option value="historias-de-exito">Historias de Éxito</option>
                                     <option value="biblioteca-legal">Biblioteca Legal</option>
+                                    <option value="estadisticas">Estadisticas</option>
                                     <option value="contactenos">Contacto</option>
                                   </optgroup>
                                   

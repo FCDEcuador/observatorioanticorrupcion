@@ -5,6 +5,8 @@
 @endsection
 
 @section('custom-css')
+	{!! Html::style('public/backend/assets/plugins/ladda/ladda-themeless.min.css') !!}
+    {!! Html::style('public/backend/assets/plugins/bootstrap-sweetalert/sweetalert.css') !!}
 @endsection
 
 @section('main-content')
@@ -29,8 +31,11 @@
 		</div>
 
 		<div class="row p-3">
-			<div class="col-12 ">
-				{!! Form::open(['route' => ['contact-us.send'], 'method' => 'POST', 'name' => 'contactSend', 'id' => 'contactSend']) !!}
+			<div class="col-12 text-center" id="contactFormThankYouDiv">
+				<h1>Muchas gracias!</h1>
+			</div>
+			<div class="col-12 " id="contactFormDiv">
+				{!! Form::open(['route' => ['contact-us.send'], 'method' => 'POST', 'name' => 'contactForm', 'id' => 'contactForm']) !!}
 
 				  	<div class="form-group row justify-content-center">
 				    	{!! Form::label('name', 'Nombre', ['class' => 'col-sm-2 col-form-label text-uppercase text-sm-right text-secondary']) !!}
@@ -49,7 +54,7 @@
 				  	<div class="form-group row justify-content-center">
 				    	{!! Form::label('subject', 'Asunto', ['class' => 'col-sm-2 col-form-label text-uppercase text-sm-right text-secondary']) !!}
 				    	<div class="col-sm-4">
-				      		{!! Form::text('subect', old('subect'), ['id' => 'subect', 'class' => 'form-control', 'required']) !!}
+				      		{!! Form::text('subject', old('subject'), ['id' => 'subject', 'class' => 'form-control', 'required']) !!}
 				    	</div>
 				  	</div>
 				  
@@ -61,7 +66,9 @@
 				  	</div>
 				  
 				  	<div class="align-self-center d-flex justify-content-center">
-				  		{!! Form::submit('Enviar', ['name' => 'contactSendBtn', 'id' => 'contactSendBtn', 'class' => "btn btn-info btn-sm"]) !!}
+				  		<button type="submit" class="btn btn-info btn-sm ladda-button" data-style="zoom-out" name="contactSendBtn" id="contactSendBtn">
+                            <span class="ladda-label">Enviar</span>
+                        </button>
 				  	</div>
 
 				{!! Form::close() !!}
@@ -98,4 +105,30 @@
 
 
 @section('custom-js')
+
+	{!! Html::script('public/backend/assets/plugins/jquery-validation/js/jquery.validate.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('public/backend/assets/plugins/jquery-validation/js/additional-methods.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('public/backend/assets/plugins/bootstrap-sweetalert/sweetalert.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('public/backend/assets/js/ui-sweetalert.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('public/backend/assets/plugins/ladda/spin.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('public/backend/assets/plugins/ladda/ladda.min.js', ['type' => 'text/javascript']) !!}
+
+    {!! Html::script('public/frontend/js/form-validate/form-validation-contact-form.min.js', ['type' => 'text/javascript']) !!}
+
+    <script type="text/javascript">
+    	$(document).ready(function(){
+            @if(session()->exists('successMsg'))
+                showAlert('Observatorio Anti Corrupción', '{!! session('successMsg') !!}', 'success');
+            @endif
+
+            @if(session()->exists('warningMsg'))
+                showAlert('Observatorio Anti Corrupción', '{!! session('warningMsg') !!}', 'warning');
+            @endif
+
+            @if(session()->exists('errorMsg'))
+                showAlert('Observatorio Anti Corrupción', '{!! session('errorMsg') !!}', 'error');
+            @endif
+        });
+    </script>
+
 @endsection

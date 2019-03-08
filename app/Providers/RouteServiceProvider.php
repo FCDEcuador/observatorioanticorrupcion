@@ -67,7 +67,7 @@ class RouteServiceProvider extends ServiceProvider
 
         Route::middleware('web')
              ->namespace($this->namespace)
-             ->group(base_path('routes/blaudcms_frontend.php'));
+             ->group(base_path('routes/blaudcms_backend.php'));
 
         /*
         |--------------------------------------------------------------------------
@@ -82,7 +82,7 @@ class RouteServiceProvider extends ServiceProvider
 
         Route::middleware('web')
              ->namespace($this->namespace)
-             ->group(base_path('routes/blaudcms_backend.php'));
+             ->group(base_path('routes/blaudcms_frontend.php'));
 
     }
 

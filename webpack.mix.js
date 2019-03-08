@@ -175,7 +175,13 @@ let mix = require('laravel-mix');
 	BLAUD FRONTEND ASSETS
 
 *******************************************************************************************/
+	// Items de Menu
+	   	mix.copy('resources/assets/frontend/js/form-validation/form-validation-contact-form.js', 'public/frontend/js/form-validate')
+	   	.minify('public/frontend/js/form-validate/form-validation-contact-form.js')
 
+	// Detalle de Caso de Corrupcion
+	   	.copy('resources/assets/frontend/js/pages/corruption-cases.js', 'public/frontend/js/pages')
+	   	.minify('public/frontend/js/pages/corruption-cases.js');
 
 
 

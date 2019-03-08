@@ -18,6 +18,8 @@ use BlaudCMS\LegalLibrary;
 use BlaudCMS\MetaTag;
 use BlaudCMS\SuccessStory;
 
+use BlaudCMS\Helpers\TimeFormat;
+
 use SEOMeta;
 use OpenGraph;
 use Twitter;
@@ -27,12 +29,12 @@ use Storage;
 use Auth;
 
 /**
-* Clase para seccion de casos de corrupcion
+* Clase para seccion de contenido (categorias y articulos)
 * @Autor Raúl Chauvin
 * @FechaCreacion  2019/02/16
 */
 
-class CorruptionCasesController extends Controller
+class ContentCategoriesController extends Controller
 {
     /**
      * Disco de storage.
@@ -75,19 +77,39 @@ class CorruptionCasesController extends Controller
         $this->oStorage = Storage::disk($this->sStorageDisk);
     }
 
+
     /**
-     * Metodo para mostrar la pantalla de lista de casos de corrupcion
+     * Metodo para mostrar la pantalla de lista de articulos de una categoria de contenido
      * @Autor Raúl Chauvin
      * @FechaCreacion  2019/02/16
      *
-     * @route /casos-de-corrupcion
+     * @route /{aContentCategorySlug}
      * @method GET / POST
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request){
+    public function index(Request $request, $sContentCategorySlug = ''){
 
+    	if( ! $sContentCategorySlug){
+            return redirect()->route('home');
+        }
+        
+        $oContentCategory = ContentCategory::bySlug($sContentCategorySlug);
+
+        if( ! is_object($oContentCategory)){
+            if($request->ajax()){
+                $aResponseData = [
+                    'type' => 'alert', 
+                    'title' => 'Observatorio Anti Corrupcion', 
+                    'message' => 'UPS!. Parece que la sección que seleccionaste no existe o fue movida.', 
+                    'class' => 'error',
+                ];
+                return response()->json($aResponseData, 404);
+            }
+            abort('404', 'UPS!. Parece que la sección que seleccionaste no existe o fue movida.');
+        }
+        
         $aMetas = MetaTag::all();
-        $title = 'Casos de Corrupción';
+        $title = $oContentCategory->name;
         SEO::setTitle($title);
 
         if($aMetas->isNotEmpty()){
@@ -100,6 +122,12 @@ class CorruptionCasesController extends Controller
                     SEOMeta::addMeta($metaTag->name, $metaTag->value, $metaTag->type);
                 }
             }
+        }
+        if($oContentCategory->meta_description != ''){
+        	SEO::setDescription($oContentCategory->meta_description);
+        }
+        if($oContentCategory->meta_keywords != ''){
+        	SEOMeta::addKeyword(explode(',', $oContentCategory->meta_keywords));
         }
 
         // SEO::opengraph()->setUrl('http://current.url.com');
@@ -119,13 +147,12 @@ class CorruptionCasesController extends Controller
             'topMenuItems' => $oTopMenu ? $oTopMenu->menuItems()->firstLevel()->orderBy('order', 'asc')->get() : null,
 
             // Datos para el contenido de la pagina
-            'caseStageList' => Catalogue::byContext('Etapa Actual del Caso')->get(),
-            'provinceList' => Catalogue::byContext('Provincias')->get(),
-            'stateFunctionList' => Catalogue::byContext('Función del Estado')->get(),
-            'corruptionCasesList' => CorruptionCase::searchCorruptionCasess($request->sStringSearch, $request->sCaseStage, null, $request->sProvince, $request->sStateFunction, 6),
+            'oContentCategory' => $oContentCategory,
+            'outstandingContentArticlesList' => $oContentCategory->contentArticles()->outstandings()->take(3)->orderBy('created_at', 'desc')->get(),
+            'contentArticlesList' => $oContentCategory->contentArticles()->noOutstandings()->orderBy('created_at', 'desc')->paginate(3),
     	];
 
-    	$view = view('frontend.corruption-cases', $data);
+    	$view = view('frontend.content-category', $data);
         
         if($request->ajax()){
             $sections = $view->renderSections();
@@ -140,89 +167,59 @@ class CorruptionCasesController extends Controller
         return $view;
     }
 
-    /**
-     * Metodo que devuelve el detalle de un caso de corrupcion en formato JSON
-     * @Autor Raúl Chauvin
-     * @FechaCreacion  2019/02/16
-     *
-     * @route /casos-de-corrupcion/json/
-     * @method GET
-     * @return \Illuminate\Http\Response
-     */
-    public function detail(Request $request, $sCorruptionCaseId){
-    	if( ! $sCorruptionCaseId){
-    		return response()->json(['status' => false, 'oCorruptionCase' => [], 'message' => 'Por favor seleccione un caso de corrupcion para ver su detalle'], 200);
-    	}
-
-    	$oCorruptionCase = CorruptionCase::find($sCorruptionCaseId);
-
-    	if( ! is_object($oCorruptionCase)){
-    		return response()->json(['status' => false, 'oCorruptionCase' => [], 'message' => 'El caso de corrupción que usted a seleccionado no existe, por favor seleccione otro.'], 200);
-    	}
-    	$minYear = $oCorruptionCase->whatsHappeneds()->min('year')->get();
-    	$maxYear = $oCorruptionCase->whatsHappeneds()->max('year')->get();
-    	
-    	$oCorruptionCaseParse = [
-    		'case_stage' => $oCorruptionCase->case_stage,
-	        'case_stage_detail' => $oCorruptionCase->case_stage_detail,
-	        'province' => $oCorruptionCase->province,
-	        'state_function' => $oCorruptionCase->state_function,
-	        'involved_number' => $oCorruptionCase->involved_number,
-	        'linked_institutions' => $oCorruptionCase->linked_institutions,
-	        'public_officials_involved' => $oCorruptionCase->public_officials_involved,
-	        'main_multimedia' => $this->oStorage->url($oCorruptionCase->main_multimedia),
-	        'title' => $oCorruptionCase->title,
-	        'summary' => $oCorruptionCase->summary,
-	        'url' => route('corruption-cases.show', [$oCorruptionCase->slug]),
-	        'period' => $minYear.' - '.$maxYear,
-    	];
-    	return response()->json(['status' => true, 'oCorruptionCase' => $oCorruptionCaseParse, 'message' => ''], 200);
-    }
-
 
 
     /**
-     * Metodo que muestra la pantalla de detalle de un caso de corrupcion de acuerdo a su slug
+     * Metodo para mostrar la pantalla de lista de articulos de una categoria de contenido
      * @Autor Raúl Chauvin
      * @FechaCreacion  2019/02/16
      *
-     * @route /casos-de-corrupcion/{sCorruptionCaseSlug}
-     * @method GET
+     * @route /{sContentCategorySlug}/{sContentArticleSlug}
+     * @method GET / POST
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, $sCorruptionCaseSlug){
-    	
-    	if( ! $sCorruptionCaseSlug){
-            if($request->ajax()){
-                $aResponseData = [
-                    'type' => 'alert', 
-                    'title' => 'Casos de Corrupcion', 
-                    'message' => 'Por favor seleccione un Caso de Corrupcion para poder ver su detalle.', 
-                    'class' => 'error',
-                ];
-                return response()->json($aResponseData, 200);
-            }
-            $request->session()->flash('errorMsg', 'Por favor seleccione un Caso de Corrupcion para poder ver su detalle.');
-            return back();
+    public function show(Request $request, $sContentCategorySlug = '', $sContentArticleSlug = ''){
+
+    	if( ! $sContentCategorySlug){
+            return redirect()->route('home');
         }
         
-        $oCorruptionCase = CorruptionCase::bySlug($sCorruptionCaseSlug);
+        $oContentCategory = ContentCategory::bySlug($sContentCategorySlug);
 
-        if( ! is_object($oCorruptionCase)){
+        if( ! is_object($oContentCategory)){
             if($request->ajax()){
                 $aResponseData = [
                     'type' => 'alert', 
-                    'title' => 'Casos de Corrupción', 
-                    'message' => 'El Caso de COrrupcion seleccionado no existe. Por favor seleccione otro.', 
+                    'title' => 'Observatorio Anti Corrupcion', 
+                    'message' => 'UPS!. Parece que la sección que seleccionaste no existe o fue movida.', 
                     'class' => 'error',
                 ];
                 return response()->json($aResponseData, 404);
             }
-            abort('404', 'El Caso de COrrupcion seleccionado no existe. Por favor seleccione otro.');
+            abort('404', 'UPS!. Parece que la sección que seleccionaste no existe o fue movida.');
         }
-    	
-    	$aMetas = MetaTag::all();
-        $title = $oCorruptionCase->title;
+
+        if( ! $sContentArticleSlug){
+            return redirect()->route('content-category', [$oContentCategory->slug]);
+        }
+        
+        $oContentArticle = ContentArticle::bySlug($sContentArticleSlug);
+
+        if( ! is_object($oContentArticle)){
+            if($request->ajax()){
+                $aResponseData = [
+                    'type' => 'alert', 
+                    'title' => 'Observatorio Anti Corrupcion', 
+                    'message' => 'UPS!. Parece que la sección que seleccionaste no existe o fue movida.', 
+                    'class' => 'error',
+                ];
+                return response()->json($aResponseData, 404);
+            }
+            return redirect()->route('content-category', [$oContentCategory->slug]);
+        }
+        
+        $aMetas = MetaTag::all();
+        $title = $oContentCategory->name;
         SEO::setTitle($title);
 
         if($aMetas->isNotEmpty()){
@@ -230,11 +227,21 @@ class CorruptionCasesController extends Controller
                 if($metaTag->name == 'description'){
                     SEO::setDescription($metaTag->value);
                 }elseif($metaTag->name == 'keywords'){
-                    SEOMeta::addKeyword(explode(',', $metaTag->value));
+                    SEOMeta::addKeyword(explode(',', $metaTag->value));	
                 }else{
                     SEOMeta::addMeta($metaTag->name, $metaTag->value, $metaTag->type);
                 }
             }
+        }
+        if($oContentArticle->meta_description){
+        	SEO::setDescription($oContentArticle->meta_description);
+        }elseif($oContentCategory->meta_description != ''){
+        	SEO::setDescription($oContentCategory->meta_description);
+        }
+        if($oContentArticle->meta_keywords){
+        	SEO::setDescription($oContentArticle->meta_keywords);
+        }elseif($oContentCategory->meta_keywords != ''){
+        	SEOMeta::addKeyword(explode(',', $oContentCategory->meta_keywords));
         }
 
         // SEO::opengraph()->setUrl('http://current.url.com');
@@ -254,11 +261,14 @@ class CorruptionCasesController extends Controller
             'topMenuItems' => $oTopMenu ? $oTopMenu->menuItems()->firstLevel()->orderBy('order', 'asc')->get() : null,
 
             // Datos para el contenido de la pagina
-            'oCorruptionCase' => $oCorruptionCase,
-            'corruptionCasesList' => CorruptionCase::where('id', '<>', $oCorruptionCase->id)->take(2)->inRandomOrder()->get(),
+            'contentCategoriesList' => ContentCategory::has('contentArticles')->get(),
+            'oContentCategory' => $oContentCategory,
+            'oContentArticle' => $oContentArticle,
+            'contentArticlesListRecent' => $oContentCategory->contentArticles()->outstandings()->take(2)->orderBy('created_at', 'desc')->get(),
+            'contentArticlesList' => $oContentCategory->contentArticles()->noOutstandings()->orderBy('created_at', 'desc')->paginate(2),
     	];
 
-    	$view = view('frontend.corruption-case-detail', $data);
+    	$view = view('frontend.content-article', $data);
         
         if($request->ajax()){
             $sections = $view->renderSections();

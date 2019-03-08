@@ -200,7 +200,7 @@ class ContentArticlesController extends Controller
         $oContentArticle->author_email = $request->author_email;
         $oContentArticle->source = $request->source;
         $oContentArticle->tags = explode(',', $request->tags);
-        $oContentArticle->outstanding = 0;
+        $oContentArticle->outstanding = $request->outstanding;
         $oContentArticle->main_category = 0;
         $oContentArticle->main_home = 0;
         $oContentArticle->meta_description = $request->meta_description;
@@ -339,7 +339,7 @@ class ContentArticlesController extends Controller
         $oContentArticle->author_email = $request->author_email;
         $oContentArticle->source = $request->source;
         $oContentArticle->tags = $request->tags;
-        $oContentArticle->outstanding = 0;
+        $oContentArticle->outstanding = $request->outstanding;
         $oContentArticle->main_category = 0;
         $oContentArticle->main_home = 0;
         $oContentArticle->meta_description = $request->meta_description;

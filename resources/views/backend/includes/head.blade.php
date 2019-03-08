@@ -4,7 +4,7 @@
     {!! Html::meta('description', '') !!}
     {!! Html::meta('author', 'Buhoo Artesanos Digitales') !!}
     <!-- Favicon icon -->
-    {!! Html::favicon('public/images/logocuponcity-ID.png', ['type' => 'image/png', 'sizes' => '16x16']) !!}
+    {!! Html::favicon('public/images/faviconBlaud.png', ['type' => 'image/png', 'sizes' => '16x16']) !!}
 
     <title>BlaudCMS :: @yield('title')</title>
     

@@ -12,12 +12,14 @@
 	<!-- END  SLIDER HEADER REPEAT ALL SITE -->
 
 
-	<div class="container mt-3">
+	<div class="container mt-3" id="mainContent">
 		@yield('main-content')	
 	</div>
 
 	@include('frontend.includes.footer')
 
-	@include('frontend.includes.scripts')
+	<div id="scripts">
+		@include('frontend.includes.scripts')
+	</div>
 </body>
 </html>
