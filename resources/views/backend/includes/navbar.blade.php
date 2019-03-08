@@ -124,7 +124,7 @@
 
                                 @can('backend_view_casestages')
                                     <li>
-                                        <a href="#">
+                                        <a href="{!! route('backend.parametrization.catalogues.case-stages.list') !!}">
                                             Etapas del Caso
                                         </a>
                                     </li>
@@ -132,7 +132,7 @@
 
                                 @can('backend_view_casestagedetails')
                                     <li>
-                                        <a href="#">
+                                        <a href="{!! route('backend.parametrization.catalogues.case-stage-details.list') !!}">
                                             Detalles de Etapa
                                         </a>
                                     </li>

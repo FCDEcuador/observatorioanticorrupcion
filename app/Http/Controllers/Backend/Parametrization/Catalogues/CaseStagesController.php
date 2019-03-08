@@ -10,21 +10,21 @@ use BlaudCMS\Configuration;
 use BlaudCMS\Catalogue;
 use BlaudCMS\User;
 
-use BlaudCMS\Http\Requests\Parametrization\Catalogues\ProvinceCreateRequest;
-use BlaudCMS\Http\Requests\Parametrization\Catalogues\ProvinceUpdateRequest;
+use BlaudCMS\Http\Requests\Parametrization\Catalogues\CaseStageCreateRequest;
+use BlaudCMS\Http\Requests\Parametrization\Catalogues\CaseStageUpdateRequest;
 
 use Storage;
 
 use Auth;
 
 /**
-* Clase para administracion de provincias
+* Clase para administracion de etapas del caso
 * @Autor Raúl Chauvin
 * @FechaCreacion  2019/03/04
 * @Parametrization
 */
 
-class ProvincesController extends Controller
+class CaseStagesController extends Controller
 {
     use BackendAuthorizable;
     /**
@@ -88,14 +88,14 @@ class ProvincesController extends Controller
      * @Autor Raúl Chauvin
      * @FechaCreacion  2019/03/04
      *
-     * @route /backend/parametrization/catalogues/provinces/list
+     * @route /backend/parametrization/catalogues/case-stages/list
      * @method GET
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
     {
-        $provincesList = Catalogue::byContext('Provincias')->orderBy('description', 'asc')->paginate(20);
+        $caseStagesList = Catalogue::byContext('Etapa Actual del Caso')->orderBy('description', 'asc')->paginate(20);
         $data = [
             // Datos generales para todas las vistas
             'activeMenu' => $this->activeMenu,
@@ -103,9 +103,9 @@ class ProvincesController extends Controller
 
             // Datos especificos para utilizar en la vista
             'oStorage' => $this->oStorage,
-            'provincesList' => $provincesList,
+            'caseStagesList' => $caseStagesList,
         ];
-        $view = view('backend.parametrization.catalogues.provinces.provincesList', $data);
+        $view = view('backend.parametrization.catalogues.case-stages.caseStagesList', $data);
         
         if($request->ajax()){
             $sections = $view->renderSections();
@@ -121,11 +121,11 @@ class ProvincesController extends Controller
     }
 
     /**
-     * Metodo para mostrar el formulario de creacion de nuevas provincias
+     * Metodo para mostrar el formulario de creacion de nuevas etapas del caso
      * @Autor Raúl Chauvin
      * @FechaCreacion  2019/03/03
      *
-     * @route /backend/parametrization/catalogues/provinces/add
+     * @route /backend/parametrization/catalogues/case-stages/add
      * @method GET
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -139,10 +139,10 @@ class ProvincesController extends Controller
 
             // Datos especificos para utilizar en la vista
             'oStorage' => $this->oStorage,
-            'oProvince' => null,
+            'oCaseStage' => null,
         ];
 
-        $view = view('backend.parametrization.catalogues.provinces.addEditProvince', $data);
+        $view = view('backend.parametrization.catalogues.case-stages.addEditCaseStage', $data);
         
         if($request->ajax()){
             $sections = $view->renderSections();
@@ -158,16 +158,16 @@ class ProvincesController extends Controller
     }
 
     /**
-     * Metodo para guardar en la base de datos las nuevas provincias ingresadas desde el formulario
+     * Metodo para guardar en la base de datos las nuevas etapas del caso ingresadas desde el formulario
      * @Autor Raúl Chauvin
      * @FechaCreacion  2019/03/03
      *
-     * @route /backend/parametrization/catalogues/provinces/add
+     * @route /backend/parametrization/catalogues/case-stages/add
      * @method POST
-     * @param  \BlaudCMS\Http\Requests\Parametrization\Catalogues\ProvinceCreateRequest  $request
+     * @param  \BlaudCMS\Http\Requests\Parametrization\Catalogues\CaseStageCreateRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ProvinceCreateRequest $request)
+    public function store(CaseStageCreateRequest $request)
     {
 
         if( ! $request->ajax() ){
@@ -175,25 +175,23 @@ class ProvincesController extends Controller
             return back();
         }
 
-        $oProvince = new Catalogue;
-        $oProvince->context = 'Provincias';
-        $oProvince->code = $request->code;
-        $oProvince->description = $request->description;
-        $oProvince->string_value1 = $request->string_value1;
+        $oCaseStage = new Catalogue;
+        $oCaseStage->context = 'Etapa Actual del Caso';
+        $oCaseStage->description = $request->description;
 
-        if($oProvince->save()){
-            return response()->json(['status' => true , 'message' => 'La provincia '.$oProvince->description.' ha sido agregada exisotamente.',], 200);
+        if($oCaseStage->save()){
+            return response()->json(['status' => true , 'message' => 'La etapa del caso '.$oCaseStage->description.' ha sido agregada exisotamente.',], 200);
         }else{
-            return response()->json(['status' => false , 'message' => 'La provincia '.$oProvince->description.' no pudo ser agregada. Por favor intentelo nuevamente luego de unos minutos',], 200);
+            return response()->json(['status' => false , 'message' => 'La etapa del caso '.$oCaseStage->description.' no pudo ser agregada. Por favor intentelo nuevamente luego de unos minutos',], 200);
         }
     }
 
     /**
-     * Metodo para mostrar el formulario de edicion de una provincia seleccionada previamente por su ID
+     * Metodo para mostrar el formulario de edicion de una etapa del caso seleccionada previamente por su ID
      * @Autor Raúl Chauvin
      * @FechaCreacion  2019/03/03
      *
-     * @route /backend/parametrization/catalogues/provinces/edit
+     * @route /backend/parametrization/catalogues/case-stages/edit
      * @method GET
      * @param  string $sId
      * @param  \Illuminate\Http\Request  $request
@@ -205,29 +203,29 @@ class ProvincesController extends Controller
             if($request->ajax()){
                 $aResponseData = [
                     'type' => 'alert', 
-                    'title' => 'Provincias', 
-                    'message' => 'Por favor seleccione una provincia para poder editarla.', 
+                    'title' => 'Etapas del Caso', 
+                    'message' => 'Por favor seleccione una etapa del caso para poder editarla.', 
                     'class' => 'error',
                 ];
                 return response()->json($aResponseData, 200);
             }
-            $request->session()->flash('errorMsg', 'Por favor seleccione una Provincia para poder editarla.');
+            $request->session()->flash('errorMsg', 'Por favor seleccione una etapa del caso para poder editarla.');
             return back();
         }
         
-        $oProvince = Catalogue::find($sId);
+        $oCaseStage = Catalogue::find($sId);
 
-        if( ! is_object($oProvince)){
+        if( ! is_object($oCaseStage)){
             if($request->ajax()){
                 $aResponseData = [
                     'type' => 'alert', 
-                    'title' => 'Provincias', 
-                    'message' => 'La Provincia seleccionada no existe. Por favor seleccione otra.', 
+                    'title' => 'Etapas del Caso', 
+                    'message' => 'La Etapa del caso seleccionada no existe. Por favor seleccione otra.', 
                     'class' => 'error',
                 ];
                 return response()->json($aResponseData, 200);
             }
-            $request->session()->flash('errorMsg', 'La Provincia seleccionada no existe. Por favor seleccione otra.');
+            $request->session()->flash('errorMsg', 'La Etapa del caso seleccionada no existe. Por favor seleccione otra.');
             return back();   
         }
 
@@ -238,10 +236,10 @@ class ProvincesController extends Controller
 
             // Datos especificos para utilizar en la vista
             'oStorage' => $this->oStorage,
-            'oProvince' => $oProvince,
+            'oCaseStage' => $oCaseStage,
         ];
 
-        $view = view('backend.parametrization.catalogues.provinces.addEditProvince', $data);
+        $view = view('backend.parametrization.catalogues.case-stages.addEditCaseStage', $data);
 
         if($request->ajax()){
             $sections = $view->renderSections();
@@ -258,18 +256,18 @@ class ProvincesController extends Controller
 
 
     /**
-     * Metodo para guardar en la base de datos los cambios realizados a una provincia previamente seleccionada por su ID desde el formulario
+     * Metodo para guardar en la base de datos los cambios realizados a una etapa del caso previamente seleccionada por su ID desde el formulario
      * @Autor Raúl Chauvin
      * @FechaCreacion  2019/03/03
      *
-     * @route /backend/parametrization/catalogues/provinces/edit
+     * @route /backend/parametrization/catalogues/case-stages/edit
      * @method PUT/PATCH
      *
-     * @param  \BlaudCMS\Http\Requests\Parametrization\Catalogues\ProvinceUpdateRequest  $request
+     * @param  \BlaudCMS\Http\Requests\Parametrization\Catalogues\CaseStageUpdateRequest  $request
      * @param  string $sId
      * @return \Illuminate\Http\Response
      */
-    public function update(ProvinceUpdateRequest $request, $sId = '')
+    public function update(CaseStageUpdateRequest $request, $sId = '')
     {
         if( ! $request->ajax() ){
             $request->session()->flash('errorMsg', 'Unicamente se aceptan peticiones Ajax');
@@ -277,34 +275,32 @@ class ProvincesController extends Controller
         }
 
         if( ! $sId){
-            return response()->json(['status' => false , 'message' => 'Por favor seleccione una provincia para poder editarla.',], 200);
+            return response()->json(['status' => false , 'message' => 'Por favor seleccione una etapa del caso para poder editarla.',], 200);
         }
 
-        $oProvince = Catalogue::find($sId);
+        $oCaseStage = Catalogue::find($sId);
         
-        if( ! is_object($oProvince)){
-            return response()->json(['status' => false , 'message' => 'La provincia seleccionada no existe. Por favor seleccione otra.',], 200);
+        if( ! is_object($oCaseStage)){
+            return response()->json(['status' => false , 'message' => 'La etapa del caso seleccionada no existe. Por favor seleccione otra.',], 200);
         }
 
-        $oProvince->context = 'Provincias';
-        $oProvince->code = $request->code;
-        $oProvince->description = $request->description;
-        $oProvince->string_value1 = $request->string_value1;
+        $oCaseStage->context = 'Etapa Actual del Caso';
+        $oCaseStage->description = $request->description;
 
-        if($oProvince->save()){
-            return response()->json(['status' => true , 'message' => 'La provincia '.$oProvince->description.' ha sido actualizada exisotamente.',], 200);
+        if($oCaseStage->save()){
+            return response()->json(['status' => true , 'message' => 'La etapa del caso '.$oCaseStage->description.' ha sido actualizada exisotamente.',], 200);
         }else{
-            return response()->json(['status' => false , 'message' => 'La provincia '.$oProvince->description.' no pudo ser actualizada. Por favor intentelo nuevamente luego de unos minutos',], 200);
+            return response()->json(['status' => false , 'message' => 'La etapa del caso '.$oCaseStage->description.' no pudo ser actualizada. Por favor intentelo nuevamente luego de unos minutos',], 200);
         }
     }
 
 
     /**
-     * Metodo para eliminar una provincia seleccionada previamente por su ID
+     * Metodo para eliminar una etapa del caso seleccionada previamente por su ID
      * @Autor Raúl Chauvin
      * @FechaCreacion  2019/03/03
      *
-     * @route /backend/parametrization/catalogues/provinces/delete
+     * @route /backend/parametrization/catalogues/case-stages/delete
      * @method DELETE
      * @param  \Illuminate\Http\Request  $request
      * @param  string $sId
@@ -318,19 +314,25 @@ class ProvincesController extends Controller
         }
 
         if( ! $sId){
-            return response()->json(['status' => false , 'message' => 'Por favor seleccione una provincia para poder eliminarla.',], 200);
+            return response()->json(['status' => false , 'message' => 'Por favor seleccione una etapa del caso para poder eliminarla.',], 200);
         }
 
-        $oProvince = Catalogue::find($sId);
+        $oCaseStage = Catalogue::find($sId);
         
-        if( ! is_object($oProvince)){
-            return response()->json(['status' => false , 'message' => 'La provincia seleccionada no existe. Por favor seleccione otra.',], 200);
+        if( ! is_object($oCaseStage)){
+            return response()->json(['status' => false , 'message' => 'La etapa del caso seleccionada no existe. Por favor seleccione otra.',], 200);
         }
 
-        if($oProvince->delete()){
-            return response()->json(['status' => true , 'message' => 'La provincia '.$oProvince->description.' ha sido eliminada exitosamente.',], 200);
+        $hasCaseStageDetails = $oCaseStage->childrenCatalogs;
+
+        if($hasCaseStageDetails->isNotEmpty()){
+        	return response()->json(['status' => false , 'message' => 'La etapa del caso '.$oCaseStage->description.' no pudo ser eliminada debido a que tiene detalles de etapa asignados a la misma.',], 200);
+        }
+
+        if($oCaseStage->delete()){
+            return response()->json(['status' => true , 'message' => 'La etapa del caso '.$oCaseStage->description.' ha sido eliminada exitosamente.',], 200);
         }else{
-            return response()->json(['status' => false , 'message' => 'La provincia '.$oProvince->description.' no pudo ser eliminada. Por favor intentelo nuevamente luego de unos minutos.',], 200);
+            return response()->json(['status' => false , 'message' => 'La etapa del caso '.$oCaseStage->description.' no pudo ser eliminada. Por favor intentelo nuevamente luego de unos minutos.',], 200);
         }
     }
 }

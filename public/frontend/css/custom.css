@@ -484,3 +484,20 @@ background-color: #331196; }
 		margin-left: -15px;
 	}
 }
+
+#emailDenuncia .modal-header{
+	color: #fff;
+	background: #2b3a53;
+}
+#emailDenuncia .modal-body{
+	background: #f8f9fa;
+}
+#emailDenuncia .modal-footer{
+	background: #f8f9fa;	
+}
+#emailDenuncia{
+	background: rgba(255,255,255,0.6);
+}
+#emailDenuncia .modal-title{
+	font-size: 1rem;
+}

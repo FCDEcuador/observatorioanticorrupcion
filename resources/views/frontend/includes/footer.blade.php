@@ -113,20 +113,21 @@
         			<div class="row no-gutters bg-white border p-1 mb-1 minh80 align-items-center">
         				<div class="col-12  letter-spacing-1 fz12 text-center">
         					DESPACHO CONTRALOR:<br />
-        					contralor@contraloria.gob.ec
+        					<a class="text-default" href="#"  data-toggle="modal" data-target="#emailDenuncia" data-whatever="Contraloría General del Estado" data-receptor = "contralor@contraloria.gob.ec">contralor@contraloria.gob.ec</a>
         				</div>
         			</div>
         			<div class="row no-gutters bg-white border p-1 mb-1 minh80 align-items-center">
         				<div class="col-12  letter-spacing-1 fz12 text-center">
         					SECRETARÍA GENERAL<br />
-        					secgeneral@contraloria.gob.ec<br />
-        					comunicacion@cpccs.gob.ec
+        					<a class="text-default" href="#"  data-toggle="modal" data-target="#emailDenuncia" data-whatever="Concejo de Participación Ciudadana y Control Social" data-receptor = "secgeneral@contraloria.gob.ec">secgeneral@contraloria.gob.ec</a>
+                            <br />
+                            <a class="text-default" href="#"  data-toggle="modal" data-target="#emailDenuncia" data-whatever="Concejo de Participación Ciudadana y Control Social" data-receptor = "comunicacion@cpccs.gob.ec">comunicacion@cpccs.gob.ec</a>
         				</div>
         			</div>
         			<div class="row no-gutters bg-white border p-1 mb-1 minh80 align-items-center">
         				<div class="col-12  letter-spacing-1 fz12 text-center">
         					FISCAL ENCARGADA<br />
-        					palaciosr@fiscalia.gob.ec
+        					<a class="text-default" href="#"  data-toggle="modal" data-target="#emailDenuncia" data-whatever="Fiscalia General del Estado" data-receptor = "palaciosr@fiscalia.gob.ec">palaciosr@fiscalia.gob.ec</a>
         				</div>
         			</div>
         		</div>
@@ -163,6 +164,48 @@
 
 <!-- END MODAL DENUNCIAS -->
 
+<!-- BEGIN MODAL PARA ENVIO DE EMAILS DE DENUNCIAS -->
+<div class="modal fade" id="emailDenuncia" tabindex="-1" role="dialog" aria-labelledby="emailDenunciaLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="emailDenunciaLabel">Nueva denuncia</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="container">
+          <div class="form-group row">
+            <label for="recipient-name" class="col-form-label col-sm-3">Nombre:</label>
+            <input type="text" class="form-control col-sm-8" id="recipient-name" required>
+          </div>
+          <div class="form-group row">
+            <label for="recipient-name" class="col-form-label col-sm-3">Email:</label>
+            <input type="text" class="form-control col-sm-8" id="email" name="email" required>
+          </div>
+          <div class="form-group row">
+            <label for="recipient-name" class="col-form-label col-sm-3">Teléfono:</label>
+            <input type="text" class="form-control col-sm-8" id="telefono" name="telefono" required>
+            <input type="hidden"  id="receptor" name="receptor">
+          </div>
+          <div class="form-group row mb-0">
+            <label for="message-text" class="col-form-label col-sm-3">Denuncia:</label>
+            <textarea class="form-control col-sm-8" id="denuncia" name="denuncia" required></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-info btn-sm">Enviar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END MODAL PARA ENVIO DE EMAILS DE DENUNCIAS -->
+
+
+<!-- BEGIN FOOOTER -->
 <div class="container-fluid mt-4">
 	<div class="row bg-secondary text-white p-3">
 		<div class="col-sm-4 align-self-center d-flex justify-content-center">
@@ -203,3 +246,4 @@
 		</div>
 	</div>
 </div>
+<!-- END FOOTER -->

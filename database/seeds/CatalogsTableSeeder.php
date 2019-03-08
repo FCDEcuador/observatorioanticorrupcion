@@ -61,7 +61,7 @@ class CatalogsTableSeeder extends Seeder
 	        $oCaseStageDetail = new Catalogue;
 	        $oCaseStageDetail->context = 'Detalle sobre la Etapa';
 	        $oCaseStageDetail->code = '4';
-	        $oCaseStageDetail->description = 'Determinación de responsabilidades civiles penales';
+	        $oCaseStageDetail->description = 'Determinación de responsabilidades penales';
 	        $oCaseStageDetail->catalogue_id = $oCaseStage->id;
 	        $oCaseStageDetail->save();
 	        $bar->advance();

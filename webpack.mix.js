@@ -92,6 +92,12 @@ let mix = require('laravel-mix');
 			// Provincias
 			   	.copy('resources/assets/backend/js/form-validation/form-validation-province.js', 'public/backend/assets/js/form-validate')
 			   	.minify('public/backend/assets/js/form-validate/form-validation-province.js')
+			// Etapas del Caso
+			   	.copy('resources/assets/backend/js/form-validation/form-validation-case-stage.js', 'public/backend/assets/js/form-validate')
+			   	.minify('public/backend/assets/js/form-validate/form-validation-case-stage.js')
+			// Detalle de Etapas del Caso
+			   	.copy('resources/assets/backend/js/form-validation/form-validation-case-stage-detail.js', 'public/backend/assets/js/form-validate')
+			   	.minify('public/backend/assets/js/form-validate/form-validation-case-stage-detail.js')
 			// Roles
 			   	.copy('resources/assets/backend/js/form-validation/form-validation-roles.js', 'public/backend/assets/js/form-validate')
 			   	.minify('public/backend/assets/js/form-validate/form-validation-roles.js')

@@ -10,7 +10,7 @@ function loadCorruptionCase(caseDetailUrl){
           	if(data.status === true){
           		
           		var oCorruptionCase = data.oCorruptionCase;
-				$('#corruptionCaseImg').html('<img class="d-block w-100 h-100" src="'+oCorruptionCase.main_multimedia+'" alt="'+oCorruptionCase.title+'">');
+				$('#corruptionCaseImg').html('<img class=\'d-block w-100 h-100\' src=\''+oCorruptionCase.main_multimedia+'\' alt=\''+oCorruptionCase.title+'\'>');
 				$('#corruptionCaseTitle').html(oCorruptionCase.title);
 				$('#corruptionCaseSummary').html(oCorruptionCase.summary);
 				$('#corruptionCaseCaseStage').html(oCorruptionCase.case_stage);
@@ -19,7 +19,7 @@ function loadCorruptionCase(caseDetailUrl){
 				$('#corruptionCasePeriod').html(oCorruptionCase.period);
 				$('#corruptionCaseStateFunction').html(oCorruptionCase.state_function);
 				$('#corruptionCaseProvince').html(oCorruptionCase.province);
-				$('#corruptionCaseUrl').html('<a href="'+oCorruptionCase.url+'" role="button" class="btn btn-info btn-sm">¿Quieres conocer más?</a>');
+				$('#corruptionCaseUrl').html('<a href=\''+oCorruptionCase.url+'\' role=\'button\' class=\'btn btn-info btn-sm\'>¿Quieres conocer más?</a>');
 				
 				var linkedInstitutionsCmb = $('#corruptionCaseLinkedInstitutions');
 				linkedInstitutionsCmb.empty();

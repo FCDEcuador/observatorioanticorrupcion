@@ -26,11 +26,9 @@ Route::match(['GET', 'POST'], '/casos-de-corrupcion/{corruptionCaseSlug?}', 'Fro
 
 Route::match(['GET', 'POST'], '/biblioteca-legal', 'Frontend\LegalLibraryController@index')->name('legal-library');
 
-
 Route::match(['GET', 'POST'], '/historias-de-exito', 'Frontend\SuccessStoriesController@index')->name('success-stories');
 
 Route::get('/estadisticas', 'Frontend\StatisticsController@index')->name('statistics');
-
 
 
 Route::match(['GET', 'POST'], '/{contentCategorySlug?}', 'Frontend\ContentCategoriesController@index')->name('content-category');

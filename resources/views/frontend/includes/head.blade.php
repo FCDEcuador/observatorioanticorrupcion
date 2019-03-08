@@ -36,9 +36,9 @@
 
 	@yield('custom-css')
 
-	{!! Html::script('public/frontend/js/jquery-3.3.1.slim.min.js', ['type' => 'text/javascript', 'crossorigin' => 'anonymous']) !!}
-	{!! Html::script('public/frontend/js/Chart.min.js', ['type' => 'text/javascript', 'crossorigin' => 'anonymous']) !!}
-	{!! Html::script('public/frontend/js/amcharts.js', ['type' => 'text/javascript', 'crossorigin' => 'anonymous']) !!}
-	{!! Html::script('public/frontend/js/serial.js', ['type' => 'text/javascript', 'crossorigin' => 'anonymous']) !!}
+	{!! Html::script('public/frontend/js/jquery-3.3.1.slim.min.js', ['type' => 'text/javascript']) !!}
+	{!! Html::script('public/frontend/js/Chart.min.js', ['type' => 'text/javascript']) !!}
+	{!! Html::script('public/frontend/js/amcharts.js', ['type' => 'text/javascript']) !!}
+	{!! Html::script('public/frontend/js/serial.js', ['type' => 'text/javascript']) !!}
     <!-- Go to www.addthis.com/dashboard to customize your tools --> 
-    {!! Html::script('//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c6df5f8f2935ace', ['type' => 'text/javascript', 'crossorigin' => 'anonymous']) !!}
+    {!! Html::script('//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c6df5f8f2935ace', ['type' => 'text/javascript']) !!}

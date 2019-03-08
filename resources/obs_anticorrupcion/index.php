@@ -87,16 +87,16 @@
 						</div>
 						<div class="col-sm-4">
 							<div class="pl-3 pr-3"><canvas id="periodistica" class="m-100 "></canvas></div>
-							<div class="titulo text-uppercase fz14 mt-1 mb-3 mb-sm-0 text-center">Investigación periodística</div>
+							<div class="titulo text-uppercase fz14 mt-1 mb-3 mb-sm-0 text-center">Envestigación periodística</div>
 						</div>
 					</div>
 					
 					
 					<script>
 					
-					setupChart('examen-de-contraloria', 33,'#a9d42c');
-					setupChart('proceso-judicial', 66,'#390094');
-					setupChart('investigacion-periodistica', 99, '#4db1e0');
+					setupChart('contraloria', 33,'#a9d42c');
+					setupChart('judicial', 66,'#390094');
+					setupChart('periodistica', 99, '#4db1e0');
 
 
 					function setupChart(chartId, progress, fondo ) {

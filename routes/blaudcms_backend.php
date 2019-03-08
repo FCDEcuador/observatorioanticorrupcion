@@ -173,6 +173,54 @@ Route::group(array('prefix' => '/backend'), function(){
 				Route::delete('/delete/{iId?}', 'Backend\Parametrization\Catalogues\ProvincesController@destroy')->name('backend.parametrization.catalogues.provinces.delete');
 			});
 
+
+			/*************************************************************************************************
+
+
+					RUTAS PARA ADMINISTRACION DE ETAPAS ACTUALES DEL CASO
+
+
+			*************************************************************************************************/
+			Route::group(array('prefix' => '/case-stage'), function(){
+				// Ruta para ver la lista de etapas del caso
+				Route::match(['GET', 'POST'], '/list', 'Backend\Parametrization\Catalogues\CaseStagesController@index')->name('backend.parametrization.catalogues.case-stages.list');
+
+				// Rutas para crear una nueva etapa del caso en el sistema
+				Route::get('/add', 'Backend\Parametrization\Catalogues\CaseStagesController@create')->name('backend.parametrization.catalogues.case-stages.create');
+				Route::post('/add', 'Backend\Parametrization\Catalogues\CaseStagesController@store')->name('backend.parametrization.catalogues.case-stages.store');
+
+				// Rutas para editar una etapa del caso de acuerdo a su ID
+				Route::get('/edit/{iId?}', 'Backend\Parametrization\Catalogues\CaseStagesController@edit')->name('backend.parametrization.catalogues.case-stages.edit');
+				Route::match(['PUT', 'PATCH'], '/edit/{iId?}', 'Backend\Parametrization\Catalogues\CaseStagesController@update')->name('backend.parametrization.catalogues.case-stages.update');
+
+				// Ruta para eliminar una etapa del caso en particular seleccionado por su ID
+				Route::delete('/delete/{iId?}', 'Backend\Parametrization\Catalogues\CaseStagesController@destroy')->name('backend.parametrization.catalogues.case-stages.delete');
+			});
+
+
+			/*************************************************************************************************
+
+
+					RUTAS PARA ADMINISTRACION DE DETALLES DE ETAPAS ACTUALES DEL CASO
+
+
+			*************************************************************************************************/
+			Route::group(array('prefix' => '/case-stage-details'), function(){
+				// Ruta para ver la lista de detalle de etapas del caso
+				Route::match(['GET', 'POST'], '/list', 'Backend\Parametrization\Catalogues\CaseStagesDetailController@index')->name('backend.parametrization.catalogues.case-stage-details.list');
+
+				// Rutas para crear una nuevo detalle de etapa del caso en el sistema
+				Route::get('/add', 'Backend\Parametrization\Catalogues\CaseStagesDetailController@create')->name('backend.parametrization.catalogues.case-stage-details.create');
+				Route::post('/add', 'Backend\Parametrization\Catalogues\CaseStagesDetailController@store')->name('backend.parametrization.catalogues.case-stage-details.store');
+
+				// Rutas para editar un detalle de etapa del caso de acuerdo a su ID
+				Route::get('/edit/{iId?}', 'Backend\Parametrization\Catalogues\CaseStagesDetailController@edit')->name('backend.parametrization.catalogues.case-stage-details.edit');
+				Route::match(['PUT', 'PATCH'], '/edit/{iId?}', 'Backend\Parametrization\Catalogues\CaseStagesDetailController@update')->name('backend.parametrization.catalogues.case-stage-details.update');
+
+				// Ruta para eliminar un detalle de etapa del caso en particular seleccionado por su ID
+				Route::delete('/delete/{iId?}', 'Backend\Parametrization\Catalogues\CaseStagesDetailController@destroy')->name('backend.parametrization.catalogues.case-stage-details.delete');
+			});
+
 			
 		});
 	});
