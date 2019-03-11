@@ -100,7 +100,7 @@
 
                                 @can('backend_view_officials')
                                     <li>
-                                        <a href="#">
+                                        <a href="{!! route('backend.parametrization.catalogues.public-officials.list') !!}">
                                             Funcionarios
                                         </a>
                                     </li>
@@ -108,7 +108,7 @@
 
                                 @can('backend_view_institutions')
                                     <li>
-                                        <a href="#">
+                                        <a href="{!! route('backend.parametrization.catalogues.institutions.list') !!}">
                                             Instituciones
                                         </a>
                                     </li>
@@ -116,7 +116,7 @@
 
                                 @can('backend_view_statefunctions')
                                     <li>
-                                        <a href="#">
+                                        <a href="{!! route('backend.parametrization.catalogues.state-functions.list') !!}">
                                             Funciones del Estado
                                         </a>
                                     </li>

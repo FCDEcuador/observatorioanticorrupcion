@@ -98,6 +98,15 @@ let mix = require('laravel-mix');
 			// Detalle de Etapas del Caso
 			   	.copy('resources/assets/backend/js/form-validation/form-validation-case-stage-detail.js', 'public/backend/assets/js/form-validate')
 			   	.minify('public/backend/assets/js/form-validate/form-validation-case-stage-detail.js')
+			// Funciones del Estado
+			   	.copy('resources/assets/backend/js/form-validation/form-validation-state-function.js', 'public/backend/assets/js/form-validate')
+			   	.minify('public/backend/assets/js/form-validate/form-validation-state-function.js')
+			// Instituciones
+			   	.copy('resources/assets/backend/js/form-validation/form-validation-institution.js', 'public/backend/assets/js/form-validate')
+			   	.minify('public/backend/assets/js/form-validate/form-validation-institution.js')
+			// Funcionarios Publicos
+			   	.copy('resources/assets/backend/js/form-validation/form-validation-public-official.js', 'public/backend/assets/js/form-validate')
+			   	.minify('public/backend/assets/js/form-validate/form-validation-public-official.js')
 			// Roles
 			   	.copy('resources/assets/backend/js/form-validation/form-validation-roles.js', 'public/backend/assets/js/form-validate')
 			   	.minify('public/backend/assets/js/form-validate/form-validation-roles.js')

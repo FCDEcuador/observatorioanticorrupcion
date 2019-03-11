@@ -280,18 +280,18 @@ Route::group(array('prefix' => '/backend'), function(){
 			*************************************************************************************************/
 			Route::group(array('prefix' => '/public-officials'), function(){
 				// Ruta para ver la lista de funcionarios publicos
-				Route::match(['GET', 'POST'], '/list', 'Backend\Parametrization\Catalogues\PublicOfficialsController@index')->name('backend.parametrization.catalogues.public-officials.list');
+				Route::match(['GET', 'POST'], '/list', 'Backend\Parametrization\Catalogues\OfficialsController@index')->name('backend.parametrization.catalogues.public-officials.list');
 
 				// Rutas para crear un nuevo funcionario publico en el sistema
-				Route::get('/add', 'Backend\Parametrization\Catalogues\PublicOfficialsController@create')->name('backend.parametrization.catalogues.public-officials.create');
-				Route::post('/add', 'Backend\Parametrization\Catalogues\PublicOfficialsController@store')->name('backend.parametrization.catalogues.public-officials.store');
+				Route::get('/add', 'Backend\Parametrization\Catalogues\OfficialsController@create')->name('backend.parametrization.catalogues.public-officials.create');
+				Route::post('/add', 'Backend\Parametrization\Catalogues\OfficialsController@store')->name('backend.parametrization.catalogues.public-officials.store');
 
 				// Rutas para editar un funcionario publico de acuerdo a su ID
-				Route::get('/edit/{iId?}', 'Backend\Parametrization\Catalogues\PublicOfficialsController@edit')->name('backend.parametrization.catalogues.public-officials.edit');
-				Route::match(['PUT', 'PATCH'], '/edit/{iId?}', 'Backend\Parametrization\Catalogues\PublicOfficialsController@update')->name('backend.parametrization.catalogues.public-officials.update');
+				Route::get('/edit/{iId?}', 'Backend\Parametrization\Catalogues\OfficialsController@edit')->name('backend.parametrization.catalogues.public-officials.edit');
+				Route::match(['PUT', 'PATCH'], '/edit/{iId?}', 'Backend\Parametrization\Catalogues\OfficialsController@update')->name('backend.parametrization.catalogues.public-officials.update');
 
 				// Ruta para eliminar un funcionario publico en particular seleccionado por su ID
-				Route::delete('/delete/{iId?}', 'Backend\Parametrization\Catalogues\PublicOfficialsController@destroy')->name('backend.parametrization.catalogues.public-officials.delete');
+				Route::delete('/delete/{iId?}', 'Backend\Parametrization\Catalogues\OfficialsController@destroy')->name('backend.parametrization.catalogues.public-officials.delete');
 			});
 
 			

@@ -5,7 +5,7 @@
 @endsection
 
 @section('title')
-	Función del Estado
+	Instituciones
 @endsection
 
 @section('main-content')	
@@ -22,7 +22,7 @@
                     <li class="breadcrumb-item"><a href="{!! route('backend.dashboard') !!}">Dashboard</a></li>
                     <li class="breadcrumb-item">Parametrizacion</li>
                     <li class="breadcrumb-item">Catalogos</li>
-                    <li class="breadcrumb-item active">Función del Estado</li>
+                    <li class="breadcrumb-item active">Instituciones</li>
                 </ol>
             </div>
         </div>
@@ -40,19 +40,19 @@
                         <div class="row">
                             <div class="col-md-7">
                                 <h4 class="card-title">
-                                  Lista de Funciones del Estado
+                                  Lista de Instituciones
                                 </h4>
                                 <h6 class="card-subtitle">
-                                  A continuacion la lista de funciones del estado generadas para el portal web
+                                  A continuacion la lista de instituciones generadas para el portal web
                                 </h6>
                             </div>
                             <div class="col-md-4">
                                 @can('backend_add_casestages')
-                                    <a href="{!! route('backend.parametrization.catalogues.state-functions.create') !!}" class="btn btn-info btn-sm waves-effect waves-light">
+                                    <a href="{!! route('backend.parametrization.catalogues.institutions.create') !!}" class="btn btn-info btn-sm waves-effect waves-light">
                                         <span class="btn-label">
                                             <i class="ti-plus"></i>
                                         </span>
-                                        Agregar Función del Estado
+                                        Agregar Institución
                                     </a>
                                 @endcan
                             </div>
@@ -66,50 +66,50 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @if($stateFunctionsList->isNotEmpty())
-                                                @foreach($stateFunctionsList as $oStateFunction)
+                                            @if($institutionsList->isNotEmpty())
+                                                @foreach($institutionsList as $oInstitution)
                                                     <tr>
                                                         <td>
                                                             <div class="btn-group">
-                                                                <button type="button" class="btn btn-xs btn-success dropdown-toggle waves-effect waves-light ladda-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="deleteStateFunctionBtn_{!! $oStateFunction->id !!}" data-style="zoom-out">
+                                                                <button type="button" class="btn btn-xs btn-success dropdown-toggle waves-effect waves-light ladda-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="deleteInstitutionBtn_{!! $oInstitution->id !!}" data-style="zoom-out">
                                                                     <span class="ladda-label">
                                                                         <i class="fa fa-cog"></i>
                                                                     </span>
                                                                     <span class="ladda-spinner"></span>
                                                                 </button>
                                                                 <div class="dropdown-menu animated flipInX">
-                                                                    @can('backend_edit_statefunctions')
-                                                                        <a class="dropdown-item" href="{!! route('backend.parametrization.catalogues.state-functions.edit', [$oStateFunction->id]) !!}">
+                                                                    @can('backend_edit_institutions')
+                                                                        <a class="dropdown-item" href="{!! route('backend.parametrization.catalogues.institutions.edit', [$oInstitution->id]) !!}">
                                                                             <small>
-                                                                                <i class="mdi mdi-pencil"></i> Editar Función del Estado
+                                                                                <i class="mdi mdi-pencil"></i> Editar Institución
                                                                             </small>
                                                                         </a>
                                                                     @endcan
-                                                                    @can('backend_delete_statefunctions')
-                                                                        <a class="dropdown-item" onclick="javascript: confirmDelete('deleteStateFunctionForm_{!! $oStateFunction->id !!}', 'deleteStateFunctionBtn_{!! $oStateFunction->id !!}', 'BlaudCMS :: Funciones del Estado', 'Esta seguro que desea eliminar la función del estado {!! $oStateFunction->description !!}', '{!! route('backend.parametrization.catalogues.state-functions.list') !!}', true);" href="#">
+                                                                    @can('backend_delete_institutions')
+                                                                        <a class="dropdown-item" onclick="javascript: confirmDelete('deleteInstitutionForm_{!! $oInstitution->id !!}', 'deleteInstitutionBtn_{!! $oInstitution->id !!}', 'BlaudCMS :: Instituciones', 'Esta seguro que desea eliminar la institución {!! $oInstitution->description !!}', '{!! route('backend.parametrization.catalogues.institutions.list') !!}', true);" href="#">
                                                                             <small>
-                                                                                <i class="mdi mdi-delete"></i> Eliminar Función del estado
+                                                                                <i class="mdi mdi-delete"></i> Eliminar Institución
                                                                             </small>
                                                                         </a>
-                                                                        {!! Form::open(['route' => ['backend.parametrization.catalogues.state-functions.delete', $oStateFunction->id], 'method' => 'DELETE', 'name' => 'deleteStateFunctionForm_'.$oStateFunction->id, 'id' => 'deleteStateFunctionForm_'.$oStateFunction->id]) !!}
+                                                                        {!! Form::open(['route' => ['backend.parametrization.catalogues.institutions.delete', $oInstitution->id], 'method' => 'DELETE', 'name' => 'deleteInstitutionForm_'.$oInstitution->id, 'id' => 'deleteInstitutionForm_'.$oInstitution->id]) !!}
                                                                         {!! Form::close() !!}
                                                                     @endcan
                                                                 </div>
                                                             </div>
                                                         </td>
-                                                        <td>{!! $oStateFunction->description !!}</td>
+                                                        <td>{!! $oInstitution->description !!}</td>
                                                     </tr>
                                                 @endforeach
                                             @else
                                                 <tr class="table-warning">
-                                                    <td colspan="4">Aun no se han generado funciones del estado para el portal web.</td>
+                                                    <td colspan="4">Aun no se han generado instituciones para el portal web.</td>
                                                 </tr>
                                             @endif
                                         </tbody>
                                     </table>
                                 </div>
                                 <div align="center">
-                                    {!! $stateFunctionsList->links() !!}
+                                    {!! $institutionsList->links() !!}
                                 </div>
 
 

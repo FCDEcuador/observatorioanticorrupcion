@@ -5,7 +5,7 @@
 @endsection
 
 @section('title')
-	Función del Estado
+	Funcionarios
 @endsection
 
 @section('main-content')	
@@ -15,14 +15,14 @@
         <!-- ============================================================== -->
         <div class="row page-titles">
             <div class="col-md-5 align-self-center">
-                <h3 class="text-themecolor">Función del Estado</h3>
+                <h3 class="text-themecolor">Funcionarios</h3>
             </div>
             <div class="col-md-7 align-self-center">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{!! route('backend.dashboard') !!}">Dashboard</a></li>
                     <li class="breadcrumb-item">Parametrizacion</li>
                     <li class="breadcrumb-item">Catalogos</li>
-                    <li class="breadcrumb-item active">Función del Estado</li>
+                    <li class="breadcrumb-item active">Funcionarios</li>
                 </ol>
             </div>
         </div>
@@ -40,19 +40,19 @@
                         <div class="row">
                             <div class="col-md-7">
                                 <h4 class="card-title">
-                                  Lista de Funciones del Estado
+                                  Lista de Funcionarios
                                 </h4>
                                 <h6 class="card-subtitle">
-                                  A continuacion la lista de funciones del estado generadas para el portal web
+                                  A continuacion la lista de funcionarios generados para el portal web
                                 </h6>
                             </div>
                             <div class="col-md-4">
-                                @can('backend_add_casestages')
-                                    <a href="{!! route('backend.parametrization.catalogues.state-functions.create') !!}" class="btn btn-info btn-sm waves-effect waves-light">
+                                @can('backend_add_officials')
+                                    <a href="{!! route('backend.parametrization.catalogues.public-officials.create') !!}" class="btn btn-info btn-sm waves-effect waves-light">
                                         <span class="btn-label">
                                             <i class="ti-plus"></i>
                                         </span>
-                                        Agregar Función del Estado
+                                        Agregar Funcionario
                                     </a>
                                 @endcan
                             </div>
@@ -66,50 +66,50 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @if($stateFunctionsList->isNotEmpty())
-                                                @foreach($stateFunctionsList as $oStateFunction)
+                                            @if($publicOfficialsList->isNotEmpty())
+                                                @foreach($publicOfficialsList as $oPublicOfficial)
                                                     <tr>
                                                         <td>
                                                             <div class="btn-group">
-                                                                <button type="button" class="btn btn-xs btn-success dropdown-toggle waves-effect waves-light ladda-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="deleteStateFunctionBtn_{!! $oStateFunction->id !!}" data-style="zoom-out">
+                                                                <button type="button" class="btn btn-xs btn-success dropdown-toggle waves-effect waves-light ladda-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="deletePublicOfficialBtn_{!! $oPublicOfficial->id !!}" data-style="zoom-out">
                                                                     <span class="ladda-label">
                                                                         <i class="fa fa-cog"></i>
                                                                     </span>
                                                                     <span class="ladda-spinner"></span>
                                                                 </button>
                                                                 <div class="dropdown-menu animated flipInX">
-                                                                    @can('backend_edit_statefunctions')
-                                                                        <a class="dropdown-item" href="{!! route('backend.parametrization.catalogues.state-functions.edit', [$oStateFunction->id]) !!}">
+                                                                    @can('backend_edit_officials')
+                                                                        <a class="dropdown-item" href="{!! route('backend.parametrization.catalogues.public-officials.edit', [$oPublicOfficial->id]) !!}">
                                                                             <small>
-                                                                                <i class="mdi mdi-pencil"></i> Editar Función del Estado
+                                                                                <i class="mdi mdi-pencil"></i> Editar Funcionario
                                                                             </small>
                                                                         </a>
                                                                     @endcan
-                                                                    @can('backend_delete_statefunctions')
-                                                                        <a class="dropdown-item" onclick="javascript: confirmDelete('deleteStateFunctionForm_{!! $oStateFunction->id !!}', 'deleteStateFunctionBtn_{!! $oStateFunction->id !!}', 'BlaudCMS :: Funciones del Estado', 'Esta seguro que desea eliminar la función del estado {!! $oStateFunction->description !!}', '{!! route('backend.parametrization.catalogues.state-functions.list') !!}', true);" href="#">
+                                                                    @can('backend_delete_officials')
+                                                                        <a class="dropdown-item" onclick="javascript: confirmDelete('deletePublicOfficialForm_{!! $oPublicOfficial->id !!}', 'deletePublicOfficialBtn_{!! $oPublicOfficial->id !!}', 'BlaudCMS :: Funcionario', 'Esta seguro que desea eliminar el funcionario {!! $oPublicOfficial->description !!}', '{!! route('backend.parametrization.catalogues.public-officials.list') !!}', true);" href="#">
                                                                             <small>
-                                                                                <i class="mdi mdi-delete"></i> Eliminar Función del estado
+                                                                                <i class="mdi mdi-delete"></i> Eliminar Funcionario
                                                                             </small>
                                                                         </a>
-                                                                        {!! Form::open(['route' => ['backend.parametrization.catalogues.state-functions.delete', $oStateFunction->id], 'method' => 'DELETE', 'name' => 'deleteStateFunctionForm_'.$oStateFunction->id, 'id' => 'deleteStateFunctionForm_'.$oStateFunction->id]) !!}
+                                                                        {!! Form::open(['route' => ['backend.parametrization.catalogues.public-officials.delete', $oPublicOfficial->id], 'method' => 'DELETE', 'name' => 'deletePublicOfficialForm_'.$oPublicOfficial->id, 'id' => 'deletePublicOfficialForm_'.$oPublicOfficial->id]) !!}
                                                                         {!! Form::close() !!}
                                                                     @endcan
                                                                 </div>
                                                             </div>
                                                         </td>
-                                                        <td>{!! $oStateFunction->description !!}</td>
+                                                        <td>{!! $oPublicOfficial->description !!}</td>
                                                     </tr>
                                                 @endforeach
                                             @else
                                                 <tr class="table-warning">
-                                                    <td colspan="4">Aun no se han generado funciones del estado para el portal web.</td>
+                                                    <td colspan="4">Aun no se han generado funcionarios para el portal web.</td>
                                                 </tr>
                                             @endif
                                         </tbody>
                                     </table>
                                 </div>
                                 <div align="center">
-                                    {!! $stateFunctionsList->links() !!}
+                                    {!! $publicOfficialsList->links() !!}
                                 </div>
 
 

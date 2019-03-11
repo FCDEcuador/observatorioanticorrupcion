@@ -10,21 +10,21 @@ use BlaudCMS\Configuration;
 use BlaudCMS\Catalogue;
 use BlaudCMS\User;
 
-use BlaudCMS\Http\Requests\Parametrization\Catalogues\InstitutionCreateRequest;
-use BlaudCMS\Http\Requests\Parametrization\Catalogues\InstitutionUpdateRequest;
+use BlaudCMS\Http\Requests\Parametrization\Catalogues\PublicOfficialCreateRequest;
+use BlaudCMS\Http\Requests\Parametrization\Catalogues\PublicOfficialUpdateRequest;
 
 use Storage;
 
 use Auth;
 
 /**
-* Clase para administracion de funciones del estado
+* Clase para administracion de funcionarios públicos
 * @Autor Raúl Chauvin
 * @FechaCreacion  2019/03/04
 * @Parametrization
 */
 
-class InstitutionsController extends Controller
+class OfficialsController extends Controller
 {
     use BackendAuthorizable;
     /**
@@ -84,18 +84,18 @@ class InstitutionsController extends Controller
 
 
     /**
-     * Metodo para mostrar la lista de instituciones
+     * Metodo para mostrar la lista de funcionarios
      * @Autor Raúl Chauvin
      * @FechaCreacion  2019/03/04
      *
-     * @route /backend/parametrization/catalogues/institutions/list
+     * @route /backend/parametrization/catalogues/public-officials/list
      * @method GET
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
     {
-        $institutionsList = Catalogue::byContext('Instituciones')->orderBy('description', 'asc')->paginate(20);
+        $publicOfficialsList = Catalogue::byContext('Funcionarios')->orderBy('description', 'asc')->paginate(20);
         $data = [
             // Datos generales para todas las vistas
             'activeMenu' => $this->activeMenu,
@@ -103,9 +103,9 @@ class InstitutionsController extends Controller
 
             // Datos especificos para utilizar en la vista
             'oStorage' => $this->oStorage,
-            'institutionsList' => $institutionsList,
+            'publicOfficialsList' => $publicOfficialsList,
         ];
-        $view = view('backend.parametrization.catalogues.institutions.institutionsList', $data);
+        $view = view('backend.parametrization.catalogues.public-officials.publicOfficialsList', $data);
         
         if($request->ajax()){
             $sections = $view->renderSections();
@@ -121,11 +121,11 @@ class InstitutionsController extends Controller
     }
 
     /**
-     * Metodo para mostrar el formulario de creacion de nuevas instituciones
+     * Metodo para mostrar el formulario de creacion de nuevos funcionarios
      * @Autor Raúl Chauvin
      * @FechaCreacion  2019/03/03
      *
-     * @route /backend/parametrization/catalogues/institutions/add
+     * @route /backend/parametrization/catalogues/public-officials/add
      * @method GET
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -139,10 +139,10 @@ class InstitutionsController extends Controller
 
             // Datos especificos para utilizar en la vista
             'oStorage' => $this->oStorage,
-            'oInstitution' => null,
+            'oPublicOfficial' => null,
         ];
 
-        $view = view('backend.parametrization.catalogues.institutions.addEditInstitution', $data);
+        $view = view('backend.parametrization.catalogues.public-officials.addEditPublicOfficial', $data);
         
         if($request->ajax()){
             $sections = $view->renderSections();
@@ -158,16 +158,16 @@ class InstitutionsController extends Controller
     }
 
     /**
-     * Metodo para guardar en la base de datos las nuevas instituciones ingresadas desde el formulario
+     * Metodo para guardar en la base de datos los nuevos funcionarios ingresados desde el formulario
      * @Autor Raúl Chauvin
      * @FechaCreacion  2019/03/03
      *
-     * @route /backend/parametrization/catalogues/institutions/add
+     * @route /backend/parametrization/catalogues/public-officials/add
      * @method POST
-     * @param  \BlaudCMS\Http\Requests\Parametrization\Catalogues\InstitutionCreateRequest  $request
+     * @param  \BlaudCMS\Http\Requests\Parametrization\Catalogues\PublicOfficialCreateRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(InstitutionCreateRequest $request)
+    public function store(PublicOfficialCreateRequest $request)
     {
 
         if( ! $request->ajax() ){
@@ -175,23 +175,23 @@ class InstitutionsController extends Controller
             return back();
         }
 
-        $oInstitution = new Catalogue;
-        $oInstitution->context = 'Instituciones';
-        $oInstitution->description = $request->description;
+        $oPublicOfficial = new Catalogue;
+        $oPublicOfficial->context = 'Funcionarios';
+        $oPublicOfficial->description = $request->description;
 
-        if($oInstitution->save()){
-            return response()->json(['status' => true , 'message' => 'La institución '.$oInstitution->description.' ha sido agregada exisotamente.',], 200);
+        if($oPublicOfficial->save()){
+            return response()->json(['status' => true , 'message' => 'El funcionario '.$oPublicOfficial->description.' ha sido agregado exisotamente.',], 200);
         }else{
-            return response()->json(['status' => false , 'message' => 'La institución '.$oInstitution->description.' no pudo ser agregada. Por favor intentelo nuevamente luego de unos minutos',], 200);
+            return response()->json(['status' => false , 'message' => 'El funcionario '.$oPublicOfficial->description.' no pudo ser agregado. Por favor intentelo nuevamente luego de unos minutos',], 200);
         }
     }
 
     /**
-     * Metodo para mostrar el formulario de edicion de una institucion seleccionada previamente por su ID
+     * Metodo para mostrar el formulario de edicion de un funcionario seleccionada previamente por su ID
      * @Autor Raúl Chauvin
      * @FechaCreacion  2019/03/03
      *
-     * @route /backend/parametrization/catalogues/institutions/edit
+     * @route /backend/parametrization/catalogues/public-officials/edit
      * @method GET
      * @param  string $sId
      * @param  \Illuminate\Http\Request  $request
@@ -203,19 +203,19 @@ class InstitutionsController extends Controller
             if($request->ajax()){
                 $aResponseData = [
                     'type' => 'alert', 
-                    'title' => 'Instituciones', 
-                    'message' => 'Por favor seleccione una institución para poder editarla.', 
+                    'title' => 'Funcionarios', 
+                    'message' => 'Por favor seleccione un funcionario para poder editarlo.', 
                     'class' => 'error',
                 ];
                 return response()->json($aResponseData, 200);
             }
-            $request->session()->flash('errorMsg', 'Por favor seleccione una institución para poder editarla.');
+            $request->session()->flash('errorMsg', 'Por favor seleccione un funcionario para poder editarlo.');
             return back();
         }
         
-        $oInstitution = Catalogue::find($sId);
+        $oPublicOfficial = Catalogue::find($sId);
 
-        if( ! is_object($oInstitution)){
+        if( ! is_object($oPublicOfficial)){
             if($request->ajax()){
                 $aResponseData = [
                     'type' => 'alert', 
@@ -236,10 +236,10 @@ class InstitutionsController extends Controller
 
             // Datos especificos para utilizar en la vista
             'oStorage' => $this->oStorage,
-            'oInstitution' => $oInstitution,
+            'oPublicOfficial' => $oPublicOfficial,
         ];
 
-        $view = view('backend.parametrization.catalogues.institutions.addEditInstitution', $data);
+        $view = view('backend.parametrization.catalogues.public-officials.addEditPublicOfficial', $data);
 
         if($request->ajax()){
             $sections = $view->renderSections();
@@ -256,18 +256,18 @@ class InstitutionsController extends Controller
 
 
     /**
-     * Metodo para guardar en la base de datos los cambios realizados a una institucion previamente seleccionada por su ID desde el formulario
+     * Metodo para guardar en la base de datos los cambios realizados a un funcionario previamente seleccionado por su ID desde el formulario
      * @Autor Raúl Chauvin
      * @FechaCreacion  2019/03/03
      *
-     * @route /backend/parametrization/catalogues/institutions/edit
+     * @route /backend/parametrization/catalogues/public-officials/edit
      * @method PUT/PATCH
      *
-     * @param  \BlaudCMS\Http\Requests\Parametrization\Catalogues\InstitutionUpdateRequest  $request
+     * @param  \BlaudCMS\Http\Requests\Parametrization\Catalogues\PublicOfficialUpdateRequest  $request
      * @param  string $sId
      * @return \Illuminate\Http\Response
      */
-    public function update(InstitutionUpdateRequest $request, $sId = '')
+    public function update(PublicOfficialUpdateRequest $request, $sId = '')
     {
         if( ! $request->ajax() ){
             $request->session()->flash('errorMsg', 'Unicamente se aceptan peticiones Ajax');
@@ -275,32 +275,32 @@ class InstitutionsController extends Controller
         }
 
         if( ! $sId){
-            return response()->json(['status' => false , 'message' => 'Por favor seleccione una institución para poder editarla.',], 200);
+            return response()->json(['status' => false , 'message' => 'Por favor seleccione un funcionario para poder editarlo.',], 200);
         }
 
-        $oInstitution = Catalogue::find($sId);
+        $oPublicOfficial = Catalogue::find($sId);
         
-        if( ! is_object($oInstitution)){
-            return response()->json(['status' => false , 'message' => 'La institución seleccionada no existe. Por favor seleccione otra.',], 200);
+        if( ! is_object($oPublicOfficial)){
+            return response()->json(['status' => false , 'message' => 'El funcionario seleccionado no existe. Por favor seleccione otro.',], 200);
         }
 
-        $oInstitution->context = 'Instituciones';
-        $oInstitution->description = $request->description;
+        $oPublicOfficial->context = 'Funcionarios';
+        $oPublicOfficial->description = $request->description;
 
-        if($oInstitution->save()){
-            return response()->json(['status' => true , 'message' => 'La institución '.$oInstitution->description.' ha sido actualizada exisotamente.',], 200);
+        if($oPublicOfficial->save()){
+            return response()->json(['status' => true , 'message' => 'El funcionario '.$oPublicOfficial->description.' ha sido actualizado exisotamente.',], 200);
         }else{
-            return response()->json(['status' => false , 'message' => 'La institución '.$oInstitution->description.' no pudo ser actualizada. Por favor intentelo nuevamente luego de unos minutos',], 200);
+            return response()->json(['status' => false , 'message' => 'El funcionario '.$oPublicOfficial->description.' no pudo ser actualizado. Por favor intentelo nuevamente luego de unos minutos',], 200);
         }
     }
 
 
     /**
-     * Metodo para eliminar una institución seleccionada previamente por su ID
+     * Metodo para eliminar un funcionario seleccionado previamente por su ID
      * @Autor Raúl Chauvin
      * @FechaCreacion  2019/03/03
      *
-     * @route /backend/parametrization/catalogues/institutions/delete
+     * @route /backend/parametrization/catalogues/public-officials/delete
      * @method DELETE
      * @param  \Illuminate\Http\Request  $request
      * @param  string $sId
@@ -314,19 +314,19 @@ class InstitutionsController extends Controller
         }
 
         if( ! $sId){
-            return response()->json(['status' => false , 'message' => 'Por favor seleccione una institución para poder eliminarla.',], 200);
+            return response()->json(['status' => false , 'message' => 'Por favor seleccione un funcionario para poder eliminarlo.',], 200);
         }
 
-        $oInstitution = Catalogue::find($sId);
+        $oPublicOfficial = Catalogue::find($sId);
         
-        if( ! is_object($oInstitution)){
-            return response()->json(['status' => false , 'message' => 'La institución seleccionada no existe. Por favor seleccione otra.',], 200);
+        if( ! is_object($oPublicOfficial)){
+            return response()->json(['status' => false , 'message' => 'El funcionario seleccionado no existe. Por favor seleccione otro.',], 200);
         }
 
-        if($oInstitution->delete()){
-            return response()->json(['status' => true , 'message' => 'La institución '.$oInstitution->description.' ha sido eliminada exitosamente.',], 200);
+        if($oPublicOfficial->delete()){
+            return response()->json(['status' => true , 'message' => 'El funcionario '.$oPublicOfficial->description.' ha sido eliminado exitosamente.',], 200);
         }else{
-            return response()->json(['status' => false , 'message' => 'La institución '.$oInstitution->description.' no pudo ser eliminada. Por favor intentelo nuevamente luego de unos minutos.',], 200);
+            return response()->json(['status' => false , 'message' => 'El funcionario '.$oPublicOfficial->description.' no pudo ser eliminado. Por favor intentelo nuevamente luego de unos minutos.',], 200);
         }
     }
 }
