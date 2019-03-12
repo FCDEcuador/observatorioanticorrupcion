@@ -150,7 +150,7 @@
 				@foreach($aCaseStageList as $oCaseStage)
 					@php
 						$aAux = [];
-						$aAux[$oCaseStage][] = [
+						$aAux[$oCaseStage->case_stage][] = [
 							'category' => ''.strtoupper($oCaseStage->case_stage_detail).'',
 							'column-1' => ''.$oCaseStage->numCases.'',
 							'fill alpha' => '1',
