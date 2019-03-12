@@ -270,19 +270,19 @@
 	    	if($aStateFunctionList->isNotEmpty()){
 				foreach($aStateFunctionList as $oStateFunction){
 					if($oStateFunction->state_function == 'Función Legislativa'){
-						$flegislativo = $oStateFunction->numCases;
+						$flegislativo = $oStateFunction->corruptionCaseNum;
 					}
 					if($oStateFunction->state_function == 'Función Ejecutiva'){
-						$fejecutivo = $oStateFunction->numCases;
+						$fejecutivo = $oStateFunction->corruptionCaseNum;
 					}
 					if($oStateFunction->state_function == 'Función Judicial'){
-						$fjudicial = $oStateFunction->numCases;
+						$fjudicial = $oStateFunction->corruptionCaseNum;
 					}
 					if($oStateFunction->state_function == 'Función Electoral'){
-						$felectoal = $oStateFunction->numCases;
+						$felectoal = $oStateFunction->corruptionCaseNum;
 					}
 					if($oStateFunction->state_function == 'Función de Transparencia y Control Social'){
-						$ftransparencia = $oStateFunction->numCases;
+						$ftransparencia = $oStateFunction->corruptionCaseNum;
 					}
 				}
 	    	}
