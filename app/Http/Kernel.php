@@ -19,6 +19,7 @@ class Kernel extends HttpKernel
         \BlaudCMS\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \BlaudCMS\Http\Middleware\TrustProxies::class,
+        \BlaudCMS\Http\Middleware\ForceHttpsMiddleware::class,
     ];
 
     /**
