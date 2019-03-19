@@ -4,6 +4,50 @@
     <!-- BEGIN PAGE LEVEL PLUGINS -->
     {!! Html::style('public/backend/assets/plugins/ladda/ladda-themeless.min.css') !!}
     {!! Html::style('public/backend/assets/plugins/bootstrap-sweetalert/sweetalert.css') !!}
+    <!-- page css -->
+    
+    <style type="text/css">
+        .login-register{
+            background-size:cover;
+            background-repeat:no-repeat;
+            background-position:50%;
+            height:100%;
+            width:100%;
+            padding:10% 0;
+            position:fixed;
+        }
+
+        .login-box{
+            width:400px;
+            margin:0 auto;
+        }
+
+        .login-box .footer{
+            width:100%;
+            left:0;
+            right:0;
+        }
+
+        .login-box .social{
+            display:block;
+            margin-bottom:30px;
+        }
+
+        #recoverform{
+            display:none;
+        }
+
+        .login-sidebar{
+            padding:0;
+            margin-top:0;
+        }
+
+        .login-sidebar .login-box{
+            right:0;
+            position:absolute;
+            height:100%;
+        }
+    </style>
     <!-- END PAGE LEVEL PLUGINS -->
 @endsection
 

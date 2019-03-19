@@ -24,9 +24,6 @@
     {!! Html::style('public/backend/assets/css/icons/flag-icon-css/flag-icon.min.css') !!}
     {!! Html::style('public/backend/assets/css/icons/material-design-iconic-font/css/materialdesignicons.min.css') !!}
     {!! Html::style('public/backend/assets/css/style.css') !!}
-    <!-- page css -->
-    {!! Html::style('public/backend/assets/css/pages/login-register-lock.css') !!}
-    
     <!-- You can change the theme colors from here -->
     {!! Html::style('public/backend/assets/css/colors/default-dark.css') !!}
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
