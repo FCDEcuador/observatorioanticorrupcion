@@ -16,8 +16,6 @@
 
     <!-- Bootstrap Core CSS -->
     {!! Html::style('public/backend/assets/plugins/bootstrap/css/bootstrap.min.css') !!}
-    <!-- page css -->
-    {!! Html::style('public/backend/assets/css/pages/login-register-lock.css') !!}
     <!-- Custom CSS -->
     {!! Html::style('public/backend/assets/css/icons/font-awesome/css/font-awesome.min.css') !!}
     {!! Html::style('public/backend/assets/css/icons/simple-line-icons/css/simple-line-icons.css') !!}
@@ -26,6 +24,8 @@
     {!! Html::style('public/backend/assets/css/icons/flag-icon-css/flag-icon.min.css') !!}
     {!! Html::style('public/backend/assets/css/icons/material-design-iconic-font/css/materialdesignicons.min.css') !!}
     {!! Html::style('public/backend/assets/css/style.css') !!}
+    <!-- page css -->
+    {!! Html::style('public/backend/assets/css/pages/login-register-lock.css') !!}
     
     <!-- You can change the theme colors from here -->
     {!! Html::style('public/backend/assets/css/colors/default-dark.css') !!}

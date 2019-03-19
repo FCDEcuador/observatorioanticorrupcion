@@ -76,7 +76,7 @@ class CreateContentTables extends Migration
                 $table->string('name')->unique();
                 $table->string('title');
                 $table->string('subtitle')->nullable();
-                $table->string('description')->nullable();
+                $table->text('description')->nullable();
                 $table->string('image')->nullable();
                 $table->string('icon')->nullable();
                 $table->string('url');

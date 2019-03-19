@@ -24,15 +24,15 @@
     <script type="text/javascript">
         $(document).ready(function(){
             @if(session()->exists('successMsg'))
-                showAlert('Cuponcity', '{!! session('successMsg') !!}', 'success');
+                showAlert('Observatorio Anti Corrupción', '{!! session('successMsg') !!}', 'success');
             @endif
 
             @if(session()->exists('warningMsg'))
-                showAlert('Cuponcity', '{!! session('warningMsg') !!}', 'warning');
+                showAlert('Observatorio Anti Corrupción', '{!! session('warningMsg') !!}', 'warning');
             @endif
 
             @if(session()->exists('errorMsg'))
-                showAlert('Cuponcity', '{!! session('errorMsg') !!}', 'error');
+                showAlert('Observatorio Anti Corrupción', '{!! session('errorMsg') !!}', 'error');
             @endif
         });
     </script>
