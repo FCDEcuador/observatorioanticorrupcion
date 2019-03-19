@@ -25,8 +25,13 @@
 
 		<div class="row p-3 justify-content-center">
 			<div class="col-sm-6">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus. Fusce venenatis odio non condimentum pulvinar. Donec facilisis enim gravida lectus pretium egestas. Aenean tempus lectus ut risus suscipit, tempus vestibulum ex aliquet.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque convallis dolor ac nibh sollicitudin faucibus.</p>
+				<p>¿Quieres obtener información adicional de Ciudadanía y Desarrollo, compartir una idea con nosotros o hacer un comentario? Envíanos un correo electrónico o info@ciudadaniaydesarrollo.org o llena el formulario a continuación.</p>
+				
+				<p>Dirección: Av. Gral. Eloy Alfaro y 6 de Diciembre, Edificio Monasterio Plaza Piso 10 - Quito</p>
+				
+				<p>E-mail:  <a href="mailto:info@ciudadaniaydesarrollo.org">info@ciudadaniaydesarrollo.org</a></p>
+ 				<p>Teléfono:(+593 – 2) 333-2526</p>
+				<p>Quito-Ecuador</p>
 			</div>
 		</div>
 
