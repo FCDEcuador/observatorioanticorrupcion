@@ -160,7 +160,7 @@
 					</script>
 
 					<div class="clearfix">
-						<a href="#" role="button" class="btn btn-success btn-sm bgmorado mt-2 float-right">conoce más aquí</a>
+						<a href="{!! route('statistics') !!}" role="button" class="btn btn-success btn-sm bgmorado mt-2 float-right">conoce más aquí</a>
 					</div>
 				</div>			
 			</div>

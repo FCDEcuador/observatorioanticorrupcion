@@ -121,7 +121,7 @@ class HomeController extends Controller
             'topMenuItems' => $oTopMenu ? $oTopMenu->menuItems()->firstLevel()->orderBy('order', 'asc')->get() : null,
 
             // Datos para el contenido de la pagina
-            'corruptionCasesList' => CorruptionCase::orderBy('created_at', 'desc')->take(3)->get(),
+            'corruptionCasesList' => CorruptionCase::orderBy('created_at', 'desc')->skip(0)->take(3)->get(),
             'caseStages' => Catalogue::byContext('Etapa Actual del Caso')->get(),
             'oContentCategory' => $oContentCategory,
             'oSuccessStory' => SuccessStory::orderBy('created_at', 'desc')->first(),

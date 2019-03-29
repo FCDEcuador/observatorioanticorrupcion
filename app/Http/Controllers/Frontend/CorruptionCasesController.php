@@ -122,7 +122,7 @@ class CorruptionCasesController extends Controller
             'caseStageList' => Catalogue::byContext('Etapa Actual del Caso')->get(),
             'provinceList' => Catalogue::byContext('Provincias')->get(),
             'stateFunctionList' => Catalogue::byContext('Función del Estado')->get(),
-            'corruptionCasesList' => CorruptionCase::searchCorruptionCasess($request->sStringSearch, $request->sCaseStage, null, $request->sProvince, $request->sStateFunction, 6),
+            'corruptionCasesList' => CorruptionCase::searchCorruptionCases($request->sStringSearch, $request->sCaseStage, null, $request->sProvince, $request->sStateFunction, 6),
     	];
 
     	$view = view('frontend.corruption-cases', $data);

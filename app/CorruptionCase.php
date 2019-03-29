@@ -220,7 +220,7 @@ class CorruptionCase extends Model
      *
      * @return CorruptionCases[]
      */
-    public static function searchCorruptionCasess(
+    public static function searchCorruptionCases(
 		$sStringSearch = null, 
 		$sCaseStage = null, 
 		$sCaseStageDetail = null, 
