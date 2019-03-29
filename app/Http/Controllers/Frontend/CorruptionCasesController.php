@@ -159,8 +159,8 @@ class CorruptionCasesController extends Controller
     	if( ! is_object($oCorruptionCase)){
     		return response()->json(['status' => false, 'oCorruptionCase' => [], 'message' => 'El caso de corrupción que usted a seleccionado no existe, por favor seleccione otro.'], 200);
     	}
-    	$minYear = $oCorruptionCase->whatsHappeneds()->min('year')->get();
-    	$maxYear = $oCorruptionCase->whatsHappeneds()->max('year')->get();
+    	$minYear = $oCorruptionCase->whatsHappeneds()->min('year');
+    	$maxYear = $oCorruptionCase->whatsHappeneds()->max('year');
     	
     	$oCorruptionCaseParse = [
     		'case_stage' => $oCorruptionCase->case_stage,
