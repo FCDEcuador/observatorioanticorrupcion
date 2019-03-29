@@ -228,7 +228,7 @@
 					<div class="col-sm-6">
 						<div class="row no-gutters">
 							<div class="col-sm-5 align-self-start pr-0 pr-sm-3">
-								<img class="d-block w-100" src="https://via.placeholder.com/280x300" alt="Biblioteca Legal">
+								<img class="d-block w-100" src="{!! asset('public/images/biblioteca-legal.jpg') !!}" alt="Biblioteca Legal">
 							</div>
 							<div class="col-sm-7 pl-3">
 								<h1 class="titulo text-default text-uppercase mt-3 mt-sm-0">Biblioteca Legal</h1>
@@ -249,7 +249,15 @@
 								<a href="{!! route('success-stories') !!}" role="button" class="btn btn-success btn-sm float-right">Ver más</a>
 							</div>
 							<div class="col-sm-3 align-self-start">
-								<img class="d-block w-100" src="https://via.placeholder.com/280x300" alt="Historias de Exito">
+								@if(is_object($oSuccessStory))
+									@if($oSuccessStory->image != '')
+										<img class="d-block w-100" src="{!! $oStorage->url($oSuccessStory->image) !!}" alt="Historias de Exito">
+									@else
+										<img class="d-block w-100" src="https://via.placeholder.com/280x300" alt="Historias de Exito">	
+									@endif
+								@else
+									<img class="d-block w-100" src="https://via.placeholder.com/280x300" alt="Historias de Exito">
+								@endif
 							</div>
 						</div>
 					</div>

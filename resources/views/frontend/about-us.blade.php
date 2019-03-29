@@ -16,8 +16,7 @@
 			</div>
 			<div class="row mt-3">
 				<div class="col-sm-6">
-					<!--iframe class="w-100 h-100" src="https://www.youtube.com/embed/bcIc4YC0nEg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe-->
-					<img src="https://via.placeholder.com/600x400" class="img-fluid" />
+					<iframe class="w-100 h-100" src="https://www.youtube.com/embed/aZPRrlLzPFc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
 				<div class="col-sm-6 mt-3 mb-3 text-justify">
 					<p>Somos una iniciativa de Fundación Ciudadanía y Desarrollo que través de la investigación y análisis de casos de corrupción y su posterior difusión en formatos abiertos y amigables, busca promover el conocimiento y debate ciudadano sobre la importancia del combate a la corrupción. </p>
@@ -39,8 +38,8 @@
 				<p class="text-justify">La información obtenida y difundida por el Observatorio Anticorrupción de Fundación Ciudadanía y Desarrollo pretende constituirse en una herramienta ciudadana que otorgue elementos de valoración cuantitativa y cualitativa acerca de los casos de corrupción en Ecuador. El análisis realizado será referente a aquellos casos que han quedado en la impunidad, que actualmente estén siendo investigados por la Fiscalía General del Estado, se encuentren en etapa de juicio ante las instancias pertinentes, o sean evidenciados por los medios de comunicación especializados en periodismo de investigación. </p>
 			</div>
 			<div class="col-sm-6">
-				<!--iframe class="w-100 h-100" src="https://www.youtube.com/embed/bcIc4YC0nEg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe-->
-				<img src="https://via.placeholder.com/600x400" class="img-fluid" />
+				<iframe class="w-100 h-100" src="https://www.youtube.com/embed/bdeM5T8K3uA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				
 			</div>
 		</div>
 

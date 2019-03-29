@@ -124,8 +124,7 @@ class HomeController extends Controller
             'corruptionCasesList' => CorruptionCase::orderBy('created_at', 'desc')->take(3)->get(),
             'caseStages' => Catalogue::byContext('Etapa Actual del Caso')->get(),
             'oContentCategory' => $oContentCategory,
-            
-            
+            'oSuccessStory' => SuccessStory::orderBy('created_at', 'desc')->first(),
     	];
 
     	$view = view('frontend.home', $data);
