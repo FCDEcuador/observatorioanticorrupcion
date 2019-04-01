@@ -28,13 +28,13 @@
 		                        	@if($subTopMenuItems->isNotEmpty())
 		                        		<li class="nav-item dropdown">
 				        
-									        <a class="nav-link dropdown-toggle" href="{!! url($oTopMenuItem->link) !!}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" target="{!! $oTopMenuItem->target !!}">
+									        <a class="nav-link dropdown-toggle" href="{!! url($oTopMenuItem->link) !!}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" target="{!! $oTopMenuItem->target !!}" {!! $oTopMenuItem->target == '_blank' ? 'rel="noopener noreferrer"' : '' !!}>
 									          {!! $oTopMenuItem->title !!}
 									        </a>
 									        
 									        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 									          	@foreach($subTopMenuItems as $oSubTopMenuItem)
-									          		<a class="dropdown-item" href="{!! url($oSubTopMenuItem->link) !!}" target="{!! $oSubTopMenuItem->target !!}">
+									          		<a class="dropdown-item" href="{!! url($oSubTopMenuItem->link) !!}" target="{!! $oSubTopMenuItem->target !!}" {!! $oSubTopMenuItem->target == '_blank' ? 'rel="noopener noreferrer"' : '' !!}>
 									          			{!! $oSubTopMenuItem->title !!}
 									          		</a>
 									          	@endforeach
@@ -43,7 +43,7 @@
 								      	</li>
 		                        	@else
 		                        		<li class="nav-item">
-								        	<a class="nav-link" href="{!! url($oTopMenuItem->link) !!}" target="{!! $oTopMenuItem->target !!}">
+								        	<a class="nav-link" href="{!! url($oTopMenuItem->link) !!}" target="{!! $oTopMenuItem->target !!}" {!! $oTopMenuItem->target == '_blank' ? 'rel="noopener noreferrer"' : '' !!}>
 								        		{!! $oTopMenuItem->title !!}
 								        	</a>
 								      	</li>

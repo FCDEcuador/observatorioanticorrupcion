@@ -111,7 +111,7 @@ class CorruptionCasesController extends Controller
      */
     public function index(Request $request)
     {
-        $corruptionCasesList = CorruptionCase::searchCorruptionCasess(
+        $corruptionCasesList = CorruptionCase::searchCorruptionCases(
 													$request->sStringSearch, 
 													$request->sCaseStage, 
 													$request->sCaseStageDetail, 

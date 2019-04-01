@@ -213,21 +213,21 @@
 		</div>
 		<div class="col-sm-4 align-self-center d-flex justify-content-center mt-4 mt-sm-0">
 			@if($oConfiguration->facebook_account != '')
-				<a href="{!! $oConfiguration->facebook_account !!}" class="text-white fz24 border redes-ico mr-3" target="_blank">
+				<a href="{!! $oConfiguration->facebook_account !!}" class="text-white fz24 border redes-ico mr-3" target="_blank" rel="noopener noreferrer">
 					<span class="">
 						<i class="fab fa-facebook-f"></i>
 					</span>
 				</a>
 			@endif
 			@if($oConfiguration->twitter_account != '')
-				<a href="{!! $oConfiguration->twitter_account !!}" class="text-white fz24 border redes-ico mr-3" target="_blank">
+				<a href="{!! $oConfiguration->twitter_account !!}" class="text-white fz24 border redes-ico mr-3" target="_blank" rel="noopener noreferrer">
 					<span class="">
 						<i class="fab fa-twitter"></i>
 					</span>
 				</a>
 			@endif
 			@if($oConfiguration->instagram_account != '')
-				<a href="{!! $oConfiguration->instagram_account !!}" class="text-white fz24 border redes-ico" target="_blank">
+				<a href="{!! $oConfiguration->instagram_account !!}" class="text-white fz24 border redes-ico" target="_blank" rel="noopener noreferrer">
 					<span class="">
 						<i class="fab fa-instagram"></i>
 					</span>
@@ -242,7 +242,7 @@
 	<div class="row">
 		<div class="col-12 text-center">
 			<p class="text-secondary mt-3">Bajo la licencia de:</p>
-			<p><a class="text-secondary fz40" href="https://creativecommons.org/licenses/by-nc-sa/3.0/ec/" target="_blank"><i class="fab fa-creative-commons"></i></a> <a class="text-secondary fz40" href="" target="_blank"><i class="fab fa-github"></i></a></p>
+			<p><a class="text-secondary fz40" href="https://creativecommons.org/licenses/by-nc-sa/3.0/ec/" target="_blank" rel="noopener noreferrer"><i class="fab fa-creative-commons"></i></a> <a class="text-secondary fz40" href="" target="_blank"><i class="fab fa-github"></i></a></p>
 		</div>
 	</div>
 </div>

@@ -435,7 +435,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="political_causes"> Causas Políticas: </label>
+                                            <label for="political_causes"> Causas Técnicas: </label>
                                             {!! Form::textarea('political_causes', null, ['id' => 'political_causes', 'class' => 'form-control', 'placeholder' => 'Ingrese las causas políticas del caso de corrupción']) !!}
                                         </div>
                                     </div>

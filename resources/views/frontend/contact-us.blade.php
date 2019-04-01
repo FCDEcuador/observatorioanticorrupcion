@@ -92,13 +92,13 @@
 			<div class="col-8 col-sm-3">
 				<div class="border-left borazul">
 					@if($oConfiguration->facebook_account != '')
-						<a href="{!! $oConfiguration->facebook_account !!}" class="text-secondary mt-3 pl-3" target="_blank"><span class="pr-3"><i class="fab fa-facebook-f"></i> ECSinCorrupcion</span></a><br>
+						<a href="{!! $oConfiguration->facebook_account !!}" class="text-secondary mt-3 pl-3" target="_blank" rel="noopener noreferrer"><span class="pr-3"><i class="fab fa-facebook-f"></i> ECSinCorrupcion</span></a><br>
 					@endif
 					@if($oConfiguration->twitter_account != '')
-						<a href="{!! $oConfiguration->twitter_account !!}" class="text-secondary mt-3 pl-3" target="_blank"><span class="pr-3"><i class="fab fa-twitter"></i> @ECSinCorrupcion</span></a><br>
+						<a href="{!! $oConfiguration->twitter_account !!}" class="text-secondary mt-3 pl-3" target="_blank" rel="noopener noreferrer"><span class="pr-3"><i class="fab fa-twitter"></i> @ECSinCorrupcion</span></a><br>
 					@endif
 					@if($oConfiguration->instagram_account != '')
-						<a href="{!! $oConfiguration->instagram_account !!}" class="text-secondary mt-3 pl-3" target="_blank"><span class="pr-3"><i class="fab fa-instagram"></i> @fcd_ecuador</span></a>
+						<a href="{!! $oConfiguration->instagram_account !!}" class="text-secondary mt-3 pl-3" target="_blank" rel="noopener noreferrer"><span class="pr-3"><i class="fab fa-instagram"></i> @fcd_ecuador</span></a>
 					@endif
 				</div>
 			</div>

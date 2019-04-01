@@ -38,7 +38,7 @@
 					</div>
 				</div>
 				<div class="col-sm-6 d-flex align-items-end justify-content-center mb-3 mt-3 mt-sm-0">
-					<a href="{!! $oMainSuccessStory->url !!}" role="button" class="btn btn-success btn-sm bgmorado" target="_blank">Ver más</a>
+					<a href="{!! $oMainSuccessStory->url !!}" role="button" class="btn btn-success btn-sm bgmorado" target="_blank" rel="noopener noreferrer">Ver más</a>
 				</div>
 			</div>
 		</div>
@@ -61,7 +61,7 @@
 					<div class="col-sm-3">
 						<img class="d-block w-100" src="{!! $oStorage->url($oSuccessStory->image) !!}" alt="{!! $oSuccessStory->title !!}">
 						<div class="cont-text border-left border-right bormorado pl-3 pr-3 pt-3 pb-0">
-							<h6 class="text-center mt-3 font-weight-bold"><a href="{!! $oSuccessStory->url !!}" class="morado" target="_blank">{!! $oSuccessStory->title !!}</a></h6>
+							<h6 class="text-center mt-3 font-weight-bold"><a href="{!! $oSuccessStory->url !!}" class="morado" target="_blank" rel="noopener noreferrer">{!! $oSuccessStory->title !!}</a></h6>
 							<div class="text-justify">{!! $oSuccessStory->description !!}</div>
 						</div>
 					</div>

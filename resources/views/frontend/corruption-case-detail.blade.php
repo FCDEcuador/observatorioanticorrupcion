@@ -84,7 +84,7 @@
 			<!-- BEGIN SECCION QUE OCURRIO -->
 			<div class="row mt-3 mb-3">
 				<div class="col-sm-6">
-					<h1 class="titulo border-bottom bormorado morado text-uppercase">¿QUé ocurrió?</h1>
+					<h1 class="titulo border-bottom bormorado morado text-uppercase">¿Qué ocurrió?</h1>
 				</div>
 			</div>
 			<div class="row">
@@ -147,7 +147,7 @@
 		    		<div class="card-header bgazul text-center p-0" id="headingTwo">
 		      			<h3 class="mb-0">
 		        			<a class="btn btn-link text-white btn-lg collapsed d-block w-100" role=button data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-		          				Causas Políticas
+		          				Causas Técnicas
 		        			</a>
 		      			</h3>
 		    		</div>
