@@ -34,8 +34,8 @@ a{
 
 #casos-corrupcion .carousel-indicators{
 	position: relative;
-	margin-right: 10%;
-	justify-content: flex-end;
+    margin-right: 0%;
+    top: -30px;
     bottom: 0px;
     margin-bottom: 0;
 }
