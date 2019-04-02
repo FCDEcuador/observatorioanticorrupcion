@@ -147,7 +147,7 @@ body{
 .antecedentes{
 	min-height: 305px;
 	max-height: 305px;
-	overflow: hidden;
+	overflow-y: scroll;
 }
 
 .fechas-circulos{
