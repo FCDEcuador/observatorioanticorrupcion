@@ -27,8 +27,8 @@
 	{!! Html::meta('msapplication-TileImage', asset('public/frontend/images/ms-icon-144x144.png')) !!}
 	{!! Html::meta('theme-color', '#ffffff') !!}
 
-	<!-- Bootstrap CSS -->
-	{!! Html::style('public/backend/assets/plugins/bootstrap/css/bootstrap.min.css', ['crossorigin' => 'anonymous']) !!}
+	<!-- Bootstrap CSS -->	
+	{!! Html::style('public/frontend/css/bootstrap.min.css', ['crossorigin' => 'anonymous']) !!}
 	<!-- Font-awesome CSS -->
 	{!! Html::style('public/frontend/css/all.css') !!}
 
