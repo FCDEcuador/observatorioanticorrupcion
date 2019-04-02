@@ -169,6 +169,10 @@ a{
 	border-radius: 5px 5px 0 0;
 }
 
+.detalle{
+	word-break: break-word;
+}
+
 @media (max-width: 575.98px) { 
 	.fz14{
 		font-size: 14px;
