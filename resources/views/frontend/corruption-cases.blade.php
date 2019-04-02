@@ -67,7 +67,7 @@
 					@foreach($corruptionCasesList as $oCorruptionCase)
 						<div class="col-6 col-sm-4 mt-3">
 							<div class="shadow m-2 bg-white rounded">
-								<img class="d-block w-100" src="{!! $oStorage->url($oCorruptionCase->main_multimedia) !!}" alt="{!! $oCorruptionCase->title !!}">
+								<img class="d-block w-100" src="{!! $oStorage->url($oCorruptionCase->home_image) !!}" alt="{!! $oCorruptionCase->title !!}">
 								<div class="cont-text p-1">
 									<h6 class="text-center mt-3">
 										<a class="morado" href="#" data-toggle="modal" data-target="#casos-resumen" onclick="javascript: loadCorruptionCase('{!! route('corruption-cases.detail-json', [$oCorruptionCase->id]) !!}');">
