@@ -53,12 +53,12 @@
 		</div>
 		<div class="col-12">
 			<div class="row mt-3 mb-1">
-				<div class="offset-sm-2 col-sm-4 align-self-center mt-3 pl-5 pr-5 pl-sm-0 pr-sm-0">
-					<a href="https://www.padf.org/" target="_blank"><img src="{!! asset('public/frontend/images/padf.png') !!}" class="mx-auto d-block img-fluid"></a>
+				<div class="col-sm-12 align-self-center mt-3 pl-5 pr-5 pl-sm-0 pr-sm-0">
+					<a href="https://www.padf.org/" target="_blank"><img src="{!! asset('public/frontend/images/padf.png') !!}" class="mx-auto d-block img-fluid" style="width: 240px;"></a>
 				</div>
-				<div class="col-sm-4 align-self-center mt-5 mt-sm-3  pl-5 pr-5 pl-sm-0 pr-sm-0">
+				<!--div class="col-sm-4 align-self-center mt-5 mt-sm-3  pl-5 pr-5 pl-sm-0 pr-sm-0">
 					<a href="http://www.oas.org/es/" target="_blank"><img src="{!! asset('public/frontend/images/OEA.png') !!}" class="mx-auto d-block img-fluid"></a>
-				</div>
+				</div-->
 			</div>
 		</div>
 	</div>
