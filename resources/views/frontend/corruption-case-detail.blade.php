@@ -172,7 +172,7 @@
 					</h2>
 					@if($oCorruptionCase->economic_consequences != '')
 						<div class="subtitulo text-white font-italic mt-3">
-							Económica
+							Económicas
 						</div>
 						<div class="detalle text-white text-justify">
 							{!! $oCorruptionCase->economic_consequences !!}
@@ -207,7 +207,7 @@
 				@if($oCorruptionCase->social_consequences != '')
 					<div class="p-3" style="background: rgba(36,57,91,0.7);">
 						<div class="subtitulo text-white font-italic mt-3">
-							Social
+							Sociales
 						</div>
 						<div class="detalle text-white text-justify">
 							{!! $oCorruptionCase->social_consequences !!}

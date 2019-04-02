@@ -23,13 +23,13 @@
 							    <div class="carousel-item {!! $loop->first ? 'active' : '' !!}">
 							    	<div class="row no-gutters">
 							    		<div class="col-12 mr-sm-3">
-											<h1 class="titulo border-bottom border-info text-default text-uppercase mt-3 mt-sm-0 text-sm-left mb-3"><a href="{!! url('/casos-de-corrupcion/'.$oCorruptionCase->slug) !!}">{!! $oCorruptionCase->title !!}</a></h1>
+											<h1 class="titulo border-bottom border-info text-default text-uppercase mt-3 mt-sm-0 text-sm-left mb-3"><a href="{!! url('/casos-de-corrupcion/'.$oCorruptionCase->slug) !!}">NUEVOS CASOS DE CORRUPCIÓN</a></h1>
 							    		</div>
 							    		<div class="col-sm-5 mr-sm-3">
 							    			<img class="d-block w-100" src="{!! $oStorage->url($oCorruptionCase->home_image) !!}" alt="{!! $oCorruptionCase->title !!}">
 							    		</div>
 							    		<div class="col-sm-6">
-							    			<div class="pb-3 pr-3 pt-3 text-justify text-muted">{!! $oCorruptionCase->summary !!}</div>
+							    			<div class="pr-3 pt-3 text-justify text-muted">{!! $oCorruptionCase->summary !!}</div>
 							    			<a href="{!! url('/casos-de-corrupcion/'.$oCorruptionCase->slug) !!}" role="button" class="btn btn-success btn-sm float-right mb-3">Entérate</a>
 							    		</div>
 							    	</div>
