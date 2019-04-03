@@ -1,11 +1,3 @@
-@extends('frontend.layouts.frontend-layout')
-
-@section('title')
-	{!! $oCorruptionCase->title !!}
-@endsection
-
-@section('main-content')
-	
 	<img src="{!! $oStorage->url($oCorruptionCase->main_multimedia) !!}" />
 
 	<h1>{!! $oCorruptionCase->title !!}</h1>
@@ -79,4 +71,3 @@
 		<h6>Fuentes</h6>
 		{!! $oCorruptionCase->sources !!}
 	@endif
-@endsection
