@@ -360,7 +360,7 @@
                                        $nextWH = 0;
                                        $aWhatHappendLines = null;
                                        if(is_object($oCorruptionCase)){
-                                            $aWhatHappendLines = $oCorruptionCase->whatsHappeneds;
+                                            $aWhatHappendLines = $oCorruptionCase->whatsHappeneds()->orderBy('order', 'asc')->orderBy('year', 'asc')->get();
                                        }
                                 @endphp
                                 <div id="whatHappenedDiv">
