@@ -4,10 +4,6 @@
 	{!! $oCorruptionCase->title !!}
 @endsection
 
-@section('custom-css')	
-@endsection
-
-
 
 @section('main-content')
 	
@@ -32,20 +28,6 @@
 							{!! $oCorruptionCase->title !!}
 						</h3>
 					</div>
-				</div>
-			</div>
-		</div>
-		
-		<div class="row">
-			<div class="col-12 d-flex align-items-middle justify-content-center mt-3">
-				<div class="text-muted text-center mr-1 d-none d-sm-inline-block">
-					Compartir:
-				</div>
-				<div class="share-md mr-3">
-					<div class="addthis_inline_share_toolbox d-flex justify-content-center"></div>
-				</div>
-				<div>
-					<a href="{!! route('corruption-cases.download-pdf', [$oCorruptionCase->slug]) !!}" role="button" class="btn btn-success btn-sm float-right" target="_blank">descarga PDF</a>
 				</div>
 			</div>
 		</div>
@@ -230,47 +212,4 @@
 			</div>
 		@endif
 		<!-- END SECCION CONSECUENCIAS -->
-
-		@if($corruptionCasesList->isNotEmpty())
-			<!-- BEGIN SECCION OTROS CASOS -->
-			<div class="row mt-3">
-				<div class="col-sm-6">
-					<div class="titulo border-bottom border-success ext-success text-uppercase">Conoce más casos</div>
-				</div>
-			
-				<div class="row mt-3 no-gutters">
-					@foreach($corruptionCasesList as $oCorruptionCaseList)
-						<div class="col-sm-6">
-							<div class="row no-gutters">
-								<div class="col-4 d-sm-flex align-items-center pl-3 pr-sm-3">
-									<img class="d-block w-100" src="{!! $oStorage->url($oCorruptionCaseList->main_multimedia) !!}" alt="{!! $oCorruptionCaseList->title !!}">
-								</div>
-								<div class="col-8 pl-3 pl-sm-0 pr-3 pr-sm-0">
-									<h6 class="text-success font-weight-bold">
-										{!! $oCorruptionCaseList->state_function !!}
-									</h6>
-									<h3 class="subtitulo text-default text-uppercase">
-										<a href="{!! route('corruption-cases.show', [$oCorruptionCaseList->slug]) !!}" class="text-default">
-											{!! $oCorruptionCaseList->title !!}
-										</a>
-									</h3>
-									<p class="text-justify">
-										<a href="{!! route('corruption-cases.show', [$oCorruptionCaseList->slug]) !!}" class="text-secondary">
-											{!! $oCorruptionCaseList->summary !!}
-										</a>
-									</p>
-								</div>
-							</div>
-						</div>
-					@endforeach
-				</div>
-			</div>
-			<!-- END SECCION OTROS CASOS -->
-		@endif
-	
-@endsection
-
-
-
-@section('custom-js')
 @endsection
