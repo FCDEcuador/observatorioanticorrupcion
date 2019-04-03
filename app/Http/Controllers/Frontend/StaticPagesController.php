@@ -19,6 +19,7 @@ use BlaudCMS\CorruptionCase;
 use BlaudCMS\LegalLibrary;
 use BlaudCMS\MetaTag;
 use BlaudCMS\SuccessStory;
+use BlaudCMS\MainSlider;
 
 use BlaudCMS\Http\Requests\Frontend\ContactFormRequest;
 
@@ -119,6 +120,7 @@ class StaticPagesController extends Controller
             'title' => $title,
             'oConfiguration' => $this->oConfiguration,
             'oStorage' => $this->oStorage,
+            'mainSliders' => MainSlider::active()->orderBy('order', 'asc')->get(),
 
             // menus de navegacion
             'topMenuItems' => $oTopMenu ? $oTopMenu->menuItems()->firstLevel()->orderBy('order', 'asc')->get() : null,
@@ -179,6 +181,7 @@ class StaticPagesController extends Controller
             'title' => $title,
             'oConfiguration' => $this->oConfiguration,
             'oStorage' => $this->oStorage,
+            'mainSliders' => MainSlider::active()->orderBy('order', 'asc')->get(),
 
             // menus de navegacion
             'topMenuItems' => $oTopMenu ? $oTopMenu->menuItems()->firstLevel()->orderBy('order', 'asc')->get() : null,

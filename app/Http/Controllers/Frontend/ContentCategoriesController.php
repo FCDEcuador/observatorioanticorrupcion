@@ -17,6 +17,7 @@ use BlaudCMS\WhatHappened;
 use BlaudCMS\LegalLibrary;
 use BlaudCMS\MetaTag;
 use BlaudCMS\SuccessStory;
+use BlaudCMS\MainSlider;
 
 use BlaudCMS\Helpers\TimeFormat;
 
@@ -142,6 +143,7 @@ class ContentCategoriesController extends Controller
             'title' => $title,
             'oConfiguration' => $this->oConfiguration,
             'oStorage' => $this->oStorage,
+            'mainSliders' => MainSlider::active()->orderBy('order', 'asc')->get(),
 
             // menus de navegacion
             'topMenuItems' => $oTopMenu ? $oTopMenu->menuItems()->firstLevel()->orderBy('order', 'asc')->get() : null,
@@ -256,6 +258,7 @@ class ContentCategoriesController extends Controller
             'title' => $title,
             'oConfiguration' => $this->oConfiguration,
             'oStorage' => $this->oStorage,
+            'mainSliders' => MainSlider::active()->orderBy('order', 'asc')->get(),
 
             // menus de navegacion
             'topMenuItems' => $oTopMenu ? $oTopMenu->menuItems()->firstLevel()->orderBy('order', 'asc')->get() : null,

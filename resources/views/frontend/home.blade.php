@@ -228,11 +228,28 @@
 					<div class="col-sm-6">
 						<div class="row no-gutters">
 							<div class="col-sm-5 align-self-start pr-0 pr-sm-3">
-								<img class="d-block w-100" src="{!! asset('public/images/biblioteca-legal.jpg') !!}" alt="Biblioteca Legal">
+								@if(is_object($oHomeField))
+									@if($oHomeField->legal_library_image != '')
+										<img class="d-block w-100" src="{!! asset($oStorage->url($oHomeField->legal_library_image)) !!}" alt="Biblioteca Legal">
+									@else
+										<img class="d-block w-100" src="{!! asset('public/images/biblioteca-legal.jpg') !!}" alt="Biblioteca Legal">
+									@endif
+								@else
+									<img class="d-block w-100" src="{!! asset('public/images/biblioteca-legal.jpg') !!}" alt="Biblioteca Legal">
+								@endif
 							</div>
 							<div class="col-sm-7 pl-3">
 								<h1 class="titulo text-default text-uppercase mt-3 mt-sm-0">Biblioteca Legal</h1>
-								<p class="text-justify text-muted">Aquí puedes encontrar  las principales leyes, reglamentos y decretos que abordan temas y mecanismos de prevención y sanción a los actos de corrupción en Ecuador</p>
+								@if(is_object($oHomeField))
+									@if($oHomeField->legal_library_text != '')
+										<p class="text-justify text-muted">{!! $oHomeField->legal_library_text !!}</p>
+									@else
+										<p class="text-justify text-muted">Aquí puedes encontrar  las principales leyes, reglamentos y decretos que abordan temas y mecanismos de prevención y sanción a los actos de corrupción en Ecuador</p>
+									@endif
+								@else
+									<p class="text-justify text-muted">Aquí puedes encontrar  las principales leyes, reglamentos y decretos que abordan temas y mecanismos de prevención y sanción a los actos de corrupción en Ecuador</p>
+								@endif
+
 								<a href="{!! route('legal-library') !!}" role="button" class="btn btn-info btn-sm float-right">Ver más</a>
 							</div>
 						</div>
@@ -240,12 +257,32 @@
 					<div class="col-sm-6">
 						<div class="row no-gutters bgvioleta mt-3 mt-sm-0" >
 							<div class="col-12">
-								<h4 class="pl-4 pr-4 pb-3 pt-3 text-white text-uppercase" style="font-size: 18px;line-height: 22px;text-align: justify;margin-bottom: 0px;">Conoce historias de éxito sobre la lucha contra la corrupción</h4>
+								<h4 class="pl-4 pr-4 pb-3 pt-3 text-white text-uppercase" style="font-size: 18px;line-height: 22px;text-align: justify;margin-bottom: 0px;">
+									@if(is_object($oHomeField))
+										@if($oHomeField->success_stories_title != '')
+											{!! $oHomeField->success_stories_title !!}
+										@else
+											Conoce historias de éxito sobre la lucha contra la corrupción
+										@endif
+									@else
+										Conoce historias de éxito sobre la lucha contra la corrupción
+									@endif
+								</h4>
 							</div>
 						</div>
 						<div class="row no-gutters border-left borazul">
 							<div class="col-sm-9 p-3">
-								<p class="text-justify text-muted">Entérate de experiencias exitosas a nivel mundial sobre la lucha contra la corrupción. </p>
+								<p class="text-justify text-muted">
+									@if(is_object($oHomeField))
+										@if($oHomeField->success_stories_text != '')
+											{!! $oHomeField->success_stories_text !!}
+										@else
+											Entérate de experiencias exitosas a nivel mundial sobre la lucha contra la corrupción. 
+										@endif
+									@else
+										Entérate de experiencias exitosas a nivel mundial sobre la lucha contra la corrupción. 
+									@endif
+								</p>
 								<a href="{!! route('success-stories') !!}" role="button" class="btn btn-success btn-sm float-right">Ver más</a>
 							</div>
 							<div class="col-sm-3 align-self-start">

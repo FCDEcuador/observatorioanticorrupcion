@@ -16,6 +16,8 @@ use BlaudCMS\CorruptionCase;
 use BlaudCMS\LegalLibrary;
 use BlaudCMS\MetaTag;
 use BlaudCMS\SuccessStory;
+use BlaudCMS\MainSlider;
+use BlaudCMS\HomeField;
 
 use SEOMeta;
 use OpenGraph;
@@ -55,6 +57,13 @@ class HomeController extends Controller
     private $oConfiguration;
 
     /**
+     * Instancia del modelo.
+     *
+     * @var homeField
+     */
+    private $oHomeField;
+
+    /**
      * Constructor del Controller, iniciamos los middlewares para validar que el usuario tenga los permisos correctos
      * @Autor Raúl Chauvin
      * @FechaCreacion  2017/05/15
@@ -69,6 +78,15 @@ class HomeController extends Controller
             $oConfiguration->save();
         }
         $this->oConfiguration = $oConfiguration;
+
+        // Instanciamos el objeto de configuracion para obtener su data, si no existe creamos un nuevo objeto
+        $oHomeField = HomeField::find(1);
+        if( ! is_object($oHomeField)){
+            $oHomeField = new Configuration;
+            $oHomeField->id = 1;
+            $oHomeField->save();
+        }
+        $this->oHomeField = $oHomeField;
 
         $this->sStorageDisk = 'public';
         $this->oStorage = Storage::disk($this->sStorageDisk);
@@ -116,11 +134,13 @@ class HomeController extends Controller
             'title' => $title,
             'oConfiguration' => $this->oConfiguration,
             'oStorage' => $this->oStorage,
+            'mainSliders' => MainSlider::active()->orderBy('order', 'asc')->get(),
 
             // menus de navegacion
             'topMenuItems' => $oTopMenu ? $oTopMenu->menuItems()->firstLevel()->orderBy('order', 'asc')->get() : null,
 
             // Datos para el contenido de la pagina
+            'oHomeField' => $this->oHomeField,
             'corruptionCasesList' => CorruptionCase::orderBy('created_at', 'desc')->skip(0)->take(3)->get(),
             'caseStages' => Catalogue::byContext('Etapa Actual del Caso')->get(),
             'oContentCategory' => $oContentCategory,

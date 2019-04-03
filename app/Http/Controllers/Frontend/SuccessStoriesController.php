@@ -17,6 +17,7 @@ use BlaudCMS\WhatHappened;
 use BlaudCMS\LegalLibrary;
 use BlaudCMS\MetaTag;
 use BlaudCMS\SuccessStory;
+use BlaudCMS\MainSlider;
 
 use SEOMeta;
 use OpenGraph;
@@ -117,6 +118,7 @@ class SuccessStoriesController extends Controller
             'title' => $title,
             'oConfiguration' => $this->oConfiguration,
             'oStorage' => $this->oStorage,
+            'mainSliders' => MainSlider::active()->orderBy('order', 'asc')->get(),
 
             // menus de navegacion
             'topMenuItems' => $oTopMenu ? $oTopMenu->menuItems()->firstLevel()->orderBy('order', 'asc')->get() : null,
