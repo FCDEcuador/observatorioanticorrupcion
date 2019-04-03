@@ -1,7 +1,8 @@
-	<img src="{!! $oStorage->url($oCorruptionCase->main_multimedia) !!}" />
-
 	<h1>{!! $oCorruptionCase->title !!}</h1>
 	<hr />
+	
+	<img src="{!! $oStorage->url($oCorruptionCase->main_multimedia) !!}" />
+
 	<h3>ANTECEDENTES</h3>
 	
 	@if($oCorruptionCase->history_image)
