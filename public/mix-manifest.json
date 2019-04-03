@@ -100,6 +100,8 @@
     "/backend/assets/js/form-validate/form-validation-profile.min.js": "/backend/assets/js/form-validate/form-validation-profile.min.js",
     "/backend/assets/js/form-validate/form-validation-config.js": "/backend/assets/js/form-validate/form-validation-config.js",
     "/backend/assets/js/form-validate/form-validation-config.min.js": "/backend/assets/js/form-validate/form-validation-config.min.js",
+    "/backend/assets/js/form-validate/form-validation-home-field.js": "/backend/assets/js/form-validate/form-validation-home-field.js",
+    "/backend/assets/js/form-validate/form-validation-home-field.min.js": "/backend/assets/js/form-validate/form-validation-home-field.min.js",
     "/backend/assets/js/form-validate/form-validation-meta-tag.js": "/backend/assets/js/form-validate/form-validation-meta-tag.js",
     "/backend/assets/js/form-validate/form-validation-meta-tag.min.js": "/backend/assets/js/form-validate/form-validation-meta-tag.min.js",
     "/backend/assets/js/form-validate/form-validation-province.js": "/backend/assets/js/form-validate/form-validation-province.js",

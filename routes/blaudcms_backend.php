@@ -117,6 +117,38 @@ Route::group(array('prefix' => '/backend'), function(){
 		Route::get('/configuration', 'Backend\Parametrization\ConfigurationsController@edit')->name('backend.parametrization.configuration');
 		Route::match(['PUT', 'PATCH'], '/configuration', 'Backend\Parametrization\ConfigurationsController@update')->name('backend.parametrization.configuration.save');
 
+
+		// Rutas para administracion de elementos del home del website
+		Route::get('/home-fields', 'Backend\Parametrization\HomeFieldsController@edit')->name('backend.parametrization.home-fields');
+		Route::match(['PUT', 'PATCH'], '/home-fields', 'Backend\Parametrization\HomeFieldsController@update')->name('backend.parametrization.home-fields.save');
+
+
+		/******************************************************************************************************
+
+
+				RUTAS PARA ADMINISTRACION DE IMAGENES DEL SLIDER PRINCIPAL
+
+
+		*******************************************************************************************************/
+		Route::group(array('prefix' => '/main-slider'), function(){
+			// Ruta para ver la lista de slides
+			Route::get('/list', 'Backend\Parametrization\MainSlidersController@index')->name('backend.parametrization.main-sliders.list');
+
+			// Rutas para crear un nuevo slide en el sistema
+			Route::get('/add', 'Backend\Parametrization\MainSlidersController@create')->name('backend.parametrization.main-sliders.create');
+			Route::post('/add', 'Backend\Parametrization\MainSlidersController@store')->name('backend.parametrization.main-sliders.store');
+
+			// Rutas para editar un slide de acuerdo a su ID
+			Route::get('/edit/{iId?}', 'Backend\Parametrization\MainSlidersController@edit')->name('backend.parametrization.main-sliders.edit');
+			Route::match(['PUT', 'PATCH'], '/edit/{iId?}', 'Backend\Parametrization\MainSlidersController@update')->name('backend.parametrization.main-sliders.update');
+
+			// Ruta para cambiar el estado de un slide
+			Route::get('/change-status/{sId?}', 'Backend\Parametrization\MainSlidersController@changeStatus')->name('backend.parametrization.main-sliders.changeStatus');
+
+			// Ruta para eliminar un slide en particular seleccionado por su ID
+			Route::delete('/delete/{iId?}', 'Backend\Parametrization\MainSlidersController@destroy')->name('backend.parametrization.main-sliders.delete');
+		});
+
 		/******************************************************************************************************
 
 

@@ -192,7 +192,7 @@ var FormConfigValidation = function() {
                       if(data.status === true){
                           renderSection($(form).attr('action'));
                           swal({
-                                title: 'Cuponcity.ec :: Configuration',
+                                title: 'BlaudCMS :: Configuration',
                                 text: data.message,
                                 type: 'success',
                                 allowOutsideClick: true,
@@ -208,7 +208,7 @@ var FormConfigValidation = function() {
                           );
                       }else{
                         swal({
-                              title: 'Cuponcity.ec :: Configuration',
+                              title: 'BlaudCMS :: Configuration',
                               text: data.message,
                               type: 'error',
                               allowOutsideClick: true,
@@ -238,7 +238,7 @@ var FormConfigValidation = function() {
                         resp = 'Ups! parece que de momento el sistema no está disponible, por favor intentalo nuevamente en unos minutos.';
                       }
                       swal({
-                              title: 'Cuponcity.ec :: Configuration',
+                              title: 'BlaudCMS :: Configuration',
                               text: resp,
                               type: 'error',
                               allowOutsideClick: true,

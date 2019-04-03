@@ -43,6 +43,20 @@
                                         </a>
                                     </li>
                                 @endcan
+                                @can('backend_edit_homefields')
+                                    <li>
+                                        <a href="{!! route('backend.parametrization.home-fields') !!}">
+                                            Elementos de Home
+                                        </a>
+                                    </li>
+                                @endcan
+                                @can('backend_view_mainsliders')
+                                    <li>
+                                        <a href="{!! route('backend.parametrization.main-sliders.list') !!}">
+                                            Slider Principal
+                                        </a>
+                                    </li>
+                                @endcan
                                 @can('backend_view_metatags')
                                     <li>
                                         <a href="{!! route('backend.parametrization.meta-tags.list') !!}">

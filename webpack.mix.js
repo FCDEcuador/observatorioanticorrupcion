@@ -86,6 +86,9 @@ let mix = require('laravel-mix');
 			// Config
 			   	.copy('resources/assets/backend/js/form-validation/form-validation-config.js', 'public/backend/assets/js/form-validate')
 			   	.minify('public/backend/assets/js/form-validate/form-validation-config.js')
+			// Home Fields
+			   	.copy('resources/assets/backend/js/form-validation/form-validation-home-field.js', 'public/backend/assets/js/form-validate')
+			   	.minify('public/backend/assets/js/form-validate/form-validation-home-field.js')
 			// Meta Tags
 			   	.copy('resources/assets/backend/js/form-validation/form-validation-meta-tag.js', 'public/backend/assets/js/form-validate')
 			   	.minify('public/backend/assets/js/form-validate/form-validation-meta-tag.js')

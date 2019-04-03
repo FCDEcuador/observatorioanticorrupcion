@@ -46,6 +46,8 @@ class ConfigUpdateRequest extends FormRequest
             'contact_emails' => 'nullable',
             'sales_emails' => 'nullable',
             'admin_email' => 'nullable|email', 
+            'backend_logo' => 'nullable|image', 
+            'frontend_logo' => 'nullable|image', 
         ];
     }
 
@@ -66,6 +68,8 @@ class ConfigUpdateRequest extends FormRequest
             'youtube_account.url' => 'Por favor ingrese una direccion de Youtube valida. Recuerde incluir http:// o https:// al inicio de la URL',
             'vimeo_account.url' => 'Por favor ingrese una direccion de Vimeo valida. Recuerde incluir http:// o https:// al inicio de la URL',
             'admin_email.email' => 'Por favor ingrese una direccion de email valida para el administrador.',
+            'backend_logo.image' => 'Por favor ingrese una imagen', 
+            'frontend_logo.image' => 'Por favor ingrese una imagen',
         ];
     }
 }

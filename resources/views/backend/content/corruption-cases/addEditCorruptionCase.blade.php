@@ -372,6 +372,10 @@
                                                 @endphp
                                                 <div class="row" id="whatHappenedDiv_{!! $nextWH !!}">
                                                     <div class="col-md-2">
+                                                        <label for="order"> Orden: </label>
+                                                        <input type="number" name="order[]" id="order_{!! $nextWH !!}" class="form-control" value="{!! $oWhatHappened->order !!}" />
+                                                    </div>
+                                                    <div class="col-md-2">
                                                         <label for="year"> Año: </label>
                                                         <input type="number" name="year[]" id="year_{!! $nextWH !!}" class="form-control" value="{!! $oWhatHappened->year !!}" />
                                                     </div>
@@ -397,7 +401,7 @@
                                                         <label for="day"> Día: </label>
                                                         <input type="number" name="day[]" id="day_{!! $nextWH !!}" class="form-control" value="{!! $oWhatHappened->day !!}" />
                                                     </div>
-                                                    <div class="col-md-4">
+                                                    <div class="col-md-2">
                                                         <label for="day"> Descripción: </label>
                                                         <textarea name="description[]" id="description_{!! $nextWH !!}" class="form-control">{!! $oWhatHappened->description !!}</textarea>
                                                     </div>

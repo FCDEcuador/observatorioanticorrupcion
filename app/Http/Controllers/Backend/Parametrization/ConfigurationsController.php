@@ -86,7 +86,7 @@ class ConfigurationsController extends Controller
 
 
     /**
-     * Metodo para mostrar el formulario de edicion del perfil de usuario
+     * Metodo para mostrar el formulario de edicion de parametros de configuracion del sistema
      * @Autor Raúl Chauvin
      * @FechaCreacion  2018/01/26
      *

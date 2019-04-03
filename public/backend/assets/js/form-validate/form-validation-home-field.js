@@ -1,24 +1,7 @@
 $(document).ready(function() {
-    FormConfigValidation.init();
+    FormHomeFieldsValidation.init();
 
-    $('#backend_logo').dropify({
-        messages: {
-            default: 'Arrastre un archivo hasta este lugar o de un clic para seleccionar uno',
-            replace: 'Arrastre un archivo hasta este lugar o de un clic para seleccionar uno',
-            remove: 'Quitar',
-            error: 'Ups! parece que algo no esta bien'
-        },
-        error: {
-            'fileSize': 'El archivo es demasiado grande. ({{ value }} maximo).',
-            'minWidth': 'La imagen es muy pequeña. ({{ value }}}px minimo).',
-            'maxWidth': 'El ancho de la imagen es muy grande. ({{ value }}}px maximo).',
-            'minHeight': 'El alto de la imagen es muy pequeño. ({{ value }}}px minimo).',
-            'maxHeight': 'El alto de la imagen es muy grande. ({{ value }}px maximo).',
-            'imageFormat': 'Este formato no esta permitido. ({{ value }} unicamente).'
-        }
-    });
-
-    $('#frontend_logo').dropify({
+    $('#legal_library_image').dropify({
         messages: {
             default: 'Arrastre un archivo hasta este lugar o de un clic para seleccionar uno',
             replace: 'Arrastre un archivo hasta este lugar o de un clic para seleccionar uno',
@@ -36,94 +19,34 @@ $(document).ready(function() {
     });
 });
 
-var FormConfigValidation = function() {
+var FormHomeFieldsValidation = function() {
 
-    var handleConfigValidation = function() {
+    var handleHomeFieldsValidation = function() {
         // for more info visit the official plugin documentation: 
         // http://docs.jquery.com/Plugins/Validation
-        var configForm = $('#configForm');
-        var errorConfig = $('.alert-danger', configForm);
-        var successConfig = $('.alert-success', configForm);
+        var homeFieldsForm = $('#homeFieldsForm');
+        var errorHomeFields = $('.alert-danger', homeFieldsForm);
+        var successHomeFields = $('.alert-success', homeFieldsForm);
 
-        configForm.validate({
+        homeFieldsForm.validate({
             errorElement: 'div', //default input error message container
             errorClass: 'form-control-feedback', // default input error message class
             focusInvalid: true, // do not focus the last invalid input
             ignore: "", // validate all fields including form hidden input
             rules: {
-                facebook_account: {
-                    url: true
-                },
-                twitter_account: {
-                    url: true
-                },
-                instagram_account: {
-                    url: true
-                },
-                googleplus_account: {
-                    url: true
-                },
-                pinterest_account: {
-                    url: true
-                },
-                linkedin_account: {
-                    url: true
-                },
-                youtube_account: {
-                    url: true
-                },
-                vimeo_account: {
-                    url: true
-                },
-                admin_email: {
-                    email: true
-                },
-                backend_logo: {
-                  accept: "image/*"
-                },
-                frontend_logo: {
+                legal_library_image: {
                   accept: "image/*"
                 }
             },
             messages: {
-                facebook_account: {
-                    url: 'Por favor ingrese una direccion de Facebook valida. (Recuerde agregar http:// o https:// al inicio de la URL)'
-                },
-                twitter_account: {
-                    url: 'Por favor ingrese una direccion de Twitter valida. (Recuerde agregar http:// o https:// al inicio de la URL)'
-                },
-                instagram_account: {
-                    url: 'Por favor ingrese una direccion de Instagram valida. (Recuerde agregar http:// o https:// al inicio de la URL)'
-                },
-                googleplus_account: {
-                    url: 'Por favor ingrese una direccion de Google+ valida. (Recuerde agregar http:// o https:// al inicio de la URL)'
-                },
-                pinterest_account: {
-                    url: 'Por favor ingrese una direccion de Pinterest valida. (Recuerde agregar http:// o https:// al inicio de la URL)'
-                },
-                linkedin_account: {
-                    url: 'Por favor ingrese una direccion de Linkedin valida. (Recuerde agregar http:// o https:// al inicio de la URL)'
-                },
-                youtube_account: {
-                    url: 'Por favor ingrese una direccion de Youtube valida. (Recuerde agregar http:// o https:// al inicio de la URL)'
-                },
-                vimeo_account: {
-                    url: 'Por favor ingrese una direccion de Vimeo valida. (Recuerde agregar http:// o https:// al inicio de la URL)'
-                },
-                admin_email: {
-                    email: 'Por favor ingrese una cuenta de email válida.'
-                },
-                backend_logo: {
-                  accept: "Unicamente se aceptan archivos de imagenes (JPG, PNG, GIF)"
-                },
-                frontend_logo: {
+                legal_library_image: {
                   accept: "Unicamente se aceptan archivos de imagenes (JPG, PNG, GIF)"
                 }
             },
 
             invalidHandler: function(event, validator) { //display error alert on form submit              
-                successConfig.hide();
-                errorConfig.show();
+                successHomeFields.hide();
+                errorHomeFields.show();
             },
 
             errorPlacement: function(error, element) {
@@ -158,19 +81,15 @@ var FormConfigValidation = function() {
             },
 
             submitHandler: function(form) {
-                successConfig.show();
-                errorConfig.hide();
-                var laddaConfigBtn = Ladda.create(document.querySelector('#configBtn'));
-                laddaConfigBtn.start();
-                laddaConfigBtn.setProgress(0-1);
+                successHomeFields.show();
+                errorHomeFields.hide();
+                var laddaHomeFieldsBtn = Ladda.create(document.querySelector('#homeFieldsBtn'));
+                laddaHomeFieldsBtn.start();
+                laddaHomeFieldsBtn.setProgress(0-1);
 
                 var frmData = new FormData();
-                if($("#backend_logo")[0].files[0]){
-                  frmData.append('backend_logo', $("#backend_logo")[0].files[0]);
-                }
-
-                if($("#frontend_logo")[0].files[0]){
-                  frmData.append('frontend_logo', $("#frontend_logo")[0].files[0]);
+                if($("#legal_library_image")[0].files[0]){
+                  frmData.append('legal_library_image', $("#legal_library_image")[0].files[0]);
                 }
 
                 var other_data = $(form).serializeArray();
@@ -186,13 +105,13 @@ var FormConfigValidation = function() {
                     contentType: false,
                     processData: false,
                     beforeSend: function(){
-                      laddaConfigBtn.start();
+                      laddaHomeFieldsBtn.start();
                     },
                     success: function (data) {
                       if(data.status === true){
                           renderSection($(form).attr('action'));
                           swal({
-                                title: 'BlaudCMS :: Configuration',
+                                title: 'BlaudCMS :: Elementos de Home',
                                 text: data.message,
                                 type: 'success',
                                 allowOutsideClick: true,
@@ -208,7 +127,7 @@ var FormConfigValidation = function() {
                           );
                       }else{
                         swal({
-                              title: 'BlaudCMS :: Configuration',
+                              title: 'BlaudCMS :: Elementos de Home',
                               text: data.message,
                               type: 'error',
                               allowOutsideClick: true,
@@ -223,7 +142,7 @@ var FormConfigValidation = function() {
                             }
                         );
                       }
-                      laddaConfigBtn.stop();
+                      laddaHomeFieldsBtn.stop();
                     },
                     error: function(errors){
                       var resp = '';
@@ -238,7 +157,7 @@ var FormConfigValidation = function() {
                         resp = 'Ups! parece que de momento el sistema no está disponible, por favor intentalo nuevamente en unos minutos.';
                       }
                       swal({
-                              title: 'BlaudCMS :: Configuration',
+                              title: 'BlaudCMS :: Elementos de Home',
                               text: resp,
                               type: 'error',
                               allowOutsideClick: true,
@@ -252,7 +171,7 @@ var FormConfigValidation = function() {
                               cancelButtonText: '',
                             }
                         );
-                      laddaConfigBtn.stop();
+                      laddaHomeFieldsBtn.stop();
                     }
                 });
             }
@@ -262,7 +181,7 @@ var FormConfigValidation = function() {
     return {
         //main function to initiate the module
         init: function() {
-            handleConfigValidation();
+            handleHomeFieldsValidation();
         }
     };
 }();
