@@ -130,7 +130,7 @@ Route::group(array('prefix' => '/backend'), function(){
 
 
 		*******************************************************************************************************/
-		Route::group(array('prefix' => '/main-slider'), function(){
+		Route::group(array('prefix' => '/main-sliders'), function(){
 			// Ruta para ver la lista de slides
 			Route::get('/list', 'Backend\Parametrization\MainSlidersController@index')->name('backend.parametrization.main-sliders.list');
 

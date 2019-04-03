@@ -89,7 +89,7 @@ class MetaTagsController extends Controller
      * @Autor Raúl Chauvin
      * @FechaCreacion  2018/08/30
      *
-     * @route /backend/parametrization/meta-tags/meta-tags-list
+     * @route /backend/parametrization/meta-tags/list
      * @method GET
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -126,7 +126,7 @@ class MetaTagsController extends Controller
      * @Autor Raúl Chauvin
      * @FechaCreacion  2018/08/30
      *
-     * @route /backend/parametrization/meta-tags/add-meta-tag
+     * @route /backend/parametrization/meta-tags/add
      * @method GET
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -163,7 +163,7 @@ class MetaTagsController extends Controller
      * @Autor Raúl Chauvin
      * @FechaCreacion  2018/08/30
      *
-     * @route /backend/parametrization/meta-tags/add-meta-tag
+     * @route /backend/parametrization/meta-tags/add
      * @method POST
      * @param  \BlaudCMS\Http\Requests\Parametrization\MetaTagCreateRequest  $request
      * @return \Illuminate\Http\Response
@@ -194,7 +194,7 @@ class MetaTagsController extends Controller
      * @Autor Raúl Chauvin
      * @FechaCreacion  2018/08/30
      *
-     * @route /backend/parametrization/meta-tags/edit-meta-tag
+     * @route /backend/parametrization/meta-tags/edit
      * @method GET
      * @param  string $sId
      * @param  \Illuminate\Http\Request  $request
@@ -263,7 +263,7 @@ class MetaTagsController extends Controller
      * @Autor Raúl Chauvin
      * @FechaCreacion  2018/08/30
      *
-     * @route /backend/parametrization/meta-tags/edit-meta-tag
+     * @route /backend/parametrization/meta-tags/edit
      * @method PUT/PATCH
      *
      * @param  \BlaudCMS\Http\Requests\Parametrization\MetaTagUpdateRequest  $request
@@ -305,7 +305,7 @@ class MetaTagsController extends Controller
      * @Autor Raúl Chauvin
      * @FechaCreacion  2018/08/30
      *
-     * @route /backend/parametrization/meta-tags/delete-meta-tag
+     * @route /backend/parametrization/meta-tags/delete
      * @method DELETE
      * @param  \Illuminate\Http\Request  $request
      * @param  string $sId

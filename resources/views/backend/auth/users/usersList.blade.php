@@ -115,8 +115,8 @@
                                                             </div>
                                                         </td>
                                                         <td>
-                                                            @if(Auth::user()->avatar != '')
-                                                                <img src="{!! asset($oStorage->url(Auth::user()->avatar)) !!}" alt="{!! Auth::user()->full_name !!}" width="40" class="img-circle" />
+                                                            @if($oUser->avatar != '')
+                                                                <img src="{!! asset($oStorage->url($oUser->avatar)) !!}" alt="{!! $oUser->full_name !!}" width="40" class="img-circle" />
                                                             @else
                                                                 <img src="{!! asset('public/backend/assets/images/default-user.png') !!}" alt="{!! Auth::user()->full_name !!}" width="40" class="img-circle" />
                                                             @endif

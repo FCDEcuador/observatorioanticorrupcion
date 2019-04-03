@@ -62,19 +62,12 @@
 
                             <div class="form-group">
                                 <label for="legal_library_text"><strong>Texto para Biblioteca Legal</strong></label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="home-field-legal-library-text">
-                                            <i class="ti-text"></i>
-                                        </span>
-                                    </div>
-                                    {!! Form::textarea('legal_library_text', null, ['id' => 'legal_library_text', 'placeholder' => 'Ingrese el texto para el elemento de home Biblioteca Legal', 'class' => 'form-control']) !!}
-                                </div>
+                                {!! Form::textarea('legal_library_text', null, ['id' => 'legal_library_text', 'placeholder' => 'Ingrese el texto para el elemento de home Biblioteca Legal', 'class' => 'form-control']) !!}
                             </div>
 
                             <div class="form-group">
                                 <label for="legal_library_image">
-                                    <strong>Logo para Backend : </strong><br />
+                                    <strong>Imagen de Biblioteca Legal : </strong><br />
                                     <small>Por favor seleccione la imagen que acompaña al texto de Biblioteca Legal. Unicamente archivos de imagen (PNG, JPG, JPEG, GIF).</small>
                                 </label>
                                 @php
@@ -101,14 +94,7 @@
 
                             <div class="form-group">
                                 <label for="success_stories_text"><strong>Texto para Historias de Exito</strong></label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="home-field-legal-library-text">
-                                            <i class="ti-text"></i>
-                                        </span>
-                                    </div>
-                                    {!! Form::textarea('success_stories_text', null, ['id' => 'success_stories_text', 'placeholder' => 'Ingrese el texto para el elemento de home Historias de Exito', 'class' => 'form-control']) !!}
-                                </div>
+                                {!! Form::textarea('success_stories_text', null, ['id' => 'success_stories_text', 'placeholder' => 'Ingrese el texto para el elemento de home Historias de Exito', 'class' => 'form-control']) !!}
                             </div>
 
                             <div class="text-xs-right">
