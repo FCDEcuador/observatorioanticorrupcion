@@ -471,13 +471,12 @@ class CorruptionCasesController extends Controller
             $oCorruptionCase->whatsHappeneds()->delete();
             if(count($request->description)){
             	foreach($request->year as $key => $value){
-            		$order = $key+1;
             		$oWhatHappened = new WhatHappened;
             		$oWhatHappened->year = $request->year[$key];
 			        $oWhatHappened->month = $request->month[$key];
 			        $oWhatHappened->day = $request->day[$key];
 			        $oWhatHappened->description = $request->description[$key];
-			        $oWhatHappened->order = $order;
+			        $oWhatHappened->order = $request->order[$key];
 			        $oWhatHappened->corruption_case_id = $oCorruptionCase->id;
 			        $oWhatHappened->save();
             	}
