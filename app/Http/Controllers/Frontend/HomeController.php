@@ -82,7 +82,7 @@ class HomeController extends Controller
         // Instanciamos el objeto de configuracion para obtener su data, si no existe creamos un nuevo objeto
         $oHomeField = HomeField::find(1);
         if( ! is_object($oHomeField)){
-            $oHomeField = new Configuration;
+            $oHomeField = new HomeField;
             $oHomeField->id = 1;
             $oHomeField->save();
         }
