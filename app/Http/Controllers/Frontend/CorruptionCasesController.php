@@ -220,7 +220,7 @@ class CorruptionCasesController extends Controller
                 ];
                 return response()->json($aResponseData, 404);
             }
-            abort('404', 'El Caso de COrrupcion seleccionado no existe. Por favor seleccione otro.');
+            abort('404', 'El Caso de Corrupcion seleccionado no existe. Por favor seleccione otro.');
         }
     	
     	$aMetas = MetaTag::all();
@@ -274,5 +274,88 @@ class CorruptionCasesController extends Controller
         }
         
         return $view;
+    }
+
+
+    /**
+     * Metodo que descarga el caso de corrupcion en formato PDF
+     * @Autor Raúl Chauvin
+     * @FechaCreacion  2019/02/16
+     *
+     * @route /casos-de-corrupcion/pdf/{sCorruptionCaseSlug}
+     * @method GET
+     * @return \Illuminate\Http\Response
+     */
+    public function downloadPdf(Request $request, $sCorruptionCaseSlug){
+        
+        if( ! $sCorruptionCaseSlug){
+            if($request->ajax()){
+                $aResponseData = [
+                    'type' => 'alert', 
+                    'title' => 'Casos de Corrupcion', 
+                    'message' => 'Por favor seleccione un Caso de Corrupcion para poder ver su detalle.', 
+                    'class' => 'error',
+                ];
+                return response()->json($aResponseData, 200);
+            }
+            $request->session()->flash('errorMsg', 'Por favor seleccione un Caso de Corrupcion para poder ver su detalle.');
+            return back();
+        }
+        
+        $oCorruptionCase = CorruptionCase::bySlug($sCorruptionCaseSlug);
+
+        if( ! is_object($oCorruptionCase)){
+            if($request->ajax()){
+                $aResponseData = [
+                    'type' => 'alert', 
+                    'title' => 'Casos de Corrupción', 
+                    'message' => 'El Caso de COrrupcion seleccionado no existe. Por favor seleccione otro.', 
+                    'class' => 'error',
+                ];
+                return response()->json($aResponseData, 404);
+            }
+            abort('404', 'El Caso de Corrupcion seleccionado no existe. Por favor seleccione otro.');
+        }
+
+        $aMetas = MetaTag::all();
+        $title = $oCorruptionCase->title;
+        SEO::setTitle($title);
+
+        if($aMetas->isNotEmpty()){
+            foreach($aMetas as $metaTag){
+                if($metaTag->name == 'description'){
+                    SEO::setDescription($metaTag->value);
+                }elseif($metaTag->name == 'keywords'){
+                    SEOMeta::addKeyword(explode(',', $metaTag->value));
+                }else{
+                    SEOMeta::addMeta($metaTag->name, $metaTag->value, $metaTag->type);
+                }
+            }
+        }
+
+        // SEO::opengraph()->setUrl('http://current.url.com');
+        // SEO::setCanonical('https://codecasts.com.br/lesson');
+        //  SEO::opengraph()->addProperty('type', 'articles');
+        // SEO::twitter()->setSite('@LuizVinicius73');
+
+        $oTopMenu = Menu::byName('Menu Principal Superior');
+
+        $data = [
+            // Datos de configuracion general del sitio
+            'title' => $title,
+            'oConfiguration' => $this->oConfiguration,
+            'oStorage' => $this->oStorage,
+            'mainSliders' => MainSlider::active()->orderBy('order', 'asc')->get(),
+
+            // menus de navegacion
+            'topMenuItems' => $oTopMenu ? $oTopMenu->menuItems()->firstLevel()->orderBy('order', 'asc')->get() : null,
+
+            // Datos para el contenido de la pagina
+            'oCorruptionCase' => $oCorruptionCase,
+            'corruptionCasesList' => CorruptionCase::where('id', '<>', $oCorruptionCase->id)->take(0)->inRandomOrder()->get(),
+        ];
+
+        $pdf = \PDF::loadView('frontend.corruption-case-detail', $data);
+        return $pdf->download($oCorruptionCase->slug.'.pdf');
     }
 }

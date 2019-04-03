@@ -22,6 +22,7 @@ Route::post('/contactenos','Frontend\StaticPagesController@contactSend')->name('
 Route::match(['GET', 'POST'], '/casos-de-corrupcion', 'Frontend\CorruptionCasesController@index')->name('corruption-cases');
 Route::get('casos-de-corrupcion/json/{sCorruptionCaseId?}', 'Frontend\CorruptionCasesController@detail')->name('corruption-cases.detail-json');
 Route::match(['GET', 'POST'], '/casos-de-corrupcion/{corruptionCaseSlug?}', 'Frontend\CorruptionCasesController@show')->name('corruption-cases.show');
+Route::get('/casos-de-corrupcion/pdf/{corruptionCaseSlug?}', 'Frontend\CorruptionCasesController@downloadPdf')->name('corruption-cases.download-pdf');
 
 
 Route::match(['GET', 'POST'], '/biblioteca-legal', 'Frontend\LegalLibraryController@index')->name('legal-library');

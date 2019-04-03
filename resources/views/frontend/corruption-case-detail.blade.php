@@ -45,7 +45,7 @@
 					<div class="addthis_inline_share_toolbox d-flex justify-content-center"></div>
 				</div>
 				<div>
-					<a href="#" role="button" class="btn btn-success btn-sm float-right">descarga PDF</a>
+					<a href="{!! route('corruption-cases.download-pdf', [$oCorruptionCase->slug]) !!}" role="button" class="btn btn-success btn-sm float-right">descarga PDF</a>
 				</div>
 			</div>
 		</div>
