@@ -596,4 +596,8 @@
     </script>
     
     {!! Html::script('public/backend/assets/js/form-validate/form-validation-corruption-case.min.js', ['type' => 'text/javascript']) !!}
+
+    <script type="text/javascript">
+        loadCaseStageDetail('{!! route('backend.content.corruption-cases.case-stage-details') !!}', '{!! is_object($oCorruptionCase) ? $oCorruptionCase->case_stage_detail : '' !!}');
+    </script>
 @endsection
