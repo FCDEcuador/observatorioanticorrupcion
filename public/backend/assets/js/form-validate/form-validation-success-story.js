@@ -23,6 +23,9 @@ var FormSuccessStoryValidation = function() {
                     required: true,
                     url: true
                 },
+                main_image: {
+                    accept: "image/*"
+                },
                 image: {
                     accept: "image/*"
                 }
@@ -37,6 +40,9 @@ var FormSuccessStoryValidation = function() {
                 url: {
                     required: "Por favor ingrese la URL de la historia de éxito",
                     url: "Por favor ingrese una URL válida de la historia de éxito"
+                },
+                main_image: {
+                    accept: "Únicamente se aceptan archivos de imagen (JPG, PNG, GIF"
                 },
                 image: {
                     accept: "Únicamente se aceptan archivos de imagen (JPG, PNG, GIF"
@@ -89,6 +95,10 @@ var FormSuccessStoryValidation = function() {
                 var frmData = new FormData();
                 if($("#image")[0].files[0]){
                   frmData.append('image', $("#image")[0].files[0]);
+                }
+
+                if($("#main_image")[0].files[0]){
+                  frmData.append('main_image', $("#main_image")[0].files[0]);
                 }
 
                 var other_data = $(form).serializeArray();
@@ -174,6 +184,24 @@ $(document).ready(function() {
     FormSuccessStoryValidation.init();
 
     $('#image').dropify({
+        messages: {
+            default: 'Arrastre un archivo hasta este lugar o de un clic para seleccionar uno',
+            replace: 'Arrastre un archivo hasta este lugar o de un clic para seleccionar uno',
+            remove: 'Quitar',
+            error: 'Ups! parece que algo no esta bien'
+        },
+        error: {
+            'fileSize': 'El archivo es demasiado grande. ({{ value }} maximo).',
+            'minWidth': 'La imagen es muy pequeña. ({{ value }}}px minimo).',
+            'maxWidth': 'El ancho de la imagen es muy grande. ({{ value }}}px maximo).',
+            'minHeight': 'El alto de la imagen es muy pequeño. ({{ value }}}px minimo).',
+            'maxHeight': 'El alto de la imagen es muy grande. ({{ value }}px maximo).',
+            'imageFormat': 'Este formato no esta permitido. ({{ value }} unicamente).'
+        }
+    });
+
+
+    $('#main_image').dropify({
         messages: {
             default: 'Arrastre un archivo hasta este lugar o de un clic para seleccionar uno',
             replace: 'Arrastre un archivo hasta este lugar o de un clic para seleccionar uno',

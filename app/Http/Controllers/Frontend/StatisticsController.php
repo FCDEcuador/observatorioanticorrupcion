@@ -18,6 +18,9 @@ use BlaudCMS\MetaTag;
 use BlaudCMS\SuccessStory;
 use BlaudCMS\MainSlider;
 
+use BlaudCMS\Exports\CorruptionCasesExport;
+use Maatwebsite\Excel\Facades\Excel;
+
 use SEOMeta;
 use OpenGraph;
 use Twitter;
@@ -78,7 +81,7 @@ class StatisticsController extends Controller
 
 
     /**
-     * Metodo para mostrar el home del sitio
+     * Metodo para mostrar la pagina de estadisticas de casos de corrupcion en el sitio web
      * @Autor Raúl Chauvin
      * @FechaCreacion  2019/02/16
      *
@@ -146,5 +149,21 @@ class StatisticsController extends Controller
         }
         
         return $view;
+    }
+
+
+
+    /**
+     * Metodo para descargar la informacion de casos de corrupcion en formato excel.
+     * @Autor Raúl Chauvin
+     * @FechaCreacion  2019/04/08
+     *
+     * @route /estadisticas/excel
+     * @method GET
+     * @return \Illuminate\Http\Response
+     */
+    public function excel(Request $request){
+        $ahora = date('YmdHis');
+        return Excel::download(new CorruptionCasesExport, 'casosCorrupcion_'.$ahora.'.xls', \Maatwebsite\Excel\Excel::XLS);
     }
 }

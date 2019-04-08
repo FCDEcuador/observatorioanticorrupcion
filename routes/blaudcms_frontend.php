@@ -30,6 +30,7 @@ Route::match(['GET', 'POST'], '/biblioteca-legal', 'Frontend\LegalLibraryControl
 Route::match(['GET', 'POST'], '/historias-de-exito', 'Frontend\SuccessStoriesController@index')->name('success-stories');
 
 Route::get('/estadisticas', 'Frontend\StatisticsController@index')->name('statistics');
+Route::get('/estadisticas/excel', 'Frontend\StatisticsController@excel')->name('statistics.excel');
 
 
 Route::match(['GET', 'POST'], '/{contentCategorySlug?}', 'Frontend\ContentCategoriesController@index')->name('content-category');

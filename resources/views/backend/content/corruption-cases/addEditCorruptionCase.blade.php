@@ -371,37 +371,67 @@
                                                     $nextWH++;       
                                                 @endphp
                                                 <div class="row" id="whatHappenedDiv_{!! $nextWH !!}">
-                                                    <div class="col-md-2">
+                                                    <div class="col-md-1">
                                                         <label for="order"> Orden: </label>
                                                         <input type="number" name="order[]" id="order_{!! $nextWH !!}" class="form-control" value="{!! $oWhatHappened->order !!}" />
                                                     </div>
-                                                    <div class="col-md-2">
-                                                        <label for="year"> Año: </label>
-                                                        <input type="number" name="year[]" id="year_{!! $nextWH !!}" class="form-control" value="{!! $oWhatHappened->year !!}" />
+                                                    <div class="col-md-6">
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <label for="year"> Año Inicio: </label>
+                                                                <input type="number" name="year[]" id="year_{!! $nextWH !!}" class="form-control" value="{!! $oWhatHappened->year !!}" />
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <label for="year"> Mes Inicio: </label>
+                                                                <select name="month[]" id="month_{!! $nextWH !!}" class="form-control">
+                                                                    <option value="" {!!  ! $oWhatHappened->month ? 'selected="selected"' : '' !!}>Mes</option>
+                                                                    <option value="Enero" {!!  $oWhatHappened->month == 'Enero' ? 'selected="selected"' : '' !!}>Enero</option>
+                                                                    <option value="Febrero" {!!  $oWhatHappened->month == 'Febrero' ? 'selected="selected"' : '' !!}>Febrero</option>
+                                                                    <option value="Marzo" {!!  $oWhatHappened->month == 'Marzo' ? 'selected="selected"' : '' !!}>Marzo</option>
+                                                                    <option value="Abril" {!!  $oWhatHappened->month == 'Abril' ? 'selected="selected"' : '' !!}>Abril</option>
+                                                                    <option value="Mayo" {!!  $oWhatHappened->month == 'Mayo' ? 'selected="selected"' : '' !!}>Mayo</option>
+                                                                    <option value="Junio" {!!  $oWhatHappened->month == 'Junio' ? 'selected="selected"' : '' !!}>Junio</option>
+                                                                    <option value="Julio" {!!  $oWhatHappened->month == 'Julio' ? 'selected="selected"' : '' !!}>Julio</option>
+                                                                    <option value="Agosto" {!!  $oWhatHappened->month == 'Agosto' ? 'selected="selected"' : '' !!}>Agosto</option>
+                                                                    <option value="Septiembre" {!!  $oWhatHappened->month == 'Septiembre' ? 'selected="selected"' : '' !!}>Septiembre</option>
+                                                                    <option value="Octubre" {!!  $oWhatHappened->month == 'Octubre' ? 'selected="selected"' : '' !!}>Octubre</option>
+                                                                    <option value="Noviembre" {!!  $oWhatHappened->month == 'Noviembre' ? 'selected="selected"' : '' !!}>Noviembre</option>
+                                                                    <option value="Diciembre" {!!  $oWhatHappened->month == 'Diciembre' ? 'selected="selected"' : '' !!}>Diciembre</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <label for="day"> Día Inicio: </label>
+                                                                <input type="number" name="day[]" id="day_{!! $nextWH !!}" class="form-control" value="{!! $oWhatHappened->day !!}" />
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <label for="year_end"> Año Fin: </label>
+                                                                <input type="number" name="year_end[]" id="year_end_{!! $nextWH !!}" class="form-control" value="{!! $oWhatHappened->year !!}" />
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <label for="month_end"> Mes Fin: </label>
+                                                                <select name="month_end[]" id="month_end_{!! $nextWH !!}" class="form-control">
+                                                                    <option value="" {!!  ! $oWhatHappened->month ? 'selected="selected"' : '' !!}>Mes</option>
+                                                                    <option value="Enero" {!!  $oWhatHappened->month_end == 'Enero' ? 'selected="selected"' : '' !!}>Enero</option>
+                                                                    <option value="Febrero" {!!  $oWhatHappened->month_end == 'Febrero' ? 'selected="selected"' : '' !!}>Febrero</option>
+                                                                    <option value="Marzo" {!!  $oWhatHappened->month_end == 'Marzo' ? 'selected="selected"' : '' !!}>Marzo</option>
+                                                                    <option value="Abril" {!!  $oWhatHappened->month_end == 'Abril' ? 'selected="selected"' : '' !!}>Abril</option>
+                                                                    <option value="Mayo" {!!  $oWhatHappened->month_end == 'Mayo' ? 'selected="selected"' : '' !!}>Mayo</option>
+                                                                    <option value="Junio" {!!  $oWhatHappened->month_end == 'Junio' ? 'selected="selected"' : '' !!}>Junio</option>
+                                                                    <option value="Julio" {!!  $oWhatHappened->month_end == 'Julio' ? 'selected="selected"' : '' !!}>Julio</option>
+                                                                    <option value="Agosto" {!!  $oWhatHappened->month_end == 'Agosto' ? 'selected="selected"' : '' !!}>Agosto</option>
+                                                                    <option value="Septiembre" {!!  $oWhatHappened->month_end == 'Septiembre' ? 'selected="selected"' : '' !!}>Septiembre</option>
+                                                                    <option value="Octubre" {!!  $oWhatHappened->month == 'Octubre' ? 'selected="selected"' : '' !!}>Octubre</option>
+                                                                    <option value="Noviembre" {!!  $oWhatHappened->month_end == 'Noviembre' ? 'selected="selected"' : '' !!}>Noviembre</option>
+                                                                    <option value="Diciembre" {!!  $oWhatHappened->month_end == 'Diciembre' ? 'selected="selected"' : '' !!}>Diciembre</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <label for="day_end"> Día Fin: </label>
+                                                                <input type="number" name="day_end[]" id="day_end_{!! $nextWH !!}" class="form-control" value="{!! $oWhatHappened->day !!}" />
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-md-2">
-                                                        <label for="year"> Mes: </label>
-                                                        <select name="month[]" id="month_{!! $nextWH !!}" class="form-control">
-                                                            <option value="" {!!  ! $oWhatHappened->month ? 'selected="selected"' : '' !!}>Mes</option>
-                                                            <option value="Enero" {!!  $oWhatHappened->month == 'Enero' ? 'selected="selected"' : '' !!}>Enero</option>
-                                                            <option value="Febrero" {!!  $oWhatHappened->month == 'Febrero' ? 'selected="selected"' : '' !!}>Febrero</option>
-                                                            <option value="Marzo" {!!  $oWhatHappened->month == 'Marzo' ? 'selected="selected"' : '' !!}>Marzo</option>
-                                                            <option value="Abril" {!!  $oWhatHappened->month == 'Abril' ? 'selected="selected"' : '' !!}>Abril</option>
-                                                            <option value="Mayo" {!!  $oWhatHappened->month == 'Mayo' ? 'selected="selected"' : '' !!}>Mayo</option>
-                                                            <option value="Junio" {!!  $oWhatHappened->month == 'Junio' ? 'selected="selected"' : '' !!}>Junio</option>
-                                                            <option value="Julio" {!!  $oWhatHappened->month == 'Julio' ? 'selected="selected"' : '' !!}>Julio</option>
-                                                            <option value="Agosto" {!!  $oWhatHappened->month == 'Agosto' ? 'selected="selected"' : '' !!}>Agosto</option>
-                                                            <option value="Septiembre" {!!  $oWhatHappened->month == 'Septiembre' ? 'selected="selected"' : '' !!}>Septiembre</option>
-                                                            <option value="Octubre" {!!  $oWhatHappened->month == 'Octubre' ? 'selected="selected"' : '' !!}>Octubre</option>
-                                                            <option value="Noviembre" {!!  $oWhatHappened->month == 'Noviembre' ? 'selected="selected"' : '' !!}>Noviembre</option>
-                                                            <option value="Diciembre" {!!  $oWhatHappened->month == 'Diciembre' ? 'selected="selected"' : '' !!}>Diciembre</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-md-2">
-                                                        <label for="day"> Día: </label>
-                                                        <input type="number" name="day[]" id="day_{!! $nextWH !!}" class="form-control" value="{!! $oWhatHappened->day !!}" />
-                                                    </div>
-                                                    <div class="col-md-2">
+                                                    <div class="col-md-3">
                                                         <label for="day"> Descripción: </label>
                                                         <textarea name="description[]" id="description_{!! $nextWH !!}" class="form-control">{!! $oWhatHappened->description !!}</textarea>
                                                     </div>

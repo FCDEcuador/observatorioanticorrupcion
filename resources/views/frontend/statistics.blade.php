@@ -67,15 +67,15 @@
 			<h1 class="titulo border-bottom bormorado morado text-uppercase">etapa actual del caso</h1>
 		</div>
 		<div class="col-sm-6">
-			<a href="" role="button" class="btn btn-success btn-sm float-right">descargar EXCEL</a>
+			<a href="{!! route('statistics.excel') !!}" role="button" class="btn btn-success btn-sm float-right" target="_blank" rel="noopener noreferrer">descargar EXCEL</a>
 		</div>
 	</div>
 	<div class="row">
+		@php
+			$aAux = [];	
+			$aCharts = [];
+		@endphp
 		@if($aCaseStageList->isNotEmpty())
-			@php
-				$aAux = [];	
-				$aCharts = [];
-			@endphp
 			@foreach($aCaseStageList as $oCaseStage)
 				@if( ! in_array($oCaseStage->case_stage, $aAux))	
 					<div class="col-12 mt-5">

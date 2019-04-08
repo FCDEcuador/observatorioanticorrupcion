@@ -293,6 +293,9 @@ class CorruptionCasesController extends Controller
             		$oWhatHappened->year = $request->year[$key];
 			        $oWhatHappened->month = $request->month[$key];
 			        $oWhatHappened->day = $request->day[$key];
+                    $oWhatHappened->year_end = $request->year_end[$key];
+                    $oWhatHappened->month_end = $request->month_end[$key];
+                    $oWhatHappened->day_end = $request->day_end[$key];
 			        $oWhatHappened->description = $request->description[$key];
 			        $oWhatHappened->order = $request->order[$key];
 			        $oWhatHappened->corruption_case_id = $oCorruptionCase->id;
@@ -475,6 +478,9 @@ class CorruptionCasesController extends Controller
             		$oWhatHappened->year = $request->year[$key];
 			        $oWhatHappened->month = $request->month[$key];
 			        $oWhatHappened->day = $request->day[$key];
+                    $oWhatHappened->year_end = $request->year_end[$key];
+                    $oWhatHappened->month_end = $request->month_end[$key];
+                    $oWhatHappened->day_end = $request->day_end[$key];
 			        $oWhatHappened->description = $request->description[$key];
 			        $oWhatHappened->order = $request->order[$key];
 			        $oWhatHappened->corruption_case_id = $oCorruptionCase->id;

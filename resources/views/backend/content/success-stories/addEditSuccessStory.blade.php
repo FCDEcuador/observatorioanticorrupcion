@@ -126,9 +126,25 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="main_image">
+                                    <strong>Imagen Principal: </strong><br />
+                                    <small>Por favor seleccione la imagen principal de la historia de éxito que se va a crear. Unicamente archivos de imagen (PNG, JPG, JPEG, GIF).</small>
+                                </label>
+                                @php
+                                    $dataDefaultFile = '';
+                                    if(is_object($oSuccessStory)){
+                                        if($oSuccessStory->main_image){
+                                            $dataDefaultFile = asset($oStorage->url($oSuccessStory->main_image));
+                                        }
+                                    }
+                                @endphp
+                                {!! Form::file('main_image', ['id' => 'main_image', 'class' => 'dropify', 'data-max-file-size' => '1M', 'data-show-errors' => 'true', 'data-default-file' => $dataDefaultFile ]) !!}
+                            </div>
+
+                            <div class="form-group">
                                 <label for="image">
-                                    <strong>Imagen: </strong><br />
-                                    <small>Por favor seleccione la imagen de la historia de éxito que se va a crear. Unicamente archivos de imagen (PNG, JPG, JPEG, GIF).</small>
+                                    <strong>Imagen Listados: </strong><br />
+                                    <small>Por favor seleccione la imagen para listados de la historia de éxito que se va a crear. Unicamente archivos de imagen (PNG, JPG, JPEG, GIF).</small>
                                 </label>
                                 @php
                                     $dataDefaultFile = '';

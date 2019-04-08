@@ -190,6 +190,13 @@ class SuccessStoriesController extends Controller
             $path = $image->storePubliclyAs('success-stories',$name, ['disk' => $this->sStorageDisk]);
             $oSuccessStory->image = $path;
         }
+
+        if($request->hasFile('main_image')){
+            $main_image = $request->file('main_image');
+            $name = $main_image->getClientOriginalName();
+            $path = $main_image->storePubliclyAs('success-stories',$name, ['disk' => $this->sStorageDisk]);
+            $oSuccessStory->main_image = $path;
+        }
         
 
         if($oSuccessStory->save()){
@@ -304,6 +311,7 @@ class SuccessStoriesController extends Controller
         $oSuccessStory->url = $request->url;
 
         $oldImage = $oSuccessStory->image;
+        $oldMainImage = $oSuccessStory->main_image;
 
         
         if($request->hasFile('image')){
@@ -313,9 +321,19 @@ class SuccessStoriesController extends Controller
             $oSuccessStory->image = $path;
         }
 
+        if($request->hasFile('main_image')){
+            $main_image = $request->file('main_image');
+            $name = $main_image->getClientOriginalName();
+            $path = $main_image->storePubliclyAs('success-stories',$name, ['disk' => $this->sStorageDisk]);
+            $oSuccessStory->main_image = $path;
+        }
+
         if($oSuccessStory->save()){
         	if($oldImage != $oSuccessStory->image && $oldImage != ''){
                 $this->oStorage->delete($oldImage);
+            }
+            if($oldMainImage != $oSuccessStory->main_image && $oldMainImage != ''){
+                $this->oStorage->delete($oldMainImage);
             }
             return response()->json(['status' => true , 'message' => 'La historia de éxito '.$oSuccessStory->name.' ha sido actualizada exisotamente.',], 200);
         }else{                    

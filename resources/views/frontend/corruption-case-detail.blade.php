@@ -98,6 +98,10 @@
 		                    	<div class="timeline-content">
 		                        	<h3 class="title">
 			                        	{!! $oWhatHappened->day != '' ? $oWhatHappened->day : '' !!} {!! $oWhatHappened->month != '' ? $oWhatHappened->month : '' !!} {!! $oWhatHappened->year != '' ? $oWhatHappened->year : '' !!}
+			                        	@if($oWhatHappened->year_end != '' || $oWhatHappened->month_end != '' || $oWhatHappened->day_end != '')
+			                        		 a 
+			                        		 {!! $oWhatHappened->day_end != '' ? $oWhatHappened->day_end : '' !!} {!! $oWhatHappened->month_end != '' ? $oWhatHappened->month_end : '' !!} {!! $oWhatHappened->year_end != '' ? $oWhatHappened->year_end : '' !!}
+			                        	@endif
 			                        </h3>
 		                    		<div class="description">
 		                        		<div class="scrollbar scrollbar-secondary">

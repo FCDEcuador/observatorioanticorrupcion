@@ -34,6 +34,7 @@ class SuccessStory extends Model
         'subtitle',
         'description',
         'image',
+        'main_image',
         'icon',
         'url',
     ];
