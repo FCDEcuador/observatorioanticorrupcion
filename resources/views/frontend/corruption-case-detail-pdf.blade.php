@@ -6,7 +6,13 @@
 	<h3 style="font-family:Arial">ANTECEDENTES</h3>
 	
 	@if($oCorruptionCase->history_image)
-		<center><img src="{!! $oStorage->url($oCorruptionCase->history_image) !!}" alt="{!! $oCorruptionCase->title !!}" style="margin: 0 auto;"></center>
+	<table width="100%" align="center">
+		<tr>
+			<td>
+				<img src="{!! $oStorage->url($oCorruptionCase->history_image) !!}" alt="{!! $oCorruptionCase->title !!}" >
+			</td>
+		</tr>
+	</table>
 	@endif
 
 	<div style="text-align: justify;font-family: Arial"> {!! $oCorruptionCase->history !!}</div>
