@@ -9,7 +9,7 @@
 	<table align="center">
 		<tr>
 			<td>
-				<img src="{!! $oStorage->url($oCorruptionCase->history_image) !!}" alt="{!! $oCorruptionCase->title !!}" style="display:block;margin-left: auto;margin-right: auto;">
+				<img src="{!! $oStorage->url($oCorruptionCase->history_image) !!}" alt="{!! $oCorruptionCase->title !!}" >
 			</td>
 		</tr>
 	</table>
