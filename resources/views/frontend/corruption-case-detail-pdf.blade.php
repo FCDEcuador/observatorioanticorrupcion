@@ -64,7 +64,7 @@
 		<h4 style="font-family:Helvetica">{!! $oCorruptionCase->consequences_introduction !!}</h4>
 	@endif
 	@if($oCorruptionCase->consequences_title != '')
-		<h5>{!! $oCorruptionCase->consequences_title !!}</h5>
+		<h5 style="font-family:Helvetica">{!! $oCorruptionCase->consequences_title !!}</h5>
 	@endif
 	@if($oCorruptionCase->consequences_description != '')
 		<div style="text-align: justify;font-family: Helvetica">{!! $oCorruptionCase->consequences_description !!}</div>
