@@ -28,7 +28,7 @@
 		 @foreach($aWhatHappened as $oWhatHappened)
 	 		<tr>
 	 			<td>
-	 				{!! $oWhatHappened->day != '' ? $oWhatHappened->day : '' !!} {!! $oWhatHappened->month != '' ? $oWhatHappened->month : '' !!} {!! $oWhatHappened->year != '' ? $oWhatHappened->year : '' !!}
+	 				<div style="text-align: left;font-family: Helvetica">{!! $oWhatHappened->day != '' ? $oWhatHappened->day : '' !!} {!! $oWhatHappened->month != '' ? $oWhatHappened->month : '' !!} {!! $oWhatHappened->year != '' ? $oWhatHappened->year : '' !!}</div>
 	 			</td>
 	 			<td><div style="text-align: justify;font-family: Helvetica">{!! $oWhatHappened->description !!}</div></td>
 	 		</tr>
@@ -52,7 +52,13 @@
 
 	<h3 style="font-family:Helvetica">CONSECUENCIAS</h3>
 	@if($oCorruptionCase->consequences_image)
-		<img src="{!! $oStorage->url($oCorruptionCase->consequences_image) !!}" alt="{!! $oCorruptionCase->title !!}">
+	<table align="center">
+		<tr>
+			<td>
+				<img src="{!! $oStorage->url($oCorruptionCase->consequences_image) !!}" alt="{!! $oCorruptionCase->title !!}">
+			</td>
+		</tr>
+	</table>
 	@endif
 	@if($oCorruptionCase->consequences_introduction != '')
 		<h4 style="font-family:Helvetica">{!! $oCorruptionCase->consequences_introduction !!}</h4>
@@ -68,13 +74,13 @@
 		<div style="text-align: justify;font-family: Helvetica">{!! $oCorruptionCase->economic_consequences !!}</div>
 	@endif
 	@if($oCorruptionCase->social_consequences != '')
-		<h4 style="font-family:Helvetica">Sociales</h4>
+		<h4 style="font-family:Helvetica">Sociales y Políticas</h4>
 		<div style="text-align: justify;font-family: Helvetica">{!! $oCorruptionCase->social_consequences !!}</div>
 	@endif
 	
 	<hr />
 
 	@if($oCorruptionCase->sources != '')
-		<h6 style="font-family:Helvetica">Fuentes</h6>
+		<h4 style="font-family:Helvetica">Fuentes</h4>
 		{!! $oCorruptionCase->sources !!}
 	@endif
