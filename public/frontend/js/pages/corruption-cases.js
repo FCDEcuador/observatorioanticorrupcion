@@ -9,7 +9,7 @@ function loadCorruptionCase(caseDetailUrl){
         success: function (data) {
           	if(data.status === true){
           		var oCorruptionCase = data.oCorruptionCase;
-				      $('#corruptionCaseImg').html('<img class=\'d-block w-100 h-100\' src=\''+oCorruptionCase.main_multimedia+'\' alt=\''+oCorruptionCase.title+'\'>');
+				      $('#corruptionCaseImg').html('<img class=\'d-block w-100 h-100\' src=\''+oCorruptionCase.home_image+'\' alt=\''+oCorruptionCase.title+'\'>');
 				      $('#corruptionCaseTitle').html(oCorruptionCase.title);
 				      $('#corruptionCaseSummary').html(oCorruptionCase.summary);
 				      $('#corruptionCaseCaseStage').html(oCorruptionCase.case_stage);

@@ -236,7 +236,15 @@
 		</div>
 
 		<div class="col-sm-4 align-self-center d-flex justify-content-center mt-4 mt-sm-0">
-			<div> Una iniciativa de: <a href="" target="_blank"><img src="{!! asset('public/frontend/images/fcd.png') !!}" class="pl-3" /></a></div>
+			<div> Una iniciativa de: <a href="" target="_blank">
+                    @if($oConfiguration->backend_logo != '')
+                        <img src="{!! asset($oStorage->url($oConfiguration->backend_logo)) !!}" />
+                    @else
+                        <img src="{!! asset('public/frontend/images/fcd.png') !!}" class="pl-3" />
+                    @endif
+                
+
+            </a></div>
 		</div>
 	</div>
 	<div class="row">
