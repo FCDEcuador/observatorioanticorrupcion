@@ -356,8 +356,6 @@ class CorruptionCasesController extends Controller
         ];
 
         $pdf = \PDF::loadView('frontend.corruption-case-detail-pdf', $data);
-        
-        $pdf->getCanvas()->page_text(72, 18, "Header: {PAGE_NUM} of {PAGE_COUNT}", true, 10, array(0,0,0));
         return $pdf->download($oCorruptionCase->slug.'.pdf');
     }
 }
