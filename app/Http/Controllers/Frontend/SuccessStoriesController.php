@@ -116,9 +116,9 @@ class SuccessStoriesController extends Controller
         if(is_object($oMainSuccessStory)){
             $successStoriesList = SuccessStory::orderBy('created_at', 'desc')
                                                 ->where('id', '<>', $oMainSuccessStory->id)
-                                                ->paginate(13);
+                                                ->paginate(4);
         }else{
-            $successStoriesList = SuccessStory::orderBy('created_at', 'desc')->paginate(13);
+            $successStoriesList = SuccessStory::orderBy('created_at', 'desc')->paginate(4);
         }
         
 
