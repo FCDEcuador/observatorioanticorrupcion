@@ -27,7 +27,7 @@
 				  <div class="form-group row justify-content-center">
 				    <label for="sTags" class="col-sm-3 col-form-label text-uppercase text-left text-sm-right text-secondary">Término de búsqueda</label>
 				    <div class="col-sm-4">
-				      <input type="text" class="form-control" id="sTags" name="sTags" required>
+				      <input type="text" class="form-control" id="sTags" name="sTags">
 				    </div>
 				  </div>
 				  <div class="form-group row justify-content-center">
