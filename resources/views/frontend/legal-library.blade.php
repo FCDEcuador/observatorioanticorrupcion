@@ -66,7 +66,7 @@
 							<div class="text-justify">
 								{!! $oLegalLibrary->description !!}
 							</div>
-							<a href="{!! $oStorage->download($oLegalLibrary->pdf_document) !!}" role="button" class="btn btn-info btn-sm float-right">Descargar</a>
+							<a href="{!! $oStorage->url($oLegalLibrary->pdf_document) !!}" role="button" class="btn btn-info btn-sm float-right" target="_blank" rel="noopener noreferrer">Descargar</a>
 						</div>
 					</div>
 				</div>
