@@ -33,7 +33,7 @@
 				  <div class="form-group row justify-content-center">
 				    <label for="iIssueYear" class="col-sm-3 col-form-label text-uppercase text-left text-sm-right text-secondary">Año de emisión</label>
 				    <div class="col-sm-4">
-				      <input type="number" class="form-control" id="iIssueYear" name="iIssueYear" required>
+				      <input type="number" class="form-control" id="iIssueYear" name="iIssueYear">
 				    </div>
 				  </div>
 				  <div class="align-self-center d-flex justify-content-center">
