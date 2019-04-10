@@ -172,7 +172,7 @@ class CorruptionCasesController extends Controller
 	        'involved_number' => $oCorruptionCase->involved_number,
 	        'linked_institutions' => $oCorruptionCase->linked_institutions,
 	        'public_officials_involved' => $oCorruptionCase->public_officials_involved,
-	        'main_multimedia' => $this->oStorage->url($oCorruptionCase->main_multimedia),
+	        'main_multimedia' => $this->oStorage->url($oCorruptionCase->home_image),
 	        'title' => $oCorruptionCase->title,
 	        'summary' => $oCorruptionCase->summary,
 	        'url' => route('corruption-cases.show', [$oCorruptionCase->slug]),
