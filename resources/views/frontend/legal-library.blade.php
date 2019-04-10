@@ -75,7 +75,7 @@
 		
 
 		<div class="col-12">
-			{!! $legalLibraryList->links() !!}
+			{!! $legalLibraryList->appends($_GET)->links() !!}
 		</div>
 	</div>
 
