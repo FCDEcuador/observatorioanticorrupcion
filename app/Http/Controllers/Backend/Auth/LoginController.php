@@ -43,7 +43,7 @@ class LoginController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function login(){
-    	return view('backend.auth.login');
+        return view('backend.auth.login');
     }
 
     /**

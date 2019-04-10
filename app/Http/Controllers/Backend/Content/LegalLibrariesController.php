@@ -199,7 +199,8 @@ class LegalLibrariesController extends Controller
         if($request->hasFile('pdf_document')){
             $pdf_document = $request->file('pdf_document');
             $name = $pdf_document->getClientOriginalName();
-            $path = $pdf_document->storePubliclyAs('legal-libraries',$name, ['disk' => $this->sStorageDisk]);
+            $ext = $pdf_document->getClientOriginalExtension();
+            $path = $pdf_document->storePubliclyAs('legal-libraries',$this->oSlugify->slugify($name, '_').'.'.$ext, ['disk' => $this->sStorageDisk]);
             $oLegalLibrary->pdf_document = $path;
         }
         
@@ -321,7 +322,8 @@ class LegalLibrariesController extends Controller
         if($request->hasFile('pdf_document')){
             $pdf_document = $request->file('pdf_document');
             $name = $pdf_document->getClientOriginalName();
-            $path = $pdf_document->storePubliclyAs('success-stories',$name, ['disk' => $this->sStorageDisk]);
+            $ext = $pdf_document->getClientOriginalExtension();
+            $path = $pdf_document->storePubliclyAs('legal-libraries',$this->oSlugify->slugify($name, '_').'.'.$ext, ['disk' => $this->sStorageDisk]);
             $oLegalLibrary->pdf_document = $path;
         }
 
