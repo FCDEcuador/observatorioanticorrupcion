@@ -247,7 +247,7 @@
 						<div class="col-sm-6">
 							<div class="row no-gutters">
 								<div class="col-4 d-sm-flex align-items-center pl-3 pr-sm-3">
-									<img class="d-block w-100" src="{!! $oStorage->url($oCorruptionCaseList->main_multimedia) !!}" alt="{!! $oCorruptionCaseList->title !!}">
+									<img class="d-block w-100" src="{!! $oStorage->url($oCorruptionCaseList->home_image) !!}" alt="{!! $oCorruptionCaseList->title !!}">
 								</div>
 								<div class="col-8 pl-3 pl-sm-0 pr-3 pr-sm-0">
 									<h6 class="text-success font-weight-bold">

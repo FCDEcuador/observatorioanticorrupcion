@@ -152,7 +152,7 @@
 						$aAux = [];
 						$aAux[$oCaseStage->case_stage][] = [
 							'category' => ''.strtoupper($oCaseStage->case_stage_detail).'',
-							'column-1' => ''.$oCaseStage->numCases.'',
+							'column-1' => ''.round(($oCaseStage->numCases/$numCases*100),2).'%',
 							'fill alpha' => '1',
 							'dash length' => '',
 						];	
