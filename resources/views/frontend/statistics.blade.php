@@ -240,10 +240,17 @@
 				],
 				"allLabels": [],
 				"balloon": {
-					"horizontalPadding": 10,
-					"offsetX": 2,
-					"pointerOrientation": "up",
-					"showBullet": true
+					"adjustBorderColor": false,
+					"animationDuration": 0,
+					"borderThickness": 0,
+					"color": "#FFFFFF",
+					"disableMouseEvents": false,
+					"fadeOutDuration": 0,
+					"horizontalPadding": 0,
+					"maxWidth": 0,
+					"offsetX": 0,
+					"offsetY": 0,
+					"pointerOrientation": "right"
 				},
 				"titles": [
 					{
