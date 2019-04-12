@@ -164,8 +164,8 @@
 				
 				@foreach($aCharts as $key => $val)
 					console.log({!! $key !!});
-					console.log({!! $val !!});
-					console.log({!! $key[$val] !!});
+					console.log({!! json_encode($val) !!});
+					//console.log({!! $key[$val] !!});
 					data = {!! json_encode($aAux[$val['caseStage']]) !!};
 					setupChart('chart_{!! $val['loop'] !!}', data);
 				@endforeach
