@@ -112,6 +112,15 @@ class SuccessStoriesController extends Controller
         $oTopMenu = Menu::byName('Menu Principal Superior');
 
 
+        $oMainSuccessStory = SuccessStory::orderBy('created_at', 'desc')->first();
+        if(is_object($oMainSuccessStory)){
+            $successStoriesList = SuccessStory::orderBy('created_at', 'desc')
+                                                ->where('id', '<>', $oMainSuccessStory->id)
+                                                ->paginate(4);
+        }else{
+            $successStoriesList = SuccessStory::orderBy('created_at', 'desc')->paginate(4);
+        }
+        
 
         $data = [
     		// Datos de configuracion general del sitio
@@ -124,8 +133,8 @@ class SuccessStoriesController extends Controller
             'topMenuItems' => $oTopMenu ? $oTopMenu->menuItems()->firstLevel()->orderBy('order', 'asc')->get() : null,
 
             // Datos para el contenido de la pagina
-            'oMainSuccessStory' => SuccessStory::orderBy('created_at', 'desc')->first(),
-            'successStoriesList' => SuccessStory::orderBy('created_at', 'desc')->skip(1)->paginate(13),
+            'oMainSuccessStory' => $oMainSuccessStory,
+            'successStoriesList' => $successStoriesList,
     	];
 
     	$view = view('frontend.success-story', $data);

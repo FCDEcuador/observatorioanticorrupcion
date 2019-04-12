@@ -27,13 +27,13 @@
 				  <div class="form-group row justify-content-center">
 				    <label for="sTags" class="col-sm-3 col-form-label text-uppercase text-left text-sm-right text-secondary">Término de búsqueda</label>
 				    <div class="col-sm-4">
-				      <input type="text" class="form-control" id="sTags" name="sTags" required>
+				      <input type="text" class="form-control" id="sTags" name="sTags">
 				    </div>
 				  </div>
 				  <div class="form-group row justify-content-center">
 				    <label for="iIssueYear" class="col-sm-3 col-form-label text-uppercase text-left text-sm-right text-secondary">Año de emisión</label>
 				    <div class="col-sm-4">
-				      <input type="number" class="form-control" id="iIssueYear" name="iIssueYear" required>
+				      <input type="number" class="form-control" id="iIssueYear" name="iIssueYear">
 				    </div>
 				  </div>
 				  <div class="align-self-center d-flex justify-content-center">
@@ -66,7 +66,7 @@
 							<div class="text-justify">
 								{!! $oLegalLibrary->description !!}
 							</div>
-							<a href="{!! $oStorage->download($oLegalLibrary->pdf_document) !!}" role="button" class="btn btn-info btn-sm float-right">Descargar</a>
+							<a href="{!! $oStorage->url($oLegalLibrary->pdf_document) !!}" role="button" class="btn btn-info btn-sm float-right" target="_blank" rel="noopener noreferrer">Descargar</a>
 						</div>
 					</div>
 				</div>
@@ -75,7 +75,7 @@
 		
 
 		<div class="col-12">
-			{!! $legalLibraryList->links() !!}
+			{!! $legalLibraryList->appends($_GET)->links() !!}
 		</div>
 	</div>
 
