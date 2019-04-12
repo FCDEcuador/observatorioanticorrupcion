@@ -163,10 +163,11 @@
 			@if(count($aCharts))
 				
 				@foreach($aCharts as $key => $val)
-					console.log({!! $key !!});
+					
 					console.log({!! json_encode($val) !!});
 					//console.log({!! $key[$val] !!});
 					data = {!! json_encode($aAux[$val['caseStage']]) !!};
+					console.log(data);
 					setupChart('chart_{!! $val['loop'] !!}', data);
 				@endforeach
 			@endif
