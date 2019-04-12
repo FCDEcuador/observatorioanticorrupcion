@@ -152,7 +152,7 @@
 						$aAux = [];
 						$aAux[$oCaseStage->case_stage][] = [
 							'category' => ''.strtoupper($oCaseStage->case_stage_detail).'',
-							'column-1' => ''.round(($oCaseStage->numCases/$numCases*100),2).'%'.'',
+							'column-1' => ''.round(($oCaseStage->numCases/$numCases*100),2).'',
 							'fill alpha' => '1',
 							'dash length' => '',
 						];	
@@ -215,7 +215,7 @@
 						"clustered": false,
 						"fillAlphas": 0.3,
 						"id": "AmGraph-2",
-						"labelText": "[[value]]",
+						"labelText": "[[value]]%",
 						"lineColor": "#fff",
 						"type": "column",
 						"valueField": "column-1"
@@ -240,18 +240,18 @@
 				],
 				"allLabels": [],
 				"balloon": {
-					"adjustBorderColor": false,
-					"animationDuration": 0,
-					"borderThickness": 0,
-					"color": "#FFFFFF",
-					"disableMouseEvents": false,
-					"fadeOutDuration": 0,
-					"horizontalPadding": 0,
-					"maxWidth": 0,
-					"offsetX": 0,
-					"offsetY": 0,
-					"pointerOrientation": "right"
-				},
+				"adjustBorderColor": false,
+				"animationDuration": 0,
+				"borderThickness": 0,
+				"color": "#FFFFFF",
+				"disableMouseEvents": false,
+				"fadeOutDuration": 0,
+				"horizontalPadding": 0,
+				"maxWidth": 0,
+				"offsetX": 0,
+				"offsetY": 0,
+				"pointerOrientation": "right"
+			},
 				"titles": [
 					{
 						"id": "Title-1",
