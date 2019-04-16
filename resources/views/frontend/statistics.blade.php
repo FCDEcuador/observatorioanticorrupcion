@@ -8,9 +8,8 @@
 
 @section('main-content')
 	
-	
 	<!-- BEGIN SECCION NOTA DESTACADA -->
-<div class="container-fluid p-3 bg-light imagen-estadisticas" style="background-image: url('https://via.placeholder.com/1000x340');">
+<div class="container-fluid p-3 bg-light imagen-estadisticas" style="background-image: url('{!! asset('public/images/slide-ESTADISTICAS.jpg') !!}');">
 	<div class="container">
 		<!-- BEGIN SECCION TITULO -->
 		<div class="row mt-3 mb-5">
