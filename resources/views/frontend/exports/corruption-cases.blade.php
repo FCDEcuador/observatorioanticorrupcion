@@ -1,6 +1,30 @@
 <table width="100%">
     <tr>
-        <td colspan="6" align="center"><h1>Información Casos de Corrupción</h1></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="6" align="center">Información Casos de Corrupción</td>
     </tr>
 </table>
 
