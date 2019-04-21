@@ -8,7 +8,14 @@ use Maatwebsite\Excel\Concerns\FromView;
 use Maatwebsite\Excel\Concerns\WithTitle;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Maatwebsite\Excel\Concerns\WithEvents;
-use \Maatwebsite\Excel\Sheet;
+
+use Maatwebsite\Excel\Sheet;
+use Maatwebsite\Excel\Concerns\WithEvents;
+use Maatwebsite\Excel\Concerns\RegistersEventListeners;
+use Maatwebsite\Excel\Events\BeforeExport;
+use Maatwebsite\Excel\Events\BeforeWriting;
+use Maatwebsite\Excel\Events\BeforeSheet;
+use Maatwebsite\Excel\Events\AfterSheet;
 
 class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize, WithEvents
 {
@@ -36,11 +43,9 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
             'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER,
         ];
 
-        //$spreadsheet->getActiveSheet()->getStyle('B2')->getAlignment()->applyFromArray( [ 'horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER, 'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER, 'textRotation' => 0, 'wrapText' => TRUE ] );
-
         return [
             AfterSheet::class => function(AfterSheet $event) use ($styleArray) {
-                $event->getActiveSheet()->getStyle('A6')->applyFromArray($styleArray);
+                $event->sheet->getStyle('A1:F4')->applyFromArray($styleArray);
             },
         ];
     }
