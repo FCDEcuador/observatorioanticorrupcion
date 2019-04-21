@@ -9,7 +9,7 @@ use Maatwebsite\Excel\Concerns\WithTitle;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Maatwebsite\Excel\Concerns\WithEvents;
 
-class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize, WithEvents
+class CorruptionCasesGeneralSheet implements  WithTitle, ShouldAutoSize, WithEvents
 {
 
     /**
