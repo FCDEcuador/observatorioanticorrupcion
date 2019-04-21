@@ -30,7 +30,7 @@ class CorruptionCasesGeneralSheet implements  WithTitle, ShouldAutoSize, WithEve
                 $drawing = new \PhpOffice\PhpSpreadsheet\Worksheet\Drawing();
                 $drawing->setName('Logo');
                 $drawing->setDescription('Logo');
-                $drawing->setPath(public_path('public/frontend/images/logo-sitio.png'));
+                $drawing->setPath(public_path('/frontend/images/logo-sitio.png'));
                 $drawing->setCoordinates('D1');
 
                 $drawing->setWorksheet($event->sheet->getDelegate());
