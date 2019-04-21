@@ -1,14 +1,5 @@
 <table width="100%">
     <tr>
-        <td>
-             <img src="http://www.observatorioanticorrupcion.ec/public/frontend/images/logo-sitio.png" />
-             <img src="http://www.observatorioanticorrupcion.ec/public/frontend/images/fcd.png" />
-        </td>
-    </tr>
-</table>
-
-<table width="100%">
-    <tr>
         <td colspan="6" align="center"><h1>Información Casos de Corrupción</h1></td>
     </tr>
 </table>
@@ -16,12 +7,12 @@
 <table width="100%">
     <thead>
         <tr>
-            <th><strong>DETALLE DE LOS CASOS</strong></th>
-            <th><strong>FUNCIONES DEL ESTADO</strong></th>
-            <th><strong>PROVINCIAS</strong></th>
-            <th><strong>AÑO</strong></th>
-            <th><strong>FUNCIONARIOS PUBLICOS INVOLUCRADOS</strong></th>
-            <th><strong>INSTITUCIONES PUBLICAS INVOLUCRADAS</strong></th>
+            <th><b>DETALLE DE LOS CASOS</b></th>
+            <th><b>FUNCIONES DEL ESTADO</b></th>
+            <th><b>PROVINCIAS</b></th>
+            <th><b>AÑO</b></th>
+            <th><b>FUNCIONARIOS PUBLICOS INVOLUCRADOS</b></th>
+            <th><b>INSTITUCIONES PUBLICAS INVOLUCRADAS</b></th>
         </tr>
     </thead>
     <tbody>
@@ -41,7 +32,7 @@
         @endforeach
     @endif
     <tr>
-        <td><strong>TOTAL GENERAL</strong></td>
+        <td><b>TOTAL GENERAL</b></td>
         <td colspan="5">{!! $corruptionCases->count() !!}</td>
     </tr>
     </tbody>
