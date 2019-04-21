@@ -1,10 +1,8 @@
 <table width="100%">
     <tr>
         <td>
-             <img style="display: block; width: 200px;height: 170px" width="200px" height="170px" src="public/frontend/images/logo-sitio.png" />
-             <img style="display: block; width: 200px;height: 170px" width="200px" height="170px" src="public/frontend/images/fcd.png" />
-             
-             <img src="{!! URL::asset('images/fcd.png') !!}" />
+             <img style="display: block; width: 200px;height: 170px" width="200px" height="170px" src="http://www.observatorioanticorrupcion.ec/public/frontend/images/logo-sitio.png" />
+             <img style="display: block; width: 200px;height: 170px" width="200px" height="170px" src="http://www.observatorioanticorrupcion.ec/public/frontend/images/fcd.png" />
         </td>
     </tr>
 </table>
