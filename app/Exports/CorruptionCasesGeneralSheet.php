@@ -51,7 +51,9 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
                 $drawing->setName('Logo');
                 $drawing->setDescription('Logo');
                 $drawing->setPath(public_path('frontend/images/logo-sitio.png'));
-                $drawing->setCoordinates('D1');
+                $drawing->setHeight(176);
+                $drawing->setWidth(80);
+                $drawing->setCoordinates('C2');
 
                 $drawing->setWorksheet($event->sheet->getDelegate());
             },
