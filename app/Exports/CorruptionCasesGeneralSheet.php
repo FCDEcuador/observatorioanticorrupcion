@@ -26,12 +26,14 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
         $styleArray = [
             'font' => [
                 'bold' => true,
-            ]
+            ],
+            'horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER, 
+            'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER,
         ];
 
         return [
             AfterSheet::class => function(AfterSheet $event) use ($styleArray) {
-                $event->sheet->getStyle('A1:G1')->applyFromArray($styleArray);
+                $event->sheet->getStyle('A1:G4')->applyFromArray($styleArray);
             },
             AfterSheet::class => function(AfterSheet $event) {
                 $drawing = new \PhpOffice\PhpSpreadsheet\Worksheet\Drawing();
