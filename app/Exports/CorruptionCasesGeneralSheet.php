@@ -8,6 +8,7 @@ use Maatwebsite\Excel\Concerns\FromView;
 use Maatwebsite\Excel\Concerns\WithTitle;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Maatwebsite\Excel\Concerns\WithEvents;
+use \Maatwebsite\Excel\Sheet;
 
 class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize, WithEvents
 {
@@ -23,6 +24,10 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
     public function registerEvents(): array
     {
 
+        //Sheet::macro('styleCells', function (Sheet $sheet, string $cellRange, array $style) {
+        //    $sheet->getDelegate()->getStyle($cellRange)->applyFromArray($style);
+        //});
+
         $styleArray = [
             'font' => [
                 'bold' => true,
@@ -34,16 +39,6 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
         return [
             AfterSheet::class => function(AfterSheet $event) use ($styleArray) {
                 $event->sheet->getStyle('A1:G4')->applyFromArray($styleArray);
-            },
-            AfterSheet::class => function(AfterSheet $event) {
-                $drawing = new \PhpOffice\PhpSpreadsheet\Worksheet\Drawing();
-                $drawing->setName('Fundación Ciudadanía y Desarrollo');
-                $drawing->setDescription('Fundación Ciudadanía y Desarrollo');
-                $drawing->setPath(public_path('frontend/images/fcd.png'));
-                $drawing->setHeight(200);
-                $drawing->setCoordinates('D1');
-
-                $drawing->setWorksheet($event->sheet->getDelegate());
             },
         ];
     }
