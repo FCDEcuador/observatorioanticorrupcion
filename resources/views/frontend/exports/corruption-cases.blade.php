@@ -1,15 +1,15 @@
 <table width="100%">
     <tr>
         <td>
-             <img style="display: block; width: 200px;height: 170px" width="200px" height="170px" src="http://www.observatorioanticorrupcion.ec/public/frontend/images/logo-sitio.png" />
-             <img style="display: block; width: 200px;height: 170px" width="200px" height="170px" src="http://www.observatorioanticorrupcion.ec/public/frontend/images/fcd.png" />
+             <img width="200" height="170" src="http://www.observatorioanticorrupcion.ec/public/frontend/images/logo-sitio.png" />
+             <img width="200px" height="170px" src="http://www.observatorioanticorrupcion.ec/public/frontend/images/fcd.png" />
         </td>
     </tr>
 </table>
 
 <table width="100%">
     <tr>
-        <td colspan="6" style="text-align: center;font-size: 30px;">Información Casos de Corrupción</td>
+        <td colspan="6" align="center" style="text-align:center;font-size: 30px;">Información Casos de Corrupción</td>
     </tr>
 </table>
 

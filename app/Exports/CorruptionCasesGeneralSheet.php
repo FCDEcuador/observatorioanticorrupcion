@@ -11,13 +11,6 @@ use Maatwebsite\Excel\Concerns\WithEvents;
 
 class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize, WithEvents
 {
-    public function view(): View
-    {
-        
-        return view('frontend.exports.corruption-cases', [
-            'corruptionCases' => CorruptionCase::all()
-        ]);
-    }
 
     /**
      * @return string
@@ -27,27 +20,39 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
         return 'Datos Generales';
     }
 
+    /**
+     * @return array
+     */
     public function registerEvents(): array
     {
         return [
-            AfterSheet::class => function(AfterSheet $event) {
-                $drawing = new \PhpOffice\PhpSpreadsheet\Worksheet\Drawing();
-                $drawing->setName('Observatorio Anti Currupción');
-                $drawing->setDescription('Observatorio Anti Currupción');
-                $drawing->setPath(public_path('frontend/images/logo-sitio.png'));
-                $drawing->setCoordinates('A1');
-
-                $drawing->setWorksheet($event->sheet->getDelegate());
+            BeforeExport::class  => function(BeforeExport $event) {
+                $event->writer->setCreator('Observatorio');
             },
-            AfterSheet::class => function(AfterSheet $event) {
-                $drawing = new \PhpOffice\PhpSpreadsheet\Worksheet\Drawing();
-                $drawing->setName('Fundación Ciudadanía y Desarrollo');
-                $drawing->setDescription('Fundación Ciudadanía y Desarrollo');
-                $drawing->setPath(public_path('frontend/images/fcd.png'));
-                $drawing->setCoordinates('D1');
+            AfterSheet::class    => function(AfterSheet $event) {
+                $event->sheet->setOrientation(\PhpOffice\PhpSpreadsheet\Worksheet\PageSetup::ORIENTATION_LANDSCAPE);
 
-                $drawing->setWorksheet($event->sheet->getDelegate());
+                $event->sheet->styleCells(
+                    'B2:G8',
+                    [
+                        'borders' => [
+                            'outline' => [
+                                'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THICK,
+                                'color' => ['argb' => 'FFFF0000'],
+                            ],
+                        ]
+                    ]
+                );
             },
         ];
     }
+    public function view(): View
+    {
+        return view('frontend.exports.corruption-cases', [
+            'corruptionCases' => CorruptionCase::all()
+        ]);
+    }
+
+
+
 }
