@@ -46,12 +46,7 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
             },
         ];
     }
-    public function view(): View
-    {
-        return view('frontend.exports.corruption-cases', [
-            'corruptionCases' => CorruptionCase::all()
-        ]);
-    }
+    
 
 
 
