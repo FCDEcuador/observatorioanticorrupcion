@@ -25,7 +25,7 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
 
         $styleArray = [
             'font' => [
-                'bold' => true;
+                'bold' => true,
             ]
         ];
 
