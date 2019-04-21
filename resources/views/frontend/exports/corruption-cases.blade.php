@@ -1,15 +1,18 @@
 <table width="100%">
-    <thead>
     <tr>
-        <th colspan="3">
-            <img style="display: block; margin: auto; align: center" width=200 height=170 src="public/frontend/images/logo-sitio.png" />
-        </th>
-        <th colspan="3">
-            <img style="display: block; margin: auto; align: center" width=200 height=170 src="public/frontend/images/fcd.png" />
-            <img src="{!! URL::asset('') !!}" />
-        </th>
+        <td>
+             <img style="display: block; width: 200px;height: 170px" width="200px" height="170px" src="public/frontend/images/logo-sitio.png" />
+             <img style="display: block; width: 200px;height: 170px" width="200px" height="170px" src="public/frontend/images/fcd.png" />
+             
+             <img src="{!! URL::asset('images/fcd.png') !!}" />
+        </td>
     </tr>
-    </thead>
+</table>
+
+<table width="100%">
+    <tr>
+        <td colspan="6" style="text-align: center;font-size: 30px;">Información Casos de Corrupción</td>
+    </tr>
 </table>
 
 <table width="100%">
