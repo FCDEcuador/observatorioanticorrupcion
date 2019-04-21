@@ -57,17 +57,7 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
 
                 $drawing->setWorksheet($event->sheet->getDelegate());
             },
-            AfterSheet::class => function(AfterSheet $event) {
-                $drawing = new \PhpOffice\PhpSpreadsheet\Worksheet\Drawing();
-                $drawing->setName('Fundacion');
-                $drawing->setDescription('Fundacion');
-                $drawing->setPath(public_path('frontend/images/fcd.png'));
-                $drawing->setHeight(276);
-                $drawing->setWidth(280);
-                $drawing->setCoordinates('H2');
-
-                $drawing->setWorksheet($event->sheet->getDelegate());
-            },
+            
         ];
     }
 
