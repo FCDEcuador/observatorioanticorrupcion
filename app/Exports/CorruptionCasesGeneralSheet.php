@@ -36,9 +36,11 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
             'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER,
         ];
 
+        //$spreadsheet->getActiveSheet()->getStyle('B2')->getAlignment()->applyFromArray( [ 'horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER, 'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER, 'textRotation' => 0, 'wrapText' => TRUE ] );
+
         return [
             AfterSheet::class => function(AfterSheet $event) use ($styleArray) {
-                $event->sheet->getStyle('A1:G4')->applyFromArray($styleArray);
+                $event->sheet->getActiveSheet()->getStyle('A1:F4')->applyFromArray($styleArray);
             },
         ];
     }
