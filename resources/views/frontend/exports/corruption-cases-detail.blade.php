@@ -1,21 +1,30 @@
 <table>
-    <thead>
-    <tr>
-        <th>
-            <img src="{!! URL::asset('public/frontend/images/logo-sitio.png') !!}" />
-        </th>
-        <th>
-            <img src="{!! URL::asset('public/frontend/images/fcd.png') !!}" />
-        </th>
+   <tr>
+        <td>
+        </td>
+   </tr>
+   <tr>
+        <td>
+        </td>
+   </tr>
+   <tr>
+        <td>
+        </td>
+   </tr>
+   <tr>
+        <td>
+        </td>
+   </tr>
+   <tr>
+        <td colspan="6" >Información Casos de Corrupción</td>
     </tr>
-    </thead>
 </table>
 
 <table>
     <thead>
     <tr>
-        <th><strong>DETALLE DE LOS CASOS</strong></th>
-        <th><strong>SUBETAPA</strong></th>
+        <th>DETALLE DE LOS CASOS</th>
+        <th>SUBETAPA</th>
     </tr>
     </thead>
     <tbody>
@@ -30,13 +39,13 @@
     @if($corruptionCasesData->isNotEmpty())
         @foreach($corruptionCasesData as $oCorruptionCase)
             <tr>
-                <td><strong>{{ strtoupper($oCorruptionCase->case_stage_detail) }}</strong></td>
+                <td>{{ strtoupper($oCorruptionCase->case_stage_detail) }}</td>
                 <td>{{ $oCorruptionCase->corruptionCaseNum }}</td>
             </tr>
         @endforeach
     @endif
     <tr>
-        <td><strong>TOTAL GENERAL</strong></td>
+        <td>TOTAL GENERAL</td>
         <td>{!! $corruptionCasesList->count() !!}</td>
     </tr>
     </tbody>

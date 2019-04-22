@@ -57,7 +57,7 @@
     @endif
     <tr>
         <td><b>TOTAL GENERAL</b></td>
-        <td colspan="5">{!! $corruptionCases->count() !!}</td>
+        <td>{!! $corruptionCases->count() !!}</td>
     </tr>
     </tbody>
 </table>

@@ -30,10 +30,6 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
     public function registerEvents(): array
     {
 
-        //Sheet::macro('styleCells', function (Sheet $sheet, string $cellRange, array $style) {
-        //    $sheet->getDelegate()->getStyle($cellRange)->applyFromArray($style);
-        //});
-
         $styleArray = [
             'font' => [
                 'bold' => true,
@@ -63,7 +59,7 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
         $styleArray3 = [
             'font' => [
                 'bold' => true,
-                'size' => '14',
+                'size' => '12',
             ],
         ];
 
@@ -72,7 +68,7 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
                 
                 $event->sheet->getStyle('A9')->applyFromArray($styleArray);
 
-                $event->sheet->getStyle('A11:F13')->applyFromArray($styleArray2);
+                $event->sheet->getStyle('A11:F14')->applyFromArray($styleArray2);
 
                 $event->sheet->getStyle('A11:F11')->applyFromArray($styleArray3);
                 
@@ -80,7 +76,7 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
                 $objDrawing->setName('Logo');
                 $objDrawing->setDescription('Logo');
                 $objDrawing->setPath(public_path('frontend/images/logo-sitio.png'));
-                $objDrawing->setWidthAndHeight(228,100  );
+                $objDrawing->setHeight(100);
                 $objDrawing->setResizeProportional(true);
                 $objDrawing->setCoordinates('B2');
 
@@ -90,7 +86,7 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
                 $objDrawing2->setName('FCD');
                 $objDrawing2->setDescription('FCD');
                 $objDrawing2->setPath(public_path('frontend/images/fcd.png'));
-                $objDrawing2->setWidthAndHeight(101,84);
+                $objDrawing2->setHeight(100);
                 $objDrawing2->setResizeProportional(true);
                 $objDrawing2->setCoordinates('E2');
 
