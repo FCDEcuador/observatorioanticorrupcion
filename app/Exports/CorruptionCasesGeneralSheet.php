@@ -40,7 +40,7 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
                 'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER,
             ],
             'fill' => [
-                'fillType' => Fill::FILL_SOLID,
+                'fillType' => \PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID,
                 'color' => [ 'rgb' => 'c3d5e9' ],
             ],
             
