@@ -52,12 +52,21 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
             ],
         ];
 
+        $styleArray3 = [
+            'font' => [
+                'bold' => true,
+                'size' => '16px',
+            ],
+        ];
+
         return [
             AfterSheet::class => function(AfterSheet $event) use ($styleArray) {
                 
                 $event->sheet->getStyle('A9')->applyFromArray($styleArray);
 
                 $event->sheet->getStyle('A11:F13')->applyFromArray($styleArray2);
+
+                $event->sheet->getStyle('A11:F11')->applyFromArray($styleArray3);
                 
                 $objDrawing = new \PhpOffice\PhpSpreadsheet\Worksheet\Drawing();
                 $objDrawing->setName('Logo');
