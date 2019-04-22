@@ -86,7 +86,7 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
                 $objDrawing2->setResizeProportional(true);
                 $objDrawing2->setCoordinates('H2');
 
-                $drawing2->setWorksheet($event->sheet->getDelegate());
+                $objDrawing2->setWorksheet($event->sheet->getDelegate());
             },
             
         ];
