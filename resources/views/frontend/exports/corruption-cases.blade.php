@@ -31,12 +31,14 @@
 <table width="100%">
     <thead>
         <tr>
-            <th width="100pt" ><b>DETALLE DE LOS CASOS</b></th>
-            <th width="100pt" ><b>FUNCIONES DEL ESTADO</b></th>
-            <th width="100pt" ><b>PROVINCIAS</b></th>
-            <th width="100pt" ><b>AÑO</b></th>
-            <th width="100pt" ><b>FUNCIONARIOS PUBLICOS INVOLUCRADOS</b></th>
-            <th width="100pt" ><b>INSTITUCIONES PUBLICAS INVOLUCRADAS</b></th>
+            <th width="100px" >DETALLE DE LOS CASOS</th>
+            <th width="100px" >FUNCIONES DEL ESTADO</th>
+            <th width="100px" >PROVINCIAS</th>
+            <th width="100px" >AÑO</th>
+            <th width="100px" >FUNCIONARIOS PUBLICOS INVOLUCRADOS</th>
+            <th width="100px" >INSTITUCIONES PUBLICAS INVOLUCRADAS</th>
+            <th width="100px" ></th>
+            <th width="100px" ></th>
         </tr>
     </thead>
     <tbody>
@@ -56,7 +58,7 @@
         @endforeach
     @endif
     <tr>
-        <td><b>TOTAL GENERAL</b></td>
+        <td>TOTAL GENERAL</td>
         <td>{!! $corruptionCases->count() !!}</td>
     </tr>
     </tbody>
