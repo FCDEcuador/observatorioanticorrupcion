@@ -76,12 +76,14 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, WithEvents
 
                 $objColum = new \PhpOffice\PhpSpreadsheet\Worksheet\ColumnDimension();
                 $objColum->setWidth(array(
-                    'A'     => 10,
-                    'B'     =>  30,
-                    'C'     =>  15,
-                    'D'     =>  15,
-                    'E'     =>  15,
-                    'F'     =>  15,
+                    'A'     => 40,
+                    'B'     =>  40,
+                    'C'     =>  40,
+                    'D'     =>  40,
+                    'E'     =>  40,
+                    'F'     =>  40,
+                    'G'     =>  100,
+                    'H'     =>  100,
                 ));
                 //$objColum->setWorksheet($event->sheet->getDelegate());
 
