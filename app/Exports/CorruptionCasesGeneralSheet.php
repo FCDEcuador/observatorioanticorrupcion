@@ -37,25 +37,34 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
         $styleArray = [
             'font' => [
                 'bold' => true,
-                'size' => '16',
+                'size' => '14',
             ],
-            'horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER, 
-            'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER,
+            'Alignment' => [
+                'horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER, 
+                'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER,
+            ]
+            
         ];
 
         $styleArray2 = [
-            'borders' => [
-                'outline' => [
-                    'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THICK,
-                    'color' => ['argb' => 'FFFF0000'],
+            'Borders' => [
+                'allBorders' => [
+                
+                    'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                    'color' => ['rgb' => '808080'],
+                
                 ],
-            ],
+            ]
         ];
+
+        //$spreadsheet->getActiveSheet()->getStyle('B2')->getBorders()->applyFromArray( [ 'allBorders' => [ 'borderStyle' => Border::BORDER_DASHDOT, 'color' => [ 'rgb' => '808080' ] ] ] );
+        //$spreadsheet->getActiveSheet()->getStyle('B2')->getAlignment()->applyFromArray( [ 'horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER, 'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER, 'textRotation' => 0, 'wrapText' => TRUE ] );
+
 
         $styleArray3 = [
             'font' => [
                 'bold' => true,
-                'size' => '16',
+                'size' => '14',
             ],
         ];
 
