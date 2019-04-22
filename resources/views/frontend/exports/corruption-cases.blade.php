@@ -31,14 +31,12 @@
 <table width="100%">
     <thead>
         <tr>
-            <th width="100px" >DETALLE DE LOS CASOS</th>
-            <th width="100px" >FUNCIONES DEL ESTADO</th>
-            <th width="100px" >PROVINCIAS</th>
-            <th width="100px" >AÑO</th>
-            <th width="100px" >FUNCIONARIOS PUBLICOS INVOLUCRADOS</th>
-            <th width="100px" >INSTITUCIONES PUBLICAS INVOLUCRADAS</th>
-            <th width="100px" ></th>
-            <th width="100px" ></th>
+            <th width="80" >DETALLE DE LOS CASOS</th>
+            <th width="80" >FUNCIONES DEL ESTADO</th>
+            <th width="80" >PROVINCIAS</th>
+            <th width="80" >AÑO</th>
+            <th width="140" >FUNCIONARIOS PUBLICOS INVOLUCRADOS</th>
+            <th width="140" >INSTITUCIONES PUBLICAS INVOLUCRADAS</th>
         </tr>
     </thead>
     <tbody>
