@@ -52,10 +52,6 @@ class CorruptionCasesDetailedSheet implements FromView, WithTitle, ShouldAutoSiz
             ]
         ];
 
-        //$spreadsheet->getActiveSheet()->getStyle('B2')->getBorders()->applyFromArray( [ 'allBorders' => [ 'borderStyle' => Border::BORDER_DASHDOT, 'color' => [ 'rgb' => '808080' ] ] ] );
-        //$spreadsheet->getActiveSheet()->getStyle('B2')->getAlignment()->applyFromArray( [ 'horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER, 'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER, 'textRotation' => 0, 'wrapText' => TRUE ] );
-
-
         $styleArray3 = [
             'font' => [
                 'bold' => true,
@@ -66,7 +62,7 @@ class CorruptionCasesDetailedSheet implements FromView, WithTitle, ShouldAutoSiz
         return [
             AfterSheet::class => function(AfterSheet $event) use ($styleArray,$styleArray2,$styleArray3) {
                 
-                $event->sheet->getStyle('A5')->applyFromArray($styleArray);
+                $event->sheet->getStyle('A9')->applyFromArray($styleArray);
 
                 $event->sheet->getStyle('A11:B14')->applyFromArray($styleArray2);
 

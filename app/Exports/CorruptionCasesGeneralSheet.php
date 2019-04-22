@@ -38,7 +38,11 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
             'alignment' => [
                 'horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER, 
                 'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER,
-            ]
+            ],
+            'fill' => [
+                'fillType' => Fill::FILL_SOLID,
+                'color' => [ 'rgb' => 'c3d5e9' ],
+            ],
             
         ];
 
@@ -51,10 +55,6 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
                 ],
             ]
         ];
-
-        //$spreadsheet->getActiveSheet()->getStyle('B2')->getBorders()->applyFromArray( [ 'allBorders' => [ 'borderStyle' => Border::BORDER_DASHDOT, 'color' => [ 'rgb' => '808080' ] ] ] );
-        //$spreadsheet->getActiveSheet()->getStyle('B2')->getAlignment()->applyFromArray( [ 'horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER, 'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER, 'textRotation' => 0, 'wrapText' => TRUE ] );
-
 
         $styleArray3 = [
             'font' => [
@@ -76,7 +76,7 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
                 $objDrawing->setName('Logo');
                 $objDrawing->setDescription('Logo');
                 $objDrawing->setPath(public_path('frontend/images/logo-sitio.png'));
-                //$objDrawing->setWidth(80);
+                $objDrawing->setWidth(50);
                 $objDrawing->setResizeProportional(true);
                 $objDrawing->setCoordinates('B2');
 
@@ -86,7 +86,7 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
                 $objDrawing2->setName('FCD');
                 $objDrawing2->setDescription('FCD');
                 $objDrawing2->setPath(public_path('frontend/images/fcd.png'));
-                //$objDrawing2->setWidth(60);
+                $objDrawing->setWidth(20);
                 $objDrawing2->setResizeProportional(true);
                 $objDrawing2->setCoordinates('F2');
 
