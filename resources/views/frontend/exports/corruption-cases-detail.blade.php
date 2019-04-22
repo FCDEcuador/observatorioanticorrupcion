@@ -1,20 +1,28 @@
 <table>
    <tr>
-        <td>
-        </td>
-   </tr>
-   <tr>
-        <td>
-        </td>
-   </tr>
-   <tr>
-        <td>
-        </td>
-   </tr>
-   <tr>
-        <td>
-        </td>
-   </tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
    <tr>
         <td colspan="6" >Información Casos de Corrupción</td>
     </tr>
