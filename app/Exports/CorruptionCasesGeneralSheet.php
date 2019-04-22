@@ -60,7 +60,7 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
         ];
 
         return [
-            AfterSheet::class => function(AfterSheet $event) use ($styleArray) {
+            AfterSheet::class => function(AfterSheet $event) use ($styleArray,$styleArray2,$styleArray3) {
                 
                 $event->sheet->getStyle('A9')->applyFromArray($styleArray);
 
