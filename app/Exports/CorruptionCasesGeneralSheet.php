@@ -71,12 +71,22 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
                 $event->sheet->getStyle('A11:F14')->applyFromArray($styleArray2);
 
                 $event->sheet->getStyle('A11:F11')->applyFromArray($styleArray3);
+
+                $event->sheet->setWidth(array(
+                    'A'     => 10,
+                    'B'     =>  30,
+                    'C'     =>  15,
+                    'D'     =>  15,
+                    'E'     =>  15,
+                    'F'     =>  15,
+                ));
+
                 
                 $objDrawing = new \PhpOffice\PhpSpreadsheet\Worksheet\Drawing();
                 $objDrawing->setName('Logo');
                 $objDrawing->setDescription('Logo');
                 $objDrawing->setPath(public_path('frontend/images/logo-sitio.png'));
-                $objDrawing->setWidthAndHeight(130,126);
+                //$objDrawing->setWidthAndHeight(130,126);
                 $objDrawing->setResizeProportional(true);
                 $objDrawing->setCoordinates('A2');
 
@@ -86,7 +96,7 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
                 $objDrawing2->setName('FCD');
                 $objDrawing2->setDescription('FCD');
                 $objDrawing2->setPath(public_path('frontend/images/fcd.png'));
-                $objDrawing->setWidthAndHeight(130,128);
+                //$objDrawing->setWidthAndHeight(130,128);
                 $objDrawing->setResizeProportional(true);
                 $objDrawing2->setOffsetX(20);
                 $objDrawing2->setCoordinates('E2');
