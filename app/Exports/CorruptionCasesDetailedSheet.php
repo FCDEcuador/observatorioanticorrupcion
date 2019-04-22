@@ -68,9 +68,9 @@ class CorruptionCasesDetailedSheet implements FromView, WithTitle, ShouldAutoSiz
                 
                 $event->sheet->getStyle('A5')->applyFromArray($styleArray);
 
-                $event->sheet->getStyle('A3:B7')->applyFromArray($styleArray2);
+                $event->sheet->getStyle('A11:B14')->applyFromArray($styleArray2);
 
-                $event->sheet->getStyle('A3:B3')->applyFromArray($styleArray3);
+                $event->sheet->getStyle('A11:B11')->applyFromArray($styleArray3);
                 
                 $objDrawing = new \PhpOffice\PhpSpreadsheet\Worksheet\Drawing();
                 $objDrawing->setName('Logo');
@@ -88,7 +88,7 @@ class CorruptionCasesDetailedSheet implements FromView, WithTitle, ShouldAutoSiz
                 $objDrawing2->setPath(public_path('frontend/images/fcd.png'));
                 //$objDrawing2->setHeight(100);
                 $objDrawing2->setResizeProportional(true);
-                $objDrawing2->setCoordinates('E2');
+                $objDrawing2->setCoordinates('G2');
 
                 $objDrawing2->setWorksheet($event->sheet->getDelegate());
             },
