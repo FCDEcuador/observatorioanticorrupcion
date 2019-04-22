@@ -76,7 +76,7 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
                 $objDrawing->setName('Logo');
                 $objDrawing->setDescription('Logo');
                 $objDrawing->setPath(public_path('frontend/images/logo-sitio.png'));
-                $objDrawing->setWidth(50);
+                $objDrawing->setWidthAndHeight(160,120);
                 $objDrawing->setResizeProportional(true);
                 $objDrawing->setCoordinates('B2');
 
@@ -86,7 +86,7 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
                 $objDrawing2->setName('FCD');
                 $objDrawing2->setDescription('FCD');
                 $objDrawing2->setPath(public_path('frontend/images/fcd.png'));
-                $objDrawing->setWidth(20);
+                $objDrawing->setWidthAndHeight(100,100);
                 $objDrawing2->setResizeProportional(true);
                 $objDrawing2->setCoordinates('F2');
 
