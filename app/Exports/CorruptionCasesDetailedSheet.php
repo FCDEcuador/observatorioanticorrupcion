@@ -8,7 +8,16 @@ use Maatwebsite\Excel\Concerns\FromView;
 use Maatwebsite\Excel\Concerns\WithTitle;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 
-class CorruptionCasesDetailedSheet implements FromView, WithTitle, ShouldAutoSize
+use Maatwebsite\Excel\Concerns\WithEvents;
+
+use Maatwebsite\Excel\Sheet;
+use Maatwebsite\Excel\Concerns\RegistersEventListeners;
+use Maatwebsite\Excel\Events\BeforeExport;
+use Maatwebsite\Excel\Events\BeforeWriting;
+use Maatwebsite\Excel\Events\BeforeSheet;
+use Maatwebsite\Excel\Events\AfterSheet;
+
+class CorruptionCasesDetailedSheet implements FromView, WithTitle, ShouldAutoSize, WithEvents
 {
 
 	private $caseStage;
@@ -67,7 +76,7 @@ class CorruptionCasesDetailedSheet implements FromView, WithTitle, ShouldAutoSiz
                 $objDrawing->setName('Logo');
                 $objDrawing->setDescription('Logo');
                 $objDrawing->setPath(public_path('frontend/images/logo-sitio.png'));
-                $objDrawing->setHeight(100);
+                //$objDrawing->setHeight(100);
                 $objDrawing->setResizeProportional(true);
                 $objDrawing->setCoordinates('B2');
 
@@ -77,7 +86,7 @@ class CorruptionCasesDetailedSheet implements FromView, WithTitle, ShouldAutoSiz
                 $objDrawing2->setName('FCD');
                 $objDrawing2->setDescription('FCD');
                 $objDrawing2->setPath(public_path('frontend/images/fcd.png'));
-                $objDrawing2->setHeight(100);
+                //$objDrawing2->setHeight(100);
                 $objDrawing2->setResizeProportional(true);
                 $objDrawing2->setCoordinates('E2');
 
