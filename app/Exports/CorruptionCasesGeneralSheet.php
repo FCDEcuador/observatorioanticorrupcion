@@ -37,7 +37,7 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
         $styleArray = [
             'font' => [
                 'bold' => true,
-                'size' => '16px',
+                'size' => '16',
             ],
             'horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER, 
             'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER,
@@ -55,7 +55,7 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
         $styleArray3 = [
             'font' => [
                 'bold' => true,
-                'size' => '16px',
+                'size' => '16',
             ],
         ];
 
