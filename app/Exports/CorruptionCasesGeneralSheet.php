@@ -71,6 +71,12 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
                 $event->sheet->getStyle('A11:F14')->applyFromArray($styleArray2);
 
                 $event->sheet->getStyle('A11:F11')->applyFromArray($styleArray3);
+
+
+                $objColum = new \PhpOffice\PhpSpreadsheet\Worksheet\ColumnDimension();
+                $objColum->setWidth(30);
+                $objColum->setWorksheet($event->sheet->getDelegate());
+
                 
                 $objDrawing = new \PhpOffice\PhpSpreadsheet\Worksheet\Drawing();
                 $objDrawing->setName('Logo');
