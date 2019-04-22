@@ -39,7 +39,7 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
                 'bold' => true,
                 'size' => '14',
             ],
-            'Alignment' => [
+            'alignment' => [
                 'horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER, 
                 'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER,
             ]
@@ -47,9 +47,8 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
         ];
 
         $styleArray2 = [
-            'Borders' => [
+            'borders' => [
                 'allBorders' => [
-                
                     'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
                     'color' => ['rgb' => '808080'],
                 
@@ -81,9 +80,9 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
                 $objDrawing->setName('Logo');
                 $objDrawing->setDescription('Logo');
                 $objDrawing->setPath(public_path('frontend/images/logo-sitio.png'));
-                $objDrawing->setWidthAndHeight(148,74);
+                $objDrawing->setWidthAndHeight(100,74);
                 $objDrawing->setResizeProportional(true);
-                $objDrawing->setCoordinates('C2');
+                $objDrawing->setCoordinates('A2');
 
                 $objDrawing->setWorksheet($event->sheet->getDelegate());
 
@@ -91,9 +90,9 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, ShouldAutoSize
                 $objDrawing2->setName('FCD');
                 $objDrawing2->setDescription('FCD');
                 $objDrawing2->setPath(public_path('frontend/images/fcd.png'));
-                $objDrawing2->setWidthAndHeight(148,74);
+                $objDrawing2->setWidthAndHeight(80,80);
                 $objDrawing2->setResizeProportional(true);
-                $objDrawing2->setCoordinates('H2');
+                $objDrawing2->setCoordinates('D2');
 
                 $objDrawing2->setWorksheet($event->sheet->getDelegate());
             },
