@@ -146,9 +146,11 @@
 			
 			var data;
 			@if($aCaseStageList->isNotEmpty())
+				@php
+					$aAux = [];
+				@endphp
 				@foreach($aCaseStageList as $oCaseStage)
 					@php
-						$aAux = [];
 						$aAux[$oCaseStage->case_stage][] = [
 							'category' => ''.strtoupper($oCaseStage->case_stage).'',
 							'column-1' => ''.round(($oCaseStage->numCases/$numCases*100),2).'',
@@ -160,9 +162,7 @@
 			@endif
 
 			@if(count($aCharts))
-				
 				@foreach($aCharts as $key => $val)
-					
 					console.log({!! json_encode($val) !!});
 					//console.log({!! $key[$val] !!});
 					data = {!! json_encode($aAux[$val['caseStage']]) !!};
