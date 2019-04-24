@@ -151,12 +151,14 @@
 				@endphp
 				@foreach($aCaseStageList as $oCaseStage)
 					@php
+						$k = 1;
 						$aAux[$oCaseStage->case_stage][] = [
-							'category' => ''.strtoupper($oCaseStage->case_stage).'',
+							'category' => ''.strtoupper($oCaseStage->case_stage_detail).'',
 							'column-1' => ''.round(($oCaseStage->numCases/$numCases*100),2).'',
-							'fill alpha' => '1',
+							'fill alpha' => 1/$k,
 							'dash length' => '',
-						];	
+						];
+						$k++;
 					@endphp
 				@endforeach
 			@endif
