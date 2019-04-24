@@ -64,7 +64,7 @@ class CorruptionCasesDetailedSheet implements FromView, WithTitle, WithEvents
                 
                 $event->sheet->getStyle('A9')->applyFromArray($styleArray);
 
-                $event->sheet->getStyle('A11:B14')->applyFromArray($styleArray2);
+                $event->sheet->getStyle('A11:B20')->applyFromArray($styleArray2);
 
                 $event->sheet->getStyle('A11:B11')->applyFromArray($styleArray3);
                 

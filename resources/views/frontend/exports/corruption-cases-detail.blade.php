@@ -44,6 +44,9 @@
             </tr>
         @endforeach
     @endif
+    <tr>
+        <td></td>
+    </tr>
     @if($corruptionCasesData->isNotEmpty())
         @foreach($corruptionCasesData as $oCorruptionCase)
             <tr>
