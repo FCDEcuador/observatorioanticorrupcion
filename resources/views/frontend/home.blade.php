@@ -25,8 +25,8 @@
 							    		<div class="col-sm-5">
 							    			<img class="d-block w-100" src="{!! $oStorage->url($oCorruptionCase->home_image) !!}" alt="{!! $oCorruptionCase->title !!}">
 							    		</div>
-							    		<div class="col-sm-6">
-							    			<div class="pr-1 pt-3 text-justify text-muted">{!! $oCorruptionCase->summary !!}</div>
+							    		<div class="col-sm-7">
+							    			<div class="text-justify text-muted">{!! $oCorruptionCase->summary !!}</div>
 							    			<a href="{!! url('/casos-de-corrupcion/'.$oCorruptionCase->slug) !!}" role="button" class="btn btn-success btn-sm float-right mb-3">Entérate</a>
 							    		</div>
 							    	</div>
