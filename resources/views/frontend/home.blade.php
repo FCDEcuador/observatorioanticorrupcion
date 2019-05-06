@@ -21,8 +21,8 @@
 					    @if($corruptionCasesList->isNotEmpty())
 						    @foreach($corruptionCasesList as $oCorruptionCase)
 							    <div class="carousel-item {!! $loop->first ? 'active' : '' !!}">
-							    	<div class="row no-gutters">
-							    		<div class="col-sm-5 mr-sm-3 ml-sm-3">
+							    	<div class="row">
+							    		<div class="col-sm-5">
 							    			<img class="d-block w-100" src="{!! $oStorage->url($oCorruptionCase->home_image) !!}" alt="{!! $oCorruptionCase->title !!}">
 							    		</div>
 							    		<div class="col-sm-6">
@@ -34,14 +34,7 @@
 						    @endforeach
 					    @endif
 					  </div>
-					  <a class="carousel-control-prev" href="#casos-corrupcion" role="button" data-slide="prev">
-					    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					    <span class="sr-only">Anterior</span>
-					  </a>
-					  <a class="carousel-control-next" href="#casos-corrupcion" role="button" data-slide="next">
-					    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-					    <span class="sr-only">Siguiente</span>
-					  </a>
+					  
 					  <ol class="carousel-indicators d-none d-sm-flex">
 					  	@if($corruptionCasesList->isNotEmpty())
 						    @foreach($corruptionCasesList as $oCorruptionCase)
