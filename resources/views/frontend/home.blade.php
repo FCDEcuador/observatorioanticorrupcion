@@ -16,7 +16,7 @@
 				<div class="p-3 shadow bg-white rounded home-bq">
 					<!--  BEGIN CAROUSEL  -->
 					<div class="col-12 mr-sm-3">
-						<h1 class="titulo border-bottom border-info text-default text-uppercase mt-3 mt-sm-0 text-sm-left mb-3"><a href="{!! url('/casos-de-corrupcion/'.$oCorruptionCase->slug) !!}">NUEVOS CASOS DE CORRUPCIÓN</a></h1>
+						<h1 class="titulo border-bottom border-info text-default text-uppercase mt-3 mt-sm-0 text-sm-left mb-3"><a href="{!! url('/casos-de-corrupcion/') !!}">NUEVOS CASOS DE CORRUPCIÓN</a></h1>
 		    		</div>
 			      	<div id="casos-corrupcion" class="carousel slide" data-ride="carousel">
 					  <div class="carousel-inner">
