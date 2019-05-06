@@ -23,7 +23,7 @@
 							    <div class="carousel-item {!! $loop->first ? 'active' : '' !!}">
 							    	<div class="row">
 							    		<div class="col-sm-5">
-							    			<img class="d-block w-100" src="{!! $oStorage->url($oCorruptionCase->home_image) !!}" alt="{!! $oCorruptionCase->title !!}">
+							    			<a href="{!! url('/casos-de-corrupcion/'.$oCorruptionCase->slug) !!}"><img class="d-block w-100" src="{!! $oStorage->url($oCorruptionCase->home_image) !!}" alt="{!! $oCorruptionCase->title !!}"></a>
 							    		</div>
 							    		<div class="col-sm-7">
 							    			<div class="text-justify text-muted">{!! $oCorruptionCase->summary !!}</div>
