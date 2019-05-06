@@ -15,20 +15,18 @@
 			<div class="col-md-6 mb-3 mb-md-0">
 				<div class="p-3 shadow bg-white rounded home-bq">
 					<!--  BEGIN CAROUSEL  -->
-					<div class="col-12 mr-sm-3">
-						<h1 class="titulo border-bottom border-info text-default text-uppercase mt-3 mt-sm-0 text-sm-left mb-3"><a href="{!! url('/casos-de-corrupcion/') !!}">NUEVOS CASOS DE CORRUPCIÓN</a></h1>
-		    		</div>
+					<h1 class="titulo border-bottom border-info text-default text-uppercase mt-3 mt-sm-0 text-sm-left mb-3"><a href="{!! url('/casos-de-corrupcion/') !!}">NUEVOS CASOS DE CORRUPCIÓN</a></h1>
 			      	<div id="casos-corrupcion" class="carousel slide" data-ride="carousel">
 					  <div class="carousel-inner">
 					    @if($corruptionCasesList->isNotEmpty())
 						    @foreach($corruptionCasesList as $oCorruptionCase)
 							    <div class="carousel-item {!! $loop->first ? 'active' : '' !!}">
 							    	<div class="row no-gutters">
-							    		<div class="col-sm-5 mr-sm-3">
+							    		<div class="col-sm-5 mr-sm-3 ml-sm-3">
 							    			<img class="d-block w-100" src="{!! $oStorage->url($oCorruptionCase->home_image) !!}" alt="{!! $oCorruptionCase->title !!}">
 							    		</div>
 							    		<div class="col-sm-6">
-							    			<div class="pr-3 pt-3 text-justify text-muted">{!! $oCorruptionCase->summary !!}</div>
+							    			<div class="pr-1 pt-3 text-justify text-muted">{!! $oCorruptionCase->summary !!}</div>
 							    			<a href="{!! url('/casos-de-corrupcion/'.$oCorruptionCase->slug) !!}" role="button" class="btn btn-success btn-sm float-right mb-3">Entérate</a>
 							    		</div>
 							    	</div>
