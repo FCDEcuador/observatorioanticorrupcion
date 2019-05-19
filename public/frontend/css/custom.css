@@ -172,6 +172,10 @@ a{
 	word-break: break-word;
 }
 
+.detalle a{
+	color: #4eb1df;
+}
+
 @media (max-width: 575.98px) { 
 	.fz14{
 		font-size: 14px;

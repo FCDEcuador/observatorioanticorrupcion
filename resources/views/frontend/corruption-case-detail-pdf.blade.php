@@ -1,3 +1,11 @@
+<style type="text/css">
+	.causas img{
+		float: none;
+		margin: 20px;
+		padding: 20px;
+	}
+</style>
+
 	<h1 style="font-family:Helvetica">{!! $oCorruptionCase->title !!}</h1>
 	<hr />
 	
@@ -9,7 +17,7 @@
 	<table align="center">
 		<tr>
 			<td>
-				<img src="{!! $oStorage->url($oCorruptionCase->history_image) !!}" alt="{!! $oCorruptionCase->title !!}" >
+				<img src="{!! $oStorage->url($oCorruptionCase->history_image) !!}" alt="{!! $oCorruptionCase->title !!}" style="max-width: 100%;">
 			</td>
 		</tr>
 	</table>
@@ -40,12 +48,12 @@
 	
 	@if($oCorruptionCase->legal_causes != '')
 		<h4 style="font-family:Helvetica">Causas Jurídicas</h4>
-		<div style="text-align: justify;font-family: Helvetica">{!! $oCorruptionCase->legal_causes !!}</div>
+		<div style="text-align: justify;font-family: Helvetica" class="causas">{!! $oCorruptionCase->legal_causes !!}</div>
 	@endif
-	<br /><br />
+	<br />
 	@if($oCorruptionCase->political_causes != '')
 		<h4 style="font-family:Helvetica">Causas Técnicas</h4>
-		<div style="text-align: justify;font-family: Helvetica">{!! $oCorruptionCase->political_causes !!}</div>
+		<div style="text-align: justify;font-family: Helvetica" class="causas">{!! $oCorruptionCase->political_causes !!}</div>
 	@endif
 
 	<hr />
@@ -55,7 +63,7 @@
 	<table align="center">
 		<tr>
 			<td>
-				<img src="{!! $oStorage->url($oCorruptionCase->consequences_image) !!}" alt="{!! $oCorruptionCase->title !!}">
+				<img src="{!! $oStorage->url($oCorruptionCase->consequences_image) !!}" alt="{!! $oCorruptionCase->title !!}" style="max-width: 100%;">
 			</td>
 		</tr>
 	</table>
