@@ -5,9 +5,7 @@
 	#causas img{
 		display:none!important;
 	}
-	*{
-		font-size: 12px;
-	}
+	
 </style>
 
 	<h1 style="font-family:Helvetica">{!! $oCorruptionCase->title !!}</h1>
