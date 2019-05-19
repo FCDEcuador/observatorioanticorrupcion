@@ -17,7 +17,7 @@ use Maatwebsite\Excel\Events\BeforeWriting;
 use Maatwebsite\Excel\Events\BeforeSheet;
 use Maatwebsite\Excel\Events\AfterSheet;
 
-class CorruptionCasesDetailedSheet implements FromView, WithTitle, WithEvents
+class CorruptionCasesDetailedSheet implements FromView, WithTitle, WithEvents, WithMapping
 {
 
 	private $caseStage;
