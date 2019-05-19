@@ -1,8 +1,6 @@
 <style type="text/css">
 	.causas img{
-		float: none;
-		margin: 20px;
-		padding: 20px;
+		display:none;
 	}
 </style>
 
@@ -17,7 +15,7 @@
 	<table align="center">
 		<tr>
 			<td>
-				<img src="{!! $oStorage->url($oCorruptionCase->history_image) !!}" alt="{!! $oCorruptionCase->title !!}" style="max-width: 100%;">
+				<img src="{!! $oStorage->url($oCorruptionCase->history_image) !!}" alt="{!! $oCorruptionCase->title !!}" style="max-width: 100%;;width: 100%;">
 			</td>
 		</tr>
 	</table>
@@ -63,7 +61,7 @@
 	<table align="center">
 		<tr>
 			<td>
-				<img src="{!! $oStorage->url($oCorruptionCase->consequences_image) !!}" alt="{!! $oCorruptionCase->title !!}" style="max-width: 100%;">
+				<img src="{!! $oStorage->url($oCorruptionCase->consequences_image) !!}" alt="{!! $oCorruptionCase->title !!}" style="max-width: 100%;width: 100%;">
 			</td>
 		</tr>
 	</table>
