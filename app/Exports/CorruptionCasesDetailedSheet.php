@@ -71,7 +71,9 @@ class CorruptionCasesDetailedSheet implements FromView, WithTitle, WithEvents, S
                 $objDrawing->setName('Logo');
                 $objDrawing->setDescription('Logo');
                 $objDrawing->setPath(public_path('frontend/images/logo-sitio.png'));
-                //$objDrawing->setHeight(100);
+                $objDrawing->setHeight(80);
+                $objDrawing->setOffsetX(60);
+                $objDrawing->setOffsetY(70);
                 $objDrawing->setResizeProportional(true);
                 $objDrawing->setCoordinates('A2');
 
@@ -81,9 +83,11 @@ class CorruptionCasesDetailedSheet implements FromView, WithTitle, WithEvents, S
                 $objDrawing2->setName('FCD');
                 $objDrawing2->setDescription('FCD');
                 $objDrawing2->setPath(public_path('frontend/images/fcd.png'));
-                //$objDrawing2->setHeight(100);
-                $objDrawing2->setResizeProportional(true);
-                $objDrawing2->setCoordinates('F2');
+                $objDrawing2->setHeight(80);
+                $objDrawing2->setOffsetX(60);
+                $objDrawing->setResizeProportional(true);
+                $objDrawing2->setOffsetY(70);
+                $objDrawing2->setCoordinates('D2');
 
                 $objDrawing2->setWorksheet($event->sheet->getDelegate());
 
