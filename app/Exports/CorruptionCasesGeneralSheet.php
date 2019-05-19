@@ -69,9 +69,9 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, WithEvents, Sh
                 
                 $event->sheet->getStyle('A9')->applyFromArray($styleArray);
 
-                $event->sheet->getStyle('A11:F20')->applyFromArray($styleArray2);
+                $event->sheet->getStyle('A11:H20')->applyFromArray($styleArray2);
 
-                $event->sheet->getStyle('A11:F11')->applyFromArray($styleArray3);
+                $event->sheet->getStyle('A11:H11')->applyFromArray($styleArray3);
 
 
                 $objColum = new \PhpOffice\PhpSpreadsheet\Worksheet\ColumnDimension();
@@ -105,7 +105,7 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, WithEvents, Sh
                 //$objDrawing->setWidthAndHeight(130,128);
                 $objDrawing->setResizeProportional(true);
                 $objDrawing2->setOffsetX(20);
-                $objDrawing2->setCoordinates('E2');
+                $objDrawing2->setCoordinates('F2');
 
                 $objDrawing2->setWorksheet($event->sheet->getDelegate());
 
