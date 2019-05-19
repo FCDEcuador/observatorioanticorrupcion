@@ -1,6 +1,12 @@
 <style type="text/css">
 	.causas img{
-		display:none;
+		display:none!important;
+	}
+	#causas img{
+		display:none!important;
+	}
+	*{
+		font-size: 12px;
 	}
 </style>
 
@@ -12,13 +18,9 @@
 	<h3 style="font-family:Helvetica">ANTECEDENTES</h3>
 	
 	@if($oCorruptionCase->history_image)
-	<table align="center">
-		<tr>
-			<td>
-				<img src="{!! $oStorage->url($oCorruptionCase->history_image) !!}" alt="{!! $oCorruptionCase->title !!}" style="max-width: 100%;width: 100%;">
-			</td>
-		</tr>
-	</table>
+	<div>
+		<img src="{!! $oStorage->url($oCorruptionCase->history_image) !!}" alt="{!! $oCorruptionCase->title !!}" style="max-width: 100%;width: 100%;">
+	</div>
 	@endif
 
 	<div style="text-align: justify;font-family: Helvetica"> {!! $oCorruptionCase->history !!}</div>
@@ -46,12 +48,16 @@
 	
 	@if($oCorruptionCase->legal_causes != '')
 		<h4 style="font-family:Helvetica">Causas Jurídicas</h4>
-		<div style="text-align: justify;font-family: Helvetica" class="causas">{!! $oCorruptionCase->legal_causes !!}</div>
+		<div style="text-align: justify;font-family: Helvetica" class="causas" id="causas">
+			{!! $oCorruptionCase->legal_causes !!}
+		</div>
 	@endif
 	<br />
 	@if($oCorruptionCase->political_causes != '')
 		<h4 style="font-family:Helvetica">Causas Técnicas</h4>
-		<div style="text-align: justify;font-family: Helvetica" class="causas">{!! $oCorruptionCase->political_causes !!}</div>
+		<div style="text-align: justify;font-family: Helvetica" class="causas" id="causas">
+			{!! $oCorruptionCase->political_causes !!}
+		</div>
 	@endif
 
 	<hr />
