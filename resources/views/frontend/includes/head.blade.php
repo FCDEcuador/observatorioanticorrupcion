@@ -34,6 +34,8 @@
 
 	{!! Html::style('public/frontend/css/custom.css') !!}
 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
 	@yield('custom-css')
 
 	{!! Html::script('public/frontend/js/jquery-3.3.1.slim.min.js', ['type' => 'text/javascript']) !!}

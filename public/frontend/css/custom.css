@@ -507,3 +507,13 @@ background-color: #331196; }
 #emailDenuncia .modal-title{
 	font-size: 1rem;
 }
+
+img {
+  user-drag: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
