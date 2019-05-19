@@ -92,7 +92,7 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, WithEvents, Sh
                 $objDrawing->setName('Logo');
                 $objDrawing->setDescription('Logo');
                 $objDrawing->setPath(public_path('frontend/images/logo-sitio.png'));
-                $objDrawing->setWidthAndHeight(140,126);
+                $objDrawing->setWidthAndHeight(200,126);
                 //$objDrawing->setResizeProportional(true);
                 $objDrawing->setCoordinates('A2');
 
@@ -102,7 +102,7 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, WithEvents, Sh
                 $objDrawing2->setName('FCD');
                 $objDrawing2->setDescription('FCD');
                 $objDrawing2->setPath(public_path('frontend/images/fcd.png'));
-                $objDrawing->setWidthAndHeight(80,80);
+                $objDrawing->setWidthAndHeight(80,76);
                 //$objDrawing->setResizeProportional(true);
                 $objDrawing2->setOffsetX(20);
                 $objDrawing2->setCoordinates('D2');
