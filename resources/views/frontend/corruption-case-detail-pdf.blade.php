@@ -15,7 +15,7 @@
 	<table align="center">
 		<tr>
 			<td>
-				<img src="{!! $oStorage->url($oCorruptionCase->history_image) !!}" alt="{!! $oCorruptionCase->title !!}" style="max-width: 100%;;width: 100%;">
+				<img src="{!! $oStorage->url($oCorruptionCase->history_image) !!}" alt="{!! $oCorruptionCase->title !!}" style="max-width: 100%;width: 100%;">
 			</td>
 		</tr>
 	</table>
@@ -58,13 +58,9 @@
 
 	<h3 style="font-family:Helvetica">CONSECUENCIAS</h3>
 	@if($oCorruptionCase->consequences_image)
-	<table align="center">
-		<tr>
-			<td>
-				<img src="{!! $oStorage->url($oCorruptionCase->consequences_image) !!}" alt="{!! $oCorruptionCase->title !!}" style="max-width: 100%;width: 100%;">
-			</td>
-		</tr>
-	</table>
+	<div>
+		<img src="{!! $oStorage->url($oCorruptionCase->consequences_image) !!}" alt="{!! $oCorruptionCase->title !!}" style="width: 100%;">
+	</div>
 	@endif
 	@if($oCorruptionCase->consequences_introduction != '')
 		<h4 style="font-family:Helvetica">{!! $oCorruptionCase->consequences_introduction !!}</h4>
