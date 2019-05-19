@@ -86,6 +86,8 @@ class CorruptionCasesDetailedSheet implements FromView, WithTitle, WithEvents, S
                 $objDrawing2->setCoordinates('F2');
 
                 $objDrawing2->setWorksheet($event->sheet->getDelegate());
+
+                $event->sheet->insertNewColumnBefore('A',2);  
             },
             
         ];
