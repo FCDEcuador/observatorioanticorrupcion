@@ -77,7 +77,7 @@ class CorruptionCasesDetailedSheet implements FromView, WithTitle, WithEvents, S
                 //$objDrawing->setResizeProportional(true);
                 //$objDrawing->setCoordinates('A2');
 
-                $objDrawing->setWorksheet($event->sheet->getDelegate());
+                
 
                 $objDrawing2 = new \PhpOffice\PhpSpreadsheet\Worksheet\Drawing();
                 $objDrawing2->setName('FCD');
@@ -89,9 +89,11 @@ class CorruptionCasesDetailedSheet implements FromView, WithTitle, WithEvents, S
                 $objDrawing2->setOffsetY(70);
                 $objDrawing2->setCoordinates('D2');
 
-                $objDrawing2->setWorksheet($event->sheet->getDelegate());
+                
 
                 $event->sheet->insertNewColumnBefore('A',2);  
+                $objDrawing->setWorksheet($event->sheet->getDelegate());
+                $objDrawing2->setWorksheet($event->sheet->getDelegate());
             },
             
         ];

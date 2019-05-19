@@ -96,7 +96,7 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, WithEvents, Sh
                 $objDrawing->setOffsetX(60);
                 $objDrawing->setOffsetY(70);
                 //$objDrawing->setResizeProportional(true);
-                $objDrawing->setCoordinates('A2');
+                //$objDrawing->setCoordinates('A2');
 
                 
 
