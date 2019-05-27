@@ -364,9 +364,9 @@ class CorruptionCasesController extends Controller
         $headerHtml = view()->make('frontend.corruption-case-detail-pdf-header')->render();
         $footerHtml = view()->make('frontend.corruption-case-detail-pdf-footer')->render();
 
-        $pdf = \PDF::loadView('frontend.corruption-case-detail-pdf', $data);
-        $pdf->setOption('header-html', $headerHtml);
-        $pdf->setOption('footer-html', $footerHtml);
+        $pdf = \PDF::loadView('frontend.corruption-case-detail-pdf', $data)
+            ->setOption('header-html', $headerHtml);
+            ->setOption('footer-html', $footerHtml);
         return $pdf->download($oCorruptionCase->slug.'.pdf');
     }
 }
