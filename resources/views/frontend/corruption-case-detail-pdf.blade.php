@@ -55,7 +55,7 @@
             <table width="100%">
 				<tr>
 					<td valign="middle" align="left">
-		      			<img src="{!! asset('public/frontend/images/logo-sitio.png') !!}"  style="margin-right: 20px; " />
+		      			<img src="{!! asset('public/frontend/images/logo-sitio.png') !!}"  style="margin-left: 20px; " />
 					</td>
 					<td valign="middle" align="center">
 		                <img src="{!! asset('public/frontend/images/fcd.png') !!}"  />
@@ -67,7 +67,7 @@
         <footer>
         	<div style="text-align: center;display: block;"><strong>www.ciudadaniaydesarrollo.org</strong></div>
         	<div style="font-size: 14px;color: #666;text-align: center;">Av. Gral. Eloy Alfaro y 6 de Diciembre, Edificio Monasterio Plaza, Piso 10 | (+593) 2 333 2526 | Quito - Ecuador</div>
-            <div style="background-color: #D2B02D; padding: 10px;">
+            <div style="background-color: #D2B02D;margin-top: 5px;">
             	&nbsp;
 			</div>
         </footer>
