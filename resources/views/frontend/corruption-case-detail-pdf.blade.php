@@ -33,7 +33,7 @@
                 bottom: 0cm; 
                 left: 0cm; 
                 right: 0cm;
-                height: 2cm;
+                height: 1.5cm;
             }
         
 
@@ -55,7 +55,7 @@
             <table width="100%">
 				<tr>
 					<td valign="middle" align="left">
-		      			<img src="{!! asset('public/frontend/images/logo-sitio.png') !!}"  style="margin-left: 20px; " />
+		      			<img src="{!! asset('public/frontend/images/logo-sitio.png') !!}"  style="margin-left: 50px; " />
 					</td>
 					<td valign="middle" align="center">
 		                <img src="{!! asset('public/frontend/images/fcd.png') !!}"  />
