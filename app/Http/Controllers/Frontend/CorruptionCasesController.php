@@ -361,10 +361,12 @@ class CorruptionCasesController extends Controller
             'corruptionCasesList' => CorruptionCase::where('id', '<>', $oCorruptionCase->id)->take(0)->inRandomOrder()->get(),
         ];
 
-        $pdf->setOption('header-html', base_path('views/frontend/corruption-case-detail-pdf-header.blade.php'));
-        $pdf->setOption('footer-html', base_path('views/frontend/corruption-case-detail-pdf-footer.blade.php'));
+        $headerHtml = view()->make('frontend.corruption-case-detail-pdf-header')->render();
+        $footerHtml = view()->make('frontend.corruption-case-detail-pdf-footer')->render();
 
         $pdf = \PDF::loadView('frontend.corruption-case-detail-pdf', $data);
+        $pdf->setOption('header-html', $headerHtml);
+        $pdf->setOption('footer-html', $footerHtml);
         return $pdf->download($oCorruptionCase->slug.'.pdf');
     }
 }
