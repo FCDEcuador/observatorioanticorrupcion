@@ -55,7 +55,7 @@
             <table width="100%">
 				<tr>
 					<td valign="middle" align="left">
-		      			<img src="{!! asset('public/frontend/images/logo-sitio.png') !!}"  />
+		      			<img src="{!! asset('public/frontend/images/logo-sitio.png') !!}"  style="margin-right: 20px; " />
 					</td>
 					<td valign="middle" align="center">
 		                <img src="{!! asset('public/frontend/images/fcd.png') !!}"  />
