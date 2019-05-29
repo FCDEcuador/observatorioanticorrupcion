@@ -25,13 +25,13 @@
 		<!-- BEGIN SECCION NOTA DESTACADA -->
 		<div class="container-fluid p-3 bg-light">
 			<div class="row imagen-exito" style="background-image: url('{!! $oStorage->url($oMainSuccessStory->main_image) !!}');">
-				<div class="col-sm-6 d-flex align-items-end justify-content-center" style="background:rgba(57,0,148,0.2);">
+				<div class="col-sm-6 d-flex align-items-end justify-content-center" style="background:rgba(57,0,148,0.5);">
 					<div class="row">
 						<div class="offset-sm-4 col-8">
 							<h3 class="subtitulo text-white text-uppercase text-right">
 								{!! $oMainSuccessStory->title !!}
 							</h3>
-							<p class="text-right text-white text-justify">
+							<p class="text-white text-justify">
 								{!! $oMainSuccessStory->description !!}
 							</p>
 						</div>

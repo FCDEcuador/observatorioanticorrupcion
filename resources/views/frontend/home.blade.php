@@ -56,7 +56,7 @@
 			</div>
 			<div class="col-sm-6">
 				<div class="p-3 shadow bg-white rounded home-bq">
-					<h1 class="titulo border-bottom border-info text-default text-uppercase text-center mb-3">Estadísticas</h1>
+					<h1 class="titulo border-bottom border-info text-default text-uppercase text-center mb-3 mt-0">Estadísticas</h1>
 					<p class="mb-0 text-muted">Conoce cuál es el estado de los casos de corrupción, cuya información es recopilada por nuestro Observatorio</p>
 					<div class="row">
 						@if($caseStages->isNotEmpty())
@@ -288,10 +288,10 @@
 									@if($oSuccessStory->image != '')
 										<img class="d-block w-100" src="{!! $oStorage->url($oSuccessStory->image) !!}" alt="Historias de Exito">
 									@else
-										<img class="d-block w-100" src="https://via.placeholder.com/280x300" alt="Historias de Exito">	
+										<img class="d-block w-100" src="{!! asset('public/images/historias.jpg') !!}" alt="Historias de Exito">	
 									@endif
 								@else
-									<img class="d-block w-100" src="https://via.placeholder.com/280x300" alt="Historias de Exito">
+									<img class="d-block w-100" src="{!! asset('public/images/historias.jpg') !!}" alt="Historias de Exito">
 								@endif
 							</div>
 						</div>
