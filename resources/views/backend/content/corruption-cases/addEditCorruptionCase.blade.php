@@ -427,7 +427,7 @@
                                                             </div>
                                                             <div class="col-md-4">
                                                                 <label for="day_end"> Día Fin: </label>
-                                                                <input type="number" name="day_end[]" id="day_end_{!! $nextWH !!}" class="form-control" value="{!! $oWhatHappened->day !!}" />
+                                                                <input type="number" name="day_end[]" id="day_end_{!! $nextWH !!}" class="form-control" value="{!! $oWhatHappened->day_end !!}" />
                                                             </div>
                                                         </div>
                                                     </div>
