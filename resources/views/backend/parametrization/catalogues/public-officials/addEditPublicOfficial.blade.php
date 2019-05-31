@@ -7,7 +7,7 @@
 @endsection
 
 @section('title')
-	Funcionarios
+	Involucrados
 @endsection
 
 @section('main-content')	
@@ -17,19 +17,19 @@
         <!-- ============================================================== -->
         <div class="row page-titles">
             <div class="col-md-5 align-self-center">
-                <h3 class="text-themecolor">Funcionarios</h3>
+                <h3 class="text-themecolor">Involucrados</h3>
             </div>
             <div class="col-md-7 align-self-center">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{!! route('backend.dashboard') !!}">Dashboard</a></li>
                     <li class="breadcrumb-item">Parametrizacion</li>
                     <li class="breadcrumb-item">Catalogos</li>
-                    <li class="breadcrumb-item"><a href="{!! route('backend.parametrization.catalogues.public-officials.list') !!}">Funcionarios</a></li>
+                    <li class="breadcrumb-item"><a href="{!! route('backend.parametrization.catalogues.public-officials.list') !!}">Involucrados</a></li>
                     <li class="breadcrumb-item active">
                         @if(is_object($oPublicOfficial))
-                            Editar Funcionario
+                            Editar Involucrado
                         @else
-                            Agregar Funcionario
+                            Agregar Involucrado
                         @endif
                     </li>
                 </ol>
@@ -50,9 +50,9 @@
                             <div class="col-md-7">
                                 <h4 class="card-title">
                                   @if(is_object($oPublicOfficial))
-                                    Editar Funcionario
+                                    Editar Involucrado
                                   @else
-                                    Agregar Funcionario
+                                    Agregar Involucrado
                                   @endif
                                 </h4>
                                 <h6 class="card-subtitle">
@@ -65,7 +65,7 @@
                                         <span class="btn-label">
                                             <i class="ti-menu-alt"></i>
                                         </span>
-                                        Funcionarios
+                                        Involucrados
                                     </a>
                                 @endcan
                             </div>
@@ -89,21 +89,21 @@
                         @endif
 
                             <div class="form-group">
-                                <label for="description"><strong>Nombre del Funcionario</strong></label>
+                                <label for="description"><strong>Nombre del Involucrado</strong></label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="official-description">
                                             <i class="ti-text"></i>
                                         </span>
                                     </div>
-                                    {!! Form::text('description', null, ['id' => 'description', 'placeholder' => 'Ingrese el nombre del funcionario', 'class' => 'form-control', 'required']) !!}
+                                    {!! Form::text('description', null, ['id' => 'description', 'placeholder' => 'Ingrese el nombre del Involucrado', 'class' => 'form-control', 'required']) !!}
                                 </div>
                             </div>
 
                             <div class="text-xs-right">
                                 <button type="submit" class="btn btn-outline-info ladda-button" data-style="zoom-out" name="publicOfficialBtn" id="publicOfficialBtn">
                                     <i class="fa fa-save"></i>
-                                    <span class="ladda-label">Guardar Funcionario</span>
+                                    <span class="ladda-label">Guardar Involucrado</span>
                                 </button>
                             </div>
 
