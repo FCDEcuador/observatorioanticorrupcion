@@ -405,7 +405,7 @@
                                                             </div>
                                                             <div class="col-md-4">
                                                                 <label for="year_end"> Año Fin: </label>
-                                                                <input type="number" name="year_end[]" id="year_end_{!! $nextWH !!}" class="form-control" value="{!! $oWhatHappened->year !!}" />
+                                                                <input type="number" name="year_end[]" id="year_end_{!! $nextWH !!}" class="form-control" value="{!! $oWhatHappened->year_end !!}" />
                                                             </div>
                                                             <div class="col-md-4">
                                                                 <label for="month_end"> Mes Fin: </label>
