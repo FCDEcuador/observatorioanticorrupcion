@@ -371,11 +371,11 @@
                                                     $nextWH++;       
                                                 @endphp
                                                 <div class="row" id="whatHappenedDiv_{!! $nextWH !!}">
-                                                    <div class="col-md-1">
+                                                    <div class="col-md-2">
                                                         <label for="order"> Orden: </label>
                                                         <input type="number" name="order[]" id="order_{!! $nextWH !!}" class="form-control" value="{!! $oWhatHappened->order !!}" />
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-5">
                                                         <div class="row">
                                                             <div class="col-md-4">
                                                                 <label for="year"> Año Inicio: </label>
@@ -433,7 +433,7 @@
                                                     </div>
                                                     <div class="col-md-3">
                                                         <label for="day"> Descripción: </label>
-                                                        <textarea name="description[]" id="description_{!! $nextWH !!}" class="form-control">{!! $oWhatHappened->description !!}</textarea>
+                                                        <textarea name="description[]" id="description_{!! $nextWH !!}" class="form-control" rows="4">{!! $oWhatHappened->description !!}</textarea>
                                                     </div>
                                                     <div class="col-md-2">
                                                         <a class="btn btn-danger" style="cursor: pointer; color:#FFF;" onclick="javascript: deleteWhatHappened('{!! route('backend.content.corruption-cases.deleteWH', [$oWhatHappened->id]) !!}','{!! $oWhatHappened->id !!}', {!! $nextWH !!});" title="Eliminar linea">
