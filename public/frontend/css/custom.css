@@ -67,6 +67,9 @@ a{
 .carousel-control-next, .carousel-control-prev{
 	width: 6%;
 }
+#casos-corrupcion .carousel-control-next{
+	    right: -15px !important;
+}
 .carousel-indicators{
 	bottom: 0;
 }
