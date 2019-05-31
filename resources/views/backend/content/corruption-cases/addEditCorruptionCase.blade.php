@@ -431,11 +431,11 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-3">
+                                                    <div class="col-md-4">
                                                         <label for="day"> Descripción: </label>
                                                         <textarea name="description[]" id="description_{!! $nextWH !!}" class="form-control" rows="4">{!! $oWhatHappened->description !!}</textarea>
                                                     </div>
-                                                    <div class="col-md-2">
+                                                    <div class="col-md-1">
                                                         <a class="btn btn-danger" style="cursor: pointer; color:#FFF;" onclick="javascript: deleteWhatHappened('{!! route('backend.content.corruption-cases.deleteWH', [$oWhatHappened->id]) !!}','{!! $oWhatHappened->id !!}', {!! $nextWH !!});" title="Eliminar linea">
                                                             <i class="fa fa-trash"></i>
                                                         </a>
