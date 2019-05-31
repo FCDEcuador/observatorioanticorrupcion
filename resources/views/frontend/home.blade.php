@@ -27,7 +27,7 @@
 							    		</div>
 							    		<div class="col-sm-7">
 							    			<div style="margin-left: -15px; " class="text-justify text-muted mr-sm-4">{!! $oCorruptionCase->summary !!}</div>
-							    			<a href="{!! url('/casos-de-corrupcion/'.$oCorruptionCase->slug) !!}" role="button" class="btn btn-success btn-sm float-right mb-3">Entérate</a>
+							    			<a href="{!! url('/casos-de-corrupcion/'.$oCorruptionCase->slug) !!}" role="button" class="btn btn-success btn-sm float-right mb-3 mr-3" style="margin-left: -15px;">Entérate</a>
 							    		</div>
 							    	</div>
 							    </div>
