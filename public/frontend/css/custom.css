@@ -36,6 +36,11 @@ a{
     font-weight: 700;
 }
 
+.subtitulo-home{
+	font-size: 1rem;
+    font-weight: 600;
+}
+
 #casos-corrupcion .carousel-indicators{
 	position: relative;
     margin-right: 0%;
