@@ -2,6 +2,10 @@ body{
 	font-size: 0.9rem;
 }
 a{
+	color: #24395b;
+}
+
+#accordionExample a{
 	color: #01b1e1;
 }
 .menu{

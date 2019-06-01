@@ -285,8 +285,6 @@ $(document).ready(function() {
     CKEDITOR.replace('economic_consequences', CKEditorOptions);
     CKEDITOR.replace('social_consequences', CKEditorOptions);
     CKEDITOR.replace('sources', CKEditorOptions);
-    CKEDITOR.replace('description_1', CKEditorOptions);
-    CKEDITOR.replaceAll('description_val', CKEditorOptions);
 
     
     $('#main_multimedia').dropify({
