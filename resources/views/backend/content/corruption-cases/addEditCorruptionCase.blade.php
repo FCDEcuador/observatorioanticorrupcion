@@ -433,7 +433,7 @@
                                                     </div>
                                                     <div class="col-md-4">
                                                         <label for="day"> Descripción: </label>
-                                                        <textarea name="description[]" class="description_val" id="description_{!! $nextWH !!}" class="form-control" rows="4">{!! $oWhatHappened->description !!}</textarea>
+                                                        <textarea name="description[]" id="description_{!! $nextWH !!}" class="form-control description_val" rows="4">{!! $oWhatHappened->description !!}</textarea>
                                                     </div>
                                                     <div class="col-md-1">
                                                         <a class="btn btn-danger" style="cursor: pointer; color:#FFF;" onclick="javascript: deleteWhatHappened('{!! route('backend.content.corruption-cases.deleteWH', [$oWhatHappened->id]) !!}','{!! $oWhatHappened->id !!}', {!! $nextWH !!});" title="Eliminar linea">
