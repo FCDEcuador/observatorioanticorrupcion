@@ -7,7 +7,6 @@ use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\FromView;
 use Maatwebsite\Excel\Concerns\WithTitle;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
-
 use Maatwebsite\Excel\Concerns\WithEvents;
 
 use Maatwebsite\Excel\Sheet;
@@ -17,7 +16,7 @@ use Maatwebsite\Excel\Events\BeforeWriting;
 use Maatwebsite\Excel\Events\BeforeSheet;
 use Maatwebsite\Excel\Events\AfterSheet;
 
-class CorruptionCasesDetailedSheet implements FromView, WithTitle, WithEvents
+class CorruptionCasesDetailedSheet implements FromView, WithTitle, WithEvents, ShouldAutoSize
 {
 
 	private $caseStage;
@@ -72,20 +71,28 @@ class CorruptionCasesDetailedSheet implements FromView, WithTitle, WithEvents
                 $objDrawing->setName('Logo');
                 $objDrawing->setDescription('Logo');
                 $objDrawing->setPath(public_path('frontend/images/logo-sitio.png'));
-                //$objDrawing->setHeight(100);
-                $objDrawing->setResizeProportional(true);
-                $objDrawing->setCoordinates('B2');
+                $objDrawing->setHeight(70);
+                //$objDrawing->setOffsetX(60);
+                //$objDrawing->setOffsetY(70);
+                //$objDrawing->setResizeProportional(true);
+                $objDrawing->setCoordinates('A2');
 
-                $objDrawing->setWorksheet($event->sheet->getDelegate());
+                
 
                 $objDrawing2 = new \PhpOffice\PhpSpreadsheet\Worksheet\Drawing();
                 $objDrawing2->setName('FCD');
                 $objDrawing2->setDescription('FCD');
                 $objDrawing2->setPath(public_path('frontend/images/fcd.png'));
-                //$objDrawing2->setHeight(100);
-                $objDrawing2->setResizeProportional(true);
-                $objDrawing2->setCoordinates('G2');
+                $objDrawing2->setHeight(80);
+                $objDrawing2->setOffsetX(60);
+                //$objDrawing->setResizeProportional(true);
+                $objDrawing2->setOffsetY(70);
+                $objDrawing2->setCoordinates('D2');
 
+                
+
+                $event->sheet->insertNewColumnBefore('A',2);  
+                $objDrawing->setWorksheet($event->sheet->getDelegate());
                 $objDrawing2->setWorksheet($event->sheet->getDelegate());
             },
             

@@ -115,7 +115,7 @@
                                 @can('backend_view_officials')
                                     <li>
                                         <a href="{!! route('backend.parametrization.catalogues.public-officials.list') !!}">
-                                            Funcionarios
+                                            Involucrados
                                         </a>
                                     </li>
                                 @endcan

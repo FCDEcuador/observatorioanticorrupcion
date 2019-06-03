@@ -17,7 +17,7 @@ use Maatwebsite\Excel\Events\BeforeWriting;
 use Maatwebsite\Excel\Events\BeforeSheet;
 use Maatwebsite\Excel\Events\AfterSheet;
 
-class CorruptionCasesGeneralSheet implements FromView, WithTitle, WithEvents
+class CorruptionCasesGeneralSheet implements FromView, WithTitle, WithEvents, ShouldAutoSize
 {
 
     /**
@@ -67,11 +67,11 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, WithEvents
         return [
             AfterSheet::class => function(AfterSheet $event) use ($styleArray,$styleArray2,$styleArray3) {
                 
-                $event->sheet->getStyle('A9')->applyFromArray($styleArray);
+                $event->sheet->getStyle('A11')->applyFromArray($styleArray);
 
-                $event->sheet->getStyle('A11:F20')->applyFromArray($styleArray2);
+                $event->sheet->getStyle('A11:H20')->applyFromArray($styleArray2);
 
-                $event->sheet->getStyle('A11:F11')->applyFromArray($styleArray3);
+                $event->sheet->getStyle('A11:H11')->applyFromArray($styleArray3);
 
 
                 $objColum = new \PhpOffice\PhpSpreadsheet\Worksheet\ColumnDimension();
@@ -92,24 +92,27 @@ class CorruptionCasesGeneralSheet implements FromView, WithTitle, WithEvents
                 $objDrawing->setName('Logo');
                 $objDrawing->setDescription('Logo');
                 $objDrawing->setPath(public_path('frontend/images/logo-sitio.png'));
-                //$objDrawing->setWidthAndHeight(130,126);
-                $objDrawing->setResizeProportional(true);
+                $objDrawing->setHeight(70);
+                //$objDrawing->setResizeProportional(true);
                 $objDrawing->setCoordinates('A2');
 
-                $objDrawing->setWorksheet($event->sheet->getDelegate());
+                
 
                 $objDrawing2 = new \PhpOffice\PhpSpreadsheet\Worksheet\Drawing();
                 $objDrawing2->setName('FCD');
                 $objDrawing2->setDescription('FCD');
                 $objDrawing2->setPath(public_path('frontend/images/fcd.png'));
-                //$objDrawing->setWidthAndHeight(130,128);
-                $objDrawing->setResizeProportional(true);
-                $objDrawing2->setOffsetX(20);
-                $objDrawing2->setCoordinates('E2');
+                $objDrawing2->setHeight(80);
+                $objDrawing2->setOffsetX(60);
+                //$objDrawing->setResizeProportional(true);
+                $objDrawing2->setOffsetY(70);
+                $objDrawing2->setCoordinates('D2');
 
+                
+
+                $event->sheet->insertNewColumnBefore('A',2);
+                $objDrawing->setWorksheet($event->sheet->getDelegate());  
                 $objDrawing2->setWorksheet($event->sheet->getDelegate());
-
-                $event->sheet->insertNewColumnBefore('A',2);  
 
             },
             

@@ -24,6 +24,12 @@
         <td></td>
     </tr>
     <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
         <td colspan="6" align="center">Información Casos de Corrupción</td>
     </tr>
 </table>

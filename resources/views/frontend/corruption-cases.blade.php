@@ -35,7 +35,7 @@
 				  @endif
 				</select>
 				<select class="form-control form-control-sm mb-2 border-left-0 border-right-0 border-top-0 border-info" name="sProvince" id="sProvince">
-				  <option value="">Provincia</option>
+				  <option value="">Ámbito territorial</option>
 				  @if($provinceList->isNotEmpty())
 				  	@foreach($provinceList as $oProvince)
 				  		<option value="{!! $oProvince->description !!}">{!! $oProvince->description !!}</option>
@@ -174,7 +174,7 @@
 										</div>
 										<div class="col-sm-10 p-1">
 											<div class="bg-white mb-1 p-2 p-sm-2" > 
-												<small class="display-block border-bottom border-secondary text-uppercase">Funcionarios involucrados</small>
+												<small class="display-block border-bottom border-secondary text-uppercase">Involucrados</small>
 												<select class="form-control form-control-sm text-uppercase pb-1 mb-0 border-0 text-default font-weight-bold" id="corruptionCasePublicOfficialsInvolved">
 												</select>
 											</div>
@@ -184,7 +184,7 @@
 										</div>
 										<div class="col-sm-10 p-1">
 											<div class="bg-white mb-1 p-2 p-sm-2" > 
-												<small class="display-block border-bottom border-secondary text-uppercase">Provincia</small>
+												<small class="display-block border-bottom border-secondary text-uppercase">Ámbito territorial</small>
 												<p class="text-uppercase pb-1 mb-0 text-default font-weight-bold letter-spacing-1" id="corruptionCaseProvince"></p>
 											</div>
 										</div>

@@ -58,7 +58,7 @@
 			<!-- BEGIN SECCION ANTECEDENTES -->
 			<div class="row mt-3 mb-3">
 				<div class="col-6">
-					<h1 class="titulo border-bottom border-info text-info text-uppercase">ANTECEDENTES</h1>
+					<h1 class="titulo border-bottom border-info text-info text-uppercase">Contexto</h1>
 				</div>
 			</div>
 			<div class="row mt-3 no-gutters">
@@ -84,7 +84,7 @@
 			<!-- BEGIN SECCION QUE OCURRIO -->
 			<div class="row mt-3 mb-3">
 				<div class="col-sm-6">
-					<h1 class="titulo border-bottom bormorado morado text-uppercase">¿Qué ocurrió?</h1>
+					<h1 class="titulo border-bottom bormorado morado text-uppercase">Los hechos</h1>
 				</div>
 			</div>
 			<div class="row">
@@ -210,8 +210,8 @@
 			<div class="col-sm-6" >
 				@if($oCorruptionCase->social_consequences != '')
 					<div class="p-3" style="background: rgba(36,57,91,0.7);">
-						<div class="subtitulo text-white font-italic mt-3">
-							Sociales y Políticas
+						<div class="subtitulo text-white font-italic mt-3 text-uppercase">
+							Consecuencias políticas y sociales
 						</div>
 						<div class="detalle text-white text-justify">
 							{!! $oCorruptionCase->social_consequences !!}

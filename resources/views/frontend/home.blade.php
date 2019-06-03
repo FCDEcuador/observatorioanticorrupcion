@@ -15,22 +15,22 @@
 			<div class="col-md-6 mb-3 mb-md-0">
 				<div class="p-3 shadow bg-white rounded home-bq">
 					<!--  BEGIN CAROUSEL  -->
+					<h1 class="titulo border-bottom border-info text-default text-uppercase mt-3 mt-sm-0 text-sm-left mb-3"><a href="{!! url('/casos-de-corrupcion/') !!}">NUEVOS CASOS DE CORRUPCIÓN</a></h1>
 			      	<div id="casos-corrupcion" class="carousel slide" data-ride="carousel">
-			      	  
-					  <div class="carousel-inner">
+					  <div class="carousel-inner" style="height: 250px;">
 					    @if($corruptionCasesList->isNotEmpty())
 						    @foreach($corruptionCasesList as $oCorruptionCase)
 							    <div class="carousel-item {!! $loop->first ? 'active' : '' !!}">
-							    	<div class="row no-gutters">
-							    		<div class="col-12 mr-sm-3">
-											<h1 class="titulo border-bottom border-info text-default text-uppercase mt-3 mt-sm-0 text-sm-left mb-3"><a href="{!! url('/casos-de-corrupcion/'.$oCorruptionCase->slug) !!}">NUEVOS CASOS DE CORRUPCIÓN</a></h1>
+							    	<div class="row">
+							    		<div class="col-sm-5">
+							    			<a href="{!! url('/casos-de-corrupcion/'.$oCorruptionCase->slug) !!}"><img class="d-block w-100" src="{!! $oStorage->url($oCorruptionCase->home_image) !!}" alt="{!! $oCorruptionCase->title !!}"></a>
 							    		</div>
-							    		<div class="col-sm-5 mr-sm-3">
-							    			<img class="d-block w-100" src="{!! $oStorage->url($oCorruptionCase->home_image) !!}" alt="{!! $oCorruptionCase->title !!}">
-							    		</div>
-							    		<div class="col-sm-6">
-							    			<div class="pr-3 pt-3 text-justify text-muted">{!! $oCorruptionCase->summary !!}</div>
-							    			<a href="{!! url('/casos-de-corrupcion/'.$oCorruptionCase->slug) !!}" role="button" class="btn btn-success btn-sm float-right mb-3">Entérate</a>
+							    		<div class="col-sm-7">
+							    			<h5 style="margin-left: -15px;" class="subtitulo-home"> {!! $oCorruptionCase->title !!}</h5>
+							    			<div style="margin-left: -15px;" class="text-justify text-muted mr-sm-4">{!! $oCorruptionCase->summary !!}
+							    				<a href="{!! url('/casos-de-corrupcion/'.$oCorruptionCase->slug) !!}" role="button" class="btn btn-success btn-sm float-right">Entérate</a>
+							    			</div>
+							    			
 							    		</div>
 							    	</div>
 							    </div>
@@ -39,12 +39,13 @@
 					  </div>
 					  <a class="carousel-control-prev" href="#casos-corrupcion" role="button" data-slide="prev">
 					    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					    <span class="sr-only">Anterior</span>
+					    <span class="sr-only">Previous</span>
 					  </a>
 					  <a class="carousel-control-next" href="#casos-corrupcion" role="button" data-slide="next">
 					    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-					    <span class="sr-only">Siguiente</span>
+					    <span class="sr-only">Next</span>
 					  </a>
+					  
 					  <ol class="carousel-indicators d-none d-sm-flex">
 					  	@if($corruptionCasesList->isNotEmpty())
 						    @foreach($corruptionCasesList as $oCorruptionCase)
@@ -58,7 +59,7 @@
 			</div>
 			<div class="col-sm-6">
 				<div class="p-3 shadow bg-white rounded home-bq">
-					<h1 class="titulo border-bottom border-info text-default text-uppercase text-center mb-3">Estadísticas</h1>
+					<h1 class="titulo border-bottom border-info text-default text-uppercase text-center mb-3 mt-0">Estadísticas</h1>
 					<p class="mb-0 text-muted">Conoce cuál es el estado de los casos de corrupción, cuya información es recopilada por nuestro Observatorio</p>
 					<div class="row">
 						@if($caseStages->isNotEmpty())
@@ -290,10 +291,10 @@
 									@if($oSuccessStory->image != '')
 										<img class="d-block w-100" src="{!! $oStorage->url($oSuccessStory->image) !!}" alt="Historias de Exito">
 									@else
-										<img class="d-block w-100" src="https://via.placeholder.com/280x300" alt="Historias de Exito">	
+										<img class="d-block w-100" src="{!! asset('public/images/historias.jpg') !!}" alt="Historias de Exito">	
 									@endif
 								@else
-									<img class="d-block w-100" src="https://via.placeholder.com/280x300" alt="Historias de Exito">
+									<img class="d-block w-100" src="{!! asset('public/images/historias.jpg') !!}" alt="Historias de Exito">
 								@endif
 							</div>
 						</div>
@@ -304,6 +305,7 @@
 @endsection
 
 
-
+<script src='https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js'></script>
 @section('custom-js')
+
 @endsection

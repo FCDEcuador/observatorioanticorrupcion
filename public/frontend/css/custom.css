@@ -4,6 +4,10 @@ body{
 a{
 	color: #24395b;
 }
+
+#accordionExample a{
+	color: #01b1e1;
+}
 .menu{
 	background-color: rgba(0,0,0,0.5) !important;
 	text-transform: uppercase;
@@ -32,10 +36,14 @@ a{
     font-weight: 700;
 }
 
+.subtitulo-home{
+	font-size: 1rem;
+    font-weight: 600;
+}
+
 #casos-corrupcion .carousel-indicators{
 	position: relative;
     margin-right: 0%;
-    top: -30px;
     bottom: 0px;
     margin-bottom: 0;
 }
@@ -67,6 +75,9 @@ a{
 }
 .carousel-control-next, .carousel-control-prev{
 	width: 6%;
+}
+#casos-corrupcion .carousel-control-next{
+	    right: -15px !important;
 }
 .carousel-indicators{
 	bottom: 0;
@@ -171,6 +182,10 @@ a{
 
 .detalle{
 	word-break: break-word;
+}
+
+.detalle a{
+	color: #4eb1df;
 }
 
 @media (max-width: 575.98px) { 
@@ -293,7 +308,7 @@ a{
 .main-timeline .timeline-icon:after,.main-timeline .timeline-icon:before{content:"";width:100px;height:4px;background:#ec496e;position:absolute;top:50%;right:-100px;transform:translateY(-50%)}
 .main-timeline .timeline-icon:after{width:70px;height:50px;background:#fff;top:89px;right:-30px}
 .main-timeline .timeline-content{width:50%;padding:0 50px;margin:20px 0 0;float:right;position:relative}
-.main-timeline .timeline-content:before{content:"";width:70%;height:100%;border:3px solid #331196;border-top:none;border-right:none;position:absolute;bottom:-13px;left:35px}
+.main-timeline .timeline-content:before{content:"";width:70%;height:100%;border:3px solid #331196;border-top:none;border-right:none;position:absolute;bottom:-13px;left:35px;z-index: -1;}
 .main-timeline .timeline-content:after{content:"";width:37px;height:3px;background:#331196;position:absolute;top:13px;left:0}
 .main-timeline .title{font-size:20px;font-weight:600;color:#331196;text-transform:uppercase;margin:0 0 5px}
 .main-timeline .description{display:inline-block;font-size: 0.9rem;color:#404040;line-height:1.5;margin:0;max-height: 180px; padding: 15px;background: #f8f9fa;}
@@ -507,4 +522,14 @@ background-color: #331196; }
 }
 #emailDenuncia .modal-title{
 	font-size: 1rem;
+}
+
+img {
+  user-drag: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }

@@ -5,7 +5,7 @@
 @endsection
 
 @section('title')
-	Funcionarios
+	Involucrados
 @endsection
 
 @section('main-content')	
@@ -15,14 +15,14 @@
         <!-- ============================================================== -->
         <div class="row page-titles">
             <div class="col-md-5 align-self-center">
-                <h3 class="text-themecolor">Funcionarios</h3>
+                <h3 class="text-themecolor">Involucrados</h3>
             </div>
             <div class="col-md-7 align-self-center">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{!! route('backend.dashboard') !!}">Dashboard</a></li>
                     <li class="breadcrumb-item">Parametrizacion</li>
                     <li class="breadcrumb-item">Catalogos</li>
-                    <li class="breadcrumb-item active">Funcionarios</li>
+                    <li class="breadcrumb-item active">Involucrados</li>
                 </ol>
             </div>
         </div>
@@ -40,10 +40,10 @@
                         <div class="row">
                             <div class="col-md-7">
                                 <h4 class="card-title">
-                                  Lista de Funcionarios
+                                  Lista de Involucrados
                                 </h4>
                                 <h6 class="card-subtitle">
-                                  A continuacion la lista de funcionarios generados para el portal web
+                                  A continuacion la lista de Involucrados generados para el portal web
                                 </h6>
                             </div>
                             <div class="col-md-4">
@@ -52,7 +52,7 @@
                                         <span class="btn-label">
                                             <i class="ti-plus"></i>
                                         </span>
-                                        Agregar Funcionario
+                                        Agregar Involucrado
                                     </a>
                                 @endcan
                             </div>

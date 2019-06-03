@@ -208,8 +208,11 @@
 <!-- BEGIN FOOOTER -->
 <div class="container-fluid mt-4">
 	<div class="row bg-secondary text-white p-3">
-		<div class="col-sm-4 align-self-center d-flex justify-content-center">
-			<a href="" class="text-white border pt-1 pb-1 pl-3 pr-3" style="background: rgba(255,255,255,0.4);border-radius: 5px;"><span class="pr-3">Suscríbete a nuestro newsletter</span> <i class="far fa-envelope"></i> </a>
+		<div class="col-sm-4 align-self-center d-flex justify-content-center mt-4 mt-sm-0">
+			<!--a href="" class="text-white border pt-1 pb-1 pl-3 pr-3" style="background: rgba(255,255,255,0.4);border-radius: 5px;"><span class="pr-3">Suscríbete a nuestro newsletter</span> <i class="far fa-envelope"></i> </a-->
+            <div> Con el apoyo de: <a href="" target="_blank">
+                        <img src="{!! asset('public/images/padf-white.png') !!}" />
+            </a></div>
 		</div>
 		<div class="col-sm-4 align-self-center d-flex justify-content-center mt-4 mt-sm-0">
 			@if($oConfiguration->facebook_account != '')

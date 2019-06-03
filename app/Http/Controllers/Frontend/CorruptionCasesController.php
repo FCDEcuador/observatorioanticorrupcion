@@ -163,6 +163,12 @@ class CorruptionCasesController extends Controller
     	}
     	$minYear = $oCorruptionCase->whatsHappeneds()->min('year');
     	$maxYear = $oCorruptionCase->whatsHappeneds()->max('year');
+
+        $periodValue = $minYear.' - '.$maxYear;
+
+        if($minYear == $maxYear){
+            $periodValue = $minYear;
+        }
     	
     	$oCorruptionCaseParse = [
     		'case_stage' => $oCorruptionCase->case_stage,
@@ -176,7 +182,7 @@ class CorruptionCasesController extends Controller
 	        'title' => $oCorruptionCase->title,
 	        'summary' => $oCorruptionCase->summary,
 	        'url' => route('corruption-cases.show', [$oCorruptionCase->slug]),
-	        'period' => $minYear.' - '.$maxYear,
+	        'period' => $periodValue,
     	];
     	return response()->json(['status' => true, 'oCorruptionCase' => $oCorruptionCaseParse, 'message' => ''], 200);
     }
@@ -355,7 +361,13 @@ class CorruptionCasesController extends Controller
             'corruptionCasesList' => CorruptionCase::where('id', '<>', $oCorruptionCase->id)->take(0)->inRandomOrder()->get(),
         ];
 
+        $headerHtml = view()->make('frontend.corruption-case-detail-pdf-header')->render();
+        $footerHtml = view()->make('frontend.corruption-case-detail-pdf-footer')->render();
+
         $pdf = \PDF::loadView('frontend.corruption-case-detail-pdf', $data);
+        \PDF::setOptions(['header-html'=>$headerHtml]);
+        \PDF::setOptions(['footer-html'=>$footerHtml]);
+            
         return $pdf->download($oCorruptionCase->slug.'.pdf');
     }
 }
