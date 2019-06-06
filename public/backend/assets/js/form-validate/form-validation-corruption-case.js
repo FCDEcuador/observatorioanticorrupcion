@@ -161,6 +161,7 @@ var FormCorruptionCaseValidation = function() {
             },
 
             submitHandler: function(form) {
+                /*
                 CKEDITOR.instances.summary.updateElement();
                 CKEDITOR.instances.history.updateElement();
                 CKEDITOR.instances.legal_causes.updateElement();
@@ -168,6 +169,10 @@ var FormCorruptionCaseValidation = function() {
                 CKEDITOR.instances.economic_consequences.updateElement();
                 CKEDITOR.instances.social_consequences.updateElement();
                 CKEDITOR.instances.sources.updateElement();
+                */
+                for ( instance in CKEDITOR.instances )
+                    CKEDITOR.instances[instance].updateElement();
+                
 
                 successCorruptionCase.show();
                 errorCorruptionCase.hide();
@@ -285,6 +290,11 @@ $(document).ready(function() {
     CKEDITOR.replace('economic_consequences', CKEditorOptions);
     CKEDITOR.replace('social_consequences', CKEditorOptions);
     CKEDITOR.replace('sources', CKEditorOptions);
+    //CKEDITOR.replace('description[]', CKEditorOptions);
+
+    for (var i = 1; i <= nextWH; i++) {
+        CKEDITOR.replace('description_'+i, CKEditorOptions);
+    }
 
     
     $('#main_multimedia').dropify({
@@ -386,6 +396,7 @@ function addWhatHappened(){
     nextWH++;
     var row = '<div class="row" id="whatHappenedDiv_'+nextWH+'"><div class="col-md-1"><label for="order"> Orden: </label><input type="number" name="order[]" id="order_'+nextWH+'" class="form-control" value="" /></div><div class="col-md-6"><div class="row"><div class="col-md-4"><label for="year"> Año Inicio: </label><input type="number" name="year[]" id="year_1" class="form-control" /></div><div class="col-md-4"><label for="year"> Mes Inicio: </label><select name="month[]" id="month_'+nextWH+'" class="form-control"><option value="" selected="selected">Mes</option><option value="Enero">Enero</option><option value="Febrero">Febrero</option><option value="Marzo">Marzo</option><option value="Abril">Abril</option><option value="Mayo">Mayo</option><option value="Junio">Junio</option><option value="Julio">Julio</option><option value="Agosto">Agosto</option><option value="Septiembre">Septiembre</option><option value="Octubre">Octubre</option><option value="Noviembre">Noviembre</option><option value="Diciembre">Diciembre</option></select></div><div class="col-md-4"><label for="day"> Día Inicio: </label><input type="number" name="day[]" id="day_'+nextWH+'" class="form-control" /></div><div class="col-md-4"><label for="year_end"> Año Fin: </label><input type="number" name="year_end[]" id="year_end_'+nextWH+'" class="form-control" /></div><div class="col-md-4"><label for="month_end"> Mes Fin: </label><select name="month_end[]" id="month_end_'+nextWH+'" class="form-control"><option value="" selected="selected">Mes</option><option value="Enero">Enero</option><option value="Febrero">Febrero</option><option value="Marzo">Marzo</option><option value="Abril">Abril</option><option value="Mayo">Mayo</option><option value="Junio">Junio</option><option value="Julio">Julio</option><option value="Agosto">Agosto</option><option value="Septiembre">Septiembre</option><option value="Octubre">Octubre</option><option value="Noviembre">Noviembre</option><option value="Diciembre">Diciembre</option></select></div><div class="col-md-4"><label for="day_end"> Día Fin: </label><input type="number" name="day_end[]" id="day_end_'+nextWH+'" class="form-control" /></div></div></div><div class="col-md-3"><label for="day"> Descripción: </label><textarea name="description[]" id="description_'+nextWH+'" class="form-control"></textarea></div><div class="col-md-2"><a class="btn btn-danger" style="cursor: pointer; color:#FFF;" onclick="javascript: $(\'#whatHappenedDiv_'+nextWH+'\').remove();" title="Eliminar linea"><i class="fa fa-trash"></i></a></div></div>';
     $("#whatHappenedDiv").append(row);
+    CKEDITOR.replace('description_'+nextWH, CKEditorOptions);
 }
 
 function deleteWhatHappened(urlDeleteWH, nextWH){
