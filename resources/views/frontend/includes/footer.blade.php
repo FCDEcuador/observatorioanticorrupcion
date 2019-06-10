@@ -118,7 +118,7 @@
         			</div>
         			<div class="row no-gutters bg-white border p-1 mb-1 minh80 align-items-center">
         				<div class="col-12  letter-spacing-1 fz12 text-center">
-        					SECRETARÍA GENERAL<br />
+        					CPCCS<br />
         					<a class="text-default" href="#"  data-toggle="modal" data-target="#emailDenuncia" data-whatever="Concejo de Participación Ciudadana y Control Social" data-receptor = "denuncia@cpccs.gob.ec">denuncia@cpccs.gob.ec</a>
                             <br />
                             <a class="text-default" href="#"  data-toggle="modal" data-target="#emailDenuncia" data-whatever="Concejo de Participación Ciudadana y Control Social" data-receptor = "comunicacion@cpccs.gob.ec">comunicacion@cpccs.gob.ec</a>
@@ -126,7 +126,7 @@
         			</div>
         			<div class="row no-gutters bg-white border p-1 mb-1 minh80 align-items-center">
         				<div class="col-12  letter-spacing-1 fz12 text-center">
-        					FISCAL ENCARGADA<br />
+        					FISCAL<br />
         					<a class="text-default" href="#"  data-toggle="modal" data-target="#emailDenuncia" data-whatever="Fiscalia General del Estado" data-receptor = "salazarmd@fiscalia.gob.ec">salazarmd@fiscalia.gob.ec</a>
         				</div>
         			</div>
