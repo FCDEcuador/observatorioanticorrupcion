@@ -330,6 +330,7 @@ a{
 .main-timeline .timeline:nth-child(4n) .timeline-icon{border-color:#331196}
 .main-timeline .timeline:nth-child(4n) .title{color:#331196}
 .main-timeline .timeline:nth-child(4n) .timeline-content:before{border-left-color:#331196;border-bottom-color:#331196}
+.main-timeline a{color: #01b1e1; }
 @media only screen and (max-width:1200px){.main-timeline .timeline-icon:before{width:50px;right:-50px}
 .main-timeline .timeline:nth-child(even) .timeline-icon:before{right:auto;left:-50px}
 .main-timeline .timeline-content{margin-top:75px}
