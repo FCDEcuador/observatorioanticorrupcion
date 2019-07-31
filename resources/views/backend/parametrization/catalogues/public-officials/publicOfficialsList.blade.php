@@ -46,7 +46,7 @@
                                   A continuacion la lista de Involucrados generados para el portal web
                                 </h6>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-5">
                                 @can('backend_add_officials')
                                     <a href="{!! route('backend.parametrization.catalogues.public-officials.create') !!}" class="btn btn-info btn-sm waves-effect waves-light">
                                         <span class="btn-label">
@@ -57,19 +57,21 @@
                                 @endcan
                             </div>
 
-                            {!! Form::open(['route' => ['backend.parametrization.catalogues.public-officials.list'], 'method' => 'POST', 'class' => 'form-horizontal', 'name' => 'searchInstitutions', 'id' => 'searchInstitutions']) !!}
-                              <div class="form-group">
-                                <h5>Buscar Por:</h5>
-                                <div class="controls">
-                                  {!! Form::text('sStringSearch', old('sStringSearch'), ['class' => 'form-control', 'placeholder' => 'NOMBRE', 'id' => 'sStringSearch']) !!}
-                                </div>
-                              </div>
-                              <div class="text-xs-right">
-                                  {!! Form::submit('Buscar', ['class' => 'btn btn-info']) !!}
-                              </div>
-                            {!! Form::close() !!}
-                            <hr />
-                            
+                            <div class="col-md-12">
+                                {!! Form::open(['route' => ['backend.parametrization.catalogues.public-officials.list'], 'method' => 'POST', 'class' => 'form-horizontal', 'name' => 'searchInstitutions', 'id' => 'searchInstitutions']) !!}
+                                  <div class="form-group">
+                                    <h5>Buscar Por:</h5>
+                                    <div class="controls">
+                                      {!! Form::text('sStringSearch', old('sStringSearch'), ['class' => 'form-control', 'placeholder' => 'NOMBRE', 'id' => 'sStringSearch']) !!}
+                                    </div>
+                                  </div>
+                                  <div class="text-xs-right">
+                                      {!! Form::submit('Buscar', ['class' => 'btn btn-info']) !!}
+                                  </div>
+                                {!! Form::close() !!}
+                                <hr />
+                            </div>
+
                             <div class="col-md-12">
                                 <div class="table-responsive m-t-40 p-b-40">
                                     <table class="table table-hover table-striped table-bordered">
