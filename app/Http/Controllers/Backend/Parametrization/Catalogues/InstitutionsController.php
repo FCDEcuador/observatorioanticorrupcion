@@ -95,7 +95,7 @@ class InstitutionsController extends Controller
      */
     public function index(Request $request)
     {
-        $institutionsList = Catalogue::byContext('Instituciones')->orderBy('description', 'asc')->paginate(20);
+        $institutionsList = Catalogue::searchCatalogs($request->sStringSearch, 'Instituciones', null, $iPaginate = 20);
         $data = [
             // Datos generales para todas las vistas
             'activeMenu' => $this->activeMenu,

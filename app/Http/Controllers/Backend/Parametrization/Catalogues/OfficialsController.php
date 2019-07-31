@@ -95,7 +95,7 @@ class OfficialsController extends Controller
      */
     public function index(Request $request)
     {
-        $publicOfficialsList = Catalogue::byContext('Funcionarios')->orderBy('description', 'asc')->paginate(20);
+        $publicOfficialsList = Catalogue::searchCatalogs($request->sStringSearch, 'Funcionarios', null, $iPaginate = 20);
         $data = [
             // Datos generales para todas las vistas
             'activeMenu' => $this->activeMenu,
