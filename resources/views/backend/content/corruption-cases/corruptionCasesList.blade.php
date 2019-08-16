@@ -65,7 +65,6 @@
                                                 <th>Etapa Actual del Caso</th>
                                                 <th>Detalle sobre la Etapa</th>
                                                 <th>Función del Estado</th>
-                                                <th>Provincia</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -105,7 +104,6 @@
                                                         <td>{!! $oCorruptionCase->case_stage !!}</td>
                                                         <td>{!! $oCorruptionCase->case_stage_detail !!}</td>
                                                         <td>{!! $oCorruptionCase->state_function !!}</td>
-                                                        <td>{!! $oCorruptionCase->province !!}</td>
                                                     </tr>
                                                 @endforeach
                                             @else

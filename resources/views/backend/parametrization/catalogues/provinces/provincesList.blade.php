@@ -5,7 +5,7 @@
 @endsection
 
 @section('title')
-	Provincias
+	Territorios
 @endsection
 
 @section('main-content')	
@@ -15,14 +15,14 @@
         <!-- ============================================================== -->
         <div class="row page-titles">
             <div class="col-md-5 align-self-center">
-                <h3 class="text-themecolor">Provincias</h3>
+                <h3 class="text-themecolor">Territorios</h3>
             </div>
             <div class="col-md-7 align-self-center">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{!! route('backend.dashboard') !!}">Dashboard</a></li>
                     <li class="breadcrumb-item">Parametrizacion</li>
                     <li class="breadcrumb-item">Catalogos</li>
-                    <li class="breadcrumb-item active">Provincias</li>
+                    <li class="breadcrumb-item active">Territorios</li>
                 </ol>
             </div>
         </div>
@@ -40,10 +40,10 @@
                         <div class="row">
                             <div class="col-md-7">
                                 <h4 class="card-title">
-                                  Lista de Provincias
+                                  Lista de Territorios
                                 </h4>
                                 <h6 class="card-subtitle">
-                                  A continuacion la lista de provincias generadas para el portal web
+                                  A continuacion la lista de territorios generados para el portal web
                                 </h6>
                             </div>
                             <div class="col-md-4">
@@ -52,7 +52,7 @@
                                         <span class="btn-label">
                                             <i class="ti-plus"></i>
                                         </span>
-                                        Agregar Provincia
+                                        Agregar Territorio
                                     </a>
                                 @endcan
                             </div>
@@ -106,7 +106,7 @@
                                                 @endforeach
                                             @else
                                                 <tr class="table-warning">
-                                                    <td colspan="4">Aun no se han generado provincias para el portal web.</td>
+                                                    <td colspan="4">Aun no se han generado territorios para el portal web.</td>
                                                 </tr>
                                             @endif
                                         </tbody>
