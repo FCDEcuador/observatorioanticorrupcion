@@ -142,19 +142,16 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="province"> Territorio : <span class="danger">*</span> </label>
-                                            <select name="province[]" id="province" class="select2 m-b-10 select2-multiple form-control" required multiple="multiple" data-placeholder="Seleccione los Territorios">
+                                            <label for="province"> Provincia : <span class="danger">*</span> </label>
+                                            <select name="province" id="province" class="select2 custom-select form-control required" required>
+                                                <option value="">Seleccione una Provincia</option>
                                                 @if($aProvinces->isNotEmpty())
                                                     @foreach($aProvinces as $oProvince)
                                                         @php
                                                             $selected = '';
                                                             if(is_object($oCorruptionCase)){
-                                                                if(count($oCorruptionCase->province)){
-                                                                    foreach ($oCorruptionCase->province as $province) {
-                                                                        if($oProvince->description == $province){
-                                                                            $selected = 'selected="selected"';
-                                                                        }       
-                                                                    }
+                                                                if($oProvince->description == $oCorruptionCase->province){
+                                                                    $selected = 'selected="selected"';
                                                                 }
                                                             }
                                                         @endphp

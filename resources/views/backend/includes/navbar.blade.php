@@ -107,7 +107,7 @@
                                 @can('backend_view_provinces')
                                     <li>
                                         <a href="{!! route('backend.parametrization.catalogues.provinces.list') !!}">
-                                            Territorios
+                                            Provincias
                                         </a>
                                     </li>
                                 @endcan

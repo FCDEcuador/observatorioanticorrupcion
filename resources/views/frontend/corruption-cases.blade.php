@@ -185,8 +185,7 @@
 										<div class="col-sm-10 p-1">
 											<div class="bg-white mb-1 p-2 p-sm-2" > 
 												<small class="display-block border-bottom border-secondary text-uppercase">Ámbito territorial</small>
-												<select class="form-control form-control-sm text-uppercase pb-1 mb-0 border-0 text-default font-weight-bold" id="corruptionCaseProvince">
-												</select>
+												<p class="text-uppercase pb-1 mb-0 text-default font-weight-bold letter-spacing-1" id="corruptionCaseProvince"></p>
 											</div>
 										</div>
 									</div>

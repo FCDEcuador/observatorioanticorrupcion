@@ -139,31 +139,6 @@ class CorruptionCase extends Model
     	return json_decode($publicOfficialsInvolved);
     }
 
-
-    /**
-     * Método que guarda en la base de datos los territorios del caso de corrupcion en formato JSON
-     * @Autor Raúl Chauvin
-     * @FechaCreacion  2019/08/16
-     *
-     * @param string province
-     *
-     */
-    public function setProvinceAttribute($province){
-        $this->attributes['province'] = json_encode($province);
-    }
-
-    /**
-     * Método que devuelve los territorios del caso de corrupcion en formato array luego de convertir el JSON
-     * @Autor Raúl Chauvin
-     * @FechaCreacion  2019/08/16
-     *
-     * @param string province
-     *
-     */
-    public function getProvinceAttribute($province){
-    	return json_decode($province);
-    }
-
     /*****************************************************************
     	Autor Raúl Chauvin
     	FechaCreacion  2017/06/07
@@ -254,10 +229,10 @@ class CorruptionCase extends Model
 		$iPaginate = 20
 	){
     	
-	    $aListCorruptionCases = CorruptionCase::select();
+	    $aListCorruptionCases = null;
 
     	if($sStringSearch){
-    		$aListCorruptionCases = $aListCorruptionCases->where(function($sQuery) use ($sStringSearch){
+    		$aListCorruptionCases = CorruptionCase::where(function($sQuery) use ($sStringSearch){
             						$sQuery->where('title','like','%'.$sStringSearch.'%')
                                     ->orWhere('summary','like','%'.$sStringSearch.'%')
                                     ->orWhere('linked_institutions','like','%'.$sStringSearch.'%')
@@ -277,22 +252,42 @@ class CorruptionCase extends Model
     	}
 
     	if($sCaseStage){
-    		$aListCorruptionCases = $aListCorruptionCases->where('case_stage', 'like', '%'.$sCaseStage.'%');
+    		if($aListCorruptionCases){
+	    		$aListCorruptionCases = $aListCorruptionCases->where('case_stage', $sCaseStage);
+	    	}else{
+	    		$aListCorruptionCases = CorruptionCase::where('case_stage', $sCaseStage);
+	    	}
     	}
 
     	if($sCaseStageDetail){
-    		$aListCorruptionCases = $aListCorruptionCases->where('case_stage_detail', 'like', '%'.$sCaseStageDetail.'%');
+    		if($aListCorruptionCases){
+	    		$aListCorruptionCases = $aListCorruptionCases->where('case_stage_detail', $sCaseStageDetail);
+	    	}else{
+	    		$aListCorruptionCases = CorruptionCase::where('case_stage_detail', $sCaseStageDetail);
+	    	}
     	}
 
     	if($sProvince){
-    		$aListCorruptionCases = $aListCorruptionCases->where('province', 'like', '%'.$sProvince.'%');
+    		if($aListCorruptionCases){
+	    		$aListCorruptionCases = $aListCorruptionCases->where('province', $sProvince);
+	    	}else{
+	    		$aListCorruptionCases = CorruptionCase::where('province', $sProvince);
+	    	}
     	}
 
     	if($sStateFunction){
-    		$aListCorruptionCases = $aListCorruptionCases->where('state_function', 'like', '%'.$sStateFunction.'%');
+    		if($aListCorruptionCases){
+	    		$aListCorruptionCases = $aListCorruptionCases->where('state_function', $sStateFunction);
+	    	}else{
+	    		$aListCorruptionCases = CorruptionCase::where('state_function', $sStateFunction);
+	    	}
     	}
 
-    	$aListCorruptionCases = $aListCorruptionCases->orderBy('created_at', 'desc')->paginate($iPaginate);
+    	if($aListCorruptionCases){
+			$aListCorruptionCases = $aListCorruptionCases->orderBy('created_at', 'desc')->paginate($iPaginate);
+		}else{
+			$aListCorruptionCases = CorruptionCase::orderBy('created_at', 'desc')->paginate($iPaginate);
+		}
     	
     	return $aListCorruptionCases;
     }

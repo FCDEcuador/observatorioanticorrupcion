@@ -24,7 +24,6 @@ class CorruptionCasesExport implements WithMultipleSheets
         		$sheets[] = new CorruptionCasesDetailedSheet($caseStage->case_stage);
         	}
         }
-        $sheets[] = new CorruptionCasesDataSheet();
         
         return $sheets;
     }

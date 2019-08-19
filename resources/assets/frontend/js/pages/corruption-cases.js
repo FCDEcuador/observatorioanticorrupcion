@@ -17,6 +17,7 @@ function loadCorruptionCase(caseDetailUrl){
 				      $('#corruptionCaseInvolvedNumber').html(oCorruptionCase.involved_number + ' personas');
 				      $('#corruptionCasePeriod').html(oCorruptionCase.period);
 				      $('#corruptionCaseStateFunction').html(oCorruptionCase.state_function);
+				      $('#corruptionCaseProvince').html(oCorruptionCase.province);
 				      $('#corruptionCaseUrl').html('<a href=\''+oCorruptionCase.url+'\' role=\'button\' class=\'btn btn-info btn-sm\'>¿Quieres conocer más?</a>');
 				
 				      var linkedInstitutionsCmb = $('#corruptionCaseLinkedInstitutions');
@@ -28,14 +29,8 @@ function loadCorruptionCase(caseDetailUrl){
 				      var publicOfficialsInvolvedCmb = $('#corruptionCasePublicOfficialsInvolved');
 				      publicOfficialsInvolvedCmb.empty();
 				      $.each(oCorruptionCase.public_officials_involved, function(index, publicOfficialInvolved){
-                			publicOfficialsInvolvedCmb.append('<option>'+publicOfficialInvolved+'</option>');
-					  });
-
-					  var provinceCmb = $('#corruptionCaseProvince');
-				      provinceCmb.empty();
-				      $.each(oCorruptionCase.province, function(index, territory){
-                			provinceCmb.append('<option>'+territory+'</option>');
-					  });
+                publicOfficialsInvolvedCmb.append('<option>'+publicOfficialInvolved+'</option>');
+				      });
           	}else{
             	swal({
 	            	title: 'Casos de Corrupción',

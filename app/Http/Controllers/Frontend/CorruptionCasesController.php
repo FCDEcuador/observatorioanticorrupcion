@@ -221,7 +221,7 @@ class CorruptionCasesController extends Controller
                 $aResponseData = [
                     'type' => 'alert', 
                     'title' => 'Casos de Corrupción', 
-                    'message' => 'El Caso de Corrupcion seleccionado no existe. Por favor seleccione otro.', 
+                    'message' => 'El Caso de COrrupcion seleccionado no existe. Por favor seleccione otro.', 
                     'class' => 'error',
                 ];
                 return response()->json($aResponseData, 404);

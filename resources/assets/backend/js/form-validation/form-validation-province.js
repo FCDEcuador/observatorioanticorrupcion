@@ -23,11 +23,11 @@ var FormProvinceValidation = function() {
             },
             messages: {
                 description: {
-                    required: "Por favor ingrese el nombre del territorio"
+                    required: "Por favor ingrese el nombre de la provincia"
                 },
                 code: {
-                    required: "Por favor ingrese el código del territorio",
-                    digits: "Por favor ingrese un código de territorio válido"
+                    required: "Por favor ingrese el código de la provincia",
+                    digits: "Por favor ingrese un código de provincia válido"
                 }
             },
 
@@ -86,7 +86,7 @@ var FormProvinceValidation = function() {
                         renderSection(urlProvincesList);
                       }else{
                         swal({
-                              title: 'BlaudCMS :: Territorios',
+                              title: 'BlaudCMS :: Provincias',
                               text: data.message,
                               type: 'error',
                               allowOutsideClick: true,
@@ -116,7 +116,7 @@ var FormProvinceValidation = function() {
                         resp = 'Ups! parece que de momento el sistema no está disponible, por favor intentalo nuevamente en unos minutos.';
                       }
                       swal({
-                              title: 'BlaudCMS :: Territorios',
+                              title: 'BlaudCMS :: Provincias',
                               text: resp,
                               type: 'error',
                               allowOutsideClick: true,
