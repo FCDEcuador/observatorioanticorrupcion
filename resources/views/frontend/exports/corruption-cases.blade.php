@@ -34,12 +34,14 @@
     </tr>
 </table>
 
+
+
 <table width="100%">
     <thead>
         <tr>
             <th width="80" >DETALLE DE LOS CASOS</th>
             <th width="80" >FUNCIONES DEL ESTADO</th>
-            <th width="80" >PROVINCIAS</th>
+            <th width="80" >TERRITORIO</th>
             <th width="80" >AÑO</th>
             <th width="140" >FUNCIONARIOS PUBLICOS INVOLUCRADOS</th>
             <th width="140" >INSTITUCIONES PUBLICAS INVOLUCRADAS</th>
@@ -54,7 +56,7 @@
             <tr>
                 <td>{{ $oCorruptionCase->title }}</td>
                 <td>{{ $oCorruptionCase->state_function }}</td>
-                <td>{{ $oCorruptionCase->province }}</td>
+                <td>{{ implode(',', $oCorruptionCase->province) }}</td>
                 <td>{{ $minYear }}</td>
                 <td>{{ implode(',', $oCorruptionCase->public_officials_involved) }}</td>
                 <td>{{ implode(',', $oCorruptionCase->linked_institutions) }}</td>

@@ -17,6 +17,7 @@ use Storage;
 
 use Auth;
 
+
 /**
 * Clase para administracion de provincias
 * @Autor Raúl Chauvin
@@ -182,9 +183,9 @@ class ProvincesController extends Controller
         $oProvince->string_value1 = $request->string_value1;
 
         if($oProvince->save()){
-            return response()->json(['status' => true , 'message' => 'La provincia '.$oProvince->description.' ha sido agregada exisotamente.',], 200);
+            return response()->json(['status' => true , 'message' => 'El territorio '.$oProvince->description.' ha sido agregado exisotamente.',], 200);
         }else{
-            return response()->json(['status' => false , 'message' => 'La provincia '.$oProvince->description.' no pudo ser agregada. Por favor intentelo nuevamente luego de unos minutos',], 200);
+            return response()->json(['status' => false , 'message' => 'El territorio '.$oProvince->description.' no pudo ser agregado. Por favor intentelo nuevamente luego de unos minutos',], 200);
         }
     }
 
@@ -205,13 +206,13 @@ class ProvincesController extends Controller
             if($request->ajax()){
                 $aResponseData = [
                     'type' => 'alert', 
-                    'title' => 'Provincias', 
-                    'message' => 'Por favor seleccione una provincia para poder editarla.', 
+                    'title' => 'Territorios', 
+                    'message' => 'Por favor seleccione un territorio para poder editarlo.', 
                     'class' => 'error',
                 ];
                 return response()->json($aResponseData, 200);
             }
-            $request->session()->flash('errorMsg', 'Por favor seleccione una Provincia para poder editarla.');
+            $request->session()->flash('errorMsg', 'Por favor seleccione un Territorio para poder editarlo.');
             return back();
         }
         
@@ -221,13 +222,13 @@ class ProvincesController extends Controller
             if($request->ajax()){
                 $aResponseData = [
                     'type' => 'alert', 
-                    'title' => 'Provincias', 
-                    'message' => 'La Provincia seleccionada no existe. Por favor seleccione otra.', 
+                    'title' => 'Territorios', 
+                    'message' => 'El territorio seleccionado no existe. Por favor seleccione otro.', 
                     'class' => 'error',
                 ];
                 return response()->json($aResponseData, 200);
             }
-            $request->session()->flash('errorMsg', 'La Provincia seleccionada no existe. Por favor seleccione otra.');
+            $request->session()->flash('errorMsg', 'El Territorio seleccionado no existe. Por favor seleccione otro.');
             return back();   
         }
 
@@ -277,13 +278,13 @@ class ProvincesController extends Controller
         }
 
         if( ! $sId){
-            return response()->json(['status' => false , 'message' => 'Por favor seleccione una provincia para poder editarla.',], 200);
+            return response()->json(['status' => false , 'message' => 'Por favor seleccione un territorio para poder editarlo.',], 200);
         }
 
         $oProvince = Catalogue::find($sId);
         
         if( ! is_object($oProvince)){
-            return response()->json(['status' => false , 'message' => 'La provincia seleccionada no existe. Por favor seleccione otra.',], 200);
+            return response()->json(['status' => false , 'message' => 'El territorio seleccionado no existe. Por favor seleccione otro.',], 200);
         }
 
         $oProvince->context = 'Provincias';
@@ -292,9 +293,9 @@ class ProvincesController extends Controller
         $oProvince->string_value1 = $request->string_value1;
 
         if($oProvince->save()){
-            return response()->json(['status' => true , 'message' => 'La provincia '.$oProvince->description.' ha sido actualizada exisotamente.',], 200);
+            return response()->json(['status' => true , 'message' => 'El territorio '.$oProvince->description.' ha sido actualizado exisotamente.',], 200);
         }else{
-            return response()->json(['status' => false , 'message' => 'La provincia '.$oProvince->description.' no pudo ser actualizada. Por favor intentelo nuevamente luego de unos minutos',], 200);
+            return response()->json(['status' => false , 'message' => 'El territorio '.$oProvince->description.' no pudo ser actualizado. Por favor intentelo nuevamente luego de unos minutos',], 200);
         }
     }
 
@@ -318,19 +319,19 @@ class ProvincesController extends Controller
         }
 
         if( ! $sId){
-            return response()->json(['status' => false , 'message' => 'Por favor seleccione una provincia para poder eliminarla.',], 200);
+            return response()->json(['status' => false , 'message' => 'Por favor seleccione un territorio para poder eliminarlo.',], 200);
         }
 
         $oProvince = Catalogue::find($sId);
         
         if( ! is_object($oProvince)){
-            return response()->json(['status' => false , 'message' => 'La provincia seleccionada no existe. Por favor seleccione otra.',], 200);
+            return response()->json(['status' => false , 'message' => 'El territorio seleccionado no existe. Por favor seleccione otro.',], 200);
         }
 
         if($oProvince->delete()){
-            return response()->json(['status' => true , 'message' => 'La provincia '.$oProvince->description.' ha sido eliminada exitosamente.',], 200);
+            return response()->json(['status' => true , 'message' => 'El territorio '.$oProvince->description.' ha sido eliminado exitosamente.',], 200);
         }else{
-            return response()->json(['status' => false , 'message' => 'La provincia '.$oProvince->description.' no pudo ser eliminada. Por favor intentelo nuevamente luego de unos minutos.',], 200);
+            return response()->json(['status' => false , 'message' => 'El territorio '.$oProvince->description.' no pudo ser eliminado. Por favor intentelo nuevamente luego de unos minutos.',], 200);
         }
     }
 }

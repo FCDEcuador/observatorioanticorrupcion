@@ -1,5 +1,6 @@
 var FormProvinceValidation = function() {
 
+    
     var handleProvinceValidation = function() {
         // for more info visit the official plugin documentation: 
         // http://docs.jquery.com/Plugins/Validation
@@ -23,11 +24,11 @@ var FormProvinceValidation = function() {
             },
             messages: {
                 description: {
-                    required: "Por favor ingrese el nombre de la provincia"
+                    required: "Por favor ingrese el nombre del territorio"
                 },
                 code: {
-                    required: "Por favor ingrese el código de la provincia",
-                    digits: "Por favor ingrese un código de provincia válido"
+                    required: "Por favor ingrese el código del territorio",
+                    digits: "Por favor ingrese un código de territorio válido"
                 }
             },
 
@@ -86,7 +87,7 @@ var FormProvinceValidation = function() {
                         renderSection(urlProvincesList);
                       }else{
                         swal({
-                              title: 'BlaudCMS :: Provincias',
+                              title: 'BlaudCMS :: Territorios',
                               text: data.message,
                               type: 'error',
                               allowOutsideClick: true,
@@ -116,7 +117,7 @@ var FormProvinceValidation = function() {
                         resp = 'Ups! parece que de momento el sistema no está disponible, por favor intentalo nuevamente en unos minutos.';
                       }
                       swal({
-                              title: 'BlaudCMS :: Provincias',
+                              title: 'BlaudCMS :: Territorios',
                               text: resp,
                               type: 'error',
                               allowOutsideClick: true,

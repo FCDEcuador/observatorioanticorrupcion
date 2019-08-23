@@ -7,29 +7,31 @@
 @endsection
 
 @section('title')
-	Provincias
+	Territorios
 @endsection
 
 @section('main-content')	
-	<div class="container-fluid">
+	
+
+    <div class="container-fluid">
         <!-- ============================================================== -->
         <!-- Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
         <div class="row page-titles">
             <div class="col-md-5 align-self-center">
-                <h3 class="text-themecolor">Provincias</h3>
+                <h3 class="text-themecolor">Territorios</h3>
             </div>
             <div class="col-md-7 align-self-center">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{!! route('backend.dashboard') !!}">Dashboard</a></li>
                     <li class="breadcrumb-item">Parametrizacion</li>
                     <li class="breadcrumb-item">Catalogos</li>
-                    <li class="breadcrumb-item"><a href="{!! route('backend.parametrization.catalogues.provinces.list') !!}">Provincias</a></li>
+                    <li class="breadcrumb-item"><a href="{!! route('backend.parametrization.catalogues.provinces.list') !!}">Territorios</a></li>
                     <li class="breadcrumb-item active">
                         @if(is_object($oProvince))
-                            Editar Provincia
+                            Editar Territorio
                         @else
-                            Agregar Provincia
+                            Agregar Territorio
                         @endif
                     </li>
                 </ol>
@@ -50,9 +52,9 @@
                             <div class="col-md-7">
                                 <h4 class="card-title">
                                   @if(is_object($oProvince))
-                                    Editar Provincia
+                                    Editar Territorio
                                   @else
-                                    Agregar Provincia
+                                    Agregar Territorio
                                   @endif
                                 </h4>
                                 <h6 class="card-subtitle">
@@ -65,7 +67,7 @@
                                         <span class="btn-label">
                                             <i class="ti-menu-alt"></i>
                                         </span>
-                                        Provincias
+                                        Territorios
                                     </a>
                                 @endcan
                             </div>
@@ -81,7 +83,7 @@
                             </div>
                         @endif
 
-                        <!-- Formulario de meta tags -->
+                        <!-- Formulario de territorios -->
                         @if(is_object($oProvince))
                             {!! Form::model($oProvince, ['route' => ['backend.parametrization.catalogues.provinces.update', $oProvince->id], 'method' => 'PUT', 'class' => 'form p-t-20', 'name' => 'provinceForm', 'id' => 'provinceForm']) !!}
                         @else
@@ -89,45 +91,45 @@
                         @endif
 
                             <div class="form-group">
-                                <label for="description"><strong>Nombre de la Provincia</strong></label>
+                                <label for="description"><strong>Nombre del Territorio</strong></label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="province-description">
                                             <i class="ti-text"></i>
                                         </span>
                                     </div>
-                                    {!! Form::text('description', null, ['id' => 'description', 'placeholder' => 'Ingrese el nombre de la provincia', 'class' => 'form-control', 'required']) !!}
+                                    {!! Form::text('description', null, ['id' => 'description', 'placeholder' => 'Ingrese el nombre del territorio', 'class' => 'form-control', 'required']) !!}
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="code"><strong>Código de la Provincia</strong></label>
+                                <label for="code"><strong>Código del Territorio</strong></label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="province-code">
                                             <i class="ti-direction"></i>
                                         </span>
                                     </div>
-                                    {!! Form::number('code', null, ['id' => 'code', 'placeholder' => 'Ingrese el código de la provincia', 'class' => 'form-control', 'required']) !!}
+                                    {!! Form::number('code', null, ['id' => 'code', 'placeholder' => 'Ingrese el código del territorio', 'class' => 'form-control', 'required']) !!}
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="string_value1"><strong>Código de marcado de la Provincia</strong></label>
+                                <label for="string_value1"><strong>Código de marcado del Territorio</strong></label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="province-string_value1">
                                             <i class=" ti-headphone-alt"></i>
                                         </span>
                                     </div>
-                                    {!! Form::number('string_value1', null, ['id' => 'string_value1', 'placeholder' => 'Ingrese el código de marcado de la provincia', 'class' => 'form-control']) !!}
+                                    {!! Form::number('string_value1', null, ['id' => 'string_value1', 'placeholder' => 'Ingrese el código de marcado del territorio', 'class' => 'form-control']) !!}
                                 </div>
                             </div>
 
                             <div class="text-xs-right">
                                 <button type="submit" class="btn btn-outline-info ladda-button" data-style="zoom-out" name="provinceBtn" id="provinceBtn">
                                     <i class="fa fa-save"></i>
-                                    <span class="ladda-label">Guardar Provincia</span>
+                                    <span class="ladda-label">Guardar Territorio</span>
                                 </button>
                             </div>
 
