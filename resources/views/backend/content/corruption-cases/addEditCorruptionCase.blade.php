@@ -150,11 +150,13 @@
                                                         @php
                                                             $selected = '';
                                                             if(is_object($oCorruptionCase)){
-                                                                if(count($oCorruptionCase->province)){
-                                                                    foreach ($oCorruptionCase->province as $province) {
-                                                                        if($oProvince->description == $province){
-                                                                            $selected = 'selected="selected"';
-                                                                        }       
+                                                                if(is_array($oCorruptionCase->province)){
+                                                                    if(count($oCorruptionCase->province)){
+                                                                        foreach ($oCorruptionCase->province as $province) {
+                                                                            if($oProvince->description == $province){
+                                                                                $selected = 'selected="selected"';
+                                                                            }       
+                                                                        }
                                                                     }
                                                                 }
                                                             }
