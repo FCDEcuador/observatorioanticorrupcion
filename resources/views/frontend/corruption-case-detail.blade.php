@@ -226,11 +226,10 @@
 				<div class="col-sm-6" >
 					<div class="p-3" style="background: rgba(36,57,91,0.7);">
 
-
 						<div class="accordion" id="accordionFuentes">
 					  		@if($oCorruptionCase->legal_causes != '')
 						  		<div class="card">
-						    		<div class="card-header bgazul text-center p-0" id="headingOne">
+						    		<div class="card-header bgazul text-center p-0" id="headingFour">
 						      			<h6 class="mb-0 text-white text-uppercase font-weight-bold font-italic">
 						        			<a class="btn btn-link text-white btn-lg d-block w-100" role="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 						          				Fuentes
@@ -238,8 +237,8 @@
 						      			</h6>
 						    		</div>
 
-						    		<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-						      			<div class="card-body text-justify pl-5 pr-5 detalle text-white fz12">
+						    		<div id="collapseOne" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+						      			<div class="card-body text-justify detalle fz12">
 						      				{!! $oCorruptionCase->sources !!}
 						      			</div>
 						    		</div>
