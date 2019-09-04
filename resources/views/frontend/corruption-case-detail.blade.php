@@ -133,7 +133,7 @@
 		    		<div class="card-header bgazul text-center p-0" id="headingOne">
 		      			<h3 class="mb-0">
 		        			<a class="btn btn-link text-white btn-lg d-block w-100" role="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-		          				Causas Jurídicas
+		          				Causas Jurídicas <i class="fas fa-angle-down"></i>
 		        			</a>
 		      			</h3>
 		    		</div>
@@ -151,7 +151,7 @@
 		    		<div class="card-header bgazul text-center p-0" id="headingTwo">
 		      			<h3 class="mb-0">
 		        			<a class="btn btn-link text-white btn-lg collapsed d-block w-100" role=button data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-		          				Causas Técnicas
+		          				Causas Técnicas <i class="fas fa-angle-down"></i>
 		        			</a>
 		      			</h3>
 		    		</div>
@@ -232,7 +232,7 @@
 						    		<div class="card-header bgazul text-center p-0" id="headingFour">
 						      			<h6 class="mb-0 text-white text-uppercase font-weight-bold font-italic">
 						        			<a class="btn btn-link text-white btn-lg d-block w-100" role="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-						          				Fuentes
+						          				Fuentes <i class="fas fa-angle-down"></i>
 						        			</a>
 						      			</h6>
 						    		</div>
