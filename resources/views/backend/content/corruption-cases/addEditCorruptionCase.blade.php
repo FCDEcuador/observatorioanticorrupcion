@@ -320,7 +320,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="summary"> Resumen : <span class="danger">*</span> </label>
-                                            {!! Form::textarea('summary', null, ['id' => 'summary', 'class' => 'form-control', 'placeholder' => 'Ingrese el resumen del caso de corrupción', 'required']) !!}
+                                            {!! Form::textarea('summary', null, ['id' => 'summary', 'class' => 'form-control', 'maxlength' => '250','placeholder' => 'Ingrese el resumen del caso de corrupción', 'required']) !!}
                                         </div>
                                     </div>
                                 </div>
