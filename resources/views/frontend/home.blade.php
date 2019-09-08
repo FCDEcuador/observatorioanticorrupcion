@@ -60,7 +60,7 @@
 			<div class="col-sm-6">
 				<div class="p-3 shadow bg-white rounded home-bq">
 					<h1 class="titulo border-bottom border-info text-default text-uppercase text-center mb-3 mt-0">Estadísticas</h1>
-					<p class="mb-0 text-muted">Conoce cuál es el estado de los casos de corrupción, cuya información es recopilada por nuestro Observatorio</p>
+					<p class="mb-0 text-muted">Estado de los casos de corrupción, información recopilada por el observatorio</p>
 					<div class="row">
 						@php
 							$aAux = [];	
@@ -69,8 +69,8 @@
 						@if($aCaseStageList->isNotEmpty())
 							@foreach($aCaseStageList as $oCaseStage)
 								@if( ! in_array($oCaseStage->case_stage, $aAux))	
-									<div class="col-12 mt-5">
-										<h6 class="border-top bormorado morado pt-2 pb-2 font-weight-bold">{!! $oCaseStage->case_stage !!}</h6>
+									<div class="col-12">
+										<h6 class="morado pt-2 mb-0 font-weight-bold">{!! $oCaseStage->case_stage !!}</h6>
 										<div class="row no-gutters">
 											<div class="col-12 d-flex justify-content-center">
 												<div id="chart_{!! $loop->index !!}" style="width: 100%; height: 180px; background-color: #FFFFFF;" ></div>
