@@ -91,11 +91,7 @@
 					
 					
 					<script>
-					@if(count($aDataGraph))
-						@foreach($aDataGraph as $dataGraph)
-							setupChart('{!! $dataGraph['id'] !!}', {!! $dataGraph['casesNum'] !!}, '{!! $dataGraph['color'] !!}');
-						@endforeach
-					@endif
+					
 
 
 					function setupChart(chartId, progress, fondo ) {
