@@ -62,31 +62,29 @@
 					<h1 class="titulo border-bottom border-info text-default text-uppercase text-center mb-3 mt-0">Estadísticas</h1>
 					<p class="mb-0 text-muted">Conoce cuál es el estado de los casos de corrupción, cuya información es recopilada por nuestro Observatorio</p>
 					<div class="row">
-						@if($caseStages->isNotEmpty())
-							@php
-								$aDataGraph = [];	
-								$aColors = [
-									'#a9d42c',
-									'#390094',
-									'#4db1e0',
-								];
-							@endphp
-							@foreach($caseStages as $oCaseStage)
-								@php
-									$aDataGraph[$loop->index] = [
-										'id' => $oCaseStage->id,
-										'casesNum' => BlaudCMS\CorruptionCase::where('case_stage', $oCaseStage->description)->count(),
-										'color' => $aColors[$loop->index],
-									];
-								@endphp
-								<div class="col-sm-4">
-									<div class="pl-3 pr-3">
-										<canvas id="{!! $oCaseStage->id !!}" class="m-100 "></canvas>
+						@php
+							$aAux = [];	
+							$aCharts = [];
+						@endphp
+						@if($aCaseStageList->isNotEmpty())
+							@foreach($aCaseStageList as $oCaseStage)
+								@if( ! in_array($oCaseStage->case_stage, $aAux))	
+									<div class="col-12 mt-5">
+										<h6 class="border-top bormorado morado pt-2 pb-2 font-weight-bold">{!! $oCaseStage->case_stage !!}</h6>
+										<div class="row no-gutters">
+											<div class="col-12 d-flex justify-content-center">
+												<div id="chart_{!! $loop->index !!}" style="width: 100%; height: 180px; background-color: #FFFFFF;" ></div>
+											</div>
+										</div>
 									</div>
-									<div class="titulo text-uppercase fz14 mt-1 mb-3 mb-sm-0 text-center">
-										{!! $oCaseStage->description !!}
-									</div>
-								</div>
+									@php
+										$aAux[] = $oCaseStage->case_stage;	
+										$aCharts[] = [
+											'caseStage' => $oCaseStage->case_stage,
+											'loop' => $loop->index
+										];
+									@endphp
+								@endif
 							@endforeach
 						@endif
 					</div>
@@ -307,5 +305,138 @@
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js'></script>
 @section('custom-js')
+	
+	<!-- amCharts javascript code -->
+	<script type="text/javascript">
+			
+			var data;
+			@if($aCaseStageList->isNotEmpty())
+				@php
+					$aAux = [];
+					$k = 1;
+				@endphp
+				@foreach($aCaseStageList as $oCaseStage)
+					@php
+						$aAux[$oCaseStage->case_stage][] = [
+							'category' => ''.strtoupper($oCaseStage->case_stage_detail).'',
+							'column-1' => ''.round(($oCaseStage->numCases/$numCases*100),2).'',
+							'fill alpha' => 1/$k,
+							'dash length' => '',
+						];
+						$k++;
+					@endphp
+				@endforeach
+			@endif
+
+			@if(count($aCharts))
+				@foreach($aCharts as $key => $val)
+					console.log({!! json_encode($val) !!});
+					//console.log({!! $key[$val] !!});
+					data = {!! json_encode($aAux[$val['caseStage']]) !!};
+					console.log(data);
+					setupChart('chart_{!! $val['loop'] !!}', data);
+				@endforeach
+			@endif
+
+
+		function setupChart(chartId, arreglocasos ) {
+
+	        //El total de casos por tipo va a ser el 100 y 
+	        //cada subtipo sera calculado con regla de 3 
+	        //para ir dibujando cada barra
+
+	        AmCharts.makeChart(chartId,
+				{
+				"type": "serial",
+				"categoryField": "category",
+				"columnSpacing": 0,
+				"rotate": true,
+				"autoMarginOffset": 0,
+				"marginBottom": 0,
+				"marginLeft": 0,
+				"marginRight": 0,
+				"marginTop": 0,
+				"colors": [
+					"#94D500",
+					
+				],
+				"startDuration": 1,
+				"classNamePrefix": "estadisticas",
+				"fontSize": 14,
+				"handDrawScatter": 1,
+				"categoryAxis": {
+					"classNameField": "c_categorias",
+					"gridPosition": "start",
+					"axisColor": "#FFFFFF",
+					"gridColor": "#FFFFFF"
+				},
+				"trendLines": [],
+				"graphs": [
+					{
+						"alphaField": "fill alpha",
+						"dashLengthField": "dash length",
+						"fillAlphas": 1,
+						"id": "AmGraph-1",
+						"lineThickness": 0,
+						"title": "graph 1",
+						"type": "column",
+						"valueField": "column-1"
+					},
+					{
+						"clustered": false,
+						"fillAlphas": 0.3,
+						"id": "AmGraph-2",
+						"labelText": "[[value]]%",
+						"lineColor": "#fff",
+						"type": "column",
+						"valueField": "column-1"
+					}
+				],
+				"guides": [],
+				"valueAxes": [
+					{
+						"id": "ValueAxis-1",
+						"position": "bottom",
+						"zeroGridAlpha": 0,
+						"autoGridCount": false,
+						"autoRotateCount": 0,
+						"axisColor": "#FFFFFF",
+						"fontSize": 0,
+						"gridAlpha": 0,
+						"gridColor": "#FFFFFF",
+						"gridCount": 0,
+						"gridThickness": 0,
+						"title": ""
+					}
+				],
+				"allLabels": [],
+				"balloon": {
+				"adjustBorderColor": false,
+				"animationDuration": 0,
+				"borderThickness": 0,
+				"color": "#FFFFFF",
+				"disableMouseEvents": false,
+				"fadeOutDuration": 0,
+				"horizontalPadding": 0,
+				"maxWidth": 0,
+				"offsetX": 0,
+				"offsetY": 0,
+				"pointerOrientation": "right"
+			},
+				"titles": [
+					{
+						"id": "Title-1",
+						"size": 15,
+						"text": ""
+					}
+				],
+				"dataProvider": arreglocasos,
+			}
+			);
+
+
+
+	     }
+</script>
 
 @endsection

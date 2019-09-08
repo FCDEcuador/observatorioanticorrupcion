@@ -501,6 +501,7 @@ margin-top: 7px;
 	fill: #6c757d;
 	min-width: 330px;
 	display: inline-block;
+	text-transform: uppercase;
 }
 @media (max-width: 575.98px) { 
 

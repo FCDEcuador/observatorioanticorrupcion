@@ -141,6 +141,10 @@ class HomeController extends Controller
 
             // Datos para el contenido de la pagina
             'oHomeField' => $this->oHomeField,
+            'aCaseStageList' => CorruptionCase::select(\DB::raw('case_stage, case_stage_detail, count(id) as numCases'))
+                                              ->groupBy('case_stage', 'case_stage_detail')
+                                              ->orderBy('numCases', 'asc')
+                                              ->get(),
             'corruptionCasesList' => CorruptionCase::orderBy('created_at', 'desc')->skip(0)->take(3)->get(),
             'caseStages' => Catalogue::byContext('Etapa Actual del Caso')->get(),
             'oContentCategory' => $oContentCategory,
