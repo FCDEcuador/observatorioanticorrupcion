@@ -19,7 +19,7 @@
 					<iframe class="w-100 h-100" src="https://www.youtube.com/embed/aZPRrlLzPFc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
 				<div class="col-sm-6 mt-3 mb-3 text-justify">
-					<p>Somos una iniciativa de Fundación Ciudadanía y Desarrollo que través de la investigación y análisis de casos de corrupción y su posterior difusión en formatos abiertos y amigables, busca promover el conocimiento y debate ciudadano sobre la importancia del combate a la corrupción. </p>
+					<p>Somos una iniciativa de Fundación Ciudadanía y Desarrollo, que investiga, analiza y difunde datos de casos de corrupción en formatos abiertos para que la información presentada sea utilizada como herramienta ciudadana para generar memoria histórica, debate y propuestas en la lucha contra la corrupción. </p>
 					<h2 class="morado mt-3">Misión</h2>
 					<p>Obtener, sistematizar y difundir información confiable y amigable sobre casos de corrupción en Ecuador y sus consecuencias en la vida diaria de sus habitantes.</p>
 					<h2 class="morado mt-3">Visión</h2>
