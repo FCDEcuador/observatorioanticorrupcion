@@ -31,6 +31,9 @@
 						<h3 class="subtitulo text-white text-uppercase text-right fz32">
 							{!! $oCorruptionCase->title !!}
 						</h3>
+						@if($oCorruptionCase->author)
+							<p><strong>Investigador/Autor: </strong>{!! $oCorruptionCase->author !!}</p>
+						@endif
 					</div>
 				</div>
 			</div>

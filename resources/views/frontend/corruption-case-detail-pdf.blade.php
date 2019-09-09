@@ -74,8 +74,10 @@
 
         <!-- Wrap the content of your PDF inside a main tag -->
         <main>
-
 			<h1 style="font-family:Helvetica">{!! $oCorruptionCase->title !!}</h1>
+			@if($oCorruptionCase->author)
+				<p><strong>Investigador/Autor: </strong>{!! $oCorruptionCase->author !!}</p>
+			@endif
 		</main>
 		<hr />
 		
