@@ -48,8 +48,9 @@
 					<div class="addthis_inline_share_toolbox d-flex justify-content-center"></div>
 				</div>
 				<div>
-					<a href="{!! route('corruption-cases.download-pdf', [$oCorruptionCase->slug]) !!}" role="button" class="btn btn-success btn-sm float-right" target="_blank">descarga PDF</a>
-					<a href="#" data-toggle="modal" data-target="#casos-resumen" onclick="javascript: loadCorruptionCase('{!! route('corruption-cases.detail-json', [$oCorruptionCase->id]) !!}');" class="btn btn-success btn-sm float-right">Resumen del Caso</a>
+					<a href="{!! route('corruption-cases.download-pdf', [$oCorruptionCase->slug]) !!}" role="button" class="btn btn-success btn-sm" target="_blank">descarga PDF</a>
+					&nbsp;&nbsp;&nbsp;
+					<a href="#" data-toggle="modal" data-target="#casos-resumen" onclick="javascript: loadCorruptionCase('{!! route('corruption-cases.detail-json', [$oCorruptionCase->id]) !!}');" class="btn btn-success btn-sm">Resumen del Caso</a>
 				</div>
 			</div>
 		</div>
