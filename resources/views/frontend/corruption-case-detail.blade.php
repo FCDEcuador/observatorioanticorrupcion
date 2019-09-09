@@ -49,6 +49,7 @@
 				</div>
 				<div>
 					<a href="{!! route('corruption-cases.download-pdf', [$oCorruptionCase->slug]) !!}" role="button" class="btn btn-success btn-sm float-right" target="_blank">descarga PDF</a>
+					<a href="#" data-toggle="modal" data-target="#casos-resumen" onclick="javascript: loadCorruptionCase('{!! route('corruption-cases.detail-json', [$oCorruptionCase->id]) !!}');" class="btn btn-success btn-sm float-right">Resumen del Caso</a>
 				</div>
 			</div>
 		</div>
@@ -291,10 +292,141 @@
 			</div>
 			<!-- END SECCION OTROS CASOS -->
 		@endif
+
+
+
+		<!-- BEGIN MODAL -->
+		<div class="modal fade" id="casos-resumen" tabindex="-1" role="dialog" aria-labelledby="casos-resumenTitle" aria-hidden="true">
+		  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+		    <div class="modal-content">  
+		      <div class="modal-body p-0">
+		      	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		        <div class="container-fluid p-0 bg-light">
+		    		<div class="row no-gutters">
+		    			<div class="col-sm-5 d-none d-sm-block" id="corruptionCaseImg"></div>
+		    			<div class="col-sm-7 p-3">
+		    				<div class="row">
+								<div class="col-12">
+									<h6 class="text-default mb-3 text-center text-uppercase" id="corruptionCaseTitle"></h6>
+									<p class="pb-0 mb-0 text-muted" id="corruptionCaseSummary"></p>
+								</div>
+							</div>
+							<hr class="border-success">
+							<div class="row">
+								<div class="col-6">
+									<div class="row">
+										<div class="col-sm-2 fz20 mb-1 mb-sm-0 mt-1 mb-sm-0 pt-3 pb-2">
+											<i class="fas fa-sync-alt"></i>
+										</div>
+										<div class="col-sm-10 p-1">
+											<div class="bg-white mb-1 p-2 p-sm-2" > 
+												<small class="display-block border-bottom border-secondary text-uppercase">Etapa actual del caso</small>
+												<p class="text-uppercase pb-1 mb-0 text-default font-weight-bold letter-spacing-1" id="corruptionCaseCaseStage"></p>
+												<small class="display-block border-bottom border-secondary text-uppercase">Detalle sobre la etapa</small>
+												<p class="text-uppercase pb-1 mb-0 text-default font-weight-bold letter-spacing-1" id="corruptionCaseCaseStageDetail"></p>
+											</div>
+										</div>
+										<div class="col-sm-2 fz20 mb-1 mb-sm-0 mt-1 mb-sm-0 pt-3 pb-2">
+											<i class="fas fa-users"></i>
+										</div>
+										<div class="col-sm-10 p-1">
+											<div class="bg-white mb-1 p-2 p-sm-2" > 
+												<small class="display-block border-bottom border-secondary text-uppercase">Número de involucrádos</small>
+												<p class="text-uppercase pb-1 mb-0 text-default font-weight-bold letter-spacing-1" id="corruptionCaseInvolvedNumber"></p>
+											</div>
+										</div>
+										<div class="col-sm-2 fz20 mb-1 mb-sm-0 mt-1 mb-sm-0 pt-3 pb-2">
+											<i class="far fa-calendar-alt"></i>
+										</div>
+										<div class="col-sm-10 p-1">
+											<div class="bg-white mb-1 p-2 p-sm-2" > 
+												<small class="display-block border-bottom border-secondary text-uppercase">Periodo</small>
+												<p class="text-uppercase pb-1 mb-0 text-default font-weight-bold letter-spacing-1" id="corruptionCasePeriod"></p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-6">
+									<div class="row">
+										<div class="col-sm-2 fz20 mb-1 mb-sm-0 mt-1 mb-sm-0 pt-3 pb-2">
+											<i class="fas fa-university"></i>
+										</div>
+										<div class="col-sm-10 p-1">
+											<div class="bg-white mb-1 p-2 p-sm-2" > 
+												<small class="display-block border-bottom border-secondary text-uppercase">Función del estado</small>
+												<p class="text-uppercase pb-1 mb-0 text-default font-weight-bold letter-spacing-1" id="corruptionCaseStateFunction"></p>
+											</div>
+										</div>
+										<div class="col-sm-2 fz20 mb-1 mb-sm-0 mt-1 mb-sm-0 pt-3 pb-2">
+											<i class="fas fa-landmark"></i>
+										</div>
+										<div class="col-sm-10 p-1">
+											<div class="bg-white mb-1 p-2 p-sm-2" > 
+												<small class="display-block border-bottom border-secondary text-uppercase">Instituciones Vinvuladas</small>
+												<select class="form-control form-control-sm text-uppercase pb-1 mb-0 border-0 text-default font-weight-bold" id="corruptionCaseLinkedInstitutions">
+												</select>
+											</div>
+										</div>
+										<div class="col-sm-2 fz20 mb-1 mb-sm-0 mt-1 mb-sm-0 pt-3 pb-2">
+											<i class="fas fa-user"></i>
+										</div>
+										<div class="col-sm-10 p-1">
+											<div class="bg-white mb-1 p-2 p-sm-2" > 
+												<small class="display-block border-bottom border-secondary text-uppercase">Involucrados</small>
+												<select class="form-control form-control-sm text-uppercase pb-1 mb-0 border-0 text-default font-weight-bold" id="corruptionCasePublicOfficialsInvolved">
+												</select>
+											</div>
+										</div>
+										<div class="col-sm-2 fz20 mb-1 mb-sm-0 mt-1 mb-sm-0 pt-3 pb-2">
+											<i class="fas fa-map-marker-alt"></i>
+										</div>
+										<div class="col-sm-10 p-1">
+											<div class="bg-white mb-1 p-2 p-sm-2" > 
+												<small class="display-block border-bottom border-secondary text-uppercase">Ámbito territorial</small>
+												<select class="form-control form-control-sm text-uppercase pb-1 mb-0 border-0 text-default font-weight-bold" id="corruptionCaseProvince">
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-2 fz20 mb-1 mb-sm-0 mt-1 mb-sm-0">
+										<div class="align-self-center d-flex justify-content-center mt-2" id="corruptionCaseUrl"></div>
+									</div>
+								</div>
+							</div>
+		    			</div>
+		    		</div>
+		    	</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<!-- END MODAL -->
 	
 @endsection
 
 
 
 @section('custom-js')
+	{!! Html::script('public/backend/assets/plugins/bootstrap-sweetalert/sweetalert.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('public/backend/assets/js/ui-sweetalert.min.js', ['type' => 'text/javascript']) !!}
+	{!! Html::script('public/frontend/js/pages/corruption-cases.min.js', ['type' => 'text/javascript']) !!}
+
+	<script type="text/javascript">
+    	$(document).ready(function(){
+            @if(session()->exists('successMsg'))
+                showAlert('Observatorio Anti Corrupción', '{!! session('successMsg') !!}', 'success');
+            @endif
+
+            @if(session()->exists('warningMsg'))
+                showAlert('Observatorio Anti Corrupción', '{!! session('warningMsg') !!}', 'warning');
+            @endif
+
+            @if(session()->exists('errorMsg'))
+                showAlert('Observatorio Anti Corrupción', '{!! session('errorMsg') !!}', 'error');
+            @endif
+        });
+    </script>
 @endsection
