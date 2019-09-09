@@ -140,6 +140,8 @@
                                     </div>
                                 </div>
 
+
+
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -275,6 +277,15 @@
                                         <div class="form-group">
                                             <label for="title"> Título : <span class="danger">*</span> </label>
                                             {!! Form::text('title', null, ['id' => 'title', 'class' => 'form-control', 'placeholder' => 'Ingrese el título del caso de corrupción']) !!}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="authoe"> Investigador / Autor : <span class="danger">*</span> </label>
+                                            {!! Form::text('author', null, ['id' => 'author', 'placeholder' => 'Ingrese el Investigador/autor del caso de corrupción', 'class' => 'form-control']) !!}
                                         </div>
                                     </div>
                                 </div>

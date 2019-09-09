@@ -32,6 +32,7 @@ class CorruptionCase extends Model
     protected $fillable = [
         'case_stage',
         'case_stage_detail',
+        'author',
         'province',
         'state_function',
         'tags',

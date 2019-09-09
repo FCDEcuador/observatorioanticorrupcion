@@ -239,6 +239,7 @@ class CorruptionCasesController extends Controller
         $oCorruptionCase = new CorruptionCase;
         $oCorruptionCase->case_stage = $request->case_stage;
         $oCorruptionCase->case_stage_detail = $request->case_stage_detail;
+        $oCorruptionCase->author = $request->author;
         $oCorruptionCase->province = $request->province;
         $oCorruptionCase->state_function = $request->state_function;
         $oCorruptionCase->tags = explode(',', $request->tags);
@@ -419,6 +420,7 @@ class CorruptionCasesController extends Controller
 
         $oCorruptionCase->case_stage = $request->case_stage;
         $oCorruptionCase->case_stage_detail = $request->case_stage_detail;
+        $oCorruptionCase->author = $request->author;
         $oCorruptionCase->province = $request->province;
         $oCorruptionCase->state_function = $request->state_function;
         $oCorruptionCase->tags = explode(',', $request->tags);
