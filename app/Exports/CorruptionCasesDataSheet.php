@@ -16,7 +16,7 @@ use Maatwebsite\Excel\Events\BeforeWriting;
 use Maatwebsite\Excel\Events\BeforeSheet;
 use Maatwebsite\Excel\Events\AfterSheet;
 
-class CorruptionCasesDataSheet implements FromView, WithTitle, WithEvents, ShouldAutoSize
+class CorruptionCasesDataSheet implements FromView, WithTitle, ShouldAutoSize
 {
     /**
      * @return string
