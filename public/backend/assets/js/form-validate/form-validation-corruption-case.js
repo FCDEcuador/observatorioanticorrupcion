@@ -54,9 +54,7 @@ var FormCorruptionCaseValidation = function() {
                     minlength: 1,
                 },
                 summary: {
-                    required: function() {
-                         CKEDITOR.instances.summary.updateElement();
-                    }
+                    required: true
                 },
                 main_multimedia: {
                     accept: "image/*"
@@ -283,7 +281,7 @@ $(document).ready(function() {
     $(".select2").select2();
     $("#involved_number").TouchSpin();
 
-    CKEDITOR.replace('summary', CKEditorOptions);
+    //CKEDITOR.replace('summary', CKEditorOptions);
     CKEDITOR.replace('history', CKEditorOptions);
     CKEDITOR.replace('legal_causes', CKEditorOptions);
     CKEDITOR.replace('political_causes', CKEditorOptions);

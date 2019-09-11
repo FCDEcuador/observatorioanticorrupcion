@@ -41,6 +41,12 @@ a{
     font-weight: 600;
 }
 
+#casos-corrupcion .carousel-inner{
+	height: 250px;
+}
+.mlm15{
+		margin-left: -15px;
+	}
 #casos-corrupcion .carousel-indicators{
 	position: relative;
     margin-right: 0%;
@@ -222,6 +228,12 @@ a{
 		min-height: inherit;
 		max-height: inherit;
 
+	}
+	#casos-corrupcion .carousel-inner{
+		height: 100%!important;
+	}
+	.mlm15{
+		margin-left: 0px!important;
 	}
 }
 .page-link{

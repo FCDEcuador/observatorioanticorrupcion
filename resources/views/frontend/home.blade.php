@@ -26,8 +26,8 @@
 							    			<a href="{!! url('/casos-de-corrupcion/'.$oCorruptionCase->slug) !!}"><img class="d-block w-100" src="{!! $oStorage->url($oCorruptionCase->home_image) !!}" alt="{!! $oCorruptionCase->title !!}"></a>
 							    		</div>
 							    		<div class="col-sm-7">
-							    			<h5 style="margin-left: -15px;" class="subtitulo-home"> {!! $oCorruptionCase->title !!}</h5>
-							    			<div style="margin-left: -15px;" class="text-justify text-muted mr-sm-4">{!! $oCorruptionCase->summary !!}
+							    			<h5 class="subtitulo-home mlm15 mt-3 mt-sm-0"> {!! $oCorruptionCase->title !!}</h5>
+							    			<div class="text-justify text-muted mr-sm-4 mlm15">{!! $oCorruptionCase->summary !!}
 							    				<a href="{!! url('/casos-de-corrupcion/'.$oCorruptionCase->slug) !!}" role="button" class="btn btn-success btn-sm float-right">Entérate</a>
 							    			</div>
 							    			
