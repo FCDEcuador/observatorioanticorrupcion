@@ -21,7 +21,7 @@
         				<div class="col-4">
         					<img src="{!! asset('public/frontend/images/logo-contraloria.png') !!}" class="w-100" />
         				</div>
-        				<div class="col-8  letter-spacing-1 fz12 pl-1 font-weight-bold">
+        				<div class="col-8  letter-spacing-1 fz14 pl-1 ">
         					Contraloría General del Estado
         				</div>
         			</div>
@@ -29,7 +29,7 @@
         				<div class="col-4">
         					<img src="{!! asset('public/frontend/images/logo-cpcc.png') !!}" class="w-100" />
         				</div>
-        				<div class="col-8  letter-spacing-1 fz12 pl-1 font-weight-bold">
+        				<div class="col-8  letter-spacing-1 fz14 pl-1 ">
         					Concejo de Participación Ciudadana y Control Social (CPCSS)
         				</div>
         			</div>
@@ -37,7 +37,7 @@
         				<div class="col-4">
         					<img src="{!! asset('public/frontend/images/ico-fiscalia.png') !!}" class="w-100" />
         				</div>
-        				<div class="col-8  letter-spacing-1 fz12 pl-1 font-weight-bold">
+        				<div class="col-8  letter-spacing-1 fz14 pl-1 ">
         					Fiscalía General del Estado
         				</div>
         			</div>
@@ -45,7 +45,7 @@
                         <div class="col-4">
                             <img src="{!! asset('public/frontend/images/ico-quitohonesto.jpg') !!}" class="w-100" />
                         </div>
-                        <div class="col-8  letter-spacing-1 fz12 pl-1 font-weight-bold">
+                        <div class="col-8  letter-spacing-1 fz14 pl-1 ">
                             Quito Honesto
                         </div>
                     </div>
@@ -159,8 +159,8 @@
         			</div>
                     <div class="row no-gutters bg-white border p-1 mb-1 minh80 align-items-center">
                         <div class="col-12  letter-spacing-1 fz12 text-center">
-                            <br />
-                            <a class="text-default" href="#"  data-toggle="modal" data-target="#emailDenuncia" data-whatever="Quito Honesto" data-receptor = ""></a>
+                            DENUNCIAS<br />
+                            <a class="text-default" href="#"  data-toggle="modal" data-target="#emailDenuncia" data-whatever="Quito Honesto" data-receptor = "denuncias@quitohonesto.gob.ec">denuncias@quitohonesto.gob.ec</a>
                         </div>
                     </div>
         		</div>
