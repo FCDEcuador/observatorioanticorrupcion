@@ -21,26 +21,34 @@
         				<div class="col-4">
         					<img src="{!! asset('public/frontend/images/logo-contraloria.png') !!}" class="w-100" />
         				</div>
-        				<div class="col-8 text-uppercase letter-spacing-1 fz12 pl-1 font-weight-bold">
-        					CONTRALORÍA GENERAL DEL ESTADO
+        				<div class="col-8  letter-spacing-1 fz12 pl-1 font-weight-bold">
+        					Contraloría General del Estado
         				</div>
         			</div>
         			<div class="row no-gutters bg-white border p-1 mb-1 minh80 align-items-center">
         				<div class="col-4">
         					<img src="{!! asset('public/frontend/images/logo-cpcc.png') !!}" class="w-100" />
         				</div>
-        				<div class="col-8 text-uppercase letter-spacing-1 fz12 pl-1 font-weight-bold">
-        					CONCEJO DE PARTICIPACIÓN CIUDADANA Y CONTROL SOCIAL (CPCSS)
+        				<div class="col-8  letter-spacing-1 fz12 pl-1 font-weight-bold">
+        					Concejo de Participación Ciudadana y Control Social (CPCSS)
         				</div>
         			</div>
         			<div class="row no-gutters bg-white border p-1 mb-1 minh80 align-items-center">
         				<div class="col-4">
         					<img src="{!! asset('public/frontend/images/ico-fiscalia.png') !!}" class="w-100" />
         				</div>
-        				<div class="col-8 text-uppercase letter-spacing-1 fz12 pl-1 font-weight-bold">
-        					FISCALIA GENERAL DEL ESTADO
+        				<div class="col-8  letter-spacing-1 fz12 pl-1 font-weight-bold">
+        					Fiscalía General del Estado
         				</div>
         			</div>
+                    <div class="row no-gutters bg-white border p-1 mb-1 minh80 align-items-center">
+                        <div class="col-4">
+                            <img src="{!! asset('public/frontend/images/ico-quitohonesto.jpg') !!}" class="w-100" />
+                        </div>
+                        <div class="col-8  letter-spacing-1 fz12 pl-1 font-weight-bold">
+                            Quito Honesto
+                        </div>
+                    </div>
         		</div>
         		<div class="col-6 col-sm-2">
         			<p class="text-center mb-0 fz40 text-info"><i class="fas fa-map-marker-alt"></i></p>
@@ -66,6 +74,13 @@
         					Edificio Patria
         				</div>
         			</div>
+                    <div class="row no-gutters bg-white border p-1 mb-1 minh80 align-items-center">
+                        <div class="col-12 letter-spacing-1 fz12 text-center">
+                            Quito:<br />
+                            Av. Amazonas N21-252 y Jerónimo Carrión<br />
+                            Edificio Londres, 3er piso
+                        </div>
+                    </div>
         		</div>
         		<div class="col-6 col-sm-2">
         			<p class="text-center mb-0 fz40 text-info"><i class="fas fa-phone"></i></p>
@@ -87,6 +102,13 @@
         					2 3985-800
         				</div>
         			</div>
+                    <div class="row no-gutters bg-white border p-1 mb-1 minh80 align-items-center">
+                        <div class="col-12 text-uppercase letter-spacing-1 fz12 text-center">
+                            (593-02) 223-2279 <br />
+                            252-5726<br />
+                            255-1323
+                        </div>
+                    </div>
         		</div>
         		<div class="col-6 col-sm-2">
         			<p class="text-center mb-0 fz40 text-info"><i class="fas fa-globe"></i></p>
@@ -106,6 +128,11 @@
         					<a href="https://www.fiscalia.gob.ec/contacto-ciudadano/" target="_blank" role="button" class="btn btn-info btn-sm text-uppercase">Ir a la web</a>
         				</div>
         			</div>
+                    <div class="row no-gutters bg-white border p-1 mb-1 minh80 align-items-center">
+                        <div class="col-12 text-uppercase letter-spacing-1 fz12 text-center">
+                            <a href="http://www.quitohonesto.gob.ec/index.php/denuncias" target="_blank" role="button" class="btn btn-info btn-sm text-uppercase">Ir a la web</a>
+                        </div>
+                    </div>
         		</div>
         		<div class="col-6 col-sm-2">
         			<p class="text-center mb-0 fz40 text-info"><i class="far fa-envelope"></i></p>
@@ -130,6 +157,12 @@
         					<a class="text-default" href="#"  data-toggle="modal" data-target="#emailDenuncia" data-whatever="Fiscalia General del Estado" data-receptor = "salazarmd@fiscalia.gob.ec">salazarmd@fiscalia.gob.ec</a>
         				</div>
         			</div>
+                    <div class="row no-gutters bg-white border p-1 mb-1 minh80 align-items-center">
+                        <div class="col-12  letter-spacing-1 fz12 text-center">
+                            <br />
+                            <a class="text-default" href="#"  data-toggle="modal" data-target="#emailDenuncia" data-whatever="Quito Honesto" data-receptor = ""></a>
+                        </div>
+                    </div>
         		</div>
         		<div class="col-6 col-sm-2">
         			<p class="text-center mb-0 fz40 text-info"><i class="fas fa-share-alt"></i></p>
@@ -154,6 +187,13 @@
         					<a href="#" class="text-body"><i class="fab fa-facebook-f text-default"></i> FiscaliaGeneralDelEstado</a>
         				</div>
         			</div>
+                    <div class="row no-gutters bg-white border p-1 mb-1 minh80 align-items-center">
+                        <div class="col-12 letter-spacing-1 fz12">
+                            <a href="#" class="text-body"><i class="fab fa-twitter text-info"></i> @quitohonesto<br /></a>
+                            <a href="#"  onclick="javascript:window.open('https://twitter.com/intent/tweet?text=Saludos%20@QuitoHonesto%20Me%20contacto%20con%20ustedes%20por%20el%20siguiente%20motivo%20vinculado%20a%20un%20caso%20de%20corrupci%C3%B3n.%20FCD_Ecuador%20webdelobservatorio.ec','popup',width=500,height=500);return false;" class="text-body"><i class="fab fa-twitter text-info"></i> Mandale un tweet</a><br />
+                            <a href="https://www.facebook.com/quitohonesto" class="text-body"><i class="fab fa-facebook-f text-default"></i> quitohonesto</a>
+                        </div>
+                    </div>
         		</div>
         	</div>
         </div>
