@@ -188,10 +188,15 @@ a{
 
 .detalle{
 	word-break: break-word;
+	background-color: #fff;
 }
 
 .detalle a{
 	color: #4eb1df;
+}
+
+.card{
+	background: transparent!important;
 }
 
 @media (max-width: 575.98px) { 

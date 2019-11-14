@@ -31,9 +31,7 @@
 						<h3 class="subtitulo text-white text-uppercase text-right fz32">
 							{!! $oCorruptionCase->title !!}
 						</h3>
-						@if($oCorruptionCase->author)
-							<p><strong>Investigador/Autor: </strong>{!! $oCorruptionCase->author !!}</p>
-						@endif
+						
 					</div>
 				</div>
 			</div>
@@ -256,6 +254,16 @@
 			</div>
 		@endif
 		<!-- END SECCION CONSECUENCIAS -->
+
+		@if($oCorruptionCase->author)
+			<div class="row">
+				<div class="col-sm-6" >
+					<div class="p-3" style="background: rgba(36,57,91,0.7);">
+						<p class="text-white"><strong>Investigador / Autor: </strong>{!! $oCorruptionCase->author !!}</p>
+					</div>
+				</div>
+			</div>
+		@endif
 
 		@if($corruptionCasesList->isNotEmpty())
 			<!-- BEGIN SECCION OTROS CASOS -->
