@@ -228,17 +228,17 @@
 			<div class="row mt-3">
 				<div class="col-sm-12" >
 					<div class="p-3" style="background: rgba(36,57,91,0.7);">
-						<div class="accordion" id="accordionFuentes">
+						<div class="accordion" >
 							<div class="card">
 						    		<div class="card-header bgazul text-center p-0" id="headingFour">
 						      			<h6 class="mb-0 text-white text-uppercase font-weight-bold font-italic">
-						        			<a class="btn btn-link text-white btn-lg d-block w-100" role="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+						        			<a class="btn btn-link text-white btn-lg d-block w-100" role="button" data-toggle="collapse" data-target="#accordionAutor" aria-expanded="true" aria-controls="accordionAutor">
 						          				Investigador / Autor <i class="fas fa-angle-down"></i>
 						        			</a>
 						      			</h6>
 						    		</div>
 
-						    		<div id="collapseOne" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+						    		<div id="accordionAutor" class="collapse" aria-labelledby="headingFour" data-parent="#accordionAutor">
 						      			<div class="card-body text-justify detalle fz12">
 						      				<p class="text-white">{!! $oCorruptionCase->author !!}</p>
 						      			</div>
@@ -256,18 +256,18 @@
 				<div class="col-sm-12" >
 					<div class="p-3" style="background: rgba(36,57,91,0.7);">
 
-						<div class="accordion" id="accordionFuentes">
+						<div class="accordion" >
 					  		@if($oCorruptionCase->legal_causes != '')
 						  		<div class="card">
 						    		<div class="card-header bgazul text-center p-0" id="headingFour">
 						      			<h6 class="mb-0 text-white text-uppercase font-weight-bold font-italic">
-						        			<a class="btn btn-link text-white btn-lg d-block w-100" role="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+						        			<a class="btn btn-link text-white btn-lg d-block w-100" role="button" data-toggle="collapse" data-target="#accordionFuentes" aria-expanded="true" aria-controls="accordionFuentes">
 						          				Fuentes <i class="fas fa-angle-down"></i>
 						        			</a>
 						      			</h6>
 						    		</div>
 
-						    		<div id="collapseOne" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+						    		<div id="accordionFuentes" class="collapse" aria-labelledby="headingFour" data-parent="#accordionFuentes">
 						      			<div class="card-body text-justify detalle fz12">
 						      				{!! $oCorruptionCase->sources !!}
 						      			</div>
