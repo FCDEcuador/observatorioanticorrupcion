@@ -31,7 +31,7 @@ Route::get('/estadisticas/excel', 'Frontend\StatisticsController@excel')->name('
 
 Route::group(array('prefix' => '/sitemap'), function(){
 	
-	Route::get('/', 'Frontend\SitemapsController@index')->name('sitemap.list');
+	Route::get('/lista', 'Frontend\SitemapsController@index')->name('sitemap.list');
 	Route::get('/home', 'Frontend\SitemapsController@home')->name('sitemap.index');
 	Route::get('/casos-de-corrupcion', 'Frontend\SitemapsController@corruptionCases')->name('sitemap.corruption-cases');
 	Route::get('/{contentCategorySlug?}', 'Frontend\SitemapsController@contentArticles')->name('sitemap.content-articles');
