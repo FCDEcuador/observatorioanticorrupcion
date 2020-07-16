@@ -13,7 +13,6 @@
 
 Route::get('/', 'Frontend\HomeController@home')->name('home');
 
-
 Route::get('/sobre-el-observatorio', 'Frontend\StaticPagesController@about')->name('about-us');
 Route::get('/contactenos', 'Frontend\StaticPagesController@contact')->name('contact-us');
 Route::post('/contactenos','Frontend\StaticPagesController@contactSend')->name('contact-us.send');
@@ -24,13 +23,20 @@ Route::get('casos-de-corrupcion/json/{sCorruptionCaseId?}', 'Frontend\Corruption
 Route::match(['GET', 'POST'], '/casos-de-corrupcion/{corruptionCaseSlug?}', 'Frontend\CorruptionCasesController@show')->name('corruption-cases.show');
 Route::get('/casos-de-corrupcion/pdf/{corruptionCaseSlug?}', 'Frontend\CorruptionCasesController@downloadPdf')->name('corruption-cases.download-pdf');
 
-
 Route::match(['GET', 'POST'], '/biblioteca-legal', 'Frontend\LegalLibraryController@index')->name('legal-library');
-
 Route::match(['GET', 'POST'], '/historias-de-exito', 'Frontend\SuccessStoriesController@index')->name('success-stories');
-
 Route::get('/estadisticas', 'Frontend\StatisticsController@index')->name('statistics');
 Route::get('/estadisticas/excel', 'Frontend\StatisticsController@excel')->name('statistics.excel');
+
+
+Route::group(array('prefix' => '/sitemap'), function(){
+	
+	Route::get('/', 'Frontend\SitemapsController@index')->name('sitemap.list');
+	Route::get('/home', 'Frontend\SitemapsController@home')->name('sitemap.index');
+	Route::get('/casos-de-corrupcion', 'Frontend\SitemapsController@corruptionCases')->name('sitemap.corruption-cases');
+	Route::get('/{contentCategorySlug?}', 'Frontend\SitemapsController@contentArticles')->name('sitemap.content-articles');
+
+});
 
 
 Route::match(['GET', 'POST'], '/{contentCategorySlug?}', 'Frontend\ContentCategoriesController@index')->name('content-category');
