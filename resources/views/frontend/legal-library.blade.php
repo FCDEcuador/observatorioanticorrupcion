@@ -48,7 +48,7 @@
 	<!-- BEGIN SECCION RESULTADO DE BUSQUEDA -->
 	<div class="row mt-5 ">
 		<div class="col-4 d-none d-sm-block">
-			<h6 class="border-bottom border-default text-default font-weight-bold">CASO</h6>
+			<h6 class="border-bottom border-default text-default font-weight-bold">NORMA</h6>
 		</div>
 		<div class="col-8 d-none d-sm-block">
 			<h6 class="border-bottom border-default text-default font-weight-bold">DESCRIPCIÓN</h6>

@@ -180,7 +180,7 @@
 	@if(is_object($oContentCategory))
 
 		<!-- BEGIN SECCION PUBLICACIONES -->
-			<div class="container mb-5">
+			<!--div class="container mb-5">
 				<div class="row pb-3 pt-3 shadow bg-white rounded">
 					<div class="col-12">
 						<h1 class="titulo border-bottom border-info text-default mb-3">
@@ -212,7 +212,7 @@
 						<a href="{!! route('content-category', [$oContentCategory->slug]) !!}" role="button" class="btn btn-info btn-sm float-right ">Ver más</a>
 					</div>
 				</div>
-			</div>
+			</div-->
 		<!-- END SECCION PUBLICACIONES -->	
 	@endif
 
