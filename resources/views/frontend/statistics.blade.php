@@ -9,7 +9,7 @@
 @section('main-content')
 	
 	<!-- BEGIN SECCION NOTA DESTACADA -->
-<div class="container-fluid p-3 bg-light imagen-estadisticas" style="background-image: url('{!! asset('public/images/slide-ESTADISTICAS.jpg') !!}');">
+<div class="container-fluid p-3 bg-light imagen-estadisticas" style="background-image: url('{!! asset('images/slide-ESTADISTICAS.jpg') !!}');">
 	<div class="container">
 		<!-- BEGIN SECCION TITULO -->
 		<div class="row mt-3 mb-5">
@@ -32,7 +32,7 @@
 						</div>
 					</div>
 					<div class="col-5">
-						<div class="bg-light text-info fz60 text-center p-1" style="margin-bottom:-15px;padding: 10px!important;"><img src="{!! asset('public/frontend/images/ico-lupa.svg') !!}" class="img-fluid"></div>
+						<div class="bg-light text-info fz60 text-center p-1" style="margin-bottom:-15px;padding: 10px!important;"><img src="{!! asset('frontend/images/ico-lupa.svg') !!}" class="img-fluid"></div>
 					</div>
 					<div class="col-7 text-center ">
 						<p class="text-uppercase text-white fz12 d-block flex-grow-1" style="margin-bottom: 5px;">por el observatorio hasta:</p>

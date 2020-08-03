@@ -7,7 +7,7 @@
 		      		@if($oConfiguration->frontend_logo != '')
 		      			<img src="{!! asset($oStorage->url($oConfiguration->frontend_logo)) !!}" />
 		      		@else
-		      			<img src="{!! asset('public/frontend/images/logo-sitio.png') !!}" />
+		      			<img src="{!! asset('frontend/images/logo-sitio.png') !!}" />
 		      		@endif
 		      	</a>
 		    </div>
@@ -74,13 +74,13 @@
 				    	@endforeach
 				    @else
 				    	<div class="carousel-item active">
-					      <img class="d-block w-100" src="{!! asset('public/images/inicio-1.jpg') !!}" alt="First slide">
+					      <img class="d-block w-100" src="{!! asset('images/inicio-1.jpg') !!}" alt="First slide">
 					    </div>
 					    <div class="carousel-item">
-					      <img class="d-block w-100" src="{!! asset('public/images/inicio-2.jpg') !!}" alt="Second slide">
+					      <img class="d-block w-100" src="{!! asset('images/inicio-2.jpg') !!}" alt="Second slide">
 					    </div>
 					    <div class="carousel-item">
-					      <img class="d-block w-100" src="{!! asset('public/images/inicio-3.jpg') !!}" alt="Third slide">
+					      <img class="d-block w-100" src="{!! asset('images/inicio-3.jpg') !!}" alt="Third slide">
 					    </div>
 				    @endif
 				  </div>

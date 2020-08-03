@@ -13,9 +13,9 @@
                                 <!-- Light Logo icon -->
                                 <img src="{!! asset($oStorage->url($oConfiguration->backend_logo)) !!}" alt="BlaudCMS" class="light-logo" height="70" />
                             @else
-                                <img src="{!! asset('public/backend/assets/images/logoBlaud.png') !!}" alt="BlaudCMS" class="dark-logo" height="70" />
+                                <img src="{!! asset('backend/assets/images/logoBlaud.png') !!}" alt="BlaudCMS" class="dark-logo" height="70" />
                                 <!-- Light Logo icon -->
-                                <img src="{!! asset('public/backend/assets/images/logoBlaud.png') !!}" alt="BlaudCMS" class="light-logo" height="70" />
+                                <img src="{!! asset('backend/assets/images/logoBlaud.png') !!}" alt="BlaudCMS" class="light-logo" height="70" />
                             @endif
                         </b>
                         <!--End Logo icon -->
@@ -45,7 +45,7 @@
                                 @if(Auth::user()->avatar != '')
                                     <img src="{!! asset($oStorage->url(Auth::user()->avatar)) !!}" alt="user" class="profile-pic" />
                                 @else
-                                    <img src="{!! asset('public/backend/assets/images/default-user.png') !!}" alt="{!! Auth::user()->name !!} {!! Auth::user()->lastname !!}" class="profile-pic" />
+                                    <img src="{!! asset('backend/assets/images/default-user.png') !!}" alt="{!! Auth::user()->name !!} {!! Auth::user()->lastname !!}" class="profile-pic" />
                                 @endif
                             </a>
                             <div class="dropdown-menu dropdown-menu-right animated flipInY">
@@ -56,7 +56,7 @@
                                                 @if(Auth::user()->avatar != '')
                                                     <img src="{!! asset($oStorage->url(Auth::user()->avatar)) !!}" alt="{!! Auth::user()->name !!} {!! Auth::user()->lastname !!}" />
                                                 @else
-                                                    <img src="{!! asset('public/backend/assets/images/default-user.png') !!}" alt="{!! Auth::user()->name !!} {!! Auth::user()->lastname !!}" class="profile-pic" />
+                                                    <img src="{!! asset('backend/assets/images/default-user.png') !!}" alt="{!! Auth::user()->name !!} {!! Auth::user()->lastname !!}" class="profile-pic" />
                                                 @endif
                                             </div>
                                             <div class="u-text">

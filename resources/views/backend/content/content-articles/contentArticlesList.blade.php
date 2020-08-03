@@ -105,7 +105,7 @@
                                                   @if($oContentArticle->main_multimedia)
                                                     <img src="{!! asset($oStorage->url($oContentArticle->main_multimedia)) !!}" class="" height="40" alt="{!! $oContentArticle->title !!}" />
                                                   @else
-                                                    <img src="{!! asset('public/backend/assets/images/default-thumbnail.png') !!}" class="img-circle" height="40" alt="{!! $oContentArticle->title !!}" />
+                                                    <img src="{!! asset('backend/assets/images/default-thumbnail.png') !!}" class="img-circle" height="40" alt="{!! $oContentArticle->title !!}" />
                                                   @endif
                                                 </td>
                                                 <td> {!! $oContentArticle->title !!} </td>
@@ -140,6 +140,6 @@
 @endsection
 
 @section('custom-js')
-    {!! Html::script('public/backend/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/jquery.blockui.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery.blockui.min.js', ['type' => 'text/javascript']) !!}
 @endsection

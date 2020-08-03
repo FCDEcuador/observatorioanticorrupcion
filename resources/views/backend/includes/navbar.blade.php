@@ -14,7 +14,7 @@
                                         <img src="{!! asset('public'.$oStorage->url(Auth::user()->avatar)) !!}" alt="user" class="profile-pic" />
                                     @endif
                                 @else
-                                    <img src="{!! asset('public/backend/assets/images/default-user.png') !!}" alt="{!! Auth::user()->name !!} {!! Auth::user()->lastname !!}" class="profile-pic" />
+                                    <img src="{!! asset('backend/assets/images/default-user.png') !!}" alt="{!! Auth::user()->name !!} {!! Auth::user()->lastname !!}" class="profile-pic" />
                                 @endif
                                 <span class="hide-menu">{!! substr(Auth::user()->name,0,1) !!}. {!! Auth::user()->lastname !!}</span>
                             </a>

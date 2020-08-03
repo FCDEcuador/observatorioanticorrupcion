@@ -2,8 +2,8 @@
 
 @section('custom-css')
     <!-- BEGIN PAGE LEVEL PLUGINS -->
-    {!! Html::style('public/backend/assets/plugins/ladda/ladda-themeless.min.css') !!}
-    {!! Html::style('public/backend/assets/plugins/bootstrap-sweetalert/sweetalert.css') !!}
+    {!! Html::style('backend/assets/plugins/ladda/ladda-themeless.min.css') !!}
+    {!! Html::style('backend/assets/plugins/bootstrap-sweetalert/sweetalert.css') !!}
     <!-- page css -->
     
     <style type="text/css">
@@ -68,7 +68,7 @@
                     {!! Form::open(['route' => 'backend.login.validate', 'method' => 'POST', 'name' => 'loginform', 'id' => 'loginform', 'class' => 'form-horizontal form-material']) !!}
 
                         <h3 class="box-title m-b-20">
-                            <img src="{!! asset('public/backend/assets/images/logoBlaud.png') !!}" alt="Cuponcity.ec" width="60%" />
+                            <img src="{!! asset('backend/assets/images/logoBlaud.png') !!}" alt="Cuponcity.ec" width="60%" />
                         </h3>
                         <div class="form-group">
                             <div class="col-xs-12">
@@ -128,16 +128,16 @@
 @endsection
 
 @section('custom-js')
-    {!! Html::script('public/backend/assets/plugins/bootstrap-sweetalert/sweetalert.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/js/ui-sweetalert.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/jquery-validation/js/jquery.validate.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/jquery-validation/js/additional-methods.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/ladda/spin.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/ladda/ladda.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/jquery.blockui.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/js/custom.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/js/form-validate/form-validation-login.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/bootstrap-sweetalert/sweetalert.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/js/ui-sweetalert.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery-validation/js/jquery.validate.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery-validation/js/additional-methods.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/ladda/spin.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/ladda/ladda.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery.blockui.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/js/custom.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/js/form-validate/form-validation-login.min.js', ['type' => 'text/javascript']) !!}
 
     
     <!--Custom JavaScript -->

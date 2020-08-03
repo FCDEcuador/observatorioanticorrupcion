@@ -2,17 +2,17 @@
 
 @section('custom-css')
     <!-- BEGIN PAGE LEVEL PLUGINS -->
-    {!! Html::style('public/backend/assets/css/pages/ui-bootstrap-page.css') !!}
+    {!! Html::style('backend/assets/css/pages/ui-bootstrap-page.css') !!}
     <!-- END PAGE LEVEL PLUGINS -->
-    {!! Html::style('public/backend/assets/plugins/wizard/steps.css') !!}
-    {!! Html::style('public/backend/assets/plugins/dropify/dist/css/dropify.min.css') !!}
+    {!! Html::style('backend/assets/plugins/wizard/steps.css') !!}
+    {!! Html::style('backend/assets/plugins/dropify/dist/css/dropify.min.css') !!}
 
     <!-- page CSS -->
-    {!! Html::style('public/backend/assets/plugins/select2/dist/css/select2.min.css') !!}
-    {!! Html::style('public/backend/assets/plugins/bootstrap-select/bootstrap-select.min.css') !!}
-    {!! Html::style('public/backend/assets/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.css') !!}
-    {!! Html::style('public/backend/assets/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css') !!}
-    {!! Html::style('public/backend/assets/plugins/html5-editor/bootstrap-wysihtml5.css') !!}
+    {!! Html::style('backend/assets/plugins/select2/dist/css/select2.min.css') !!}
+    {!! Html::style('backend/assets/plugins/bootstrap-select/bootstrap-select.min.css') !!}
+    {!! Html::style('backend/assets/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.css') !!}
+    {!! Html::style('backend/assets/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css') !!}
+    {!! Html::style('backend/assets/plugins/html5-editor/bootstrap-wysihtml5.css') !!}
 
 @endsection
 
@@ -197,22 +197,22 @@
 @endsection
 
 @section('custom-js')
-    {!! Html::script('public/backend/assets/plugins/jquery-validation/js/jquery.validate.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/jquery-validation/js/additional-methods.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/jquery.blockui.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/wizard/jquery.steps.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/dropify/dist/js/dropify.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/switchery/dist/switchery.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/select2/dist/js/select2.full.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/bootstrap-select/bootstrap-select.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery-validation/js/jquery.validate.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery-validation/js/additional-methods.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery.blockui.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/wizard/jquery.steps.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/dropify/dist/js/dropify.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/switchery/dist/switchery.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/select2/dist/js/select2.full.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/bootstrap-select/bootstrap-select.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js', ['type' => 'text/javascript']) !!}
     <!-- wysuhtml5 Plugin JavaScript -->
-    {!! Html::script('public/backend/assets/plugins/html5-editor/wysihtml5-0.3.0.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/html5-editor/bootstrap-wysihtml5.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/html5-editor/wysihtml5-0.3.0.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/html5-editor/bootstrap-wysihtml5.js', ['type' => 'text/javascript']) !!}
     <script type="text/javascript">
         var urlContentCategoryList = '{!! route('backend.content.content-categories.list') !!}';
     </script>
-    {!! Html::script('public/backend/assets/js/form-validate/form-validation-content-category.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/js/form-validate/form-validation-content-category.min.js', ['type' => 'text/javascript']) !!}
 @endsection

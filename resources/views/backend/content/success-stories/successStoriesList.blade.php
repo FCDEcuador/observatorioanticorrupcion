@@ -102,7 +102,7 @@
                                                             @if($oSuccessStory->image)
                                                                 <img src="{!! asset($oStorage->url($oSuccessStory->image)) !!}" class="" height="40" alt="{!! $oSuccessStory->name !!}" />
                                                             @else
-                                                                <img src="{!! asset('public/backend/assets/images/default-thumbnail.png') !!}" class="img-circle" height="40" alt="{!! $oSuccessStory->name !!}" />
+                                                                <img src="{!! asset('backend/assets/images/default-thumbnail.png') !!}" class="img-circle" height="40" alt="{!! $oSuccessStory->name !!}" />
                                                             @endif
                                                         </td>
                                                         <td>{!! $oSuccessStory->name !!}</td>
@@ -135,6 +135,6 @@
 @endsection
 
 @section('custom-js')
-    {!! Html::script('public/backend/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/jquery.blockui.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery.blockui.min.js', ['type' => 'text/javascript']) !!}
 @endsection

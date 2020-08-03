@@ -2,7 +2,7 @@
 
 @section('custom-css')
     <!-- BEGIN PAGE LEVEL PLUGINS -->
-    {!! Html::style('public/backend/assets/css/pages/ui-bootstrap-page.css') !!}
+    {!! Html::style('backend/assets/css/pages/ui-bootstrap-page.css') !!}
     <!-- END PAGE LEVEL PLUGINS -->
 @endsection
 
@@ -120,12 +120,12 @@
 @endsection
 
 @section('custom-js')
-    {!! Html::script('public/backend/assets/plugins/jquery-validation/js/jquery.validate.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/jquery-validation/js/additional-methods.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/jquery.blockui.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery-validation/js/jquery.validate.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery-validation/js/additional-methods.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery.blockui.min.js', ['type' => 'text/javascript']) !!}
     <script type="text/javascript">
         var urlStateFunctionsList = '{!! route('backend.parametrization.catalogues.state-functions.list') !!}';
     </script>
-    {!! Html::script('public/backend/assets/js/form-validate/form-validation-state-function.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/js/form-validate/form-validation-state-function.min.js', ['type' => 'text/javascript']) !!}
 @endsection

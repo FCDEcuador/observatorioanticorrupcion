@@ -5,7 +5,7 @@
 @endsection
 
 @section('custom-css')	
-    {!! Html::style('public/backend/assets/plugins/bootstrap-sweetalert/sweetalert.css') !!}
+    {!! Html::style('backend/assets/plugins/bootstrap-sweetalert/sweetalert.css') !!}
 @endsection
 
 
@@ -213,9 +213,9 @@
 
 
 @section('custom-js')
-	{!! Html::script('public/backend/assets/plugins/bootstrap-sweetalert/sweetalert.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/js/ui-sweetalert.min.js', ['type' => 'text/javascript']) !!}
-	{!! Html::script('public/frontend/js/pages/corruption-cases.min.js', ['type' => 'text/javascript']) !!}
+	{!! Html::script('backend/assets/plugins/bootstrap-sweetalert/sweetalert.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/js/ui-sweetalert.min.js', ['type' => 'text/javascript']) !!}
+	{!! Html::script('frontend/js/pages/corruption-cases.min.js', ['type' => 'text/javascript']) !!}
 
 	<script type="text/javascript">
     	$(document).ready(function(){

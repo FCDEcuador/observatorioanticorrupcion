@@ -2,9 +2,9 @@
 
 @section('custom-css')
     <!-- BEGIN PAGE LEVEL PLUGINS -->
-    {!! Html::style('public/backend/assets/plugins/ladda/ladda-themeless.min.css') !!}
-    {!! Html::style('public/backend/assets/plugins/bootstrap-sweetalert/sweetalert.css') !!}
-    {!! Html::style('public/backend/assets/plugins/dropify/dist/css/dropify.min.css') !!}
+    {!! Html::style('backend/assets/plugins/ladda/ladda-themeless.min.css') !!}
+    {!! Html::style('backend/assets/plugins/bootstrap-sweetalert/sweetalert.css') !!}
+    {!! Html::style('backend/assets/plugins/dropify/dist/css/dropify.min.css') !!}
     <!-- END PAGE LEVEL PLUGINS -->
 @endsection
 
@@ -70,14 +70,10 @@
                                         <h4 class="card-title">Avatar</h4>
                                         <label for="avatar">Por favor seleccione su avatar. Unicamente se aceptan archivos de tipo PNG, JPG, GIF.</label>
                                         @php
-                                            $defaultAvatar = asset('public/backend/assets/images/default-user.png');
+                                            $defaultAvatar = asset('backend/assets/images/default-user.png');
                                             if(is_object($oUser)){
                                                 if($oUser->avatar != ""){
-                                                    if($env == 'production'){
-                                                        $defaultAvatar = asset($oStorage->url($oUser->avatar));
-                                                    }else{
-                                                        $defaultAvatar = asset('public'.$oStorage->url($oUser->avatar));
-                                                    }
+                                                    $defaultAvatar = asset($oStorage->url($oUser->avatar));
                                                 }
                                             }
                                         @endphp
@@ -168,17 +164,17 @@
 @endsection
 
 @section('custom-js')
-    {!! Html::script('public/backend/assets/plugins/bootstrap-sweetalert/sweetalert.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/js/ui-sweetalert.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/jquery-validation/js/jquery.validate.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/jquery-validation/js/additional-methods.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/ladda/spin.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/ladda/ladda.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/jquery.blockui.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/js/form-validate/form-validation-profile.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/bootstrap-sweetalert/sweetalert.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/js/ui-sweetalert.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery-validation/js/jquery.validate.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery-validation/js/additional-methods.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/ladda/spin.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/ladda/ladda.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery.blockui.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/js/form-validate/form-validation-profile.min.js', ['type' => 'text/javascript']) !!}
     <!-- jQuery file upload -->
-    {!! Html::script('public/backend/assets/plugins/dropify/dist/js/dropify.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/dropify/dist/js/dropify.min.js', ['type' => 'text/javascript']) !!}
     
     <!--Custom JavaScript -->
     <script type="text/javascript">

@@ -118,7 +118,7 @@
                                                             @if($oUser->avatar != '')
                                                                 <img src="{!! asset($oStorage->url($oUser->avatar)) !!}" alt="{!! $oUser->full_name !!}" width="40" class="img-circle" />
                                                             @else
-                                                                <img src="{!! asset('public/backend/assets/images/default-user.png') !!}" alt="{!! Auth::user()->full_name !!}" width="40" class="img-circle" />
+                                                                <img src="{!! asset('backend/assets/images/default-user.png') !!}" alt="{!! Auth::user()->full_name !!}" width="40" class="img-circle" />
                                                             @endif
                                                         </td>
                                                         <td>{!! $oUser->full_name !!}</td>
@@ -181,8 +181,8 @@
 @endsection
 
 @section('custom-js')
-    {!! Html::script('public/backend/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/jquery.blockui.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery.blockui.min.js', ['type' => 'text/javascript']) !!}
     
     <!--Custom JavaScript -->
     <script type="text/javascript">
@@ -196,5 +196,5 @@
         var urlUsersList = '{!! route('backend.auth.users.list') !!}';
     </script>
 
-    {!! Html::script('public/backend/assets/js/pages/users-list.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/js/pages/users-list.min.js', ['type' => 'text/javascript']) !!}
 @endsection

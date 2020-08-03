@@ -130,8 +130,8 @@
 @endsection
 
 @section('custom-js')
-    {!! Html::script('public/backend/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/jquery.blockui.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery.blockui.min.js', ['type' => 'text/javascript']) !!}
     
     <!--Custom JavaScript -->
     <script type="text/javascript">
@@ -145,5 +145,5 @@
         var urlRolesList = '{!! route('backend.auth.roles.list') !!}';
     </script>
 
-    {!! Html::script('public/backend/assets/js/pages/roles-list.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/js/pages/roles-list.min.js', ['type' => 'text/javascript']) !!}
 @endsection

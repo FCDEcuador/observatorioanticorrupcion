@@ -103,7 +103,7 @@
                                                             @if($oMainSlider->image_path != '')
                                                                 <img src="{!! asset($oStorage->url($oMainSlider->image_path)) !!}" alt="" width="400"/>
                                                             @else
-                                                                <img src="{!! asset('public/backend/assets/images/default-thumbnail.png') !!}" alt="" width="200" />
+                                                                <img src="{!! asset('backend/assets/images/default-thumbnail.png') !!}" alt="" width="200" />
                                                             @endif
                                                         </td>
                                                         <td>
@@ -141,6 +141,6 @@
 @endsection
 
 @section('custom-js')
-    {!! Html::script('public/backend/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/jquery.blockui.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery.blockui.min.js', ['type' => 'text/javascript']) !!}
 @endsection

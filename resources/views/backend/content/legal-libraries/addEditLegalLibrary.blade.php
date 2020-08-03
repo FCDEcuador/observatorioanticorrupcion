@@ -2,9 +2,9 @@
 
 @section('custom-css')
     <!-- BEGIN PAGE LEVEL PLUGINS -->
-    {!! Html::style('public/backend/assets/css/pages/ui-bootstrap-page.css') !!}
-    {!! Html::style('public/backend/assets/plugins/dropify/dist/css/dropify.min.css') !!}
-    {!! Html::style('public/backend/assets/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.css') !!}
+    {!! Html::style('backend/assets/css/pages/ui-bootstrap-page.css') !!}
+    {!! Html::style('backend/assets/plugins/dropify/dist/css/dropify.min.css') !!}
+    {!! Html::style('backend/assets/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.css') !!}
     <!-- END PAGE LEVEL PLUGINS -->
 @endsection
 
@@ -166,13 +166,13 @@
 @endsection
 
 @section('custom-js')
-    {!! Html::script('public/backend/assets/plugins/jquery-validation/js/jquery.validate.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/jquery-validation/js/additional-methods.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/jquery.blockui.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/dropify/dist/js/dropify.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/vendor/unisharp/laravel-ckeditor/ckeditor.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery-validation/js/jquery.validate.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery-validation/js/additional-methods.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery.blockui.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/dropify/dist/js/dropify.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('vendor/unisharp/laravel-ckeditor/ckeditor.js', ['type' => 'text/javascript']) !!}
     <script type="text/javascript">
         var urlLegalLibrariesList = '{!! route('backend.content.legal-libraries.list') !!}';
 
@@ -183,5 +183,5 @@
             filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token={!! csrf_token() !!}'
         };
     </script>
-    {!! Html::script('public/backend/assets/js/form-validate/form-validation-legal-library.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/js/form-validate/form-validation-legal-library.min.js', ['type' => 'text/javascript']) !!}
 @endsection

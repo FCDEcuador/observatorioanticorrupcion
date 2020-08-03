@@ -227,10 +227,10 @@
 									@if($oHomeField->legal_library_image != '')
 										<img class="d-block w-100" src="{!! asset($oStorage->url($oHomeField->legal_library_image)) !!}" alt="Biblioteca Legal">
 									@else
-										<img class="d-block w-100" src="{!! asset('public/images/biblioteca-legal.jpg') !!}" alt="Biblioteca Legal">
+										<img class="d-block w-100" src="{!! asset('images/biblioteca-legal.jpg') !!}" alt="Biblioteca Legal">
 									@endif
 								@else
-									<img class="d-block w-100" src="{!! asset('public/images/biblioteca-legal.jpg') !!}" alt="Biblioteca Legal">
+									<img class="d-block w-100" src="{!! asset('images/biblioteca-legal.jpg') !!}" alt="Biblioteca Legal">
 								@endif
 							</div>
 							<div class="col-sm-7 pl-3">
@@ -285,10 +285,10 @@
 									@if($oSuccessStory->image != '')
 										<img class="d-block w-100" src="{!! $oStorage->url($oSuccessStory->image) !!}" alt="Historias de Exito">
 									@else
-										<img class="d-block w-100" src="{!! asset('public/images/historias.jpg') !!}" alt="Historias de Exito">	
+										<img class="d-block w-100" src="{!! asset('images/historias.jpg') !!}" alt="Historias de Exito">	
 									@endif
 								@else
-									<img class="d-block w-100" src="{!! asset('public/images/historias.jpg') !!}" alt="Historias de Exito">
+									<img class="d-block w-100" src="{!! asset('images/historias.jpg') !!}" alt="Historias de Exito">
 								@endif
 							</div>
 						</div>

@@ -5,7 +5,7 @@
 @endsection
 
 @section('custom-css')	
-    {!! Html::style('public/backend/assets/plugins/bootstrap-sweetalert/sweetalert.css') !!}
+    {!! Html::style('backend/assets/plugins/bootstrap-sweetalert/sweetalert.css') !!}
     @if($oContentArticle->extra_headers != '')
     	{!! $oContentArticle->extra_headers !!}
     @else
@@ -128,6 +128,6 @@
 
 
 @section('custom-js')
-	{!! Html::script('public/backend/assets/plugins/bootstrap-sweetalert/sweetalert.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/js/ui-sweetalert.min.js', ['type' => 'text/javascript']) !!}
+	{!! Html::script('backend/assets/plugins/bootstrap-sweetalert/sweetalert.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/js/ui-sweetalert.min.js', ['type' => 'text/javascript']) !!}
 @endsection

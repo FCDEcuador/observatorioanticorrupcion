@@ -1,4 +1,4 @@
-<a class='flotante' href='#' data-toggle="modal" data-target="#modalDenuncias" ><img src='{!! asset('public/frontend/images/denuncia.png') !!}' border="0"/>
+<a class='flotante' href='#' data-toggle="modal" data-target="#modalDenuncias" ><img src='{!! asset('frontend/images/denuncia.png') !!}' border="0"/>
 </a>
 
 <!-- BEGIN MODAL DENUNCIAS -->
@@ -19,7 +19,7 @@
         			<p class="text-default text-uppercase letter-spacing-1 text-center font-weight-bold mt-2 fz14 mb-0 align-middle" style="height:40px;">Institución</p>
         			<div class="row no-gutters bg-white border p-1 mb-1 minh80 align-items-center">
         				<div class="col-4">
-        					<img src="{!! asset('public/frontend/images/logo-contraloria.png') !!}" class="w-100" />
+        					<img src="{!! asset('frontend/images/logo-contraloria.png') !!}" class="w-100" />
         				</div>
         				<div class="col-8  letter-spacing-1 fz14 pl-1 ">
         					Contraloría General del Estado
@@ -27,7 +27,7 @@
         			</div>
         			<div class="row no-gutters bg-white border p-1 mb-1 minh80 align-items-center">
         				<div class="col-4">
-        					<img src="{!! asset('public/frontend/images/logo-cpcc.png') !!}" class="w-100" />
+        					<img src="{!! asset('frontend/images/logo-cpcc.png') !!}" class="w-100" />
         				</div>
         				<div class="col-8  letter-spacing-1 fz14 pl-1 ">
         					Concejo de Participación Ciudadana y Control Social (CPCSS)
@@ -35,7 +35,7 @@
         			</div>
         			<div class="row no-gutters bg-white border p-1 mb-1 minh80 align-items-center">
         				<div class="col-4">
-        					<img src="{!! asset('public/frontend/images/ico-fiscalia.png') !!}" class="w-100" />
+        					<img src="{!! asset('frontend/images/ico-fiscalia.png') !!}" class="w-100" />
         				</div>
         				<div class="col-8  letter-spacing-1 fz14 pl-1 ">
         					Fiscalía General del Estado
@@ -43,7 +43,7 @@
         			</div>
                     <div class="row no-gutters bg-white border p-1 mb-1 minh80 align-items-center">
                         <div class="col-4">
-                            <img src="{!! asset('public/frontend/images/ico-quitohonesto.jpg') !!}" class="w-100" />
+                            <img src="{!! asset('frontend/images/ico-quitohonesto.jpg') !!}" class="w-100" />
                         </div>
                         <div class="col-8  letter-spacing-1 fz14 pl-1 ">
                             Quito Honesto
@@ -251,7 +251,7 @@
 		<div class="col-sm-4 align-self-center d-flex justify-content-center mt-4 mt-sm-0">
 			<!--a href="" class="text-white border pt-1 pb-1 pl-3 pr-3" style="background: rgba(255,255,255,0.4);border-radius: 5px;"><span class="pr-3">Suscríbete a nuestro newsletter</span> <i class="far fa-envelope"></i> </a-->
             <div> Con el apoyo de: <a href="" target="_blank">
-                        <img src="{!! asset('public/images/padf-white.png') !!}" />
+                        <img src="{!! asset('images/padf-white.png') !!}" />
             </a></div>
 		</div>
 		<div class="col-sm-4 align-self-center d-flex justify-content-center mt-4 mt-sm-0">
@@ -283,7 +283,7 @@
                     @if($oConfiguration->backend_logo != '')
                         <img src="{!! asset($oStorage->url($oConfiguration->backend_logo)) !!}" />
                     @else
-                        <img src="{!! asset('public/frontend/images/fcd.png') !!}" class="pl-3" />
+                        <img src="{!! asset('frontend/images/fcd.png') !!}" class="pl-3" />
                     @endif
                 
 

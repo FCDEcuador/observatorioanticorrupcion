@@ -2,8 +2,8 @@
 
 @section('custom-css')
     <!-- BEGIN PAGE LEVEL PLUGINS -->
-    {!! Html::style('public/backend/assets/css/pages/ui-bootstrap-page.css') !!}
-    {!! Html::style('public/backend/assets/plugins/dropify/dist/css/dropify.min.css') !!}
+    {!! Html::style('backend/assets/css/pages/ui-bootstrap-page.css') !!}
+    {!! Html::style('backend/assets/plugins/dropify/dist/css/dropify.min.css') !!}
     <!-- END PAGE LEVEL PLUGINS -->
 @endsection
 
@@ -186,13 +186,13 @@
 @endsection
 
 @section('custom-js')
-    {!! Html::script('public/backend/assets/plugins/jquery-validation/js/jquery.validate.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/jquery-validation/js/additional-methods.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/jquery.blockui.min.js', ['type' => 'text/javascript']) !!}
-    {!! Html::script('public/backend/assets/plugins/dropify/dist/js/dropify.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery-validation/js/jquery.validate.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery-validation/js/additional-methods.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/jquery.blockui.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/plugins/dropify/dist/js/dropify.min.js', ['type' => 'text/javascript']) !!}
     <script type="text/javascript">
         var urlSuccessStoriesList = '{!! route('backend.content.success-stories.list') !!}';
     </script>
-    {!! Html::script('public/backend/assets/js/form-validate/form-validation-success-story.min.js', ['type' => 'text/javascript']) !!}
+    {!! Html::script('backend/assets/js/form-validate/form-validation-success-story.min.js', ['type' => 'text/javascript']) !!}
 @endsection
