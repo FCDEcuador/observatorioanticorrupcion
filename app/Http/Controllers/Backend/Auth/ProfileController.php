@@ -143,7 +143,7 @@ class ProfileController extends Controller
         if($request->hasFile('avatar')){
             $avatar = $request->file('avatar');
             $name = $avatar->getClientOriginalName();
-            $path = $avatar->storePubliclyAs('public/backend/users',$name, ['disk' => $this->sStorageDisk]);
+            $path = $avatar->storePubliclyAs('backend/users',$name, ['disk' => $this->sStorageDisk]);
             Auth::user()->avatar = $path;
         }
 
