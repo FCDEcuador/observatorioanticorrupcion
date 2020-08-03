@@ -31,6 +31,7 @@
         "martijnc/php-csp": "^1.0",
         "mercuryseries/flashy": "^1.0",
         "sammyk/laravel-facebook-sdk": "^3.5",
+        "spatie/laravel-csp": "^2.6",
         "spatie/laravel-permission": "^2.12",
         "unisharp/laravel-ckeditor": "^4.7",
         "unisharp/laravel-filemanager": "v2.0.0-alpha7",
