@@ -209,7 +209,7 @@
 			</div>
 		</div>
 		
-		<div class="row" {!! $oCorruptionCase->consequences_image != '' ? 'style="background: url(\''.$oStorage->url($oCorruptionCase->consequences_image).'\') no-repeat;background-size: cover;"' : '' !!}>
+		<div class="row" {!! $oCorruptionCase->consequences_image != '' ? 'style="background: url(\''.$oStorage->url($oCorruptionCase->consequences_image).'\') no-repeat;background-size: auto;"' : '' !!}>
 			<div class="col-sm-6" >
 				@if($oCorruptionCase->social_consequences != '')
 					<div class="p-3" style="background: rgba(36,57,91,0.7);">
