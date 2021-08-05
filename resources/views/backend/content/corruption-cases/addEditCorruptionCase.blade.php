@@ -427,7 +427,7 @@
                                                             <div class="col-md-4">
                                                                 <label for="month_end"> Mes Fin: </label>
                                                                 <select name="month_end[]" id="month_end_{!! $nextWH !!}" class="form-control">
-                                                                    <option value="" {!!  ! $oWhatHappened->month ? 'selected="selected"' : '' !!}>Mes</option>
+                                                                    <option value="" {!!  ! $oWhatHappened->month_end ? 'selected="selected"' : '' !!}>Mes</option>
                                                                     <option value="Enero" {!!  $oWhatHappened->month_end == 'Enero' ? 'selected="selected"' : '' !!}>Enero</option>
                                                                     <option value="Febrero" {!!  $oWhatHappened->month_end == 'Febrero' ? 'selected="selected"' : '' !!}>Febrero</option>
                                                                     <option value="Marzo" {!!  $oWhatHappened->month_end == 'Marzo' ? 'selected="selected"' : '' !!}>Marzo</option>
@@ -437,7 +437,7 @@
                                                                     <option value="Julio" {!!  $oWhatHappened->month_end == 'Julio' ? 'selected="selected"' : '' !!}>Julio</option>
                                                                     <option value="Agosto" {!!  $oWhatHappened->month_end == 'Agosto' ? 'selected="selected"' : '' !!}>Agosto</option>
                                                                     <option value="Septiembre" {!!  $oWhatHappened->month_end == 'Septiembre' ? 'selected="selected"' : '' !!}>Septiembre</option>
-                                                                    <option value="Octubre" {!!  $oWhatHappened->month == 'Octubre' ? 'selected="selected"' : '' !!}>Octubre</option>
+                                                                    <option value="Octubre" {!!  $oWhatHappened->month_end == 'Octubre' ? 'selected="selected"' : '' !!}>Octubre</option>
                                                                     <option value="Noviembre" {!!  $oWhatHappened->month_end == 'Noviembre' ? 'selected="selected"' : '' !!}>Noviembre</option>
                                                                     <option value="Diciembre" {!!  $oWhatHappened->month_end == 'Diciembre' ? 'selected="selected"' : '' !!}>Diciembre</option>
                                                                 </select>
