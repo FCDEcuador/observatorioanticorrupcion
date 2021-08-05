@@ -240,9 +240,9 @@
 
 						    		<div id="accordionAutor" class="collapse" aria-labelledby="headingFour" data-parent="#accordionAutor">
 						      			<div class="card-body text-justify detalle fz12">
-						      				<p class="text-white">{!! $oCorruptionCase->author !!}</p>
-						      				<p class="text-white">{!! $oCorruptionCase->created_at !!}</p>
-						      				
+						      				<p class="text-white">Autor/Investigador: <strong>{!! $oCorruptionCase->author !!}</strong></p>
+						      				<p class="text-white">Fecha de publicación: <strong>{!! $oCorruptionCase->created_at !!}</strong></p>
+
 						      			</div>
 						    		</div>
 						  		</div>
