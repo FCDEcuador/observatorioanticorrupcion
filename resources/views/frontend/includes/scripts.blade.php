@@ -10,7 +10,7 @@
         valueObj = "#casos-corrupcion";
     </script>
 
-    <script  src="frontend/js/index.js"></script>
+    <!--script  src="frontend/js/index.js"></script-->
 
     @yield('custom-js')
 
