@@ -296,5 +296,6 @@
 			<p><a class="text-secondary fz40" href="https://creativecommons.org/licenses/by-nc-sa/3.0/ec/" target="_blank" rel="noopener noreferrer"><i class="fab fa-creative-commons"></i></a> <a class="text-secondary fz40" href="" target="_blank"><i class="fab fa-github"></i></a></p>
 		</div>
 	</div>
+    <button onclick="topFunction()" id="myBtn" title="Subir">^</button>
 </div>
 <!-- END FOOTER -->
